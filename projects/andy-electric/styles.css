@@ -1,0 +1,1028 @@
+/* =====================================================
+   Andy Electric — Case Study Styles
+   Fondo: gradiente oscuro→rojo | Texto: #e0e0e0, #fff
+   ===================================================== */
+
+/* --- Wrapper --- */
+.andyelectric {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(170.6deg, #191919, #b12324 46.65%);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--container-pad);
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.navbar {
+  width: 100%;
+  max-width: var(--container-max);
+  height: 72px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.frame-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.layout-grid-parent,
+.capa-1-parent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.layout-grid-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.capa-1-icon {
+  width: 36px;
+  height: auto;
+}
+
+.button-text { display: flex; align-items: center; }
+
+.button,
+.button2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: Inter, sans-serif;
+  margin: 0;
+}
+
+.component-5 {
+  display: flex;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
+.button3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #161617;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cv {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: Inter, sans-serif;
+  margin: 0;
+}
+
+/* --- Main frame --- */
+.andyframe {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-pad) 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION 1 — Header Andy (2 columnas)
+   ===================================================== */
+.header-andy {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.info-andy {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.info-andy-child {
+  width: clamp(180px, 30vw, 350px);
+  height: auto;
+}
+
+/* Mon rôle / Software */
+.information-architecture-ia-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  height: auto;
+}
+
+.software {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-transform: capitalize;
+  line-height: 1.2;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.i-a-description {
+  display: flex;
+  padding: 0;
+}
+
+.information-architecture-ia-container {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+}
+
+.jai-travaill-en { margin: 0 0 0.5rem 0; }
+
+.analyse-du-positionnement-de-l {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 1.5rem;
+}
+
+/* Software icons */
+.frame-parent7 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: auto;
+}
+
+.group-icon {
+  display: none;
+}
+
+.software-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.software2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.first-level-parent {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: auto;
+}
+
+.frame-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.recycle-bin-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.recycle-bin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  position: relative;
+  isolation: isolate;
+  gap: 0;
+}
+
+.visual-studio-code {
+  display: none;
+}
+
+.image-holder {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  background-size: cover;
+}
+
+.image-1-icon { display: none; }
+.image-2-icon, .image-3-icon {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.image-2-icon { z-index: 1; }
+.image-3-icon { z-index: 2; }
+
+.frame-wrapper {
+  display: flex;
+  padding: 0;
+  width: 100%;
+}
+
+.icon-repair {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: auto;
+  height: auto;
+}
+
+.software-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.software3, .software4, .software5, .software6 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+  width: auto;
+  height: auto;
+}
+
+.software-group {
+  display: flex;
+  gap: 1.5rem;
+  width: auto;
+}
+
+/* Imagen header derecha */
+.images-header-icon {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 2 — Contexto (2 columnas)
+   ===================================================== */
+.context {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.context-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.software7 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-transform: capitalize;
+  line-height: 1.2;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.information-architecture-ia-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.information-architecture-ia-container2 {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+/* Stats (Point de départ) */
+.context-chiffres {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.software-frame {
+  display: flex;
+  padding: 0;
+}
+
+.software8 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-transform: capitalize;
+  line-height: 1.2;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.chiffres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.text-block,
+.text-block2,
+.text-block3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ff0020;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.h3-regular {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* =====================================================
+   SECTION 3 — Approche (2 columnas: imagen izq, texto der)
+   ===================================================== */
+.approche {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-2026-04-19-at-2018 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.info-approche {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.info-approche-inner {
+  display: flex;
+  padding: 0;
+}
+
+.app-users-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.app-users {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  line-height: 1.2;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.information-architecture-ia-frame {
+  display: flex;
+  padding: 0;
+}
+
+.information-architecture-ia-container3 {
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #e0e0e0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.amliorer-la-perception {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #fff;
+  width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   SECTION 4 — Canal d'acquisition (2 columnas)
+   ===================================================== */
+.canal-dacquisition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.info-canal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+.app-users-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.app-users2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  line-height: 1.2;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.information-architecture-ia-container4 {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.le-site-devient {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  width: 100%;
+  height: auto;
+}
+
+.images-canal-icon {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 5 — Images web (2 en fila)
+   ===================================================== */
+.images-web {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-2026-04-19-at-2019,
+.screenshot-2026-04-19-at-20182 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 6 — Images web 2 (2 columnas + móviles abajo)
+   ===================================================== */
+.images-web-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-2026-04-19-at-20192,
+.screenshot-2026-04-19-at-20183 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.group-parent {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: static;
+}
+
+.frame-child {
+  width: clamp(100px, 15vw, 200px);
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.frame-child6 {
+  object-fit: cover;
+  width: clamp(100px, 15vw, 200px);
+  height: auto;
+  display: block;
+}
+
+/* =====================================================
+   SECTION 7 — Resultats
+   ===================================================== */
+.resultats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
+  height: auto;
+}
+
+.app-users-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.app-users3 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  line-height: 1.2;
+  margin: 0;
+  width: auto;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.resultats-chiffres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1.5rem;
+  width: 100%;
+  height: auto;
+  align-items: start;
+}
+
+.text-block8,
+.text-block11 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.h3-regular7,
+.h3-regular9,
+.h3-regular11 {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #e0e0e0;
+  align-self: stretch;
+}
+
+.h111 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ff0020;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  width: auto;
+  font-family: Inter, sans-serif;
+}
+
+/* =====================================================
+   SECTION 8 — Brand ID (2 columnas)
+   ===================================================== */
+.brand-id {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.app-users4 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  line-height: 1.2;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.currently-app-users-report-is-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.currently-app-users-container {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.brand-cover-icon {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 9 — Livrables
+   ===================================================== */
+.livrables-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.livrables-group-inner {
+  display: flex;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+.icon3 {
+  width: clamp(200px, 30vw, 420px);
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.info-livrables-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.info-livrables {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app-users-container {
+  display: flex;
+  padding: 0;
+}
+
+.app-users5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  line-height: 1.2;
+  margin: 0;
+  width: auto;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.currently-app-users-container2 {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+/* Sub-secciones de livrables: grids de imágenes */
+.livrables-group-child {
+  display: flex;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.frame-parent3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.frame-section {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.icon2 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.icon5 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+/* =====================================================
+   SECTION 10 — Text améliorations (3 items)
+   ===================================================== */
+.text-aleiorations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+.home-plus-parent,
+.user-star-parent {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.home-plus-icon,
+.user-star-icon,
+.icon-repair-child {
+  width: 56px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.text-block13,
+.text-block14,
+.text-block15 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.h113,
+.h114 {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+/* =====================================================
+   SECTION 11 — Merch images (fotos)
+   ===================================================== */
+.merch-img {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.img-person {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+  position: static;
+}
+
+.img-person-child {
+  display: none;
+}
+
+.chatgpt-image-26-mar-2026-03-,
+.chatgpt-image-26-mar-2026-03-2,
+.chatgpt-image-3-abr-2026-12-5,
+.chatgpt-image-3-abr-2026-12-52,
+.chatgpt-image-3-abr-2026-01-0 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  position: static;
+  z-index: auto;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .header-andy,
+  .context,
+  .approche,
+  .canal-dacquisition,
+  .brand-id,
+  .resultats {
+    grid-template-columns: 1fr;
+  }
+
+  .chiffres,
+  .resultats-chiffres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .frame-parent3,
+  .frame-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .text-aleiorations {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .andyframe {
+    padding: 2rem 1rem 4rem;
+    gap: 3rem;
+  }
+
+  .images-web {
+    grid-template-columns: 1fr;
+  }
+
+  .chiffres,
+  .resultats-chiffres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .frame-parent3,
+  .frame-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .img-person {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .chiffres,
+  .resultats-chiffres {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .img-person {
+    grid-template-columns: 1fr;
+  }
+}

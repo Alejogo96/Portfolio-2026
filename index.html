@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Alejandro Guevara — Portfolio UX/UI</title>
+    <meta name="description" content="Portafolio profesional de Alejandro Guevara, UX/UI Designer & Product Designer." />
+
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Segoe UI:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Compact:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="cover-franais">
+      <section class="navbar-wrapper">
+        <nav class="navbar" aria-label="Navegación principal">
+          <div class="frame-parent">
+            <a href="#projects" class="layout-grid-parent" aria-label="Ir a proyectos">
+              <img
+                class="layout-grid-icon"
+                alt=""
+                src="./public/layout-grid.svg"
+              />
+
+              <div class="button-text">
+                <b class="button" data-i18n="nav.menu">Menu</b>
+              </div>
+            </a>
+            <a href="./index.html" class="capa-1-parent" aria-label="Ir al inicio">
+              <img
+                class="capa-1-icon"
+                loading="lazy"
+                alt=""
+                src="./public/Capa-1.svg"
+              />
+
+              <div class="button-text">
+                <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+              </div>
+            </a>
+          </div>
+          <a class="component-5" href="#cv" aria-label="Ver CV">
+            <div class="button3">
+              <img
+                class="layout-grid-icon"
+                alt=""
+                src="./public/file-certificate.svg"
+              />
+
+              <b class="cv" data-i18n="nav.cv">CV</b>
+            </div>
+          </a>
+        </nav>
+      </section>
+      <main class="home-frame">
+        <header class="langues">
+          <h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
+          <nav class="language-option" aria-label="Selector de idioma">
+            <button class="label lang-btn" data-lang="en" type="button">
+              <div class="label2" data-i18n="lang.en">Inglés</div>
+            </button>
+            <button class="label lang-btn" data-lang="fr" type="button">
+              <div class="label2" data-i18n="lang.fr">Francés</div>
+            </button>
+            <button class="labelvariant8 lang-btn" data-lang="es" data-active="true" type="button">
+              <div class="label3" data-i18n="lang.es">Español</div>
+            </button>
+          </nav>
+        </header>
+        <section class="description">
+          <!-- ── Hero Redesign (designali style) ── -->
+          <section class="hero-redesign">
+            <!-- Decorative grid background -->
+            <div class="hero-grid" aria-hidden="true"></div>
+
+            <div class="hero-inner">
+              <!-- Badge pill -->
+              <div class="hero-pill">
+                <span data-i18n="hero.badge">Portfolio 2026</span>
+                <a href="#projects" class="hero-pill-link" data-i18n="hero.badge.link">Explorar</a>
+              </div>
+
+              <!-- Title box with + corner decorators -->
+              <div class="hero-box">
+                <svg class="hero-plus hero-plus--tl" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+                <svg class="hero-plus hero-plus--tr" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+                <svg class="hero-plus hero-plus--bl" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+                <svg class="hero-plus hero-plus--br" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+
+                <h1 class="hero-title">
+                  <span data-i18n="hero.title.line1">La plataforma completa para el</span>
+                  <span class="hero-title-accent"> Diseño.</span>
+                </h1>
+
+                <!-- Available now indicator -->
+                <div class="hero-available">
+                  <span class="hero-ping" aria-hidden="true">
+                    <span class="hero-ping-dot"></span>
+                  </span>
+                  <span class="hero-available-text" data-i18n="hero.available">Disponible ahora</span>
+                </div>
+              </div>
+
+              <!-- Greeting -->
+              <p class="hero-greeting">
+                <span data-i18n="hero.intro">¡Bienvenido a mi espacio creativo! Soy </span><span class="hero-name">Alejandro Guevara</span>
+              </p>
+
+              <!-- Bio with typewriter -->
+              <p class="hero-bio">
+                <span data-i18n="hero.bio.prefix">Especialista en </span><span class="hero-typewriter" id="typewriter" aria-live="polite"></span><span aria-hidden="true">.</span>
+              </p>
+
+              <!-- CTA buttons -->
+              <div class="hero-ctas">
+                <a href="#projects" class="hero-cta-shine" aria-label="Ver proyectos">
+                  <span class="hero-btn-primary" data-i18n="hero.cta.projects">Ver proyectos</span>
+                </a>
+                <a href="#contact" class="hero-btn-outline" data-i18n="hero.cta.contact">Contactar</a>
+              </div>
+            </div>
+          </section>
+          <div class="professional-projects-parent" id="projects">
+            <h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
+            <div class="projects-layout">
+              <div class="project-pair-one">
+                <div class="project-pair-two">
+                  <a class="project-link" href="./projects/ublo/index.html" aria-label="Ver proyecto Ublo">
+                  <section class="component-6">
+                    <div class="frame-group">
+                      <div class="ublo-parent">
+                        <h2 class="ublo">Ublo</h2>
+                        <div class="description-project" data-i18n="projects.ublo.desc">
+                          Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.
+                        </div>
+                      </div>
+                      <div class="label-parent">
+                        <span class="label6">
+                          <div class="ux-research">UX research</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UX design</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UI design</div>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="component-6-inner">
+                      <img
+                        class="frame-child"
+                        loading="lazy"
+                        alt=""
+                        src="./public/card-ublo.png"
+                      />
+                    </div>
+                  </section>
+                  </a>
+                  <a class="project-link" href="./projects/bellpi/index.html" aria-label="Ver proyecto Bellpi">
+                  <section class="component-6">
+                    <div class="frame-container">
+                      <div class="ublo-parent">
+                        <h2 class="ublo">Bellpi</h2>
+                        <div class="description-project2" data-i18n="projects.bellpi.desc">
+                          Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.
+                        </div>
+                      </div>
+                      <div class="label-parent">
+                        <button class="label6">
+                          <div class="ux-research">Service design</div>
+                        </button>
+                        <button class="label6">
+                          <div class="ux-research">UX research</div>
+                        </button>
+                        <button class="label6">
+                          <div class="ux-research">UX design</div>
+                        </button>
+                        <button class="label6">
+                          <div class="ux-research">UI design</div>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="header-images">
+                      <img
+                        class="frame-item"
+                        loading="lazy"
+                        alt=""
+                        src="./public/card-bellpi.png"
+                      />
+                    </div>
+                  </section>
+                  </a>
+                  <section class="component-6" aria-label="Próximamente">
+                    <div class="frame-container">
+                      <div class="ublo-parent">
+                        <h2 class="muse-de-la">Musée de la BnF</h2>
+                        <div class="description-project3" data-i18n="projects.bnf.desc">
+                          Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.
+                        </div>
+                      </div>
+                      <div class="label-parent">
+                        <span class="label6">
+                          <div class="ux-research">UX research</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UX design</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UI design</div>
+                        </span>
+                      </div>
+                    </div>
+                    <img
+                      class="vacancy-image-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/card-bnf.png"
+                    />
+                  </section>
+                </div>
+              </div>
+              <div class="project-pair-one">
+                <div class="component-7-parent">
+                  <section class="component-6">
+                    <div class="frame-group">
+                      <div class="ublo-parent">
+                        <h2 class="muse-de-la">JumboMana</h2>
+                        <div class="description-project3">
+                          Assistant IA guidant les voyageurs dans leur recherche
+                          d’informations à l’aéroport international
+                          Lyon–Saint-Exupéry, en France.
+                        </div>
+                      </div>
+                      <div class="label-container">
+                        <div class="label16">
+                          <div class="ai">AI</div>
+                        </div>
+                        <button class="label6">
+                          <div class="ux-research">UX research</div>
+                        </button>
+                        <button class="label6">
+                          <div class="ux-research">UX design</div>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="home-wrapper">
+                      <img
+                        loading="lazy"
+                        alt=""
+                        src="./public/card-jumbo.png"
+                      />
+                    </div>
+                  </section>
+                  <a class="project-link" href="./projects/andy-electric/index.html" aria-label="Ver proyecto Andy Electric">
+                  <section class="component-6">
+                    <div class="frame-container">
+                      <div class="ublo-parent">
+                        <h2 class="muse-de-la">Andy Electric</h2>
+                        <div class="description-project3" data-i18n="projects.andy.desc">
+                          Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.
+                        </div>
+                      </div>
+                      <div class="label-parent">
+                        <span class="label6">
+                          <div class="ux-research">Brand</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UX design</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UI design</div>
+                        </span>
+                      </div>
+                    </div>
+                    <img
+                      class="images-header-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/card-andy.png"
+                    />
+                  </section>
+                  </a>
+                  <section class="component-6" aria-label="Próximamente">
+                    <div class="frame-container">
+                      <div class="ublo-parent">
+                        <h2 class="ublo">ParamoTotem</h2>
+                        <div class="description-project" data-i18n="projects.paramo.desc">
+                          Proyecto experimental enfocado en crear una experiencia inmersiva inspirada en los ecosistemas naturales.
+                        </div>
+                      </div>
+                      <div class="label-container">
+                        <div class="label16">
+                          <div class="ai">AI</div>
+                        </div>
+                        <span class="label6">
+                          <div class="ux-research">UX research</div>
+                        </span>
+                        <span class="label6">
+                          <div class="ux-research">UX design</div>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="rellena-los-vacios-remix-01jr-wrapper">
+                      <img
+                        class="rellena-los-vacios-remix-01jr"
+                        loading="lazy"
+                        alt=""
+                        src="./public/card-paramo.png"
+                      />
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="cv2" id="cv">
+          <div class="profil-professionel">
+            <h2 class="title-profil" data-i18n="cv.title">Perfil profesional</h2>
+          </div>
+          <div class="experience">
+            <div class="profil-professionel">
+              <h2 class="ux-ui-designer" data-i18n="cv.role">UX/UI Designer & Product Designer</h2>
+            </div>
+            <div class="info">
+              <section class="formationlangue">
+                <div class="formation-info">
+                  <h2 class="formation" data-i18n="cv.education">Formación</h2>
+                  <div class="infor-formation">
+                    <div class="master-cration-numrique-container">
+                      <span class="master-cration-numrique"
+                        >Máster en Creación Digital, Diseño<br />de interfaz y multimedia M2 (2025)<br
+                      /></span>
+                      <span
+                        >Université Sorbonne Paris Nord<br />París - Francia</span
+                      >
+                    </div>
+                    <div class="bootamp-ux-ui-container">
+                      <span class="master-cration-numrique"
+                        >Bootcamp UX/UI Design (2023)<br
+                      /></span>
+                      <span>Coder House<br />En línea</span>
+                    </div>
+                    <div class="licence-en-design-container">
+                      <span class="master-cration-numrique"
+                        >Licenciatura en Diseño Industrial (2018)<br
+                      /></span>
+                      <span
+                        >Universidad Jorge Tadeo Lozano<br />Bogotá - Colombia</span
+                      >
+                    </div>
+                    <div class="diplome-duef-2023-container">
+                      <span class="master-cration-numrique"
+                        >Diploma DUEF (2023)<br
+                      /></span>
+                      <span
+                        >Lengua francesa nivel B2<br />Université Jean
+                        Monnet<br />Saint-Étienne - Francia</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="formation-info">
+                  <h2 class="formation" data-i18n="cv.languages">Idiomas</h2>
+                  <div class="niveau">
+                    <div class="franais-c1" data-i18n="cv.lang.fr">Francés - C1</div>
+                    <div class="anglais-b1" data-i18n="cv.lang.en">Inglés - B1</div>
+                    <div class="espagnol-native" data-i18n="cv.lang.es">Español - Nativo</div>
+                  </div>
+                </div>
+              </section>
+              <div class="experience2">
+                <div class="info2">
+                  <h2 class="experience-title" data-i18n="cv.experience">Experiencia profesional</h2>
+                  <div class="freelance-brand-container">
+                    <p class="freelance-brand-ux-designe">
+                      <span class="freelance-brand"
+                        >Freelance: Brand & UX Designer / Andy Electric, Estados Unidos (2025-2026)</span
+                      >
+                      <span>&nbsp;</span>
+                    </p>
+                    <ul class="refonte-et-volution-de-liden">
+                      <li><span>Rediseño y evolución de la identidad de marca de la empresa, asegurando coherencia visual y posicionamiento.</span></li>
+                      <li><span>Diseño de soportes de comunicación y marketing (redes sociales, contenidos visuales, mensajes clave).</span></li>
+                      <li><span>Creación y desarrollo de un sitio web vitrina presentando los servicios y actividades de la empresa.</span></li>
+                      <li><span>Integración de soluciones de contacto para facilitar la generación de leads.</span></li>
+                      <li><span>Contribución a la mejora de la presencia digital y a la captación de nuevos clientes.</span></li>
+                    </ul>
+                  </div>
+                  <div class="alternance-ux-designer-container">
+                    <p class="alternance-ux-designer">
+                      Alternancia: UX Designer / Ublo, Francia (2024-2025)<br />
+                    </p>
+                    <ul class="conduite-de-user-research-ana">
+                      <li><span>Conducción de user research, análisis de necesidades y traducción en especificaciones de producto (user stories, criterios de aceptación, JTBD).</span></li>
+                      <li><span>Realización de auditorías UX y evaluación de la madurez del producto para proponer una roadmap de mejoras priorizadas por impacto.</span></li>
+                      <li><span>Colaboración diaria con los equipos tech, business y marketing para alinear restricciones, valor y viabilidad.</span></li>
+                      <li><span>Participación en product discovery: identificación de oportunidades, formulación de hipótesis, prototipado y tests con usuarios.</span></li>
+                    </ul>
+                  </div>
+                  <div class="cdi-product-designer-container">
+                    <p class="alternance-ux-designer">
+                      CDI: Product Designer / Iridian, Colombia (2023-2024)<br />
+                    </p>
+                    <ul class="conduite-de-user-research-ana">
+                      <li><span>Diseño y optimización de interfaces web y móvil en alineación con los KPI de producto y los objetivos de negocio.</span></li>
+                      <li><span>Implementación de un design system y de un workflow de iteración basado en tests, data y feedback de usuarios.</span></li>
+                      <li><span>Colaboración con los equipos de marketing y tech para el desarrollo de nuevas funcionalidades y la generación de leads.</span></li>
+                      <li><span>Participación en la priorización de evoluciones de producto vía análisis de restricciones técnicas, datos y feedback de clientes.</span></li>
+                    </ul>
+                  </div>
+                  <div class="cdi-ux-et-container">
+                    <p class="alternance-ux-designer">
+                      CDI: UX y Service Designer / Casatoro, Colombia (2021-2022)<br />
+                    </p>
+                    <ul class="conduite-de-user-research-ana">
+                      <li><span>Animación de talleres de diseño, recolección de insights de usuarios para orientar el desarrollo de producto y organización de tests de usabilidad para mejora continua.</span></li>
+                      <li><span>Diseño de soluciones figitales (kioscos táctiles, pantallas, apps) basadas en insights y guiadas por el uso.</span></li>
+                      <li><span>Colaboración interfuncional con los equipos de diseño, tech y negocio para mantener una alineación de producto constante.</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="competences">
+                  <h2 class="competence-title" data-i18n="cv.skills">Competencias</h2>
+                  <div class="utilisation-des-outils-container">
+                    <ul class="utilisation-des-outils-dia">
+                      <li>Uso de herramientas de IA.<br /></li>
+                      <li>Análisis de datos cuantitativos y cualitativos en el proceso de diseño y métricas clave.<br /></li>
+                      <li>Definición de roadmap y priorización (RICE, MoSCoW, Kano).<br /></li>
+                      <li>Product discovery, JTBD, análisis de necesidades, redacción de user stories y criterios de aceptación.<br /></li>
+                      <li>Visión de producto y alineación de stakeholders.<br /></li>
+                      <li>Seguimiento de KPI, análisis cuantitativo y cualitativo.<br /></li>
+                      <li>Uso de metodologías como Design Thinking, Human-Centered Design, Lean UX, Scrum y Design Sprint.<br /></li>
+                      <li>Wireframes, prototipos, tests de usuario, auditorías UX.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contact" id="contact">
+          <h2 class="title-profil" data-i18n="contact.title">Trabajemos juntos</h2>
+          <div class="contact-info">
+            <div class="contact-data">
+              <div class="contact-info2">
+                <h3 class="e-mail" data-i18n="contact.email">E-mail</h3>
+                <h3 class="oago1103gmailcom"><a href="mailto:oago1103@gmail.com">oago1103@gmail.com</a></h3>
+              </div>
+              <div class="contact-info3">
+                <h3 class="e-mail" data-i18n="contact.phone">Teléfono</h3>
+                <h3 class="oago1103gmailcom"><a href="tel:+33648760444">+33 648 760 444</a></h3>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./scripts/i18n.js"></script>
+    <script src="./scripts/hero.js"></script>
+    <!-- Canvas for interactive color trails (covers viewport, pointer-events: none) -->
+    <canvas id="canvas" aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:9999;width:100%;height:100%;"></canvas>
+  </body>
+</html>

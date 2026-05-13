@@ -1,0 +1,1286 @@
+/* =====================================================
+   home.css — Portfolio Home Page
+   ===================================================== */
+
+/* =====================================================
+   WRAPPER
+   ===================================================== */
+.cover-franais {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fffcf5;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 2rem 0 6rem;
+  gap: 0;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar-wrapper {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-pad);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  width: 100%;
+  height: 72px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.frame-parent {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.layout-grid-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-decoration: none;
+}
+
+.layout-grid-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.button-text {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
+.capa-1-parent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.capa-1-icon {
+  height: 40px;
+  width: auto;
+}
+
+.button2 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
+.component-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+}
+
+.button3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #161617;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 8px 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.cv {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
+/* =====================================================
+   MAIN FRAME
+   ===================================================== */
+.home-frame {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-pad);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-top: 3rem;
+}
+
+/* =====================================================
+   LANGUAGE SELECTOR
+   ===================================================== */
+.langues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.choisissez-votre-langue {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.label {
+  cursor: pointer;
+  border: 1.5px solid #000;
+  padding: 8px 20px;
+  background-color: #f4efe2;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.label2 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  color: #000;
+}
+
+.labelvariant8 {
+  cursor: pointer;
+  border: 1.5px solid #f4efe2;
+  padding: 8px 20px;
+  background-color: #2e2929;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.label3 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  color: #f4efe2;
+}
+
+/* =====================================================
+   DESCRIPTION (hero + projects wrapper)
+   ===================================================== */
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5rem;
+  width: 100%;
+}
+
+/* =====================================================
+   HERO REDESIGN — Designali style
+   ===================================================== */
+.hero-redesign {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0 3rem;
+  overflow: visible;
+}
+
+/* Subtle grid pattern below the title box */
+.hero-grid {
+  position: absolute;
+  left: 50%;
+  top: 260px;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 360px;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(87, 83, 78, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(87, 83, 78, 0.12) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 60%, transparent 100%);
+}
+
+/* Content wrapper — above the grid */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 860px;
+}
+
+/* ── Badge pill ── */
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.8125rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: var(--font-base);
+  backdrop-filter: blur(4px);
+}
+
+.hero-pill-link {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.hero-pill-link:hover { color: #000; }
+
+/* ── Title box with mask + border ── */
+.hero-box {
+  position: relative;
+  border: 1.5px solid rgba(0, 0, 0, 0.13);
+  padding: 3rem 2.5rem 2rem;
+  width: 100%;
+  background: rgba(255, 252, 245, 0.65);
+  -webkit-mask-image: radial-gradient(ellipse 800px 600px at center, white, transparent);
+  mask-image: radial-gradient(ellipse 800px 600px at center, white, transparent);
+}
+
+/* ── Plus corner decorators ── */
+.hero-plus {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: #000;
+}
+.hero-plus--tl { top: -20px; left: -20px; }
+.hero-plus--tr { top: -20px; right: -20px; }
+.hero-plus--bl { bottom: -20px; left: -20px; }
+.hero-plus--br { bottom: -20px; right: -20px; }
+
+/* ── Main heading ── */
+.hero-title {
+  font-size: clamp(2.25rem, 5.5vw, 5rem);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: #000;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.hero-title-accent {
+  color: #e11d48;
+}
+
+/* ── Available indicator ── */
+.hero-available {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.hero-ping {
+  position: relative;
+  display: inline-flex;
+  width: 12px;
+  height: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.hero-ping::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  opacity: 0.75;
+  animation: hero-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.hero-ping-dot {
+  position: relative;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.hero-available-text {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #22c55e;
+  font-family: var(--font-base);
+}
+
+@keyframes hero-ping {
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── Greeting ── */
+.hero-greeting {
+  font-size: clamp(1.0625rem, 2vw, 1.375rem);
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-base);
+}
+
+.hero-name {
+  color: #e11d48;
+  font-weight: 700;
+}
+
+/* ── Bio + typewriter ── */
+.hero-bio {
+  font-size: 1.0625rem;
+  color: rgba(0, 0, 0, 0.52);
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-base);
+}
+
+.hero-typewriter {
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.hero-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #3b82f6;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  animation: hero-blink 1s step-end infinite;
+}
+
+@keyframes hero-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── CTA buttons ── */
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+/* Shine border wrapper */
+.hero-cta-shine {
+  position: relative;
+  display: inline-block;
+  border-radius: 14px;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+  overflow: hidden;
+}
+.hero-cta-shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 3px;
+  background-image: radial-gradient(
+    transparent, transparent,
+    #FF007F, #39FF14, #00FFFF,
+    transparent, transparent
+  );
+  background-size: 300% 300%;
+  animation: shine-pulse 14s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes shine-pulse {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.hero-btn-primary {
+  display: block;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 11px;
+  padding: 10px 26px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-base);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.hero-btn-primary:hover { background: #1a1a1a; }
+
+.hero-btn-outline {
+  display: inline-block;
+  border: 1.5px solid rgba(0, 0, 0, 0.22);
+  background: transparent;
+  color: #000;
+  border-radius: 12px;
+  padding: 10px 26px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-base);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.hero-btn-outline:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.38);
+}
+
+/* ── Hero responsive ── */
+@media (max-width: 768px) {
+  .hero-box {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .hero-plus {
+    width: 28px;
+    height: 28px;
+  }
+  .hero-plus--tl { top: -14px; left: -14px; }
+  .hero-plus--tr { top: -14px; right: -14px; }
+  .hero-plus--bl { bottom: -14px; left: -14px; }
+  .hero-plus--br { bottom: -14px; right: -14px; }
+}
+
+/* =====================================================
+   PROJECTS — "Projets" heading + grid
+   ===================================================== */
+.professional-projects-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.professional-projects {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.projects-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.project-pair-one {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-pair-two,
+.component-7-parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* =====================================================
+   PROJECT CARD — .component-6
+   ===================================================== */
+.component-6 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(92, 87, 61, 0.18);
+  overflow: hidden;
+  width: 100%;
+  height: 460px;
+  box-sizing: border-box;
+  text-align: left;
+  color: #000;
+  font-family: Inter, sans-serif;
+}
+
+/* Info interior de la card */
+.frame-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+  flex-shrink: 0;
+}
+
+.frame-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+  flex-shrink: 0;
+}
+
+.ublo-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ublo,
+.muse-de-la {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+  line-height: 1.2;
+}
+
+.description-project,
+.description-project2,
+.description-project3 {
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-family: Inter, sans-serif;
+  color: #000;
+  line-height: 1.5;
+}
+
+.label-parent,
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.label6 {
+  border: 1.5px solid #002358;
+  padding: 5px 10px;
+  background-color: #f4efe2;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  cursor: default;
+}
+
+.ux-research {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  color: #002358;
+}
+
+.label16 {
+  height: auto;
+  border-radius: 999px;
+  background-color: #f4efe2;
+  border: 1.5px solid #002358;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.ai {
+  font-size: 12px;
+  font-weight: 600;
+  color: #002358;
+  font-family: Inter, sans-serif;
+}
+
+/* =====================================================
+   CARD IMAGE SECTIONS — all cards same height
+   ===================================================== */
+.component-6-inner,
+.header-images,
+.home-wrapper,
+.rellena-los-vacios-remix-01jr-wrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* All card preview images inside wrapper divs */
+.component-6-inner img,
+.header-images img,
+.home-wrapper img,
+.rellena-los-vacios-remix-01jr-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Direct img children of .component-6 (Musée de la BnF, Andy Electric) */
+.vacancy-image-icon,
+.images-header-icon {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* =====================================================
+   JUMBOMANA — card especial con preview mini
+   ===================================================== */
+.home-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem 1rem;
+  min-height: 220px;
+}
+
+.home {
+  position: relative;
+  box-shadow: 0 4px 12px rgba(128, 132, 173, 0.3);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f5f1ef, #f4f0ed);
+  border: 0.6px solid rgba(0, 0, 0, 0.3);
+  width: 160px;
+  height: 300px;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+}
+
+.frame-inner,
+.rectangle-parent {
+  position: absolute;
+  left: 0;
+  width: 160px;
+}
+
+.rectangle-parent {
+  top: 56px;
+  height: 244px;
+}
+
+.frame-inner {
+  top: 8px;
+  background: linear-gradient(270deg, #e9e2dc, #d7cdc6);
+  height: 232px;
+}
+
+.sam-still-body-01-1024x576-1-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: auto;
+  object-fit: cover;
+}
+
+.menubar {
+  position: absolute;
+  top: 188px;
+  left: 68px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.14);
+  border-radius: 17px;
+  background-color: #1a237e;
+  border: 0.3px solid #fff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon { width: 9px; height: 9px; }
+
+.menubar2 {
+  position: absolute;
+  top: 106px;
+  left: 130px;
+  box-shadow: 0 0 1.4px rgba(0,0,0,0.25);
+  border-radius: 3.5px;
+  background-color: #fff;
+  width: 18px;
+  padding: 10px 3px;
+  box-sizing: border-box;
+  font-size: 2px;
+  font-family: Helvetica, sans-serif;
+}
+
+.frame-parent2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7px;
+  width: 15px;
+}
+
+.icon2 { width: 8px; height: 8px; }
+.vector-icon { width: 10px; height: 9px; }
+
+.frame-parent3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7px;
+}
+
+.group-icon { width: 11px; height: 12px; object-fit: cover; }
+.couper-le-son,
+.langues2 {
+  font-size: 2px;
+  letter-spacing: 0.01em;
+  line-height: 150%;
+  color: #1a237e;
+}
+
+.vi-parent {
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  width: 146px;
+  height: 32px;
+}
+
+.vi-icon {
+  position: absolute;
+  top: 0; left: 0;
+  width: 28px; height: 15px;
+  object-fit: cover;
+}
+
+.al-icon {
+  position: absolute;
+  top: 0; right: 0;
+  width: 26px; height: 15px;
+  object-fit: cover;
+}
+
+.jumbo-mana-logopng-icon {
+  position: absolute;
+  top: calc(50% + 1px);
+  left: 118px;
+  width: 22px; height: 15px;
+  object-fit: cover;
+}
+
+.card, .card2, .card3, .card4 {
+  position: absolute;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  border-radius: 3.5px;
+  background-color: #fff;
+  border: 0.3px solid #434242;
+  width: 31px;
+  height: 19px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4px;
+}
+
+.card  { top: 164px; left: 81px; }
+.card2 { top: 192px; left: 25px; overflow: hidden; text-align: left; }
+.card3 { top: 192px; left: 99px; overflow: hidden; }
+.card4 { top: 164px; left: 42px; overflow: hidden; }
+
+.icon3 { width: 9px; height: 9px; overflow: hidden; position: relative; }
+.icon-child { position: absolute; height: 60%; width: 47%; top: 20%; right: 27%; bottom: 20%; left: 27%; }
+.icon-item { position: absolute; top: 2.4px; left: 2.4px; width: 5px; height: 5px; }
+.icon-inner { position: absolute; height: 57%; width: 66%; top: 20%; right: 19%; bottom: 22%; left: 15%; overflow: hidden; }
+.messsage-icon { position: absolute; top: 2.4px; left: 2px; width: 6px; height: 5px; }
+
+.magasins {
+  font-size: 5px;
+  letter-spacing: 0.01em;
+  line-height: 5px;
+  font-weight: 500;
+  font-family: "Noto Sans", sans-serif;
+  color: #1a237e;
+}
+
+.bonjour-je-vais-bien-comment-wrapper {
+  position: absolute;
+  top: 39px;
+  left: 19px;
+  background-color: #fff;
+  padding: 3.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bonjour-je-vais {
+  font-size: 5.5px;
+  color: #000;
+  font-family: Nunito, sans-serif;
+  font-weight: 700;
+  width: 107px;
+}
+
+.chatbum {
+  position: absolute;
+  top: 116px;
+  left: 32px;
+  box-shadow: 0 1.4px 1.4px rgba(0,0,0,0.25);
+  border-radius: 1.7px;
+  background-color: #1a237e;
+  width: 93px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 3.5px;
+  box-sizing: border-box;
+  isolation: isolate;
+  gap: 3.5px;
+}
+
+.o-se-trouve {
+  width: 90px;
+  font-size: 4.5px;
+  color: #fff;
+  font-family: Nunito, sans-serif;
+  z-index: 0;
+}
+
+.component-4 { width: 93px; height: 2px; z-index: 1; position: relative; }
+.component-4-child,
+.component-4-inner,
+.component-4-item {
+  position: absolute;
+  height: 100%; width: 100%;
+  top: 0; right: 0; bottom: 0; left: 0;
+  border-radius: 0 0 2px 2px;
+  background-color: #d9d9d9;
+}
+.component-4-item { background-color: #818181; }
+.component-4-inner { background-color: #06c32f; }
+
+.chatbum-child {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  margin: 0 !important;
+  top: 8px;
+  left: 88px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* =====================================================
+   CV / PERFIL PROFESIONAL
+   ===================================================== */
+.cv2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-family: Inter, sans-serif;
+}
+
+.profil-professionel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-profil {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  text-align: left;
+}
+
+.ux-ui-designer {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+}
+
+/* 2 columnas: izq (formación/idiomas) | der (experiencia/competencias) */
+.info {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.formationlangue {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  text-align: left;
+  color: #000;
+  font-family: Inter, sans-serif;
+  width: 100%;
+}
+
+.formation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.formation {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+}
+
+.infor-formation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.master-cration-numrique-container,
+.bootamp-ux-ui-container,
+.licence-en-design-container,
+.diplome-duef-2023-container {
+  width: 100%;
+  height: auto;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+  color: #000;
+}
+
+.master-cration-numrique {
+  font-weight: 600;
+  display: block;
+}
+
+.niveau {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.franais-c1,
+.anglais-b1,
+.espagnol-native {
+  width: 100%;
+  height: auto;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Columna derecha: experiencia */
+.experience2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.info2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.experience-title {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.freelance-brand-container,
+.alternance-ux-designer-container,
+.cdi-product-designer-container,
+.cdi-ux-et-container {
+  width: 100%;
+  height: auto;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #000;
+  font-family: Inter, sans-serif;
+}
+
+.freelance-brand-ux-designe { margin: 0; }
+
+.freelance-brand {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+}
+
+.refonte-et-volution-de-liden {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.alternance-ux-designer {
+  margin: 0;
+  font-weight: 600;
+}
+
+.conduite-de-user-research-ana {
+  margin: 0;
+  font-size: 0.9375rem;
+  padding-left: 1.5rem;
+}
+
+/* Competencias */
+.competences {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.competence-title {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.utilisation-des-outils-container {
+  width: 100%;
+  height: auto;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #000;
+}
+
+.utilisation-des-outils-dia {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-family: Inter, sans-serif;
+  font-size: inherit;
+}
+
+/* =====================================================
+   CONTACT — "Travaillons ensemble"
+   ===================================================== */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-family: Inter, sans-serif;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.contact-data {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.contact-info2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  width: auto;
+}
+
+.contact-info3 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  width: auto;
+}
+
+.e-mail {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #0e0e0e;
+  height: auto;
+}
+
+.oago1103gmailcom {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: Inter, sans-serif;
+  color: #0e0e0e;
+  height: auto;
+}
+
+/* =====================================================
+   MEDIA QUERIES
+   ===================================================== */
+@media (max-width: 1024px) {
+  .project-pair-two,
+  .component-7-parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-pair-two,
+  .component-7-parent {
+    grid-template-columns: 1fr;
+  }
+
+  .img-3323-1-parent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .img-3323-1-icon {
+    width: 160px;
+    height: 160px;
+  }
+
+  .contact-data {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .home-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover-franais {
+    padding: 1rem 0 4rem;
+  }
+
+  .home-frame {
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .description {
+    gap: 3rem;
+  }
+}

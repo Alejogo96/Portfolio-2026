@@ -1,0 +1,44 @@
+{
+  "nav.menu": "Menu",
+  "nav.portfolio": "Portfolio",
+  "nav.cv": "CV",
+
+  "lang.title": "Choisissez votre langue",
+  "lang.en": "Anglais",
+  "lang.fr": "Français",
+  "lang.es": "Espagnol",
+
+  "hero.greeting": "Salut ! Je suis Alejandro Guevara",
+  "hero.bio": "Je suis designer spécialisé en UX et en design de services. Je crois au pouvoir du design et de l'art pour créer des expériences qui ne se contentent pas de fonctionner, mais qui résonnent.<br /><br />Curieux de nature, passionné par le sport et les voyages, j'aime expérimenter les outils d'IA comme compagnons créatifs dans mon flux de travail et m'inspirer de méthodes et d'outils issus d'autres disciplines pour nourrir et développer ma pensée créative.",
+
+  "hero.badge": "Portfolio 2026",
+  "hero.badge.link": "Explorer",
+  "hero.title.line1": "La plateforme complète pour le",
+  "hero.available": "Disponible maintenant",
+  "hero.intro": "Bienvenue dans mon espace créatif ! Je suis ",
+  "hero.bio.prefix": "Spécialisé en ",
+  "hero.cta.projects": "Voir les projets",
+  "hero.cta.contact": "Contacter",
+
+  "projects.title": "Projets",
+  "projects.ublo.desc": "Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.",
+  "projects.bellpi.desc": "Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.",
+  "projects.bnf.desc": "Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.",
+  "projects.jumbomana.desc": "Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.",
+  "projects.andy.desc": "Branding, site web et améliorations d'expérience pour une entreprise de services électriques aux États-Unis.",
+  "projects.paramo.desc": "Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.",
+
+  "cv.title": "Profil professionnel",
+  "cv.role": "UX/UI Designer & Product Designer",
+  "cv.education": "Formation",
+  "cv.languages": "Langues",
+  "cv.lang.fr": "Français - C1",
+  "cv.lang.en": "Anglais - B1",
+  "cv.lang.es": "Espagnol - Natif",
+  "cv.experience": "Expériences professionnelles",
+  "cv.skills": "Compétences",
+
+  "contact.title": "Travaillons ensemble",
+  "contact.email": "E-mail",
+  "contact.phone": "Téléphone"
+}

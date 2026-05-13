@@ -1,0 +1,44 @@
+{
+  "nav.menu": "Menú",
+  "nav.portfolio": "Portfolio",
+  "nav.cv": "CV",
+
+  "lang.title": "Elige tu idioma",
+  "lang.en": "Inglés",
+  "lang.fr": "Francés",
+  "lang.es": "Español",
+
+  "hero.greeting": "¡Hola! Soy Alejandro Guevara",
+  "hero.bio": "Soy un diseñador especializado en UX y diseño de servicios. Creo en el poder del diseño y del arte para crear experiencias que no solo funcionan, sino que resuenan.<br /><br />Curioso por naturaleza, apasionado del deporte y los viajes, disfruto experimentar con herramientas de IA como compañeras creativas y nutrirme de métodos de otras disciplinas para alimentar mi pensamiento creativo.",
+
+  "hero.badge": "Portfolio 2026",
+  "hero.badge.link": "Explorar",
+  "hero.title.line1": "La plataforma completa para el",
+  "hero.available": "Disponible ahora",
+  "hero.intro": "¡Bienvenido a mi espacio creativo! Soy ",
+  "hero.bio.prefix": "Especialista en ",
+  "hero.cta.projects": "Ver proyectos",
+  "hero.cta.contact": "Contactar",
+
+  "projects.title": "Proyectos",
+  "projects.ublo.desc": "Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.",
+  "projects.bellpi.desc": "Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.",
+  "projects.bnf.desc": "Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.",
+  "projects.jumbomana.desc": "Asistente de IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.",
+  "projects.andy.desc": "Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.",
+  "projects.paramo.desc": "Proyecto experimental enfocado en crear una experiencia inmersiva inspirada en los ecosistemas naturales.",
+
+  "cv.title": "Perfil profesional",
+  "cv.role": "UX/UI Designer & Product Designer",
+  "cv.education": "Formación",
+  "cv.languages": "Idiomas",
+  "cv.lang.fr": "Francés - C1",
+  "cv.lang.en": "Inglés - B1",
+  "cv.lang.es": "Español - Nativo",
+  "cv.experience": "Experiencia profesional",
+  "cv.skills": "Competencias",
+
+  "contact.title": "Trabajemos juntos",
+  "contact.email": "E-mail",
+  "contact.phone": "Teléfono"
+}

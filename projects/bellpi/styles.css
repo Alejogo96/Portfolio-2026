@@ -1,0 +1,634 @@
+/* =====================================================
+   Bellpi — Case Study Styles
+   Fondo: #fff | Gradientes: negro→azul, negro→verde
+   ===================================================== */
+
+/* --- Wrapper --- */
+.bellpi {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--container-pad);
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  max-width: var(--container-max);
+  height: 72px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  gap: 1rem;
+  font-size: 16px;
+  color: #fff;
+  font-family: Inter, sans-serif;
+}
+
+.frame-parent {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.layout-grid-parent,
+.capa-1-parent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.layout-grid-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.capa-1-icon {
+  width: 36px;
+  height: auto;
+}
+
+.button-text { display: flex; align-items: center; }
+
+.button,
+.button2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: Inter, sans-serif;
+}
+
+.component-5 {
+  display: flex;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
+.button3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #161617;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cv {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: Inter, sans-serif;
+}
+
+/* --- Main frame --- */
+.bellpi-frame {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-pad) 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION 1 — Header (2 columnas)
+   ===================================================== */
+.bellpi-header {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.bellpi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+.desktop-8-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.desktop-8 {
+  width: clamp(160px, 22vw, 300px);
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.i-was-part-of-the-design-team-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.i-was-part-container {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #000;
+  font-family: Inter, sans-serif;
+  width: 100%;
+  height: auto;
+}
+
+.bellpi-une-plateforme-e-comme { margin: 0; }
+
+.concevoir-et-optimiser-des-par {
+  margin: 0;
+  font-size: inherit;
+  padding-left: 1.5rem;
+}
+
+/* Software */
+.software-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.software {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--Gray-2);
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.frame-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.frame-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.frame-child,
+.frame-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.frame-container {
+  display: flex;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slack-parent {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.slack,
+.figma,
+.linear,
+.chatgpt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000;
+  font-family: Inter, sans-serif;
+  width: auto;
+  height: auto;
+}
+
+.figma-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Imágenes del header */
+.img-bellpi {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.screenshot-2024-12-05-at-1048 {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  display: block;
+  object-fit: cover;
+}
+
+.screenshot-2024-12-05-at-1024 {
+  width: 85%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  display: block;
+  object-fit: cover;
+  align-self: flex-start;
+  margin-top: -2rem;
+}
+
+/* =====================================================
+   SECTION 2 — Lancement de produit (2 columnas)
+   ===================================================== */
+.lancement-product {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.info-lancement {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  font-family: inherit;
+  background: linear-gradient(90deg, #000, #0076fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: auto;
+  align-self: stretch;
+}
+
+.i-worked-as-container {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #000;
+  width: 100%;
+  height: auto;
+}
+
+.vendeurs-et-les { white-space: normal; }
+
+.design-thinking-lean-container {
+  font-size: 1rem;
+  line-height: 1.65;
+  height: auto;
+  align-self: stretch;
+}
+
+.design-thinking-lean-ux-scrum {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 1.5rem;
+}
+
+/* Imágenes lancement */
+.img-lancement {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-2024-12-05-at-10242 {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  display: block;
+  object-fit: cover;
+}
+
+.a8682255-352d-471e-9342-95cbe7-icon,
+.f9a0-e8c2-4bf2-a5a3-1305bd8e7f-icon {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 3 — Itération continue (2 columnas)
+   ===================================================== */
+.iteration-continue {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.desktop-4 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.info-iteration {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.title2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  height: auto;
+  background: linear-gradient(90deg, #000, #01b695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  font-family: Raleway, sans-serif;
+}
+
+.info-detail {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #000;
+  width: 100%;
+  height: auto;
+  font-family: Inter, sans-serif;
+}
+
+.images-icon {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 4 — Expérience sur site (2 columnas)
+   ===================================================== */
+.experiencesursite {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.info-expeirence {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+.title-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title3 {
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  height: auto;
+  width: auto;
+  background: linear-gradient(180deg, #0076fd, #616161);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  font-family: Inter, sans-serif;
+}
+
+.info-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #000;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-2024-12-04-at-2325-parent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.screenshot-2024-12-04-at-2325 {
+  width: clamp(140px, 20vw, 260px);
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.bulllet-points-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.bulllet-points {
+  font-size: 1rem;
+  line-height: 1.65;
+  width: 100%;
+  height: auto;
+}
+
+/* Imágenes del sitio */
+.images-sur-site {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.imgaes-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-2024-12-04-at-23252,
+.screenshot-2024-12-04-at-23253 {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.screenshot-2024-12-04-at-23254 {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  grid-column: 1 / -1;
+}
+
+.notre-approche-a {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #000;
+  width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   SECTION 5 — Expérience interactive (2 columnas)
+   ===================================================== */
+.experience-interactive {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.info-experience-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.interactive-experience {
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  height: auto;
+  background: linear-gradient(90deg, #000, #01b695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  font-family: Raleway, sans-serif;
+}
+
+.interactive-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.as-part-of-container {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #000;
+  font-family: Inter, sans-serif;
+}
+
+/* 3 fotos de bornes tactiles */
+.imgaes-bornes-tactiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.a4987b-0623-495d-ae4e-d222e63b-icon,
+.dfdc6487-df18-4f1a-a45b-4c9066-icon,
+.ae38d0-1355-4559-b98a-4693b396-icon {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .bellpi-header,
+  .lancement-product,
+  .iteration-continue,
+  .experiencesursite,
+  .experience-interactive {
+    grid-template-columns: 1fr;
+  }
+
+  .screenshot-2024-12-05-at-1024 {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .bellpi-frame {
+    padding: 2rem 1rem 4rem;
+    gap: 3rem;
+  }
+
+  .screenshot-2024-12-04-at-2325-parent {
+    grid-template-columns: 1fr;
+  }
+
+  .imgaes-bornes-tactiles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .imgaes-bornes-tactiles {
+    grid-template-columns: 1fr;
+  }
+}

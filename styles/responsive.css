@@ -1,0 +1,556 @@
+/* =====================================================
+   responsive.css — Layout responsivo global
+   ===================================================== */
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img, picture, svg, video {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Wrappers raíz */
+.cover-franais,
+.ublo,
+.bellpi,
+.andyelectric {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   HOME — Navbar
+   ===================================================== */
+.navbar-wrapper,
+.home-frame,
+.langues,
+.description,
+.cv2,
+.contact,
+.experience,
+.profil-professionel {
+  width: 100% !important;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  box-sizing: border-box;
+}
+
+/* Dentro del CV solo limitamos ancho, sin padding duplicado */
+.formationlangue,
+.experience2,
+.competences {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100% !important;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   HOME — Alturas fijas del Figma export → auto
+   ===================================================== */
+.description {
+  height: auto !important;
+  gap: var(--space-8) !important;
+}
+
+.home-frame {
+  gap: var(--space-8) !important;
+}
+
+/* =====================================================
+   HOME — Hero
+   ===================================================== */
+.img-3323-1-parent {
+  width: 100% !important;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.img-3323-1-icon {
+  width: clamp(160px, 22vw, 280px) !important;
+  height: auto !important;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hello-im-alejandro-guevara-parent {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.hello-im-alejandro {
+  font-size: var(--fs-h1) !important;
+  line-height: var(--lh-tight) !important;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.im-a-designer {
+  font-size: var(--fs-body) !important;
+  line-height: var(--lh-base) !important;
+  max-width: var(--measure);
+}
+
+/* =====================================================
+   HOME — Sección Proyectos (grid 3 columnas)
+   ===================================================== */
+.professional-projects-parent {
+  width: 100% !important;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  box-sizing: border-box;
+}
+
+.professional-projects {
+  font-size: var(--fs-h2) !important;
+  line-height: 1.2 !important;
+  margin-bottom: var(--space-6);
+}
+
+.projects-layout {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.project-pair-one {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-pair-two,
+.component-7-parent {
+  width: 100% !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.component-6 {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.frame-group,
+.frame-container {
+  width: 100% !important;
+  padding: var(--space-5);
+  box-sizing: border-box;
+}
+
+.ublo-parent {
+  width: 100% !important;
+  margin-bottom: var(--space-3);
+}
+
+.ublo,
+.muse-de-la {
+  font-size: var(--fs-h3) !important;
+  margin-bottom: var(--space-2);
+}
+
+.description-project,
+.description-project2,
+.description-project3 {
+  font-size: var(--fs-body) !important;
+  line-height: var(--lh-base) !important;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.label-parent,
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.label6,
+.label16 {
+  width: auto !important;
+  padding: 0.25rem 0.75rem !important;
+  font-size: var(--fs-small) !important;
+  border-radius: 999px;
+}
+
+.ux-research,
+.ai {
+  font-size: var(--fs-small) !important;
+}
+
+.frame-child,
+.frame-item,
+.screenshot-2024-12-05-at-1024,
+.vacancy-image-icon,
+.images-header-icon,
+.rellena-los-vacios-remix-01jr {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  display: block;
+}
+
+.component-6-inner,
+.header-images,
+.rellena-los-vacios-remix-01jr-wrapper {
+  width: 100% !important;
+  padding: 0 var(--space-5) var(--space-5);
+  box-sizing: border-box;
+}
+
+.home-wrapper,
+.home {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =====================================================
+   HOME — CV / Perfil Profesional (2 columnas desktop)
+   ===================================================== */
+.title-profil {
+  font-size: var(--fs-h2) !important;
+  margin-bottom: var(--space-5);
+}
+
+.ux-ui-designer {
+  font-size: var(--fs-h3) !important;
+  margin-bottom: var(--space-5);
+}
+
+.formation,
+.experience-title,
+.competence-title {
+  font-size: var(--fs-h3) !important;
+  margin-bottom: var(--space-4);
+}
+
+/* 2 columnas en desktop */
+.cv2 .info {
+  display: grid !important;
+  grid-template-columns: 320px 1fr !important;
+  gap: var(--space-7);
+  width: 100% !important;
+  max-width: var(--container-max) !important;
+  align-items: start;
+}
+
+.formationlangue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: auto !important;
+}
+
+.infor-formation,
+.niveau {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100% !important;
+}
+
+.master-cration-numrique-container,
+.bootamp-ux-ui-container,
+.licence-en-design-container,
+.diplome-duef-2023-container {
+  width: 100% !important;
+  height: auto !important;
+  font-size: var(--fs-body) !important;
+  line-height: var(--lh-base) !important;
+}
+
+.master-cration-numrique {
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.franais-c1,
+.anglais-b1,
+.espagnol-native {
+  width: 100% !important;
+  height: auto !important;
+  font-size: var(--fs-body) !important;
+}
+
+.experience2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100% !important;
+  height: auto !important;
+}
+
+.info2 {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.freelance-brand-container,
+.alternance-ux-designer-container,
+.cdi-product-designer-container,
+.cdi-ux-et-container {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.freelance-brand-ux-designe,
+.alternance-ux-designer {
+  font-size: var(--fs-h4) !important;
+  font-weight: 600;
+  margin-bottom: var(--space-3) !important;
+}
+
+.refonte-et-volution-de-liden,
+.conduite-de-user-research-ana,
+.utilisation-des-outils-dia {
+  width: 100% !important;
+  font-size: var(--fs-body) !important;
+  line-height: var(--lh-base) !important;
+}
+
+.utilisation-des-outils-container {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.competences {
+  width: 100% !important;
+}
+
+/* =====================================================
+   HOME — Contacto
+   ===================================================== */
+.contact {
+  padding-block: var(--space-7);
+}
+
+.contact-info,
+.contact-data {
+  width: 100% !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.contact-info2,
+.contact-info3 {
+  width: auto !important;
+  flex: 1 1 220px;
+}
+
+.e-mail {
+  font-size: var(--fs-h4) !important;
+  margin-bottom: var(--space-2);
+  height: auto !important;
+}
+
+.oago1103gmailcom {
+  font-size: var(--fs-body) !important;
+  height: auto !important;
+  word-break: break-word;
+}
+
+/* =====================================================
+   HOME — Navbar overrides
+   ===================================================== */
+.navbar {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+.frame-parent {
+  display: flex !important;
+  align-items: center;
+  gap: var(--space-4);
+  width: auto !important;
+}
+
+.layout-grid-parent,
+.capa-1-parent,
+.component-5 {
+  width: auto !important;
+  height: auto !important;
+  padding: 0.5rem 0.75rem !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: 999px;
+}
+
+.button,
+.button2,
+.cv {
+  font-size: var(--fs-small) !important;
+}
+
+.button3 {
+  padding: 0.5rem 1rem !important;
+  gap: var(--space-2);
+}
+
+.layout-grid-icon,
+.capa-1-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0;
+}
+
+/* Selector de idioma */
+.langues {
+  padding-block: var(--space-5);
+}
+
+.choisissez-votre-langue {
+  font-size: var(--fs-h3) !important;
+  margin-bottom: var(--space-4);
+}
+
+.language-option {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  width: auto !important;
+}
+
+.label,
+.labelvariant8 {
+  width: auto !important;
+  height: auto !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 999px;
+}
+
+.label2,
+.label3 {
+  font-size: var(--fs-small) !important;
+}
+
+/* =====================================================
+   BREAKPOINTS — Tablet ≤ 1024px
+   ===================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --container-pad: clamp(1rem, 3vw, 2rem);
+  }
+
+  .project-pair-two,
+  .component-7-parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cv2 .info {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =====================================================
+   BREAKPOINTS — Mobile ≤ 768px
+   ===================================================== */
+@media (max-width: 768px) {
+  .project-pair-two,
+  .component-7-parent {
+    grid-template-columns: 1fr !important;
+  }
+
+  .img-3323-1-parent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .img-3323-1-icon {
+    width: 100% !important;
+    max-width: 240px !important;
+    border-radius: 50%;
+  }
+
+  .navbar {
+    padding-block: var(--space-2);
+  }
+
+  .layout-grid-parent .button-text,
+  .capa-1-parent .button-text {
+    display: none;
+  }
+
+  .langues {
+    padding-block: var(--space-4);
+  }
+
+  .contact-info,
+  .contact-data {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .frame-group,
+  .frame-container {
+    padding: var(--space-4);
+  }
+
+  .component-6-inner,
+  .header-images,
+  .rellena-los-vacios-remix-01jr-wrapper {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+
+  .home-wrapper {
+    display: none;
+  }
+}
+
+/* =====================================================
+   BREAKPOINTS — Small mobile ≤ 480px
+   ===================================================== */
+@media (max-width: 480px) {
+  :root {
+    --container-pad: 1rem;
+  }
+
+  .frame-group,
+  .frame-container {
+    padding: var(--space-3);
+  }
+
+  .label-parent,
+  .label-container {
+    gap: 0.375rem;
+  }
+}

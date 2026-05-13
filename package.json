@@ -1,0 +1,17 @@
+{
+  "name": "alejandro-guevara-portfolio",
+  "version": "1.0.0",
+  "description": "Portafolio profesional de Alejandro Guevara — UX/UI Designer & Product Designer.",
+  "private": true,
+  "scripts": {
+    "dev": "parcel index.html projects/ublo/index.html projects/bellpi/index.html projects/andy-electric/index.html --port 1234 --open",
+    "start": "parcel index.html projects/ublo/index.html projects/bellpi/index.html projects/andy-electric/index.html --port 1234",
+    "build": "parcel build index.html projects/ublo/index.html projects/bellpi/index.html projects/andy-electric/index.html --dist-dir build --public-url ./",
+    "clean": "rm -rf .parcel-cache build"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "author": "Alejandro Guevara <oago1103@gmail.com>",
+  "license": "ISC"
+}
