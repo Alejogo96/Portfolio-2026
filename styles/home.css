@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fffcf5;
+  background-color: #0a0a0a;
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -242,7 +242,7 @@
   left: 0;
   right: 0;
   height: 120px;
-  background: linear-gradient(to bottom, transparent, #fffcf5);
+  background: linear-gradient(to bottom, transparent, #0a0a0a);
   pointer-events: none;
   z-index: 5;
 }
@@ -1251,4 +1251,126 @@
   .description {
     gap: 3rem;
   }
+}
+
+/* =====================================================
+   DARK THEME — full-page overrides to match hero
+   ===================================================== */
+
+/* Language selector */
+.choisissez-votre-langue {
+  color: rgba(255, 255, 255, 0.85);
+}
+.label {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+}
+.label2 {
+  color: rgba(255, 255, 255, 0.8);
+}
+.labelvariant8 {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+}
+.label3 {
+  color: #fff;
+}
+
+/* Projects heading */
+.professional-projects {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Project cards */
+.component-6 {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+.ublo,
+.muse-de-la {
+  color: #fff;
+}
+.description-project,
+.description-project2,
+.description-project3 {
+  color: rgba(255, 255, 255, 0.52);
+}
+.label6 {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.ux-research {
+  color: rgba(255, 255, 255, 0.75);
+}
+.label16 {
+  background-color: rgba(255, 95, 58, 0.12);
+  border-color: rgba(255, 95, 58, 0.4);
+}
+.ai {
+  color: #ff5f3a;
+}
+
+/* CV / Professional profile */
+.cv2 {
+  color: rgba(255, 255, 255, 0.85);
+}
+.title-profil {
+  color: rgba(255, 255, 255, 0.9);
+}
+.ux-ui-designer {
+  color: rgba(255, 255, 255, 0.9);
+}
+.formationlangue {
+  color: rgba(255, 255, 255, 0.75);
+}
+.formation {
+  color: rgba(255, 255, 255, 0.9);
+}
+.master-cration-numrique-container,
+.bootamp-ux-ui-container,
+.licence-en-design-container,
+.diplome-duef-2023-container {
+  color: rgba(255, 255, 255, 0.65);
+}
+.franais-c1,
+.anglais-b1,
+.espagnol-native {
+  color: rgba(255, 255, 255, 0.72);
+}
+.experience-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+.freelance-brand-container,
+.alternance-ux-designer-container,
+.cdi-product-designer-container,
+.cdi-ux-et-container {
+  color: rgba(255, 255, 255, 0.65);
+}
+.competence-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+.utilisation-des-outils-container {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Contact */
+.contact {
+  color: rgba(255, 255, 255, 0.85);
+}
+.e-mail {
+  color: rgba(255, 255, 255, 0.88);
+}
+.oago1103gmailcom {
+  color: rgba(255, 255, 255, 0.55);
+}
+.oago1103gmailcom a,
+.oago1103gmailcom {
+  transition: color var(--transition-base);
+}
+.oago1103gmailcom a:hover {
+  color: #ff5f3a;
 }
