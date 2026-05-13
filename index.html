@@ -80,6 +80,67 @@
           </a>
         </nav>
       </section>
+
+      <!-- ── Glowy Waves Hero (full-width, outside container) ── -->
+      <section class="hero-waves" id="home" aria-label="Portfolio hero">
+        <canvas id="waves-canvas" class="hw-canvas" aria-hidden="true"></canvas>
+        <div class="hw-glow hw-glow--top" aria-hidden="true"></div>
+        <div class="hw-glow hw-glow--br"  aria-hidden="true"></div>
+
+        <div class="hw-inner">
+          <!-- Badge -->
+          <div class="hw-badge hw-anim hw-anim--1">
+            <svg class="hw-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+              <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
+            </svg>
+            <span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
+          </div>
+
+          <!-- Heading -->
+          <h1 class="hw-title hw-anim hw-anim--2">
+            <span data-i18n="hero.h1.line1">Hola, soy </span><span class="hw-gradient">Alejandro Guevara.</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="hw-desc hw-anim hw-anim--3" data-i18n="hero.h1.desc">
+            Diseñador especializado en UX, diseño de servicios y producto digital. Creo experiencias que no solo funcionan, sino que resuenan.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hw-ctas hw-anim hw-anim--4">
+            <a href="#projects" class="hw-btn hw-btn--primary">
+              <span data-i18n="hero.cta.projects">Ver proyectos</span>
+              <svg class="hw-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="hw-btn hw-btn--outline" data-i18n="hero.cta.contact">Contactar</a>
+          </div>
+
+          <!-- Highlight pills -->
+          <ul class="hw-pills hw-anim hw-anim--5" aria-label="Especialidades">
+            <li data-i18n="hero.pill1">UX Design</li>
+            <li data-i18n="hero.pill2">Service Design</li>
+            <li data-i18n="hero.pill3">Product Design</li>
+          </ul>
+
+          <!-- Stats -->
+          <div class="hw-stats hw-anim hw-anim--6">
+            <div class="hw-stat">
+              <div class="hw-stat__label" data-i18n="hero.stat1.label">Proyectos</div>
+              <div class="hw-stat__value">6+</div>
+            </div>
+            <div class="hw-stat">
+              <div class="hw-stat__label" data-i18n="hero.stat2.label">Años exp.</div>
+              <div class="hw-stat__value">4+</div>
+            </div>
+            <div class="hw-stat">
+              <div class="hw-stat__label" data-i18n="hero.stat3.label">Idiomas</div>
+              <div class="hw-stat__value">3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <main class="home-frame">
         <header class="langues">
           <h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
@@ -96,58 +157,6 @@
           </nav>
         </header>
         <section class="description">
-          <!-- ── Hero Redesign (designali style) ── -->
-          <section class="hero-redesign">
-            <!-- Decorative grid background -->
-            <div class="hero-grid" aria-hidden="true"></div>
-
-            <div class="hero-inner">
-              <!-- Badge pill -->
-              <div class="hero-pill">
-                <span data-i18n="hero.badge">Portfolio 2026</span>
-                <a href="#projects" class="hero-pill-link" data-i18n="hero.badge.link">Explorar</a>
-              </div>
-
-              <!-- Title box with + corner decorators -->
-              <div class="hero-box">
-                <svg class="hero-plus hero-plus--tl" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
-                <svg class="hero-plus hero-plus--tr" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
-                <svg class="hero-plus hero-plus--bl" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
-                <svg class="hero-plus hero-plus--br" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
-
-                <h1 class="hero-title">
-                  <span data-i18n="hero.title.line1">La plataforma completa para el</span>
-                  <span class="hero-title-accent"> Diseño.</span>
-                </h1>
-
-                <!-- Available now indicator -->
-                <div class="hero-available">
-                  <span class="hero-ping" aria-hidden="true">
-                    <span class="hero-ping-dot"></span>
-                  </span>
-                  <span class="hero-available-text" data-i18n="hero.available">Disponible ahora</span>
-                </div>
-              </div>
-
-              <!-- Greeting -->
-              <p class="hero-greeting">
-                <span data-i18n="hero.intro">¡Bienvenido a mi espacio creativo! Soy </span><span class="hero-name">Alejandro Guevara</span>
-              </p>
-
-              <!-- Bio with typewriter -->
-              <p class="hero-bio">
-                <span data-i18n="hero.bio.prefix">Especialista en </span><span class="hero-typewriter" id="typewriter" aria-live="polite"></span><span aria-hidden="true">.</span>
-              </p>
-
-              <!-- CTA buttons -->
-              <div class="hero-ctas">
-                <a href="#projects" class="hero-cta-shine" aria-label="Ver proyectos">
-                  <span class="hero-btn-primary" data-i18n="hero.cta.projects">Ver proyectos</span>
-                </a>
-                <a href="#contact" class="hero-btn-outline" data-i18n="hero.cta.contact">Contactar</a>
-              </div>
-            </div>
-          </section>
           <div class="professional-projects-parent" id="projects">
             <h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
             <div class="projects-layout">
@@ -486,7 +495,5 @@
     </div>
     <script type="module" src="./scripts/i18n.js"></script>
     <script src="./scripts/hero.js"></script>
-    <!-- Canvas for interactive color trails (covers viewport, pointer-events: none) -->
-    <canvas id="canvas" aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:9999;width:100%;height:100%;"></canvas>
   </body>
 </html>
