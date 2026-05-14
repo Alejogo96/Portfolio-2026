@@ -88,14 +88,21 @@
         <div class="hw-glow hw-glow--br"  aria-hidden="true"></div>
 
         <div class="hw-inner">
-          <!-- Badge -->
-          <div class="hw-badge hw-anim hw-anim--1">
-            <svg class="hw-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
-              <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
-            </svg>
-            <span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
-          </div>
+          <!-- Language selector -->
+          <header class="langues hw-anim hw-anim--1">
+            <h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
+            <nav class="language-option" aria-label="Selector de idioma">
+              <button class="label lang-btn" data-lang="en" type="button">
+                <div class="label2" data-i18n="lang.en">Inglés</div>
+              </button>
+              <button class="label lang-btn" data-lang="fr" type="button">
+                <div class="label2" data-i18n="lang.fr">Francés</div>
+              </button>
+              <button class="labelvariant8 lang-btn" data-lang="es" data-active="true" type="button">
+                <div class="label3" data-i18n="lang.es">Español</div>
+              </button>
+            </nav>
+          </header>
 
           <!-- Heading -->
           <h1 class="hw-title hw-anim hw-anim--2">
@@ -107,24 +114,15 @@
             Diseñador especializado en UX, diseño de servicios y producto digital. Creo experiencias que no solo funcionan, sino que resuenan.
           </p>
 
-          <!-- CTAs -->
-          <div class="hw-ctas hw-anim hw-anim--4">
-            <a href="#projects" class="hw-btn hw-btn--primary">
-              <span data-i18n="hero.cta.projects">Ver proyectos</span>
-              <svg class="hw-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="#contact" class="hw-btn hw-btn--outline" data-i18n="hero.cta.contact">Contactar</a>
-          </div>
-
           <!-- Highlight pills -->
-          <ul class="hw-pills hw-anim hw-anim--5" aria-label="Especialidades">
+          <ul class="hw-pills hw-anim hw-anim--4" aria-label="Especialidades">
             <li data-i18n="hero.pill1">UX Design</li>
             <li data-i18n="hero.pill2">Service Design</li>
             <li data-i18n="hero.pill3">Product Design</li>
           </ul>
 
           <!-- Stats -->
-          <div class="hw-stats hw-anim hw-anim--6">
+          <div class="hw-stats hw-anim hw-anim--5">
             <div class="hw-stat">
               <div class="hw-stat__label" data-i18n="hero.stat1.label">Proyectos</div>
               <div class="hw-stat__value">6+</div>
@@ -142,22 +140,15 @@
       </section>
 
       <main class="home-frame">
-        <header class="langues">
-          <h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
-          <nav class="language-option" aria-label="Selector de idioma">
-            <button class="label lang-btn" data-lang="en" type="button">
-              <div class="label2" data-i18n="lang.en">Inglés</div>
-            </button>
-            <button class="label lang-btn" data-lang="fr" type="button">
-              <div class="label2" data-i18n="lang.fr">Francés</div>
-            </button>
-            <button class="labelvariant8 lang-btn" data-lang="es" data-active="true" type="button">
-              <div class="label3" data-i18n="lang.es">Español</div>
-            </button>
-          </nav>
-        </header>
         <section class="description">
           <div class="professional-projects-parent" id="projects">
+            <div class="hw-badge section-badge">
+              <svg class="hw-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+                <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
+              </svg>
+              <span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
+            </div>
             <h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
             <div class="projects-layout">
               <div class="project-pair-one">

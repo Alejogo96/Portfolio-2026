@@ -1257,25 +1257,40 @@
    DARK THEME — full-page overrides to match hero
    ===================================================== */
 
-/* Language selector */
+/* Language selector — in hero (dark bg, orange border per Figma) */
 .choisissez-votre-langue {
   color: rgba(255, 255, 255, 0.85);
 }
 .label {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(8px);
+  background-color: #111;
+  border-color: #d36c40;
+  backdrop-filter: blur(4px);
 }
 .label2 {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 .labelvariant8 {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(8px);
+  background-color: #1a1a1a;
+  border-color: #d36c40;
+  backdrop-filter: blur(4px);
 }
 .label3 {
   color: #fff;
+}
+
+/* Language selector spacing inside hero */
+.hw-inner .langues {
+  margin-bottom: 2.5rem;
+}
+.hw-inner .choisissez-votre-langue {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Badge in projects section */
+.section-badge {
+  border-radius: 5px;
+  margin-bottom: 0;
 }
 
 /* Projects heading */
@@ -1283,35 +1298,35 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Project cards */
+/* Project cards — light style matching Figma (#e1e1e1) */
 .component-6 {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: none;
-  color: rgba(255, 255, 255, 0.9);
+  background-color: #e1e1e1;
+  border: none;
+  box-shadow: 0 6px 15px -3px rgba(92, 87, 61, 0.5);
+  color: #000;
 }
 .ublo,
 .muse-de-la {
-  color: #fff;
+  color: #000;
 }
 .description-project,
 .description-project2,
 .description-project3 {
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(0, 0, 0, 0.65);
 }
 .label6 {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.18);
+  background-color: #f4efe2;
+  border-color: #002358;
 }
 .ux-research {
-  color: rgba(255, 255, 255, 0.75);
+  color: #002358;
 }
 .label16 {
-  background-color: rgba(255, 95, 58, 0.12);
-  border-color: rgba(255, 95, 58, 0.4);
+  background-color: #f4efe2;
+  border-color: #002358;
 }
 .ai {
-  color: #ff5f3a;
+  color: #002358;
 }
 
 /* CV / Professional profile */
