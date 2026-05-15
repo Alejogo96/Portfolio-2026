@@ -1,0 +1,203 @@
+/* =====================================================
+   navbar.css — Shared navbar (home + all project pages)
+   ===================================================== */
+
+.navbar-wrapper {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-pad);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #000;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  box-shadow: 0 4px 9px rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 3rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+/* ── Hover on navbar links ── */
+.layout-grid-parent:hover,
+.capa-1-parent:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transition: background var(--transition-base);
+}
+
+/* ── Dropdown wrapper ── */
+.navbar-menu-wrapper {
+  position: relative;
+}
+
+/* ── Dropdown panel ── */
+.navbar-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -12px;
+  width: 620px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 14px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+/* Invisible bridge to keep hover from closing the dropdown */
+.navbar-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.navbar-menu-wrapper:hover .navbar-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Dropdown item ── */
+.navbar-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.navbar-dropdown-item:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-dropdown-item__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-dropdown-item__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.navbar-dropdown-item__name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.navbar-dropdown-item__desc {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.45;
+  font-family: Inter, sans-serif;
+  margin: 0;
+}
+
+/* ── Menu link ── */
+.layout-grid-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-decoration: none;
+}
+
+.layout-grid-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.button-text {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
+/* ── Portfolio logo link ── */
+.capa-1-parent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.capa-1-icon {
+  height: 40px;
+  width: auto;
+}
+
+.button2 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
+/* ── CV button ── */
+.component-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+}
+
+.button3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #161617;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 8px 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.cv {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}

@@ -7,6 +7,7 @@
     <meta name="description" content="Caso de estudio Ublo: plataforma para gestores inmobiliarios en Francia." />
 
     <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/navbar.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="../../styles/responsive.css" />
     <link
@@ -44,47 +45,88 @@
   </head>
   <body>
     <div class="ublo">
-      <header class="navbar-wrapper">
+      <section class="navbar-wrapper">
         <nav class="navbar" aria-label="Navegación principal">
-          <div class="frame-parent">
-            <a class="layout-grid-parent" href="../../index.html#projects" aria-label="Volver a proyectos">
-              <img
-                class="layout-grid-icon"
-                loading="lazy"
-                alt=""
-                src="./public/layout-grid.svg"
-              />
-
+          <div class="navbar-menu-wrapper">
+            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ir a proyectos">
+              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
               <div class="button-text">
                 <b class="button" data-i18n="nav.menu">Menu</b>
               </div>
             </a>
-            <a class="capa-1-parent" href="../../index.html" aria-label="Ir al inicio">
-              <img
-                class="capa-1-icon"
-                loading="lazy"
-                alt=""
-                src="./public/Capa-12.svg"
-              />
-
-              <div class="button-text">
-                <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-              </div>
-            </a>
+            <nav class="navbar-dropdown" aria-label="Navegación de proyectos">
+              <a href="../../index.html#home" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Presentación del portfolio</p>
+              </a>
+              <a href="../../index.html#projects" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">JumboMana</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Asistente IA en el aeropuerto Lyon–Saint-Exupéry.</p>
+              </a>
+              <a href="../ublo/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Ublo</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plataforma francesa para gestores inmobiliarios.</p>
+              </a>
+              <a href="../../index.html#projects" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Gemelo digital del patrimonio de la BnF.</p>
+              </a>
+              <a href="../bellpi/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Bellpi</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de vehículos usados.</p>
+              </a>
+              <a href="../andy-electric/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Andy Electric</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.andy.desc">Branding y web para empresa eléctrica.</p>
+              </a>
+              <a href="../../index.html#projects" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Experiencia inmersiva en ecosistemas naturales.</p>
+              </a>
+              <a href="../../index.html#cv" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Perfil profesional y experiencia.</p>
+              </a>
+            </nav>
           </div>
-          <a class="component-5" href="../../index.html#cv">
-            <span class="button3">
-              <img
-                class="layout-grid-icon"
-                alt=""
-                src="./public/file-certificate.svg"
-              />
-
+          <a href="../../index.html" class="capa-1-parent" aria-label="Ir al inicio">
+            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
+            <div class="button-text">
+              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+            </div>
+          </a>
+          <a class="component-5" href="../../index.html#cv" aria-label="Ver CV">
+            <div class="button3">
+              <img class="layout-grid-icon" alt="" src="../../public/file-certificate.svg" />
               <b class="cv" data-i18n="nav.cv">CV</b>
-            </span>
+            </div>
           </a>
         </nav>
-      </header>
+      </section>
       <main class="ubloframe">
         <section class="info-header">
           <section class="ublo-info">
