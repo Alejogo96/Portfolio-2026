@@ -379,7 +379,7 @@
 }
 
 /* =====================================================
-   PROJECTS — "Projets" heading + grid
+   PROJECTS — heading + showcase list
    ===================================================== */
 .professional-projects-parent {
   display: flex;
@@ -399,104 +399,186 @@
   line-height: 1.2;
 }
 
-.pc-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-}
-
 /* =====================================================
-   PROJECT CARD — .pc-card
+   PROJECT SHOWCASE — list with floating image preview
    ===================================================== */
-.pc-card {
-  display: flex;
-  flex-direction: column;
-  background: #e1e1e1;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px -3px rgba(92, 87, 61, 0.5);
-  overflow: clip;
-  padding: 18px;
-  gap: 33px;
-  box-sizing: border-box;
-  aspect-ratio: 1 / 1;
+.ps-showcase {
+  position: relative;
   width: 100%;
-  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
-  color: #000;
-  font-family: Inter, sans-serif;
-  text-align: left;
 }
 
-.pc-card:hover {
-  background: #ffffff;
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -6px rgba(92, 87, 61, 0.4);
-}
-
-a.project-link .pc-card {
-  cursor: pointer;
-}
-
-.pc-card__header {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.pc-card__title {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: Inter, sans-serif;
-  color: #000;
-  line-height: 1.1;
-}
-
-.pc-card__desc {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 300;
-  font-family: Inter, sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-  line-height: 1.45;
-}
-
-.pc-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.pc-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 32px;
-  padding: 0 12px;
-  background: #f4efe2;
-  border: 1.5px solid #002358;
-  border-radius: 34px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  font-family: Inter, sans-serif;
-  color: #002358;
-  white-space: nowrap;
-}
-
-.pc-card__img {
-  flex: 1;
-  min-height: 0;
+/* ── Floating image preview ── */
+.ps-preview {
+  position: fixed;
+  z-index: 900;
+  pointer-events: none;
+  width: 280px;
+  height: 180px;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, left, top;
+  top: 0;
+  left: 0;
 }
 
-.pc-card__img img {
+.ps-preview.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ps-preview__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  opacity: 0;
+  transform: scale(1.08);
+  filter: blur(8px);
+  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+}
+
+.ps-preview__img.is-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: none;
+}
+
+.ps-preview__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.18) 0%, transparent 60%);
+}
+
+/* ── Row ── */
+.ps-row {
   display: block;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.ps-end-border {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background highlight on hover */
+.ps-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: 0 -1rem;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 10px;
+  opacity: 0;
+  transform: scaleX(0.97);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.ps-row:not(.ps-row--static):hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.ps-row__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.375rem 0;
+}
+
+.ps-row__left {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Title + arrow */
+.ps-row__title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.3rem;
+}
+
+.ps-row__title {
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: var(--font-base);
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.01em;
+}
+
+/* Animated underline */
+.ps-row__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 0;
+  background: rgba(255, 255, 255, 0.85);
+  transition: width 0.3s ease;
+}
+
+.ps-row:not(.ps-row--static):hover .ps-row__title::after {
+  width: 100%;
+}
+
+/* Arrow icon — slides in on hover */
+.ps-row__arrow {
+  width: 15px;
+  height: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-6px) translateY(6px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.ps-row:not(.ps-row--static):hover .ps-row__arrow {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Description */
+.ps-row__desc {
+  margin: 0;
+  font-size: 0.875rem;
+  font-family: var(--font-base);
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.55;
+  transition: color 0.28s ease;
+}
+
+.ps-row:not(.ps-row--static):hover .ps-row__desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Year */
+.ps-row__year {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.28s ease;
+}
+
+.ps-row:not(.ps-row--static):hover .ps-row__year {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 
@@ -822,14 +904,8 @@ a.project-link .pc-card {
 }
 
 @media (max-width: 768px) {
-  .pc-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pc-card {
-    aspect-ratio: auto;
-    min-height: 420px;
-  }
+  /* Floating preview is pointer-only; hide it on mobile entirely */
+  .ps-preview { display: none; }
 
   .img-3323-1-parent {
     flex-direction: column;

@@ -202,123 +202,102 @@
               <span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
             </div>
             <h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
-            <div class="pc-grid">
+            <!-- Project Showcase — list with floating image preview -->
+            <div class="ps-showcase" id="ps-showcase">
 
-              <!-- Ublo -->
-              <a class="project-link" href="./projects/ublo/index.html" aria-label="Ver proyecto Ublo">
-                <article class="pc-card">
-                  <div class="pc-card__header">
-                    <div>
-                      <h2 class="pc-card__title">Ublo</h2>
-                      <p class="pc-card__desc" data-i18n="projects.ublo.desc">Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.</p>
+              <!-- Floating image preview (follows cursor) -->
+              <div class="ps-preview" id="ps-preview" aria-hidden="true">
+                <img class="ps-preview__img" data-preview="0" src="./public/card-ublo.png"   alt="" loading="lazy" />
+                <img class="ps-preview__img" data-preview="1" src="./public/card-bellpi.png" alt="" loading="lazy" />
+                <img class="ps-preview__img" data-preview="2" src="./public/card-bnf.png"    alt="" loading="lazy" />
+                <img class="ps-preview__img" data-preview="3" src="./public/card-jumbo.png"  alt="" loading="lazy" />
+                <img class="ps-preview__img" data-preview="4" src="./public/card-andy.png"   alt="" loading="lazy" />
+                <img class="ps-preview__img" data-preview="5" src="./public/card-paramo.png" alt="" loading="lazy" />
+                <div class="ps-preview__overlay"></div>
+              </div>
+
+              <!-- Row: Ublo (linked) -->
+              <a href="./projects/ublo/index.html" class="ps-row" data-ps-index="0" aria-label="Ver proyecto Ublo">
+                <div class="ps-row__inner">
+                  <div class="ps-row__left">
+                    <div class="ps-row__title-wrap">
+                      <span class="ps-row__title">Ublo</span>
+                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                     </div>
-                    <div class="pc-card__tags">
-                      <span class="pc-tag">UX research</span>
-                      <span class="pc-tag">UX design</span>
-                      <span class="pc-tag">UI design</span>
-                    </div>
+                    <p class="ps-row__desc" data-i18n="projects.ublo.desc">Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.</p>
                   </div>
-                  <div class="pc-card__img">
-                    <img loading="lazy" alt="Ublo" src="./public/card-ublo.png" />
-                  </div>
-                </article>
+                  <span class="ps-row__year">2025</span>
+                </div>
               </a>
 
-              <!-- Bellpi -->
-              <a class="project-link" href="./projects/bellpi/index.html" aria-label="Ver proyecto Bellpi">
-                <article class="pc-card">
-                  <div class="pc-card__header">
-                    <div>
-                      <h2 class="pc-card__title">Bellpi</h2>
-                      <p class="pc-card__desc" data-i18n="projects.bellpi.desc">Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.</p>
+              <!-- Row: Bellpi (linked) -->
+              <a href="./projects/bellpi/index.html" class="ps-row" data-ps-index="1" aria-label="Ver proyecto Bellpi">
+                <div class="ps-row__inner">
+                  <div class="ps-row__left">
+                    <div class="ps-row__title-wrap">
+                      <span class="ps-row__title">Bellpi</span>
+                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                     </div>
-                    <div class="pc-card__tags">
-                      <span class="pc-tag">Service design</span>
-                      <span class="pc-tag">UX research</span>
-                      <span class="pc-tag">UX design</span>
-                      <span class="pc-tag">UI design</span>
-                    </div>
+                    <p class="ps-row__desc" data-i18n="projects.bellpi.desc">Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.</p>
                   </div>
-                  <div class="pc-card__img">
-                    <img loading="lazy" alt="Bellpi" src="./public/card-bellpi.png" />
-                  </div>
-                </article>
+                  <span class="ps-row__year">2024</span>
+                </div>
               </a>
 
-              <!-- Musée de la BnF -->
-              <article class="pc-card">
-                <div class="pc-card__header">
-                  <div>
-                    <h2 class="pc-card__title">Musée de la BnF</h2>
-                    <p class="pc-card__desc" data-i18n="projects.bnf.desc">Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.</p>
-                  </div>
-                  <div class="pc-card__tags">
-                    <span class="pc-tag">UX research</span>
-                    <span class="pc-tag">UX design</span>
-                    <span class="pc-tag">UI design</span>
-                  </div>
-                </div>
-                <div class="pc-card__img">
-                  <img loading="lazy" alt="Musée de la BnF" src="./public/card-bnf.png" />
-                </div>
-              </article>
-
-              <!-- JumboMana -->
-              <article class="pc-card">
-                <div class="pc-card__header">
-                  <div>
-                    <h2 class="pc-card__title">JumboMana</h2>
-                    <p class="pc-card__desc" data-i18n="projects.jumbomana.desc">Asistente IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.</p>
-                  </div>
-                  <div class="pc-card__tags">
-                    <span class="pc-tag">AI</span>
-                    <span class="pc-tag">UX research</span>
-                    <span class="pc-tag">UX design</span>
-                  </div>
-                </div>
-                <div class="pc-card__img">
-                  <img loading="lazy" alt="JumboMana" src="./public/card-jumbo.png" />
-                </div>
-              </article>
-
-              <!-- Andy Electric -->
-              <a class="project-link" href="./projects/andy-electric/index.html" aria-label="Ver proyecto Andy Electric">
-                <article class="pc-card">
-                  <div class="pc-card__header">
-                    <div>
-                      <h2 class="pc-card__title">Andy Electric</h2>
-                      <p class="pc-card__desc" data-i18n="projects.andy.desc">Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.</p>
+              <!-- Row: Musée de la BnF (no case study yet) -->
+              <div class="ps-row ps-row--static" data-ps-index="2">
+                <div class="ps-row__inner">
+                  <div class="ps-row__left">
+                    <div class="ps-row__title-wrap">
+                      <span class="ps-row__title">Musée de la BnF</span>
                     </div>
-                    <div class="pc-card__tags">
-                      <span class="pc-tag">Brand</span>
-                      <span class="pc-tag">UX design</span>
-                      <span class="pc-tag">UI design</span>
+                    <p class="ps-row__desc" data-i18n="projects.bnf.desc">Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.</p>
+                  </div>
+                  <span class="ps-row__year">2024</span>
+                </div>
+              </div>
+
+              <!-- Row: JumboMana (no case study yet) -->
+              <div class="ps-row ps-row--static" data-ps-index="3">
+                <div class="ps-row__inner">
+                  <div class="ps-row__left">
+                    <div class="ps-row__title-wrap">
+                      <span class="ps-row__title">JumboMana</span>
                     </div>
+                    <p class="ps-row__desc" data-i18n="projects.jumbomana.desc">Asistente IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.</p>
                   </div>
-                  <div class="pc-card__img">
-                    <img loading="lazy" alt="Andy Electric" src="./public/card-andy.png" />
+                  <span class="ps-row__year">2024</span>
+                </div>
+              </div>
+
+              <!-- Row: Andy Electric (linked) -->
+              <a href="./projects/andy-electric/index.html" class="ps-row" data-ps-index="4" aria-label="Ver proyecto Andy Electric">
+                <div class="ps-row__inner">
+                  <div class="ps-row__left">
+                    <div class="ps-row__title-wrap">
+                      <span class="ps-row__title">Andy Electric</span>
+                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </div>
+                    <p class="ps-row__desc" data-i18n="projects.andy.desc">Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.</p>
                   </div>
-                </article>
+                  <span class="ps-row__year">2025</span>
+                </div>
               </a>
 
-              <!-- ParamoTotem -->
-              <article class="pc-card">
-                <div class="pc-card__header">
-                  <div>
-                    <h2 class="pc-card__title">ParamoTotem</h2>
-                    <p class="pc-card__desc" data-i18n="projects.paramo.desc">Proyecto experimental enfocado en crear una experiencia inmersiva inspirada en los ecosistemas naturales.</p>
+              <!-- Row: ParamoTotem (no case study yet) -->
+              <div class="ps-row ps-row--static" data-ps-index="5">
+                <div class="ps-row__inner">
+                  <div class="ps-row__left">
+                    <div class="ps-row__title-wrap">
+                      <span class="ps-row__title">ParamoTotem</span>
+                    </div>
+                    <p class="ps-row__desc" data-i18n="projects.paramo.desc">Proyecto experimental enfocado en crear una experiencia inmersiva inspirada en los ecosistemas naturales.</p>
                   </div>
-                  <div class="pc-card__tags">
-                    <span class="pc-tag">AI</span>
-                    <span class="pc-tag">UX research</span>
-                    <span class="pc-tag">UX design</span>
-                  </div>
+                  <span class="ps-row__year">2023</span>
                 </div>
-                <div class="pc-card__img">
-                  <img loading="lazy" alt="ParamoTotem" src="./public/card-paramo.png" />
-                </div>
-              </article>
+              </div>
 
+              <div class="ps-end-border"></div>
             </div>
           </div>
         </section>
@@ -464,5 +443,6 @@
     </div>
     <script type="module" src="./scripts/i18n.js"></script>
     <script src="./scripts/hero.js"></script>
+    <script src="./scripts/showcase.js"></script>
   </body>
 </html>
