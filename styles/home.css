@@ -595,21 +595,7 @@
   line-height: 1.2;
 }
 
-.projects-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.project-pair-one {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.project-pair-two,
-.component-7-parent {
+.pc-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -617,128 +603,91 @@
 }
 
 /* =====================================================
-   PROJECT CARD — .component-6
+   PROJECT CARD — .pc-card
    ===================================================== */
-.component-6 {
+.pc-card {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(92, 87, 61, 0.18);
-  overflow: hidden;
-  width: 100%;
-  height: 460px;
+  background: #e1e1e1;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px -3px rgba(92, 87, 61, 0.5);
+  overflow: clip;
+  padding: 18px;
+  gap: 16px;
   box-sizing: border-box;
-  text-align: left;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
   color: #000;
   font-family: Inter, sans-serif;
+  text-align: left;
 }
 
-/* Info interior de la card */
-.frame-group {
+.pc-card:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -6px rgba(92, 87, 61, 0.4);
+}
+
+a.project-link .pc-card {
+  cursor: pointer;
+}
+
+.pc-card__header {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1.25rem 1.25rem 0.75rem;
+  gap: 10px;
   flex-shrink: 0;
 }
 
-.frame-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.25rem 1.25rem 0.75rem;
-  flex-shrink: 0;
-}
-
-.ublo-parent {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.ublo,
-.muse-de-la {
+.pc-card__title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: Inter, sans-serif;
   color: #000;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
-.description-project,
-.description-project2,
-.description-project3 {
-  font-size: 0.875rem;
+.pc-card__desc {
+  margin: 0;
+  font-size: 1rem;
   font-weight: 300;
   font-family: Inter, sans-serif;
-  color: #000;
-  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.45;
 }
 
-.label-parent,
-.label-container {
+.pc-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 4px;
 }
 
-.label6 {
-  border: 1.5px solid #002358;
-  padding: 5px 10px;
-  background-color: #f4efe2;
-  border-radius: 999px;
-  display: flex;
+.pc-tag {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: auto;
-  cursor: default;
-}
-
-.ux-research {
-  font-size: 12px;
+  height: 32px;
+  padding: 0 12px;
+  background: #f4efe2;
+  border: 1.5px solid #002358;
+  border-radius: 34px;
+  font-size: 0.8125rem;
   font-weight: 600;
   font-family: Inter, sans-serif;
   color: #002358;
+  white-space: nowrap;
 }
 
-.label16 {
-  height: auto;
-  border-radius: 999px;
-  background-color: #f4efe2;
-  border: 1.5px solid #002358;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 10px;
-}
-
-.ai {
-  font-size: 12px;
-  font-weight: 600;
-  color: #002358;
-  font-family: Inter, sans-serif;
-}
-
-/* =====================================================
-   CARD IMAGE SECTIONS — all cards same height
-   ===================================================== */
-.component-6-inner,
-.header-images,
-.home-wrapper,
-.rellena-los-vacios-remix-01jr-wrapper {
+.pc-card__img {
   flex: 1;
   min-height: 0;
   overflow: hidden;
+  border-radius: 8px;
 }
 
-/* All card preview images inside wrapper divs */
-.component-6-inner img,
-.header-images img,
-.home-wrapper img,
-.rellena-los-vacios-remix-01jr-wrapper img {
+.pc-card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -746,268 +695,6 @@
   display: block;
 }
 
-/* Direct img children of .component-6 (Musée de la BnF, Andy Electric) */
-.vacancy-image-icon,
-.images-header-icon {
-  flex: 1;
-  min-height: 0;
-  width: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-
-/* =====================================================
-   JUMBOMANA — card especial con preview mini
-   ===================================================== */
-.home-wrapper {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem 1rem;
-  min-height: 220px;
-}
-
-.home {
-  position: relative;
-  box-shadow: 0 4px 12px rgba(128, 132, 173, 0.3);
-  border-radius: 8px;
-  background: linear-gradient(180deg, #f5f1ef, #f4f0ed);
-  border: 0.6px solid rgba(0, 0, 0, 0.3);
-  width: 160px;
-  height: 300px;
-  overflow: hidden;
-  display: block;
-  flex-shrink: 0;
-}
-
-.frame-inner,
-.rectangle-parent {
-  position: absolute;
-  left: 0;
-  width: 160px;
-}
-
-.rectangle-parent {
-  top: 56px;
-  height: 244px;
-}
-
-.frame-inner {
-  top: 8px;
-  background: linear-gradient(270deg, #e9e2dc, #d7cdc6);
-  height: 232px;
-}
-
-.sam-still-body-01-1024x576-1-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 160px;
-  height: auto;
-  object-fit: cover;
-}
-
-.menubar {
-  position: absolute;
-  top: 188px;
-  left: 68px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.14);
-  border-radius: 17px;
-  background-color: #1a237e;
-  border: 0.3px solid #fff;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon { width: 9px; height: 9px; }
-
-.menubar2 {
-  position: absolute;
-  top: 106px;
-  left: 130px;
-  box-shadow: 0 0 1.4px rgba(0,0,0,0.25);
-  border-radius: 3.5px;
-  background-color: #fff;
-  width: 18px;
-  padding: 10px 3px;
-  box-sizing: border-box;
-  font-size: 2px;
-  font-family: Helvetica, sans-serif;
-}
-
-.frame-parent2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.icon-parent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7px;
-  width: 15px;
-}
-
-.icon2 { width: 8px; height: 8px; }
-.vector-icon { width: 10px; height: 9px; }
-
-.frame-parent3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7px;
-}
-
-.group-icon { width: 11px; height: 12px; object-fit: cover; }
-.couper-le-son,
-.langues2 {
-  font-size: 2px;
-  letter-spacing: 0.01em;
-  line-height: 150%;
-  color: #1a237e;
-}
-
-.vi-parent {
-  position: absolute;
-  top: 8px;
-  left: 7px;
-  width: 146px;
-  height: 32px;
-}
-
-.vi-icon {
-  position: absolute;
-  top: 0; left: 0;
-  width: 28px; height: 15px;
-  object-fit: cover;
-}
-
-.al-icon {
-  position: absolute;
-  top: 0; right: 0;
-  width: 26px; height: 15px;
-  object-fit: cover;
-}
-
-.jumbo-mana-logopng-icon {
-  position: absolute;
-  top: calc(50% + 1px);
-  left: 118px;
-  width: 22px; height: 15px;
-  object-fit: cover;
-}
-
-.card, .card2, .card3, .card4 {
-  position: absolute;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-  border-radius: 3.5px;
-  background-color: #fff;
-  border: 0.3px solid #434242;
-  width: 31px;
-  height: 19px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.4px;
-}
-
-.card  { top: 164px; left: 81px; }
-.card2 { top: 192px; left: 25px; overflow: hidden; text-align: left; }
-.card3 { top: 192px; left: 99px; overflow: hidden; }
-.card4 { top: 164px; left: 42px; overflow: hidden; }
-
-.icon3 { width: 9px; height: 9px; overflow: hidden; position: relative; }
-.icon-child { position: absolute; height: 60%; width: 47%; top: 20%; right: 27%; bottom: 20%; left: 27%; }
-.icon-item { position: absolute; top: 2.4px; left: 2.4px; width: 5px; height: 5px; }
-.icon-inner { position: absolute; height: 57%; width: 66%; top: 20%; right: 19%; bottom: 22%; left: 15%; overflow: hidden; }
-.messsage-icon { position: absolute; top: 2.4px; left: 2px; width: 6px; height: 5px; }
-
-.magasins {
-  font-size: 5px;
-  letter-spacing: 0.01em;
-  line-height: 5px;
-  font-weight: 500;
-  font-family: "Noto Sans", sans-serif;
-  color: #1a237e;
-}
-
-.bonjour-je-vais-bien-comment-wrapper {
-  position: absolute;
-  top: 39px;
-  left: 19px;
-  background-color: #fff;
-  padding: 3.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bonjour-je-vais {
-  font-size: 5.5px;
-  color: #000;
-  font-family: Nunito, sans-serif;
-  font-weight: 700;
-  width: 107px;
-}
-
-.chatbum {
-  position: absolute;
-  top: 116px;
-  left: 32px;
-  box-shadow: 0 1.4px 1.4px rgba(0,0,0,0.25);
-  border-radius: 1.7px;
-  background-color: #1a237e;
-  width: 93px;
-  height: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 3.5px;
-  box-sizing: border-box;
-  isolation: isolate;
-  gap: 3.5px;
-}
-
-.o-se-trouve {
-  width: 90px;
-  font-size: 4.5px;
-  color: #fff;
-  font-family: Nunito, sans-serif;
-  z-index: 0;
-}
-
-.component-4 { width: 93px; height: 2px; z-index: 1; position: relative; }
-.component-4-child,
-.component-4-inner,
-.component-4-item {
-  position: absolute;
-  height: 100%; width: 100%;
-  top: 0; right: 0; bottom: 0; left: 0;
-  border-radius: 0 0 2px 2px;
-  background-color: #d9d9d9;
-}
-.component-4-item { background-color: #818181; }
-.component-4-inner { background-color: #06c32f; }
-
-.chatbum-child {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  margin: 0 !important;
-  top: 8px;
-  left: 88px;
-  object-fit: contain;
-  z-index: 2;
-}
 
 /* =====================================================
    CV CONTACT — bloque dentro de la columna izquierda
@@ -1324,8 +1011,7 @@
    MEDIA QUERIES
    ===================================================== */
 @media (max-width: 1024px) {
-  .project-pair-two,
-  .component-7-parent {
+  .pc-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1336,9 +1022,13 @@
 }
 
 @media (max-width: 768px) {
-  .project-pair-two,
-  .component-7-parent {
+  .pc-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pc-card {
+    aspect-ratio: auto;
+    min-height: 420px;
   }
 
   .img-3323-1-parent {
@@ -1354,10 +1044,6 @@
   .contact-data {
     flex-direction: column;
     gap: 1.5rem;
-  }
-
-  .home-wrapper {
-    display: none;
   }
 }
 
@@ -1421,36 +1107,6 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Project cards — light style matching Figma (#e1e1e1) */
-.component-6 {
-  background-color: #e1e1e1;
-  border: none;
-  box-shadow: 0 6px 15px -3px rgba(92, 87, 61, 0.5);
-  color: #000;
-}
-.ublo,
-.muse-de-la {
-  color: #000;
-}
-.description-project,
-.description-project2,
-.description-project3 {
-  color: rgba(0, 0, 0, 0.65);
-}
-.label6 {
-  background-color: #f4efe2;
-  border-color: #002358;
-}
-.ux-research {
-  color: #002358;
-}
-.label16 {
-  background-color: #f4efe2;
-  border-color: #002358;
-}
-.ai {
-  color: #002358;
-}
 
 /* CV / Professional profile */
 .cv2 {
