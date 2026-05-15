@@ -42,16 +42,72 @@
     <div class="cover-franais">
       <section class="navbar-wrapper">
         <nav class="navbar" aria-label="Navegación principal">
-          <a href="#projects" class="layout-grid-parent" aria-label="Ir a proyectos">
-            <img
-              class="layout-grid-icon"
-              alt=""
-              src="./public/layout-grid.svg"
-            />
-            <div class="button-text">
-              <b class="button" data-i18n="nav.menu">Menu</b>
-            </div>
-          </a>
+          <div class="navbar-menu-wrapper">
+            <a href="#projects" class="layout-grid-parent" aria-label="Ir a proyectos">
+              <img class="layout-grid-icon" alt="" src="./public/layout-grid.svg" />
+              <div class="button-text">
+                <b class="button" data-i18n="nav.menu">Menu</b>
+              </div>
+            </a>
+            <nav class="navbar-dropdown" aria-label="Navegación de proyectos">
+              <a href="#home" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Presentación del portfolio</p>
+              </a>
+              <a href="#projects" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">JumboMana</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Asistente IA en el aeropuerto Lyon–Saint-Exupéry.</p>
+              </a>
+              <a href="./projects/ublo/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Ublo</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plataforma francesa para gestores inmobiliarios.</p>
+              </a>
+              <a href="#projects" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Gemelo digital del patrimonio de la BnF.</p>
+              </a>
+              <a href="./projects/bellpi/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Bellpi</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de vehículos usados.</p>
+              </a>
+              <a href="./projects/andy-electric/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Andy Electric</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.andy.desc">Branding y web para empresa eléctrica.</p>
+              </a>
+              <a href="#projects" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Experiencia inmersiva en ecosistemas naturales.</p>
+              </a>
+              <a href="#cv" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Perfil profesional y experiencia.</p>
+              </a>
+            </nav>
+          </div>
           <a href="./index.html" class="capa-1-parent" aria-label="Ir al inicio">
             <img
               class="capa-1-icon"

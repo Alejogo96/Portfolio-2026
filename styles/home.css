@@ -20,6 +20,98 @@
 /* =====================================================
    NAVBAR
    ===================================================== */
+
+/* ── Hover en links del navbar ── */
+.layout-grid-parent:hover,
+.capa-1-parent:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transition: background var(--transition-base);
+}
+
+/* ── Wrapper del menú con dropdown ── */
+.navbar-menu-wrapper {
+  position: relative;
+}
+
+/* ── Dropdown panel ── */
+.navbar-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -12px;
+  width: 620px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 14px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+/* Puente invisible para mantener el hover entre botón y dropdown */
+.navbar-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.navbar-menu-wrapper:hover .navbar-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Item del dropdown ── */
+.navbar-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.navbar-dropdown-item:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-dropdown-item__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-dropdown-item__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.navbar-dropdown-item__name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.navbar-dropdown-item__desc {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.45;
+  font-family: Inter, sans-serif;
+  margin: 0;
+}
 .navbar-wrapper {
   width: 100%;
   max-width: var(--container-max);
@@ -27,6 +119,8 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 200;
 }
 
 .navbar {

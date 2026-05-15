@@ -2,6 +2,9 @@
   "nav.menu": "Menú",
   "nav.portfolio": "Portfolio",
   "nav.cv": "CV",
+  "nav.home": "Home",
+  "menu.home.desc": "Presentación del portfolio",
+  "menu.cv.desc": "Perfil profesional, formación y experiencia",
 
   "lang.title": "Elige tu idioma",
   "lang.en": "Inglés",
