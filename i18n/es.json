@@ -45,6 +45,25 @@
   "cv.skills": "Competencias",
   "cv.contact": "Contacto",
 
+  "cv.edu.master.title": "Máster en Creación Digital, Diseño<br>de interfaz y multimedia M2 (2025)",
+  "cv.edu.master.school": "Université Sorbonne Paris Nord<br>París - Francia",
+  "cv.edu.bootcamp.title": "Bootcamp UX/UI Design (2023)",
+  "cv.edu.bootcamp.school": "Coder House<br>En línea",
+  "cv.edu.licence.title": "Licenciatura en Diseño Industrial (2018)",
+  "cv.edu.licence.school": "Universidad Jorge Tadeo Lozano<br>Bogotá - Colombia",
+  "cv.edu.duef.title": "Diploma DUEF (2023)",
+  "cv.edu.duef.school": "Lengua francesa nivel B2<br>Université Jean Monnet<br>Saint-Étienne - Francia",
+
+  "cv.exp.freelance.title": "Freelance: Brand & UX Designer / Andy Electric, Estados Unidos (2025-2026)",
+  "cv.exp.freelance.items": "<li>Rediseño y evolución de la identidad de marca de la empresa, asegurando coherencia visual y posicionamiento.</li><li>Diseño de soportes de comunicación y marketing (redes sociales, contenidos visuales, mensajes clave).</li><li>Creación y desarrollo de un sitio web vitrina presentando los servicios y actividades de la empresa.</li><li>Integración de soluciones de contacto para facilitar la generación de leads.</li><li>Contribución a la mejora de la presencia digital y a la captación de nuevos clientes.</li>",
+  "cv.exp.ublo.title": "Alternancia: UX Designer / Ublo, Francia (2024-2025)",
+  "cv.exp.ublo.items": "<li>Conducción de user research, análisis de necesidades y traducción en especificaciones de producto (user stories, criterios de aceptación, JTBD).</li><li>Realización de auditorías UX y evaluación de la madurez del producto para proponer una roadmap de mejoras priorizadas por impacto.</li><li>Colaboración diaria con los equipos tech, business y marketing para alinear restricciones, valor y viabilidad.</li><li>Participación en product discovery: identificación de oportunidades, formulación de hipótesis, prototipado y tests con usuarios.</li>",
+  "cv.exp.iridian.title": "CDI: Product Designer / Iridian, Colombia (2023-2024)",
+  "cv.exp.iridian.items": "<li>Diseño y optimización de interfaces web y móvil en alineación con los KPI de producto y los objetivos de negocio.</li><li>Implementación de un design system y de un workflow de iteración basado en tests, data y feedback de usuarios.</li><li>Colaboración con los equipos de marketing y tech para el desarrollo de nuevas funcionalidades y la generación de leads.</li><li>Participación en la priorización de evoluciones de producto vía análisis de restricciones técnicas, datos y feedback de clientes.</li>",
+  "cv.exp.casatoro.title": "CDI: UX y Service Designer / Casatoro, Colombia (2021-2022)",
+  "cv.exp.casatoro.items": "<li>Animación de talleres de diseño, recolección de insights de usuarios para orientar el desarrollo de producto y organización de tests de usabilidad para mejora continua.</li><li>Diseño de soluciones figitales (kioscos táctiles, pantallas, apps) basadas en insights y guiadas por el uso.</li><li>Colaboración interfuncional con los equipos de diseño, tech y negocio para mantener una alineación de producto constante.</li>",
+  "cv.skills.items": "<li>Uso de herramientas de IA.</li><li>Análisis de datos cuantitativos y cualitativos en el proceso de diseño y métricas clave.</li><li>Definición de roadmap y priorización (RICE, MoSCoW, Kano).</li><li>Product discovery, JTBD, análisis de necesidades, redacción de user stories y criterios de aceptación.</li><li>Visión de producto y alineación de stakeholders.</li><li>Seguimiento de KPI, análisis cuantitativo y cualitativo.</li><li>Uso de metodologías como Design Thinking, Human-Centered Design, Lean UX, Scrum y Design Sprint.</li><li>Wireframes, prototipos, tests de usuario, auditorías UX.</li>",
+
   "contact.title": "Trabajemos juntos",
   "contact.email": "E-mail",
   "contact.phone": "Teléfono"

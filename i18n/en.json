@@ -45,6 +45,25 @@
   "cv.skills": "Skills",
   "cv.contact": "Contact",
 
+  "cv.edu.master.title": "Master's in Digital Creation, Interface Design<br>and Multimedia M2 (2025)",
+  "cv.edu.master.school": "Université Sorbonne Paris Nord<br>Paris - France",
+  "cv.edu.bootcamp.title": "UX/UI Design Bootcamp (2023)",
+  "cv.edu.bootcamp.school": "Coder House<br>Online",
+  "cv.edu.licence.title": "Bachelor's in Industrial Design (2018)",
+  "cv.edu.licence.school": "Universidad Jorge Tadeo Lozano<br>Bogotá - Colombia",
+  "cv.edu.duef.title": "DUEF Diploma (2023)",
+  "cv.edu.duef.school": "French Language - Level B2<br>Université Jean Monnet<br>Saint-Étienne - France",
+
+  "cv.exp.freelance.title": "Freelance: Brand & UX Designer / Andy Electric, USA (2025-2026)",
+  "cv.exp.freelance.items": "<li>Redesign and evolution of the company's brand identity, ensuring visual consistency and positioning.</li><li>Design of communication and marketing materials (social media, visual content, key messages).</li><li>Creation and development of a showcase website presenting the company's services and activities.</li><li>Integration of contact solutions to facilitate lead generation.</li><li>Contributing to improving digital presence and attracting new clients.</li>",
+  "cv.exp.ublo.title": "Work-study: UX Designer / Ublo, France (2024-2025)",
+  "cv.exp.ublo.items": "<li>Conducting user research, needs analysis and translation into product specifications (user stories, acceptance criteria, JTBD).</li><li>Performing UX audits and assessing product maturity to propose an improvement roadmap prioritised by impact.</li><li>Daily collaboration with tech, business and marketing teams to align constraints, value and feasibility.</li><li>Participating in product discovery: opportunity identification, hypothesis formulation, prototyping and user testing.</li>",
+  "cv.exp.iridian.title": "Full-time: Product Designer / Iridian, Colombia (2023-2024)",
+  "cv.exp.iridian.items": "<li>Design and optimisation of web and mobile interfaces aligned with product KPIs and business objectives.</li><li>Implementation of a design system and an iteration workflow based on testing, data and user feedback.</li><li>Collaboration with marketing and tech teams for developing new features and generating leads.</li><li>Participation in product evolution prioritisation through analysis of technical constraints, data and client feedback.</li>",
+  "cv.exp.casatoro.title": "Full-time: UX & Service Designer / Casatoro, Colombia (2021-2022)",
+  "cv.exp.casatoro.items": "<li>Facilitating design workshops, collecting user insights to guide product development and organising usability tests for continuous improvement.</li><li>Designing phygital solutions (touch kiosks, screens, apps) based on insights and usage-driven approaches.</li><li>Cross-functional collaboration with design, tech and business teams to maintain constant product alignment.</li>",
+  "cv.skills.items": "<li>Use of AI tools.</li><li>Quantitative and qualitative data analysis in the design process and key metrics.</li><li>Roadmap definition and prioritisation (RICE, MoSCoW, Kano).</li><li>Product discovery, JTBD, needs analysis, writing user stories and acceptance criteria.</li><li>Product vision and stakeholder alignment.</li><li>KPI tracking, quantitative and qualitative analysis.</li><li>Use of methodologies such as Design Thinking, Human-Centered Design, Lean UX, Scrum and Design Sprint.</li><li>Wireframes, prototypes, user testing, UX audits.</li>",
+
   "contact.title": "Let's work together",
   "contact.email": "E-mail",
   "contact.phone": "Phone"
