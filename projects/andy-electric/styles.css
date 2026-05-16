@@ -63,7 +63,7 @@
 }
 
 .software {
-  font-size: 1.75rem;
+  font-size: var(--fs-h2);
   font-weight: 700;
   color: #e0e0e0;
   text-transform: capitalize;
@@ -79,7 +79,7 @@
 }
 
 .information-architecture-ia-container {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
@@ -115,7 +115,7 @@
 }
 
 .software2 {
-  font-size: 1.25rem;
+  font-size: var(--fs-lead);
   font-weight: 700;
   color: #e0e0e0;
   text-transform: capitalize;
@@ -254,7 +254,7 @@
 }
 
 .software7 {
-  font-size: 1.75rem;
+  font-size: var(--fs-h2);
   font-weight: 700;
   color: #e0e0e0;
   text-transform: capitalize;
@@ -270,7 +270,7 @@
 }
 
 .information-architecture-ia-container2 {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
@@ -294,7 +294,7 @@
 }
 
 .software8 {
-  font-size: 1.75rem;
+  font-size: var(--fs-h2);
   font-weight: 700;
   color: #e0e0e0;
   text-transform: capitalize;
@@ -334,7 +334,7 @@
 }
 
 .h3-regular {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   line-height: 1.4;
   font-weight: 600;
   color: #e0e0e0;
@@ -381,7 +381,7 @@
 }
 
 .app-users {
-  font-size: 1.75rem;
+  font-size: var(--fs-h2);
   font-weight: 700;
   color: #e0e0e0;
   line-height: 1.2;
@@ -397,7 +397,7 @@
 }
 
 .information-architecture-ia-container3 {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   font-weight: 500;
   color: #e0e0e0;
@@ -407,7 +407,7 @@
 }
 
 .amliorer-la-perception {
-  font-size: 1.25rem;
+  font-size: var(--fs-lead);
   line-height: 1.5;
   font-weight: 700;
   color: #fff;
@@ -453,7 +453,7 @@
 }
 
 .information-architecture-ia-container4 {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
@@ -595,7 +595,7 @@
 .h3-regular7,
 .h3-regular9,
 .h3-regular11 {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   line-height: 1.4;
   font-weight: 600;
   color: #e0e0e0;
@@ -651,7 +651,7 @@
 }
 
 .currently-app-users-container {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
@@ -719,7 +719,7 @@
 }
 
 .app-users5 {
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   font-weight: 700;
   color: #e0e0e0;
   line-height: 1.2;
@@ -730,7 +730,7 @@
 }
 
 .currently-app-users-container2 {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
@@ -830,7 +830,7 @@
 
 .h113,
 .h114 {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.5;
   font-weight: 600;
   color: #fff;

@@ -68,7 +68,7 @@
 }
 
 .i-was-part-container {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
   font-family: Inter, sans-serif;
@@ -92,7 +92,7 @@
 }
 
 .software {
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   font-weight: 700;
   color: var(--Gray-2);
   letter-spacing: 0.03em;
@@ -141,7 +141,7 @@
 .figma,
 .linear,
 .chatgpt {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: #000;
   font-family: Inter, sans-serif;
@@ -217,7 +217,7 @@
 }
 
 .i-worked-as-container {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
   width: 100%;
@@ -227,7 +227,7 @@
 .vendeurs-et-les { white-space: normal; }
 
 .design-thinking-lean-container {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   height: auto;
   align-self: stretch;
@@ -310,7 +310,7 @@
 }
 
 .info-detail {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
   width: 100%;
@@ -365,7 +365,7 @@
 }
 
 .info-text {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
   width: 100%;
@@ -394,7 +394,7 @@
 }
 
 .bulllet-points {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   width: 100%;
   height: auto;
@@ -435,7 +435,7 @@
 }
 
 .notre-approche-a {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
   width: 100%;
@@ -482,7 +482,7 @@
 }
 
 .as-part-of-container {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
   font-family: Inter, sans-serif;
