@@ -11,15 +11,22 @@
   align-items: center;
   background-color: #0a0a0a;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   box-sizing: border-box;
   padding: 2rem 0 6rem;
   gap: 0;
 }
 
 /* =====================================================
-   NAVBAR — see styles/navbar.css (shared)
+   NAVBAR — background matches dark page
    ===================================================== */
+.navbar-wrapper {
+  background-color: #0a0a0a;
+}
+/* Remove cover-franais top padding now that navbar-wrapper has its own */
+.cover-franais {
+  padding-top: 0;
+}
 
 /* =====================================================
    MAIN FRAME

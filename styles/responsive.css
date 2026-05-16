@@ -2,9 +2,15 @@
    responsive.css — Layout responsivo global
    ===================================================== */
 
-html, body {
+html {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip; /* propagates to viewport — prevents h-scroll without creating a scroll container */
+}
+
+body {
+  max-width: 100vw;
+  /* overflow-x: visible (default) — must NOT be hidden/scroll here or it creates a
+     scroll container that blocks position:sticky on navbar and other elements */
 }
 
 img, picture, svg, video {

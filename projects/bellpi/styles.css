@@ -14,7 +14,10 @@
   overflow-x: clip;
 }
 
-/* --- Navbar: see ../../styles/navbar.css --- */
+/* --- Navbar: background matches page so content doesn't bleed behind sticky padding --- */
+.navbar-wrapper {
+  background-color: #fff;
+}
 
 /* --- Main frame --- */
 .bellpi-frame {

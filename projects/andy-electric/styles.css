@@ -14,7 +14,10 @@
   overflow-x: clip;
 }
 
-/* --- Navbar: see ../../styles/navbar.css --- */
+/* --- Navbar: background matches dark top of gradient so content doesn't bleed --- */
+.navbar-wrapper {
+  background-color: #191919;
+}
 
 /* --- Main frame --- */
 .andyframe {
