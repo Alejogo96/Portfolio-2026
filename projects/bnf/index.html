@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Musée de la BnF — Cas d'étude · Alejandro Guevara</title>
+    <meta name="description" content="Cas d'étude Musée de la BnF : application web jumeau numérique du patrimoine architectural et des collections du site Richelieu." />
+
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/navbar.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../../styles/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="bnf">
+      <section class="navbar-wrapper">
+        <nav class="navbar" aria-label="Navigation principale">
+          <div class="navbar-menu-wrapper">
+            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ir a proyectos">
+              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
+              <div class="button-text">
+                <b class="button" data-i18n="nav.menu">Menu</b>
+              </div>
+            </a>
+            <nav class="navbar-dropdown" aria-label="Navigation des projets">
+              <a href="../../index.html#home" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+              </a>
+              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Ublo</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme française pour gestionnaires immobiliers.</p>
+              </a>
+              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Bellpi</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de véhicules d'occasion.</p>
+              </a>
+              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">JumboMana</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA à l'aéroport Lyon–Saint-Exupéry.</p>
+              </a>
+              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Jumeau numérique du patrimoine BnF.</p>
+              </a>
+              <a href="../../projects/andy-electric/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Andy Electric</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.andy.desc">Branding y web para empresa eléctrica.</p>
+              </a>
+              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Expérience immersive dans les écosystèmes naturels.</p>
+              </a>
+              <a href="../../index.html#cv" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Profil professionnel et expérience.</p>
+              </a>
+            </nav>
+          </div>
+          <a href="../../index.html" class="capa-1-parent" aria-label="Ir al inicio">
+            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
+            <div class="button-text">
+              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+            </div>
+          </a>
+          <div class="navbar-lang" aria-label="Sélecteur de langue">
+            <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button">FR</button>
+            <button class="navbar-lang-btn lang-btn" data-lang="en" type="button">EN</button>
+            <button class="navbar-lang-btn lang-btn" data-lang="es" type="button">ES</button>
+          </div>
+          <a class="component-5" href="../../index.html#cv" aria-label="Ver CV">
+            <div class="button3">
+              <img class="layout-grid-icon" alt="" src="../../public/file-certificate.svg" />
+              <b class="cv" data-i18n="nav.cv">CV</b>
+            </div>
+          </a>
+        </nav>
+      </section>
+
+      <main class="bnf-frame">
+
+        <section class="bnf-header">
+          <div class="bnf-header-info">
+            <img
+              class="bnf-logo"
+              alt="Musée de la BnF — logotype"
+              src="./public/group-header.png"
+            />
+            <div class="bnf-title-block">
+              <h1 class="bnf-title">Musée de la BnF</h1>
+              <p class="bnf-role">UX Designer &amp; Service Designer</p>
+            </div>
+            <p class="bnf-desc">
+              Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la Bibliothèque nationale de France à travers une exploration interactive.
+            </p>
+            <div class="bnf-meta">
+              <div class="bnf-meta-item">
+                <span class="bnf-meta-label">Type</span>
+                <span class="bnf-meta-value">Projet académique</span>
+              </div>
+              <div class="bnf-meta-item">
+                <span class="bnf-meta-label">Rôle</span>
+                <span class="bnf-meta-value">UX &amp; Service Designer</span>
+              </div>
+              <div class="bnf-meta-item">
+                <span class="bnf-meta-label">Périmètre</span>
+                <span class="bnf-meta-value">Site Richelieu, Paris</span>
+              </div>
+            </div>
+          </div>
+          <div class="bnf-header-images">
+            <img
+              class="bnf-header-img"
+              loading="lazy"
+              alt="Références visuelles — patrimoine BnF"
+              src="./public/img-reference.png"
+            />
+          </div>
+        </section>
+
+        <section class="bnf-recherche">
+          <h2 class="bnf-section-title">Recherche utilisateur</h2>
+          <p class="bnf-body-text">
+            La phase de recherche a permis de comprendre les attentes des visiteurs du site Richelieu et d'identifier les opportunités de valorisation du patrimoine architectural et des collections. Entretiens, observations sur site et analyse comparative ont structuré la démarche.
+          </p>
+          <div class="bnf-recherche-grid">
+            <img
+              class="bnf-grid-img"
+              loading="lazy"
+              alt="Personas — profils des visiteurs"
+              src="./public/img-personas.png"
+            />
+            <img
+              class="bnf-grid-img"
+              loading="lazy"
+              alt="Benchmark — analyse comparative"
+              src="./public/benchmark.png"
+            />
+          </div>
+        </section>
+
+        <section class="bnf-journey">
+          <h2 class="bnf-section-title">Journey Maps</h2>
+          <p class="bnf-body-text">
+            Les parcours utilisateurs ont été cartographiés en détail pour quatre profils distincts, révélant les moments clés d'engagement et les points de friction dans l'expérience actuelle du musée.
+          </p>
+          <div class="bnf-journey-grid">
+            <img
+              class="bnf-journey-img"
+              loading="lazy"
+              alt="Journey map 1"
+              src="./public/journeymap1.png"
+            />
+            <img
+              class="bnf-journey-img"
+              loading="lazy"
+              alt="Journey map 2"
+              src="./public/journeymap2.png"
+            />
+            <img
+              class="bnf-journey-img"
+              loading="lazy"
+              alt="Journey map 3"
+              src="./public/journeymap3.png"
+            />
+            <img
+              class="bnf-journey-img"
+              loading="lazy"
+              alt="Journey map 4"
+              src="./public/journeymap4.png"
+            />
+          </div>
+        </section>
+
+        <section class="bnf-architecture">
+          <h2 class="bnf-section-title">Architecture &amp; User Flows</h2>
+          <p class="bnf-body-text">
+            L'architecture de l'information a été structurée pour faciliter l'exploration du patrimoine à travers plusieurs entrées : géographique, thématique et chronologique. Les user flows ont été validés par des tests de navigation à distance.
+          </p>
+          <div class="bnf-arch-img-full">
+            <img
+              class="bnf-img-full"
+              loading="lazy"
+              alt="Architecture de l'information"
+              src="./public/img-architecture.png"
+            />
+          </div>
+          <div class="bnf-userflow-grid">
+            <img
+              class="bnf-flow-img"
+              loading="lazy"
+              alt="User flow 1"
+              src="./public/userflow1.png"
+            />
+            <img
+              class="bnf-flow-img"
+              loading="lazy"
+              alt="User flow 2"
+              src="./public/userflow2.png"
+            />
+            <img
+              class="bnf-flow-img"
+              loading="lazy"
+              alt="User flow 3"
+              src="./public/userflow3.png"
+            />
+            <img
+              class="bnf-flow-img"
+              loading="lazy"
+              alt="User flow 4"
+              src="./public/userflow4.png"
+            />
+          </div>
+        </section>
+
+        <section class="bnf-design-final">
+          <h2 class="bnf-section-title">Design final</h2>
+          <p class="bnf-body-text">
+            Le design final intègre un jumeau numérique en 3D du site Richelieu, permettant aux visiteurs d'explorer les espaces architecturaux, de découvrir les collections et d'accéder à des contenus enrichis directement liés aux œuvres et aux lieux.
+          </p>
+          <div class="bnf-final-top">
+            <img
+              class="bnf-img-full"
+              loading="lazy"
+              alt="Design final — interface de l'application"
+              src="./public/img-final.png"
+            />
+          </div>
+          <div class="bnf-final-bottom">
+            <img
+              class="bnf-grid-img"
+              loading="lazy"
+              alt="Carte 3D du site Richelieu"
+              src="./public/map3D.png"
+            />
+            <img
+              class="bnf-grid-img"
+              loading="lazy"
+              alt="Exploration des collections"
+              src="./public/collections.png"
+            />
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script type="module" src="../../scripts/i18n.js"></script>
+  </body>
+</html>

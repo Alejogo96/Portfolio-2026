@@ -1,0 +1,245 @@
+/* =====================================================
+   ParamoTotem — Case Study Styles
+   Fondo: #f0fdf4 | Acento: #166534 | Texto: #14532d
+   ===================================================== */
+
+.paramo {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0fdf4;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.navbar-wrapper {
+  background-color: #f0fdf4;
+}
+
+.paramo-frame {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-pad) 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION 1 — Header
+   ===================================================== */
+.pm-header {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.pm-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.pm-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pm-title {
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 700;
+  color: #166534;
+  line-height: 1.0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.pm-role {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  color: #4ade80;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pm-desc {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #14532d;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.pm-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(22, 101, 52, 0.2);
+}
+
+.pm-meta-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.pm-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #166534;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: Inter, sans-serif;
+  min-width: 80px;
+}
+
+.pm-meta-value {
+  font-size: var(--fs-body);
+  color: #15803d;
+  font-family: Inter, sans-serif;
+}
+
+.pm-header-image {
+  width: 100%;
+}
+
+.pm-hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(22, 101, 52, 0.15);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 2 — Concept
+   ===================================================== */
+.pm-concept {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.pm-concept-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pm-section-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 700;
+  color: #166534;
+  line-height: 1.0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.pm-body-text {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #14532d;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.pm-concept-image {
+  width: 100%;
+}
+
+.pm-img-full {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(22, 101, 52, 0.12);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 3 — Stations
+   ===================================================== */
+.pm-stations {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pm-stations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.pm-station-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pm-station-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 24px rgba(22, 101, 52, 0.12);
+  display: block;
+  object-fit: cover;
+}
+
+.pm-station-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #166534;
+  font-family: Inter, sans-serif;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* =====================================================
+   SECTION 4 — Expérience
+   ===================================================== */
+.pm-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pm-experience-image {
+  width: 100%;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .pm-header {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-concept {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .paramo-frame {
+    padding: 2rem 1rem 4rem;
+    gap: 4rem;
+  }
+
+  .pm-stations-grid {
+    grid-template-columns: 1fr;
+  }
+}

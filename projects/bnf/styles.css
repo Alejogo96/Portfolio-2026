@@ -1,0 +1,290 @@
+/* =====================================================
+   Musée de la BnF — Case Study Styles
+   Fondo: #faf7f0 | Acento: #92400e | Texto: #1c1917
+   ===================================================== */
+
+.bnf {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #faf7f0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.navbar-wrapper {
+  background-color: #faf7f0;
+}
+
+.bnf-frame {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-pad) 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION 1 — Header
+   ===================================================== */
+.bnf-header {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.bnf-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.bnf-logo {
+  width: clamp(160px, 20vw, 260px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.bnf-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bnf-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 700;
+  color: #92400e;
+  line-height: 1.0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.bnf-role {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  color: #78716c;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bnf-desc {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #1c1917;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.bnf-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(146, 64, 14, 0.2);
+}
+
+.bnf-meta-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.bnf-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #92400e;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: Inter, sans-serif;
+  min-width: 80px;
+}
+
+.bnf-meta-value {
+  font-size: var(--fs-body);
+  color: #44403c;
+  font-family: Inter, sans-serif;
+}
+
+.bnf-header-images {
+  width: 100%;
+}
+
+.bnf-header-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(146, 64, 14, 0.12);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 2 — Recherche utilisateur
+   ===================================================== */
+.bnf-recherche {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.bnf-section-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 700;
+  color: #92400e;
+  line-height: 1.0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.bnf-body-text {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #1c1917;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  max-width: 72ch;
+}
+
+.bnf-recherche-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.bnf-grid-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 24px rgba(146, 64, 14, 0.1);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 3 — Journey Maps
+   ===================================================== */
+.bnf-journey {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.bnf-journey-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.bnf-journey-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(146, 64, 14, 0.1);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 4 — Architecture & User Flows
+   ===================================================== */
+.bnf-architecture {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.bnf-arch-img-full {
+  width: 100%;
+}
+
+.bnf-img-full {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(146, 64, 14, 0.12);
+  display: block;
+  object-fit: cover;
+}
+
+.bnf-userflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.bnf-flow-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(146, 64, 14, 0.1);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 5 — Design final
+   ===================================================== */
+.bnf-design-final {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.bnf-final-top {
+  width: 100%;
+}
+
+.bnf-final-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .bnf-header {
+    grid-template-columns: 1fr;
+  }
+
+  .bnf-userflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bnf-frame {
+    padding: 2rem 1rem 4rem;
+    gap: 4rem;
+  }
+
+  .bnf-recherche-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bnf-journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bnf-userflow-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bnf-final-bottom {
+    grid-template-columns: 1fr;
+  }
+}

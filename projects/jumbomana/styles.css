@@ -1,0 +1,283 @@
+/* =====================================================
+   JumboMana — Case Study Styles
+   Fondo: #0f172a | Acento: #3b82f6 | Texto: #e2e8f0
+   ===================================================== */
+
+.jumbomana {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.navbar-wrapper {
+  background-color: #0f172a;
+}
+
+.jumbomana-frame {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-pad) 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION 1 — Header
+   ===================================================== */
+.jm-header {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.jm-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.jm-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jm-title {
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 700;
+  color: #3b82f6;
+  line-height: 1.0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.jm-role {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  color: #94a3b8;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.jm-desc {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #e2e8f0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.jm-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.jm-meta-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.jm-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: Inter, sans-serif;
+  min-width: 80px;
+}
+
+.jm-meta-value {
+  font-size: var(--fs-body);
+  color: #cbd5e1;
+  font-family: Inter, sans-serif;
+}
+
+.jm-header-image {
+  width: 100%;
+}
+
+.jm-hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.2);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 2 — Contexte
+   ===================================================== */
+.jm-contexte {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.jm-section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.jm-section-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 700;
+  color: #3b82f6;
+  line-height: 1.0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.jm-body-text {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #e2e8f0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.jm-contexte-image {
+  width: 100%;
+}
+
+.jm-img-full {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.15);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 3 — Recherche
+   ===================================================== */
+.jm-recherche {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.jm-recherche-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 60ch;
+}
+
+.jm-recherche-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.jm-grid-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+  display: block;
+  object-fit: cover;
+}
+
+/* =====================================================
+   SECTION 4 — Design
+   ===================================================== */
+.jm-design {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.jm-design-stack {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.jm-design-img-main {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.2);
+  display: block;
+  object-fit: cover;
+}
+
+.jm-design-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* =====================================================
+   SECTION 5 — Prototype
+   ===================================================== */
+.jm-prototype {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.jm-prototype-image {
+  width: 100%;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .jm-header {
+    grid-template-columns: 1fr;
+  }
+
+  .jm-contexte {
+    grid-template-columns: 1fr;
+  }
+
+  .jm-recherche-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jm-design-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .jm-design-pair {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .jumbomana-frame {
+    padding: 2rem 1rem 4rem;
+    gap: 4rem;
+  }
+
+  .jm-recherche-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .jm-design-pair {
+    flex-direction: column;
+  }
+}
