@@ -71,7 +71,7 @@ picture {
   --font-display: "Raleway", "Inter", system-ui, sans-serif;
 
   /* Texto */
-  --fs-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16 → 18px */
+  --fs-body: 1rem; /* 16px fijo */
   --fs-small: clamp(0.875rem, 0.85rem + 0.15vw, 0.95rem); /* 14 → 15px */
   --fs-lead: clamp(1.125rem, 1rem + 0.5vw, 1.25rem); /* 18 → 20px */
 
