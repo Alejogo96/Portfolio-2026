@@ -203,3 +203,36 @@
   font-family: Inter, sans-serif;
   color: #fff;
 }
+
+/* ── Language switcher in navbar ── */
+.navbar-lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbar-lang-btn {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.45);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 9px;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  line-height: 1;
+}
+
+.navbar-lang-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-lang-btn[data-active="true"] {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}

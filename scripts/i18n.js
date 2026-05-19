@@ -5,7 +5,7 @@
  * - Lee `data-i18n="key"` y reemplaza `textContent`.
  * - Lee `data-i18n-html="key"` y reemplaza `innerHTML` (para texto con <br/>).
  * - Persiste el idioma en localStorage (`pf:lang`).
- * - Lenguajes soportados: es (default), en, fr.
+ * - Lenguajes soportados: fr (default), en, es.
  */
 
 import es from "../i18n/es.json";
@@ -14,7 +14,7 @@ import fr from "../i18n/fr.json";
 
 const DICTS = { es, en, fr };
 const SUPPORTED = ["es", "en", "fr"];
-const DEFAULT_LANG = "es";
+const DEFAULT_LANG = "fr";
 const STORAGE_KEY = "pf:lang";
 
 function resolveLang() {
@@ -24,8 +24,6 @@ function resolveLang() {
   } catch (_) {
     /* localStorage puede no estar disponible */
   }
-  const nav = (navigator.language || "").slice(0, 2).toLowerCase();
-  if (SUPPORTED.includes(nav)) return nav;
   return DEFAULT_LANG;
 }
 
