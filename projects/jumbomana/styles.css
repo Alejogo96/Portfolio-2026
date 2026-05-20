@@ -1,12 +1,12 @@
 /* =====================================================
    JumboMana — Case Study Styles
-   Fondo: #0f172a | Acento: #3b82f6 | Texto: #e2e8f0
+   Fondo: #fffcf5 (crema) | Acento: #1a237e (navy) | Texto: #000
    ===================================================== */
 
 .jumbomana {
   width: 100%;
   min-height: 100vh;
-  background-color: #0f172a;
+  background-color: #fffcf5;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -14,10 +14,40 @@
 }
 
 .navbar-wrapper {
-  background-color: #0f172a;
+  background-color: #fffcf5;
 }
 
-.jumbomana-frame {
+/* Navbar dark icons adapt to light bg */
+.jumbomana .navbar .button,
+.jumbomana .navbar .button2,
+.jumbomana .navbar .cv {
+  color: #1a237e;
+}
+
+.jumbomana .navbar .layout-grid-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(200deg) brightness(0.3);
+}
+
+.jumbomana .navbar .capa-1-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(200deg) brightness(0.3);
+}
+
+.jumbomana .navbar-lang-btn {
+  color: rgba(26, 35, 126, 0.5);
+}
+
+.jumbomana .navbar-lang-btn:hover {
+  color: #1a237e;
+  border-color: rgba(26, 35, 126, 0.3);
+}
+
+.jumbomana .navbar-lang-btn[data-active="true"] {
+  color: #1a237e !important;
+  border-color: rgba(26, 35, 126, 0.5) !important;
+  background: rgba(26, 35, 126, 0.08) !important;
+}
+
+.jm-frame {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
@@ -29,217 +59,405 @@
 }
 
 /* =====================================================
+   SHARED — headings + body text
+   ===================================================== */
+.jm-section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.15;
+}
+
+.jm-body-text {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #111;
+  margin: 0;
+}
+
+.jm-body-bold {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.jm-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: disc;
+}
+
+.jm-list li {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: #111;
+}
+
+/* =====================================================
    SECTION 1 — Header
    ===================================================== */
 .jm-header {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: start;
 }
 
 .jm-header-info {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 2rem;
+}
+
+.jm-logo {
+  width: 120px;
+  height: auto;
+  display: block;
 }
 
 .jm-title-block {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .jm-title {
-  font-size: clamp(3rem, 6vw, 7rem);
-  font-weight: 700;
-  color: #3b82f6;
-  line-height: 1.0;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #1a237e;
   margin: 0;
   font-family: Inter, sans-serif;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
 }
 
 .jm-role {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 500;
-  color: #94a3b8;
+  font-size: var(--fs-body);
+  color: rgba(26, 35, 126, 0.6);
   margin: 0;
   font-family: Inter, sans-serif;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.jm-desc {
-  font-size: var(--fs-body);
-  line-height: 1.65;
-  color: #e2e8f0;
-  margin: 0;
-  font-family: Inter, sans-serif;
-}
-
-.jm-meta {
+.jm-logiciel {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-.jm-meta-item {
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.jm-meta-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #3b82f6;
+.jm-logiciel-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-family: Inter, sans-serif;
-  min-width: 80px;
 }
 
-.jm-meta-value {
-  font-size: var(--fs-body);
-  color: #cbd5e1;
-  font-family: Inter, sans-serif;
+.jm-logiciel-icons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.jm-header-image {
+.jm-logiciel-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.jm-logiciel-icon img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.jm-header-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.jm-header-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .jm-hero-img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.2);
   display: block;
-  object-fit: cover;
+  border-radius: 16px;
 }
 
 /* =====================================================
-   SECTION 2 — Contexte
+   SECTION 2 — Défi de conception
    ===================================================== */
-.jm-contexte {
+.jm-defi {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.jm-defi-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.jm-defi-heading {
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: 800;
+  color: #1a237e;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+}
+
+.jm-questions-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.jm-questions-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.2;
+}
+
+.jm-questions-grid {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.jm-question-card {
+  background: #1a237e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jm-question-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.jm-question-text {
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* =====================================================
+   SECTION 3 — Réflexion + Phase d'idéation
+   ===================================================== */
+.jm-reflexion {
+  width: 100%;
+}
+
+.jm-reflexion-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.jm-reflexion-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.jm-reflexion-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.jm-ideation {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.jm-ideation-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 700px;
+}
+
+.jm-ideation-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.jm-ideation-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* =====================================================
+   SECTION 4 — Tests utilisateur
+   ===================================================== */
+.jm-tests {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.jm-tests-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 800px;
+}
+
+.jm-tests-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: start;
 }
 
-.jm-section-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.jm-section-title {
-  font-size: clamp(2.5rem, 5vw, 6rem);
-  font-weight: 700;
-  color: #3b82f6;
-  line-height: 1.0;
-  margin: 0;
-  font-family: Inter, sans-serif;
-}
-
-.jm-body-text {
-  font-size: var(--fs-body);
-  line-height: 1.65;
-  color: #e2e8f0;
-  margin: 0;
-  font-family: Inter, sans-serif;
-}
-
-.jm-contexte-image {
-  width: 100%;
-}
-
-.jm-img-full {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.15);
-  display: block;
-  object-fit: cover;
-}
-
-/* =====================================================
-   SECTION 3 — Recherche
-   ===================================================== */
-.jm-recherche {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.jm-recherche-header {
+.jm-tests-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 60ch;
 }
 
-.jm-recherche-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  width: 100%;
+.jm-tests-subtitle {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  text-align: center;
 }
 
-.jm-grid-img {
+.jm-tests-img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
   display: block;
-  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* =====================================================
-   SECTION 4 — Design
+   SECTION 5 — Commentaires des utilisateurs
    ===================================================== */
-.jm-design {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.jm-commentaires {
+  width: 100%;
 }
 
-.jm-design-stack {
+.jm-commentaires-inner {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
   align-items: start;
 }
 
-.jm-design-img-main {
+.jm-commentaires-img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.2);
   display: block;
   object-fit: cover;
 }
 
-.jm-design-pair {
+.jm-commentaires-content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 2rem;
+}
+
+.jm-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.jm-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jm-stat-number {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: #1a237e;
+  font-family: Inter, sans-serif;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.jm-stat-label {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: #111;
+  margin: 0;
 }
 
 /* =====================================================
-   SECTION 5 — Prototype
+   SECTION 6 — Assistant IA / Section finale
    ===================================================== */
-.jm-prototype {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.jm-assistant {
+  width: 100%;
 }
 
-.jm-prototype-image {
+.jm-assistant-img {
   width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* =====================================================
+   SECTION 7 — Version kiosque
+   ===================================================== */
+.jm-kiosque {
+  width: 100%;
+}
+
+.jm-kiosque-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
 }
 
 /* =====================================================
@@ -250,34 +468,38 @@
     grid-template-columns: 1fr;
   }
 
-  .jm-contexte {
+  .jm-reflexion-content {
     grid-template-columns: 1fr;
   }
 
-  .jm-recherche-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .jm-design-stack {
+  .jm-commentaires-inner {
     grid-template-columns: 1fr;
   }
 
-  .jm-design-pair {
-    flex-direction: row;
+  .jm-tests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jm-questions-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .jumbomana-frame {
+  .jm-frame {
     padding: 2rem 1rem 4rem;
     gap: 4rem;
   }
 
-  .jm-recherche-grid {
-    grid-template-columns: 1fr 1fr;
+  .jm-ideation-imgs {
+    grid-template-columns: 1fr;
   }
 
-  .jm-design-pair {
-    flex-direction: column;
+  .jm-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jm-defi-heading {
+    font-size: clamp(3rem, 12vw, 5rem);
   }
 }

@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/navbar.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../../styles/responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap" />
   </head>
   <body>
     <div class="jumbomana">
+
       <section class="navbar-wrapper">
         <nav class="navbar" aria-label="Navigation principale">
           <div class="navbar-menu-wrapper">
@@ -34,20 +31,6 @@
                 </div>
                 <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
               </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme française pour gestionnaires immobiliers.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de véhicules d'occasion.</p>
-              </a>
               <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
                 <div class="navbar-dropdown-item__header">
                   <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
@@ -55,12 +38,26 @@
                 </div>
                 <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA à l'aéroport Lyon–Saint-Exupéry.</p>
               </a>
+              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Ublo</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme française pour gestionnaires immobiliers.</p>
+              </a>
               <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
                 <div class="navbar-dropdown-item__header">
                   <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
                   <span class="navbar-dropdown-item__name">Musée de la BnF</span>
                 </div>
                 <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Jumeau numérique du patrimoine BnF.</p>
+              </a>
+              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Bellpi</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de véhicules d'occasion.</p>
               </a>
               <a href="../../projects/andy-electric/index.html" class="navbar-dropdown-item">
                 <div class="navbar-dropdown-item__header">
@@ -105,138 +102,235 @@
         </nav>
       </section>
 
-      <main class="jumbomana-frame">
+      <main class="jm-frame">
 
+        <!-- ================================================
+             SECTION 1 — Header
+             ================================================ -->
         <section class="jm-header">
           <div class="jm-header-info">
+            <img
+              class="jm-logo"
+              alt="JumboMana logo"
+              src="./public/jumbomana-logo.png"
+            />
             <div class="jm-title-block">
               <h1 class="jm-title">JumboMana</h1>
               <p class="jm-role">UX Designer</p>
             </div>
-            <p class="jm-desc">
-              Assistant IA conversationnel intégré à l'application de l'aéroport international Lyon–Saint-Exupéry, aidant les voyageurs à trouver rapidement des informations sur les vols, les services et la navigation dans l'aéroport.
-            </p>
-            <div class="jm-meta">
-              <div class="jm-meta-item">
-                <span class="jm-meta-label">Type</span>
-                <span class="jm-meta-value">Projet académique</span>
-              </div>
-              <div class="jm-meta-item">
-                <span class="jm-meta-label">Rôle</span>
-                <span class="jm-meta-value">UX Designer</span>
-              </div>
-              <div class="jm-meta-item">
-                <span class="jm-meta-label">Contexte</span>
-                <span class="jm-meta-value">Aéroport Lyon–Saint-Exupéry</span>
+
+            <div class="jm-logiciel">
+              <h2 class="jm-logiciel-heading">Logiciel</h2>
+              <div class="jm-logiciel-icons">
+                <div class="jm-logiciel-icon">
+                  <img src="./public/icon-logiciel-1.png" alt="ChatGPT" />
+                </div>
+                <div class="jm-logiciel-icon">
+                  <img src="./public/icon-logiciel-2.png" alt="Gamma AI" />
+                </div>
+                <div class="jm-logiciel-icon">
+                  <img src="./public/icon-logiciel-3.png" alt="Sora" />
+                </div>
               </div>
             </div>
+
+            <div class="jm-header-desc">
+              <p class="jm-body-bold">Aéroport Lyon-Saint-Exupéry – Projet AI Assistant</p>
+              <p class="jm-body-text">
+                Le défi était de concevoir une expérience claire et engageante, capable de capter l'attention dans un environnement aussi fréquenté sans être confondue avec de la publicité. L'interface était nécessaire pour faciliter une compréhension rapide des fonctionnalités, garantir une utilisation fluide et compléter efficacement les systèmes d'information existants à l'aéroport.
+              </p>
+              <p class="jm-body-bold">Objectifs de conception :</p>
+              <ul class="jm-list">
+                <li>Offrir un service intuitif et accessible capable de servir des millions de voyageurs ayant des besoins, des langues et des niveaux de familiarité différents avec l'aéroport.</li>
+                <li>Réduire la résistance des utilisateurs grâce à un avatar convivial et à une interaction naturelle (toucher ou vocale), rendant l'assistant accessible à tous.</li>
+                <li>Améliorer l'orientation à l'aide de cartes interactives, de codes QR et de réponses précises et contextuelles pour aider les voyageurs à naviguer efficacement.</li>
+              </ul>
+            </div>
           </div>
-          <div class="jm-header-image">
+
+          <div class="jm-header-visual">
             <img
               class="jm-hero-img"
-              alt="JumboMana — interface de l'assistant IA"
+              alt="JumboMana — interface de l'assistant IA sur mobile"
               src="./public/frame-hero.png"
             />
           </div>
         </section>
 
-        <section class="jm-contexte">
-          <div class="jm-section-text">
-            <h2 class="jm-section-title">Contexte</h2>
+        <!-- ================================================
+             SECTION 2 — Défi de conception
+             ================================================ -->
+        <section class="jm-defi">
+          <div class="jm-defi-top">
+            <h2 class="jm-defi-heading">Défi de conception</h2>
             <p class="jm-body-text">
-              L'aéroport Lyon–Saint-Exupéry accueille des millions de voyageurs chaque année. Cependant, beaucoup d'entre eux peinent à trouver des informations en temps réel sur leurs vols, les services disponibles ou la navigation dans les terminaux, entraînant stress et confusion.
-            </p>
-            <p class="jm-body-text">
-              L'objectif de ce projet était de concevoir un assistant IA conversationnel intégré directement à l'application officielle de l'aéroport, capable de répondre de manière naturelle et instantanée aux questions des voyageurs à toutes les étapes de leur parcours.
+              Dans quelle mesure la mise en œuvre du système compléterait-elle efficacement les services d'information traditionnels de la Gare du Nord, sans provoquer de confusion ni de résistance chez les usagers, tout en restant identifiable, compréhensible et accessible, et en s'adaptant aux besoins et aux différents formats des usagers ?
             </p>
           </div>
-          <div class="jm-contexte-image">
-            <img
-              class="jm-img-full"
-              loading="lazy"
-              alt="Contexte — voyageurs à l'aéroport"
-              src="./public/img-context.png"
-            />
+
+          <div class="jm-questions-block">
+            <h3 class="jm-questions-title">Premières questions concernant le besoin de l'utilisateur</h3>
+            <div class="jm-questions-grid">
+              <div class="jm-question-card">
+                <p class="jm-question-label">Qui ?</p>
+                <p class="jm-question-text">➔ Utilisateurs (visiteurs, voyageurs, compagnons, etc.) ➔ Recherche d'informations, d'orientation ou d'assistance</p>
+              </div>
+              <div class="jm-question-card">
+                <p class="jm-question-label">Quand ?</p>
+                <p class="jm-question-text">➔ Lors d'un voyage à l'aéroport ➔ En cas de besoin d'orientation ou d'information en temps réel</p>
+              </div>
+              <div class="jm-question-card">
+                <p class="jm-question-label">Où ?</p>
+                <p class="jm-question-text">➔ Aéroport Lyon-Saint-Exupéry ➔ Zones de transit, halls d'arrivée et départ, services</p>
+              </div>
+              <div class="jm-question-card">
+                <p class="jm-question-label">Quoi ?</p>
+                <p class="jm-question-text">➔ Assistant IA conversationnel multiformat ➔ Kiosque tactile et application mobile</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="jm-recherche">
-          <div class="jm-recherche-header">
-            <h2 class="jm-section-title">Recherche utilisateur</h2>
-            <p class="jm-body-text">
-              La phase de recherche a combiné des observations sur le terrain, des entretiens avec des voyageurs et une analyse comparative des assistants IA existants dans les aéroports internationaux, afin d'identifier les principaux points de friction et les besoins non couverts.
-            </p>
-          </div>
-          <div class="jm-recherche-grid">
-            <img
-              class="jm-grid-img"
-              loading="lazy"
-              alt="Recherche utilisateur — groupe 01"
-              src="./public/group-01.png"
-            />
-            <img
-              class="jm-grid-img"
-              loading="lazy"
-              alt="Recherche utilisateur — groupe 02"
-              src="./public/group-02.png"
-            />
-            <img
-              class="jm-grid-img"
-              loading="lazy"
-              alt="Recherche utilisateur — groupe 05"
-              src="./public/group-05.png"
-            />
-            <img
-              class="jm-grid-img"
-              loading="lazy"
-              alt="Recherche utilisateur — groupe 08"
-              src="./public/group-08.png"
-            />
-          </div>
-        </section>
-
-        <section class="jm-design">
-          <h2 class="jm-section-title">Design &amp; Prototypage</h2>
-          <p class="jm-body-text">
-            À partir des insights de recherche, j'ai conçu les flux conversationnels, les wireframes et les maquettes haute fidélité de l'assistant. Les interfaces ont été itérées en fonction des retours utilisateurs lors de sessions de tests à distance et en présentiel.
-          </p>
-          <div class="jm-design-stack">
-            <img
-              class="jm-design-img-main"
-              loading="lazy"
-              alt="Design — écrans de l'assistant IA"
-              src="./public/group-09.png"
-            />
-            <div class="jm-design-pair">
+        <!-- ================================================
+             SECTION 3 — Réflexion / Phase d'idéation
+             ================================================ -->
+        <section class="jm-reflexion">
+          <div class="jm-reflexion-content">
+            <div class="jm-reflexion-text">
+              <h2 class="jm-section-heading">Réflexion sur notre démarche à travers un outil de conception</h2>
+              <p class="jm-body-text">
+                Nous avons structuré notre processus de conception à l'aide d'un outil collaboratif permettant de cartographier les insights utilisateurs, de prioriser les fonctionnalités clés et de valider les hypothèses de conception. Cette approche a facilité l'alignement de l'équipe et la prise de décisions éclairées à chaque étape du projet.
+              </p>
+            </div>
+            <div class="jm-reflexion-visual">
               <img
-                class="jm-grid-img"
+                class="jm-reflexion-img"
                 loading="lazy"
-                alt="Design — écran groupe 13"
-                src="./public/group-13.png"
-              />
-              <img
-                class="jm-grid-img"
-                loading="lazy"
-                alt="Design — écran groupe 14"
-                src="./public/group-14.png"
+                alt="Post-its et notes d'atelier de conception"
+                src="./public/group-05.png"
               />
             </div>
           </div>
         </section>
 
-        <section class="jm-prototype">
-          <h2 class="jm-section-title">Prototype final</h2>
-          <p class="jm-body-text">
-            Le prototype final intègre l'ensemble des flux conversationnels validés : recherche de vols, accès aux services, navigation dans l'aéroport et assistance en temps réel. L'interface adopte les codes visuels de l'application existante tout en apportant une expérience conversationnelle fluide et accessible.
-          </p>
-          <div class="jm-prototype-image">
+        <section class="jm-ideation">
+          <div class="jm-ideation-header">
+            <h2 class="jm-section-heading">Phase d'idéation</h2>
+            <p class="jm-body-text">
+              Nos wireframes dans un storyboard. Le projet comprenait deux versions d'interface : <strong>une pour les appareils mobiles et une autre conçue pour les grands écrans tactiles</strong>, comme ceux que l'on trouve couramment dans les aéroports. Le storyboard nous a aidé à déterminer comment les utilisateurs navigueraient dans chaque version, en mettant l'accent sur les moments clés d'interaction, d'accessibilité et de cohérence du flux. Cette étape était essentielle pour aligner la vision de conception sur toutes les plates-formes.
+            </p>
+          </div>
+          <div class="jm-ideation-imgs">
             <img
-              class="jm-img-full"
+              class="jm-ideation-img"
               loading="lazy"
-              alt="Prototype final JumboMana"
-              src="./public/frame-header.png"
+              alt="Wireframes et storyboard — phase d'idéation"
+              src="./public/group-09.png"
+            />
+            <img
+              class="jm-ideation-img"
+              loading="lazy"
+              alt="Flux kiosque et mobile — wireframes"
+              src="./public/group-08.png"
             />
           </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 4 — Tests utilisateur
+             ================================================ -->
+        <section class="jm-tests">
+          <div class="jm-tests-header">
+            <h2 class="jm-section-heading">Tests utilisateur</h2>
+            <p class="jm-body-text">
+              Lors des tests utilisateurs, les participants ont interagi avec succès avec les fonctionnalités clés de l'interface. Ils ont pu couper le son, changer de langue, rechercher un restaurant et terminer la tâche en localisant l'itinéraire menant au restaurant sélectionné.
+            </p>
+          </div>
+
+          <div class="jm-tests-grid">
+            <div class="jm-tests-col">
+              <h3 class="jm-tests-subtitle">Version kiosque</h3>
+              <img
+                class="jm-tests-img"
+                loading="lazy"
+                alt="Tests utilisateur — version kiosque"
+                src="./public/group-01.png"
+              />
+            </div>
+            <div class="jm-tests-col">
+              <h3 class="jm-tests-subtitle">Service mobile</h3>
+              <img
+                class="jm-tests-img"
+                loading="lazy"
+                alt="Tests utilisateur — service mobile"
+                src="./public/group-02.png"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 5 — Commentaires des utilisateurs
+             ================================================ -->
+        <section class="jm-commentaires">
+          <div class="jm-commentaires-inner">
+            <div class="jm-commentaires-photo">
+              <img
+                class="jm-commentaires-img"
+                loading="lazy"
+                alt="Utilisateur testant l'application JumboMana"
+                src="./public/img-context.png"
+              />
+            </div>
+            <div class="jm-commentaires-content">
+              <h2 class="jm-section-heading">Commentaires des utilisateurs</h2>
+              <p class="jm-body-text">
+                Ces résultats indiquent que l'interface était généralement intuitive et aidait les utilisateurs à atteindre leurs objectifs avec un minimum de frictions.
+              </p>
+              <div class="jm-stats-grid">
+                <div class="jm-stat">
+                  <span class="jm-stat-number">100%</span>
+                  <p class="jm-stat-label">Certains utilisateurs ont réussi à changer la langue.</p>
+                </div>
+                <div class="jm-stat">
+                  <span class="jm-stat-number">84%</span>
+                  <p class="jm-stat-label">Certains utilisateurs ont pu couper le son.</p>
+                </div>
+                <div class="jm-stat">
+                  <span class="jm-stat-number">100%</span>
+                  <p class="jm-stat-label">Certains utilisateurs ont réussi à rechercher un restaurant.</p>
+                </div>
+                <div class="jm-stat">
+                  <span class="jm-stat-number">84%</span>
+                  <p class="jm-stat-label">Certains utilisateurs ont terminé la tâche en trouvant l'itinéraire du restaurant.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 6 — Un assistant IA qui accompagne les voyageurs
+             ================================================ -->
+        <section class="jm-assistant">
+          <img
+            class="jm-assistant-img"
+            loading="lazy"
+            alt="Un assistant IA qui accompagne les voyageurs — écrans mobiles"
+            src="./public/group-13.png"
+          />
+        </section>
+
+        <!-- ================================================
+             SECTION 7 — Version kiosque finale
+             ================================================ -->
+        <section class="jm-kiosque">
+          <img
+            class="jm-kiosque-img"
+            loading="lazy"
+            alt="Version kiosque — écrans du dispositif tactile"
+            src="./public/group-14.png"
+          />
         </section>
 
       </main>
