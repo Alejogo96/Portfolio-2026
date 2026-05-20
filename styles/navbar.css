@@ -190,9 +190,9 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 6px;
-  transition: background var(--transition-fast);
+  transition: background 0.15s ease;
 }
 
 .navbar-lang-trigger:hover {
@@ -200,19 +200,20 @@
 }
 
 .navbar-lang-current {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.125rem;
+  font-weight: 700;
   font-family: Inter, sans-serif;
   color: #fff;
   line-height: 1;
+  letter-spacing: 0.04em;
 }
 
 .navbar-lang-arrow {
-  font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.6);
-  transition: transform 0.15s ease;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.55);
+  transition: transform 0.2s ease;
   line-height: 1;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .navbar-lang-wrapper[data-open="true"] .navbar-lang-arrow {
@@ -221,51 +222,89 @@
 
 .navbar-lang-options {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 8px);
   right: 0;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  padding: 4px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 72px;
+  min-width: 148px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.15s ease;
-  z-index: 201;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, visibility 0.18s, transform 0.18s ease;
+  z-index: 500;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-lang-wrapper[data-open="true"] .navbar-lang-options {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transform: translateY(0);
 }
 
 .navbar-lang-btn {
-  font-size: 0.875rem;
-  font-weight: 700;
-  font-family: Inter, sans-serif;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.55);
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 7px 10px;
-  cursor: pointer;
-  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-  line-height: 1;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  text-align: left;
 }
 
 .navbar-lang-btn:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .navbar-lang-btn[data-active="true"] {
-  color: #fff !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.lang-btn-code {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  font-family: Inter, sans-serif;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.08em;
+  min-width: 24px;
+  line-height: 1;
+}
+
+.navbar-lang-btn[data-active="true"] .lang-btn-code {
+  color: #fff;
+}
+
+.lang-btn-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: Inter, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+  flex: 1;
+}
+
+.navbar-lang-btn[data-active="true"] .lang-btn-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+.lang-btn-check {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  line-height: 1;
+}
+
+.navbar-lang-btn[data-active="true"] .lang-btn-check {
+  opacity: 1;
 }

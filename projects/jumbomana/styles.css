@@ -51,6 +51,24 @@
 .jumbomana .navbar-lang-options {
   background: #fffcf5;
   border-color: rgba(26, 35, 126, 0.2);
+  box-shadow: 0 8px 28px rgba(26, 35, 126, 0.12);
+}
+
+.jumbomana .lang-btn-code {
+  color: rgba(26, 35, 126, 0.4);
+}
+
+.jumbomana .lang-btn-name {
+  color: rgba(26, 35, 126, 0.65);
+}
+
+.jumbomana .navbar-lang-btn[data-active="true"] .lang-btn-code,
+.jumbomana .navbar-lang-btn[data-active="true"] .lang-btn-name {
+  color: #1a237e;
+}
+
+.jumbomana .lang-btn-check {
+  color: #1a237e;
 }
 
 .jumbomana .navbar-lang-btn {

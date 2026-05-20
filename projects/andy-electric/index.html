@@ -107,14 +107,26 @@
             </div>
           </a>
           <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button">
+            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
               <span class="navbar-lang-current">FR</span>
               <span class="navbar-lang-arrow">▾</span>
             </button>
-            <div class="navbar-lang-options">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button">FR</button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button">EN</button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button">ES</button>
+            <div class="navbar-lang-options" role="listbox">
+              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
+                <span class="lang-btn-code">FR</span>
+                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+                <span class="lang-btn-check">✓</span>
+              </button>
+              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
+                <span class="lang-btn-code">EN</span>
+                <span class="lang-btn-name" data-i18n="lang.en">English</span>
+                <span class="lang-btn-check">✓</span>
+              </button>
+              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
+                <span class="lang-btn-code">ES</span>
+                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
+                <span class="lang-btn-check">✓</span>
+              </button>
             </div>
           </div>
         </nav>

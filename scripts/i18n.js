@@ -92,6 +92,14 @@ function bindLanguageButtons() {
   });
 }
 
+function closeLangDropdowns() {
+  document.querySelectorAll(".navbar-lang-wrapper").forEach((w) => {
+    w.dataset.open = "false";
+    const t = w.querySelector(".navbar-lang-trigger");
+    if (t) t.setAttribute("aria-expanded", "false");
+  });
+}
+
 function bindLangDropdown() {
   document.querySelectorAll(".navbar-lang-wrapper").forEach((wrapper) => {
     const trigger = wrapper.querySelector(".navbar-lang-trigger");
@@ -99,17 +107,17 @@ function bindLangDropdown() {
     trigger.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = wrapper.dataset.open === "true";
-      document.querySelectorAll(".navbar-lang-wrapper").forEach((w) => {
-        w.dataset.open = "false";
-      });
-      wrapper.dataset.open = isOpen ? "false" : "true";
+      closeLangDropdowns();
+      if (!isOpen) {
+        wrapper.dataset.open = "true";
+        trigger.setAttribute("aria-expanded", "true");
+      }
     });
   });
 
-  document.addEventListener("click", () => {
-    document.querySelectorAll(".navbar-lang-wrapper").forEach((wrapper) => {
-      wrapper.dataset.open = "false";
-    });
+  document.addEventListener("click", closeLangDropdowns);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLangDropdowns();
   });
 }
 
