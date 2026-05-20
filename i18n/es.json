@@ -5,15 +5,12 @@
   "nav.home": "Home",
   "menu.home.desc": "Presentación del portfolio",
   "menu.cv.desc": "Perfil profesional, formación y experiencia",
-
   "lang.title": "Elige tu idioma",
   "lang.en": "Inglés",
   "lang.fr": "Francés",
   "lang.es": "Español",
-
   "hero.greeting": "¡Hola! Soy Alejandro Guevara",
   "hero.bio": "Soy un diseñador especializado en UX y diseño de servicios. Creo en el poder del diseño y del arte para crear experiencias que no solo funcionan, sino que resuenan.<br /><br />Curioso por naturaleza, apasionado del deporte y los viajes, disfruto experimentar con herramientas de IA como compañeras creativas y nutrirme de métodos de otras disciplinas para alimentar mi pensamiento creativo.",
-
   "hero.badge": "UX/UI Designer · Portfolio 2026",
   "hero.h1.line1": "Hola, soy ",
   "hero.h1.desc": "Diseñador especializado en UX, diseño de servicios y producto digital. Creo experiencias que no solo funcionan, sino que resuenan.",
@@ -25,15 +22,12 @@
   "hero.stat1.label": "Proyectos",
   "hero.stat2.label": "Años exp.",
   "hero.stat3.label": "Idiomas",
-
   "projects.title": "Proyectos",
   "projects.ublo.desc": "Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.",
   "projects.bellpi.desc": "Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.",
   "projects.bnf.desc": "Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.",
   "projects.jumbomana.desc": "Asistente de IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.",
   "projects.andy.desc": "Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.",
-  "projects.paramo.desc": "Proyecto experimental enfocado en crear una experiencia inmersiva inspirada en los ecosistemas naturales.",
-
   "cv.title": "Perfil profesional",
   "cv.role": "UX/UI Designer & Product Designer",
   "cv.education": "Formación",
@@ -44,7 +38,6 @@
   "cv.experience": "Experiencia profesional",
   "cv.skills": "Competencias",
   "cv.contact": "Contacto",
-
   "cv.edu.master.title": "Máster en Creación Digital, Diseño<br>de interfaz y multimedia M2 (2025)",
   "cv.edu.master.school": "Université Sorbonne Paris Nord<br>París - Francia",
   "cv.edu.bootcamp.title": "Bootcamp UX/UI Design (2023)",
@@ -53,7 +46,6 @@
   "cv.edu.licence.school": "Universidad Jorge Tadeo Lozano<br>Bogotá - Colombia",
   "cv.edu.duef.title": "Diploma DUEF (2023)",
   "cv.edu.duef.school": "Lengua francesa nivel B2<br>Université Jean Monnet<br>Saint-Étienne - Francia",
-
   "cv.exp.freelance.title": "Freelance: Brand & UX Designer / Andy Electric, Estados Unidos (2025-2026)",
   "cv.exp.freelance.items": "<li>Rediseño y evolución de la identidad de marca de la empresa, asegurando coherencia visual y posicionamiento.</li><li>Diseño de soportes de comunicación y marketing (redes sociales, contenidos visuales, mensajes clave).</li><li>Creación y desarrollo de un sitio web vitrina presentando los servicios y actividades de la empresa.</li><li>Integración de soluciones de contacto para facilitar la generación de leads.</li><li>Contribución a la mejora de la presencia digital y a la captación de nuevos clientes.</li>",
   "cv.exp.ublo.title": "Alternancia: UX Designer / Ublo, Francia (2024-2025)",
@@ -63,8 +55,8 @@
   "cv.exp.casatoro.title": "CDI: UX y Service Designer / Casatoro, Colombia (2021-2022)",
   "cv.exp.casatoro.items": "<li>Animación de talleres de diseño, recolección de insights de usuarios para orientar el desarrollo de producto y organización de tests de usabilidad para mejora continua.</li><li>Diseño de soluciones figitales (kioscos táctiles, pantallas, apps) basadas en insights y guiadas por el uso.</li><li>Colaboración interfuncional con los equipos de diseño, tech y negocio para mantener una alineación de producto constante.</li>",
   "cv.skills.items": "<li>Uso de herramientas de IA.</li><li>Análisis de datos cuantitativos y cualitativos en el proceso de diseño y métricas clave.</li><li>Definición de roadmap y priorización (RICE, MoSCoW, Kano).</li><li>Product discovery, JTBD, análisis de necesidades, redacción de user stories y criterios de aceptación.</li><li>Visión de producto y alineación de stakeholders.</li><li>Seguimiento de KPI, análisis cuantitativo y cualitativo.</li><li>Uso de metodologías como Design Thinking, Human-Centered Design, Lean UX, Scrum y Design Sprint.</li><li>Wireframes, prototipos, tests de usuario, auditorías UX.</li>",
-
   "contact.title": "Trabajemos juntos",
   "contact.email": "E-mail",
-  "contact.phone": "Teléfono"
+  "contact.phone": "Teléfono",
+  "projects.spotify.desc": "Diseño de 3 nuevas funcionalidades UX para Spotify."
 }

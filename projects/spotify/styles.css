@@ -1,0 +1,502 @@
+/* =====================================================
+   Spotify — Case Study Styles
+   Fondo: #111 | Acento: #1ed760 (Spotify green) | Texto: #e0e0e0
+   ===================================================== */
+
+.spotify-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.navbar-wrapper {
+  background-color: #111;
+}
+
+.sp-frame {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-pad) 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SHARED
+   ===================================================== */
+.sp-section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.15;
+}
+
+.sp-section-heading.sp-green {
+  color: #1ed760;
+}
+
+.sp-section-heading-lg {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  text-transform: capitalize;
+}
+
+.sp-body-text {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.sp-label-sm {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-transform: capitalize;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.sp-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: disc;
+}
+
+.sp-list li {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.sp-list--bold li {
+  font-weight: 700;
+  font-size: var(--fs-body);
+}
+
+.sp-list--participants li strong {
+  color: #fff;
+}
+
+/* =====================================================
+   SECTION 1 — Header
+   ===================================================== */
+.sp-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sp-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sp-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.sp-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sp-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #e0e0e0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.sp-role {
+  font-size: var(--fs-body);
+  color: rgba(224, 224, 224, 0.55);
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sp-logiciel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sp-logiciel-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sp-logiciel-icons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.sp-logiciel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sp-logiciel-item span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  font-family: Inter, sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sp-logiciel-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.sp-logiciel-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Three-phone stacked layout */
+.sp-header-phones {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-phone {
+  position: absolute;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.sp-phone--front {
+  width: 52%;
+  z-index: 3;
+}
+
+.sp-phone--back-left {
+  width: 42%;
+  left: 0;
+  top: 5%;
+  z-index: 2;
+  opacity: 0.85;
+  transform: rotate(-4deg);
+}
+
+.sp-phone--back-right {
+  width: 42%;
+  right: 0;
+  top: 5%;
+  z-index: 2;
+  opacity: 0.85;
+  transform: rotate(4deg);
+}
+
+/* =====================================================
+   SECTION 2 — Utilisateurs
+   ===================================================== */
+.sp-users-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sp-users-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sp-users-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.sp-desktop-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 3 — Navigation Logique
+   ===================================================== */
+.sp-navigation-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sp-navigation-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sp-navigation-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sp-arch-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  font-family: Inter, sans-serif;
+  background: #111;
+  padding: 0.5rem 0;
+}
+
+/* =====================================================
+   SECTION 4 — Tests
+   ===================================================== */
+.sp-tests {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sp-tests-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sp-tests-left,
+.sp-tests-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sp-tests-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sp-tests-bold {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.sp-screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================================
+   SECTION 5 — Nouvelles Fonctionnalités
+   ===================================================== */
+.sp-features {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.sp-features-heading {
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 800;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-transform: capitalize;
+  background: linear-gradient(to right, #2bd268, #5f5f5f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sp-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sp-feature--reverse {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.sp-feature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sp-feature-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.sp-feature-title--gradient {
+  background: linear-gradient(to bottom, #e2e2e2, #2bd268);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sp-feature-phones {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sp-phone-sm {
+  flex: 1;
+  max-width: 160px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.sp-feature-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sp-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: Raleway, sans-serif;
+  color: #eaeaea;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.3rem 0.75rem;
+}
+
+/* Final gallery */
+.sp-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sp-gallery-phone {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .sp-header {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-header-phones {
+    height: 380px;
+  }
+
+  .sp-users-inner,
+  .sp-navigation-inner,
+  .sp-tests-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-feature,
+  .sp-feature--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-frame {
+    padding: 2rem 1rem 4rem;
+    gap: 4rem;
+  }
+
+  .sp-header-phones {
+    height: 300px;
+  }
+
+  .sp-features-heading {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .sp-feature-phones {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sp-phone-sm {
+    max-width: 130px;
+  }
+}

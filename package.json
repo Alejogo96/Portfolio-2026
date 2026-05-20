@@ -4,9 +4,9 @@
   "description": "Portafolio profesional de Alejandro Guevara — UX/UI Designer & Product Designer.",
   "private": true,
   "scripts": {
-    "dev": "parcel index.html projects/ublo/index.html projects/bellpi/index.html projects/andy-electric/index.html projects/jumbomana/index.html projects/bnf/index.html projects/paramo/index.html --port 1234 --open",
-    "start": "parcel index.html projects/ublo/index.html projects/bellpi/index.html projects/andy-electric/index.html projects/jumbomana/index.html projects/bnf/index.html projects/paramo/index.html --port 1234",
-    "build": "parcel build index.html projects/ublo/index.html projects/bellpi/index.html projects/andy-electric/index.html projects/jumbomana/index.html projects/bnf/index.html projects/paramo/index.html --dist-dir build --public-url /Portfolio-2026/",
+    "dev": "parcel index.html projects/andy-electric/index.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html --port 1234 --open",
+    "start": "parcel index.html projects/andy-electric/index.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html --port 1234",
+    "build": "parcel build index.html projects/andy-electric/index.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html --dist-dir build --public-url /Portfolio-2026/",
     "clean": "rm -rf .parcel-cache build"
   },
   "devDependencies": {
