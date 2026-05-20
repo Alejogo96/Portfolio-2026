@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/navbar.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../../styles/responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap" />
   </head>
   <body>
     <div class="bnf">
+
       <section class="navbar-wrapper">
         <nav class="navbar" aria-label="Navigation principale">
           <div class="navbar-menu-wrapper">
@@ -34,20 +31,6 @@
                 </div>
                 <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
               </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme française pour gestionnaires immobiliers.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de véhicules d'occasion.</p>
-              </a>
               <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
                 <div class="navbar-dropdown-item__header">
                   <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
@@ -55,12 +38,26 @@
                 </div>
                 <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA à l'aéroport Lyon–Saint-Exupéry.</p>
               </a>
+              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Ublo</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme française pour gestionnaires immobiliers.</p>
+              </a>
               <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
                 <div class="navbar-dropdown-item__header">
                   <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
                   <span class="navbar-dropdown-item__name">Musée de la BnF</span>
                 </div>
                 <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Jumeau numérique du patrimoine BnF.</p>
+              </a>
+              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
+                <div class="navbar-dropdown-item__header">
+                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
+                  <span class="navbar-dropdown-item__name">Bellpi</span>
+                </div>
+                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">E-commerce de véhicules d'occasion.</p>
               </a>
               <a href="../../projects/andy-electric/index.html" class="navbar-dropdown-item">
                 <div class="navbar-dropdown-item__header">
@@ -107,167 +104,202 @@
 
       <main class="bnf-frame">
 
+        <!-- ================================================
+             SECTION 1 — Header
+             ================================================ -->
         <section class="bnf-header">
           <div class="bnf-header-info">
-            <img
-              class="bnf-logo"
-              alt="Musée de la BnF — logotype"
-              src="./public/group-header.png"
-            />
             <div class="bnf-title-block">
-              <h1 class="bnf-title">Musée de la BnF</h1>
+              <h1 class="bnf-project-name">Musée de la BnF</h1>
               <p class="bnf-role">UX Designer &amp; Service Designer</p>
             </div>
-            <p class="bnf-desc">
-              Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la Bibliothèque nationale de France à travers une exploration interactive.
-            </p>
-            <div class="bnf-meta">
-              <div class="bnf-meta-item">
-                <span class="bnf-meta-label">Type</span>
-                <span class="bnf-meta-value">Projet académique</span>
-              </div>
-              <div class="bnf-meta-item">
-                <span class="bnf-meta-label">Rôle</span>
-                <span class="bnf-meta-value">UX &amp; Service Designer</span>
-              </div>
-              <div class="bnf-meta-item">
-                <span class="bnf-meta-label">Périmètre</span>
-                <span class="bnf-meta-value">Site Richelieu, Paris</span>
-              </div>
+
+            <div class="bnf-methodology">
+              <h2 class="bnf-methodology-title">Étapes de la méthodologie sur le terrain</h2>
+              <ul class="bnf-steps">
+                <li>Analyse du contexte et recherche utilisateur sur site</li>
+                <li>Définition des scénarios et des parcours utilisateurs</li>
+                <li>Conception des flows et de l'architecture de l'information</li>
+                <li>Prototypage, tests et itérations de l'interface</li>
+              </ul>
             </div>
+
+            <p class="bnf-description">
+              Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la Bibliothèque nationale de France. Le projet vise à offrir une expérience culturelle immersive combinant visite virtuelle 3D, découverte des collections et streaming de contenus documentaires.
+            </p>
           </div>
-          <div class="bnf-header-images">
+
+          <div class="bnf-header-visual">
             <img
               class="bnf-header-img"
-              loading="lazy"
-              alt="Références visuelles — patrimoine BnF"
+              alt="Références visuelles — patrimoine BnF Richelieu"
               src="./public/img-reference.png"
             />
           </div>
         </section>
 
-        <section class="bnf-recherche">
-          <h2 class="bnf-section-title">Recherche utilisateur</h2>
-          <p class="bnf-body-text">
-            La phase de recherche a permis de comprendre les attentes des visiteurs du site Richelieu et d'identifier les opportunités de valorisation du patrimoine architectural et des collections. Entretiens, observations sur site et analyse comparative ont structuré la démarche.
-          </p>
-          <div class="bnf-recherche-grid">
+        <!-- ================================================
+             SECTION 2 — Références
+             ================================================ -->
+        <section class="bnf-references">
+          <div class="bnf-section-info">
+            <h2 class="bnf-section-heading">Références</h2>
+            <p class="bnf-body-text">
+              Une analyse comparative approfondie a été menée pour identifier les meilleures pratiques en matière d'expérience culturelle digitale. Les références incluent des applications de visite virtuelle 3D, des plateformes de streaming culturel ainsi que des musées ayant développé des expériences numériques innovantes.
+            </p>
+          </div>
+          <div class="bnf-ref-visual">
             <img
-              class="bnf-grid-img"
+              class="bnf-ref-img"
               loading="lazy"
-              alt="Personas — profils des visiteurs"
-              src="./public/img-personas.png"
-            />
-            <img
-              class="bnf-grid-img"
-              loading="lazy"
-              alt="Benchmark — analyse comparative"
+              alt="Benchmark — analyse comparative des références numériques"
               src="./public/benchmark.png"
             />
           </div>
         </section>
 
-        <section class="bnf-journey">
-          <h2 class="bnf-section-title">Journey Maps</h2>
-          <p class="bnf-body-text">
-            Les parcours utilisateurs ont été cartographiés en détail pour quatre profils distincts, révélant les moments clés d'engagement et les points de friction dans l'expérience actuelle du musée.
-          </p>
-          <div class="bnf-journey-grid">
+        <!-- ================================================
+             SECTION 3 — Personas
+             ================================================ -->
+        <section class="bnf-personas-section">
+          <div class="bnf-section-info">
+            <h2 class="bnf-section-heading">Personas</h2>
+            <p class="bnf-body-text">
+              Quatre profils utilisateurs ont été définis à partir des recherches terrain et des entretiens menés avec des visiteurs du site Richelieu. Ces personas ont guidé toutes les décisions de conception tout au long du projet.
+            </p>
+          </div>
+          <div class="bnf-personas-visual">
             <img
-              class="bnf-journey-img"
+              class="bnf-personas-img"
               loading="lazy"
-              alt="Journey map 1"
-              src="./public/journeymap1.png"
-            />
-            <img
-              class="bnf-journey-img"
-              loading="lazy"
-              alt="Journey map 2"
-              src="./public/journeymap2.png"
-            />
-            <img
-              class="bnf-journey-img"
-              loading="lazy"
-              alt="Journey map 3"
-              src="./public/journeymap3.png"
-            />
-            <img
-              class="bnf-journey-img"
-              loading="lazy"
-              alt="Journey map 4"
-              src="./public/journeymap4.png"
+              alt="Personas — profils des visiteurs BnF"
+              src="./public/img-personas.png"
             />
           </div>
         </section>
 
+        <!-- ================================================
+             SECTION 4 — Scénarios
+             ================================================ -->
+        <section class="bnf-scenarios">
+          <h2 class="bnf-scenarios-heading">Scénarios</h2>
+
+          <div class="bnf-scenarios-sub">
+            <div class="bnf-scenario-col">
+              <h3 class="bnf-scenario-title">Proposition de collection</h3>
+              <p class="bnf-body-text">
+                Explorer les expositions actuelles, passées et à venir du musée. Accéder aux collections par pièce et découvrir les œuvres d'art exposées.
+              </p>
+              <img
+                class="bnf-scenario-img"
+                loading="lazy"
+                alt="Expositions et collections du musée BnF"
+                src="./public/collections.png"
+              />
+            </div>
+            <div class="bnf-scenario-col">
+              <h3 class="bnf-scenario-title">Visite de la salle de collections</h3>
+              <p class="bnf-body-text">
+                Explorer l'évolution du musée au fil du temps à travers la carte interactive. Visite virtuelle à l'intérieur du musée permettant une découverte détaillée de chaque pièce.
+              </p>
+              <img
+                class="bnf-scenario-img"
+                loading="lazy"
+                alt="Visite 3D du musée et de ses collections"
+                src="./public/map3D.png"
+              />
+            </div>
+          </div>
+
+          <div class="bnf-journey-stack">
+            <img class="bnf-journey-img" loading="lazy" alt="Parcours utilisateur — achat de billets, visite physique" src="./public/journeymap1.png" />
+            <img class="bnf-journey-img" loading="lazy" alt="Parcours utilisateur — exploration culturelle depuis chez soi" src="./public/journeymap2.png" />
+            <img class="bnf-journey-img" loading="lazy" alt="Parcours utilisateur — deux amies explorent le contenu culturel" src="./public/journeymap3.png" />
+            <img class="bnf-journey-img" loading="lazy" alt="Parcours utilisateur — visite guidée virtuelle avec guide sur place" src="./public/journeymap4.png" />
+          </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 5 — Flows
+             ================================================ -->
+        <section class="bnf-flows-section">
+          <h2 class="bnf-section-heading">Flows</h2>
+          <div class="bnf-flows-grid">
+            <img class="bnf-flow-img" loading="lazy" alt="Flow — Expositions et collections du musée" src="./public/userflow1.png" />
+            <img class="bnf-flow-img" loading="lazy" alt="Flow — Visite 3D du musée et des collections" src="./public/userflow2.png" />
+            <img class="bnf-flow-img" loading="lazy" alt="Flow — Explorer les événements en ligne" src="./public/userflow3.png" />
+            <img class="bnf-flow-img" loading="lazy" alt="Flow — Streaming et documentaires" src="./public/userflow4.png" />
+          </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 6 — Architecture de l'information
+             ================================================ -->
         <section class="bnf-architecture">
-          <h2 class="bnf-section-title">Architecture &amp; User Flows</h2>
-          <p class="bnf-body-text">
-            L'architecture de l'information a été structurée pour faciliter l'exploration du patrimoine à travers plusieurs entrées : géographique, thématique et chronologique. Les user flows ont été validés par des tests de navigation à distance.
-          </p>
-          <div class="bnf-arch-img-full">
-            <img
-              class="bnf-img-full"
-              loading="lazy"
-              alt="Architecture de l'information"
-              src="./public/img-architecture.png"
-            />
+          <h2 class="bnf-section-heading">Architecture de l'information</h2>
+          <img
+            class="bnf-arch-img"
+            loading="lazy"
+            alt="Architecture de l'information — BnF virtuelle"
+            src="./public/img-architecture.png"
+          />
+        </section>
+
+        <!-- ================================================
+             SECTION 7 — Caractéristiques
+             ================================================ -->
+        <section class="bnf-caracteristiques">
+          <h2 class="bnf-caract-heading">Caractéristiques</h2>
+
+          <div class="bnf-caract-block">
+            <div class="bnf-caract-info">
+              <h3 class="bnf-caract-sub">Streaming</h3>
+              <p class="bnf-body-text">
+                Permettre aux utilisateurs de profiter du contenu créé par le musée via le streaming culturel et de le partager avec d'autres à distance. Un système de chat et audio intégré encourage l'interaction entre les participants en temps réel.
+              </p>
+            </div>
+            <div class="bnf-streaming-imgs">
+              <img
+                class="bnf-caract-img"
+                loading="lazy"
+                alt="Streaming — Le musée de la BnF en direct"
+                src="./public/img-video.png"
+              />
+              <img
+                class="bnf-caract-img"
+                loading="lazy"
+                alt="Streaming — partage et interaction à distance"
+                src="./public/img-video2.png"
+              />
+            </div>
           </div>
-          <div class="bnf-userflow-grid">
+
+          <div class="bnf-caract-block bnf-caract-block--reverse">
             <img
-              class="bnf-flow-img"
+              class="bnf-caract-img-full"
               loading="lazy"
-              alt="User flow 1"
-              src="./public/userflow1.png"
+              alt="Écrans finaux — BnF virtuelle application"
+              src="./public/group-header.png"
             />
-            <img
-              class="bnf-flow-img"
-              loading="lazy"
-              alt="User flow 2"
-              src="./public/userflow2.png"
-            />
-            <img
-              class="bnf-flow-img"
-              loading="lazy"
-              alt="User flow 3"
-              src="./public/userflow3.png"
-            />
-            <img
-              class="bnf-flow-img"
-              loading="lazy"
-              alt="User flow 4"
-              src="./public/userflow4.png"
-            />
+            <div class="bnf-caract-info">
+              <h3 class="bnf-caract-sub">Screening</h3>
+              <p class="bnf-body-text">
+                Une proposition complète intégrant streaming de documentaires patrimoniaux, navigation dans la carte 3D interactive et exploration des collections — tout réuni dans une expérience digitale cohérente.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section class="bnf-design-final">
-          <h2 class="bnf-section-title">Design final</h2>
-          <p class="bnf-body-text">
-            Le design final intègre un jumeau numérique en 3D du site Richelieu, permettant aux visiteurs d'explorer les espaces architecturaux, de découvrir les collections et d'accéder à des contenus enrichis directement liés aux œuvres et aux lieux.
-          </p>
-          <div class="bnf-final-top">
-            <img
-              class="bnf-img-full"
-              loading="lazy"
-              alt="Design final — interface de l'application"
-              src="./public/img-final.png"
-            />
-          </div>
-          <div class="bnf-final-bottom">
-            <img
-              class="bnf-grid-img"
-              loading="lazy"
-              alt="Carte 3D du site Richelieu"
-              src="./public/map3D.png"
-            />
-            <img
-              class="bnf-grid-img"
-              loading="lazy"
-              alt="Exploration des collections"
-              src="./public/collections.png"
-            />
-          </div>
+        <!-- ================================================
+             SECTION 8 — Écrans finaux
+             ================================================ -->
+        <section class="bnf-final">
+          <img
+            class="bnf-final-img"
+            loading="lazy"
+            alt="Interface finale — BnF virtuelle, résultats du design"
+            src="./public/img-final.png"
+          />
         </section>
 
       </main>

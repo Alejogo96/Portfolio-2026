@@ -1,12 +1,12 @@
 /* =====================================================
    Musée de la BnF — Case Study Styles
-   Fondo: #faf7f0 | Acento: #92400e | Texto: #1c1917
+   Fondo: #7B28A0 (púrpura vibrante) | Acento: #FF9F43 (coral)
    ===================================================== */
 
 .bnf {
   width: 100%;
   min-height: 100vh;
-  background-color: #faf7f0;
+  background-color: #7B28A0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -14,7 +14,7 @@
 }
 
 .navbar-wrapper {
-  background-color: #faf7f0;
+  background-color: #7B28A0;
 }
 
 .bnf-frame {
@@ -33,22 +33,15 @@
    ===================================================== */
 .bnf-header {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
   align-items: start;
 }
 
 .bnf-header-info {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-}
-
-.bnf-logo {
-  width: clamp(160px, 20vw, 260px);
-  height: auto;
-  object-fit: contain;
-  display: block;
+  gap: 2.5rem;
 }
 
 .bnf-title-block {
@@ -57,132 +50,187 @@
   gap: 0.5rem;
 }
 
-.bnf-title {
-  font-size: clamp(2.5rem, 5vw, 6rem);
+.bnf-project-name {
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
-  color: #92400e;
-  line-height: 1.0;
+  color: #fff;
   margin: 0;
   font-family: Inter, sans-serif;
+  line-height: 1.1;
 }
 
 .bnf-role {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 500;
-  color: #78716c;
-  margin: 0;
-  font-family: Inter, sans-serif;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.bnf-desc {
   font-size: var(--fs-body);
-  line-height: 1.65;
-  color: #1c1917;
+  color: rgba(255, 255, 255, 0.65);
   margin: 0;
   font-family: Inter, sans-serif;
 }
 
-.bnf-meta {
+.bnf-methodology {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(146, 64, 14, 0.2);
 }
 
-.bnf-meta-item {
+.bnf-methodology-title {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.3;
+}
+
+.bnf-steps {
+  margin: 0;
+  padding-left: 1.25rem;
   display: flex;
-  gap: 1rem;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 0.45rem;
+  list-style: disc;
 }
 
-.bnf-meta-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #92400e;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-family: Inter, sans-serif;
-  min-width: 80px;
-}
-
-.bnf-meta-value {
+.bnf-steps li {
   font-size: var(--fs-body);
-  color: #44403c;
-  font-family: Inter, sans-serif;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  margin: 0;
 }
 
-.bnf-header-images {
-  width: 100%;
+.bnf-description {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: none;
 }
+
+.bnf-header-visual { width: 100%; }
 
 .bnf-header-img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(146, 64, 14, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.35);
   display: block;
   object-fit: cover;
 }
 
 /* =====================================================
-   SECTION 2 — Recherche utilisateur
+   SECCIÓN COMÚN — heading + body
    ===================================================== */
-.bnf-recherche {
+.bnf-section-info {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.25rem;
 }
 
-.bnf-section-title {
+.bnf-section-heading {
   font-size: clamp(2.5rem, 5vw, 6rem);
   font-weight: 700;
-  color: #92400e;
-  line-height: 1.0;
+  color: #fff;
   margin: 0;
   font-family: Inter, sans-serif;
+  line-height: 1.0;
 }
 
 .bnf-body-text {
   font-size: var(--fs-body);
   line-height: 1.65;
-  color: #1c1917;
+  color: rgba(255, 255, 255, 0.82);
   margin: 0;
-  font-family: Inter, sans-serif;
-  max-width: 72ch;
-}
-
-.bnf-recherche-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.bnf-grid-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 5px 24px rgba(146, 64, 14, 0.1);
-  display: block;
-  object-fit: cover;
+  max-width: none;
 }
 
 /* =====================================================
-   SECTION 3 — Journey Maps
+   SECTION 2 — Références
    ===================================================== */
-.bnf-journey {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.bnf-references {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 4rem;
+  align-items: start;
 }
 
-.bnf-journey-grid {
+.bnf-ref-visual { width: 100%; }
+
+.bnf-ref-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* =====================================================
+   SECTION 3 — Personas
+   ===================================================== */
+.bnf-personas-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.bnf-personas-visual { width: 100%; }
+
+.bnf-personas-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* =====================================================
+   SECTION 4 — Scénarios
+   ===================================================== */
+.bnf-scenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.bnf-scenarios-heading {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.0;
+}
+
+.bnf-scenarios-sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.bnf-scenario-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bnf-scenario-title {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.2;
+}
+
+.bnf-scenario-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.bnf-journey-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -190,13 +238,33 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(146, 64, 14, 0.1);
   display: block;
-  object-fit: cover;
 }
 
 /* =====================================================
-   SECTION 4 — Architecture & User Flows
+   SECTION 5 — Flows
+   ===================================================== */
+.bnf-flows-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.bnf-flows-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.bnf-flow-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* =====================================================
+   SECTION 6 — Architecture de l'information
    ===================================================== */
 .bnf-architecture {
   display: flex;
@@ -204,53 +272,91 @@
   gap: 2.5rem;
 }
 
-.bnf-arch-img-full {
-  width: 100%;
-}
-
-.bnf-img-full {
+.bnf-arch-img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 30px rgba(146, 64, 14, 0.12);
+  background: #fff;
+  padding: 2.5rem;
+  box-sizing: border-box;
   display: block;
-  object-fit: cover;
-}
-
-.bnf-userflow-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  width: 100%;
-}
-
-.bnf-flow-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(146, 64, 14, 0.1);
-  display: block;
-  object-fit: cover;
 }
 
 /* =====================================================
-   SECTION 5 — Design final
+   SECTION 7 — Caractéristiques
    ===================================================== */
-.bnf-design-final {
+.bnf-caracteristiques {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 5rem;
 }
 
-.bnf-final-top {
-  width: 100%;
+.bnf-caract-heading {
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: 700;
+  color: #FF9F43;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
 }
 
-.bnf-final-bottom {
+.bnf-caract-block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.bnf-caract-block--reverse {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.bnf-caract-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bnf-caract-sub {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  line-height: 1.2;
+}
+
+.bnf-caract-img {
   width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.bnf-caract-img-full {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.bnf-streaming-imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* =====================================================
+   SECTION 8 — Écrans finaux
+   ===================================================== */
+.bnf-final { width: 100%; }
+
+.bnf-final-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
 }
 
 /* =====================================================
@@ -261,8 +367,21 @@
     grid-template-columns: 1fr;
   }
 
-  .bnf-userflow-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .bnf-references {
+    grid-template-columns: 1fr;
+  }
+
+  .bnf-personas-section {
+    grid-template-columns: 1fr;
+  }
+
+  .bnf-scenarios-sub {
+    grid-template-columns: 1fr;
+  }
+
+  .bnf-caract-block,
+  .bnf-caract-block--reverse {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -272,19 +391,11 @@
     gap: 4rem;
   }
 
-  .bnf-recherche-grid {
+  .bnf-flows-grid {
     grid-template-columns: 1fr;
   }
 
-  .bnf-journey-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bnf-userflow-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .bnf-final-bottom {
-    grid-template-columns: 1fr;
+  .bnf-arch-img {
+    padding: 1.25rem;
   }
 }
