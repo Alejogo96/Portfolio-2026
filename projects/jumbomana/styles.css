@@ -32,6 +32,27 @@
   filter: invert(1) sepia(1) saturate(5) hue-rotate(200deg) brightness(0.3);
 }
 
+.jumbomana .navbar-lang-trigger {
+  color: rgba(26, 35, 126, 0.7);
+}
+
+.jumbomana .navbar-lang-trigger:hover {
+  background: rgba(26, 35, 126, 0.06);
+}
+
+.jumbomana .navbar-lang-current {
+  color: rgba(26, 35, 126, 0.7);
+}
+
+.jumbomana .navbar-lang-arrow {
+  color: rgba(26, 35, 126, 0.5);
+}
+
+.jumbomana .navbar-lang-options {
+  background: #fffcf5;
+  border-color: rgba(26, 35, 126, 0.2);
+}
+
 .jumbomana .navbar-lang-btn {
   color: rgba(26, 35, 126, 0.5);
 }

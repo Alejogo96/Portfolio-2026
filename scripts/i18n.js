@@ -44,6 +44,12 @@ function updateActiveButtons(lang) {
   });
 }
 
+function updateLangTrigger(lang) {
+  document.querySelectorAll(".navbar-lang-current").forEach((el) => {
+    el.textContent = lang.toUpperCase();
+  });
+}
+
 function updateHtmlLang(lang) {
   document.documentElement.setAttribute("lang", lang);
 }
@@ -59,6 +65,7 @@ function setLanguage(lang) {
   try {
     applyDictionary(dict);
     updateActiveButtons(lang);
+    updateLangTrigger(lang);
     updateHtmlLang(lang);
     try {
       localStorage.setItem(STORAGE_KEY, lang);
@@ -74,14 +81,41 @@ function bindLanguageButtons() {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const lang = btn.dataset.lang;
-      if (lang) setLanguage(lang);
+      if (lang) {
+        setLanguage(lang);
+        const wrapper = btn.closest(".navbar-lang-wrapper");
+        if (wrapper) wrapper.dataset.open = "false";
+      }
+    });
+  });
+}
+
+function bindLangDropdown() {
+  document.querySelectorAll(".navbar-lang-wrapper").forEach((wrapper) => {
+    const trigger = wrapper.querySelector(".navbar-lang-trigger");
+    if (!trigger) return;
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = wrapper.dataset.open === "true";
+      document.querySelectorAll(".navbar-lang-wrapper").forEach((w) => {
+        w.dataset.open = "false";
+      });
+      wrapper.dataset.open = isOpen ? "false" : "true";
+    });
+  });
+
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".navbar-lang-wrapper").forEach((wrapper) => {
+      wrapper.dataset.open = "false";
     });
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   bindLanguageButtons();
+  bindLangDropdown();
   setLanguage(resolveLang());
 });
 
