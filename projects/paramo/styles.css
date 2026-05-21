@@ -243,3 +243,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* CLS prevention — aspect-ratio for key images */
+.pm-hero-img { aspect-ratio: 4/3; }
+.pm-img-full { aspect-ratio: 16/9; }
+.pm-station-img { aspect-ratio: 1/1; }
+.pm-experience-image img { aspect-ratio: 16/9; }

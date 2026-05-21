@@ -899,3 +899,9 @@
     width: 100%;
   }
 }
+
+/* CLS prevention — aspect-ratio for key images */
+.ae-hero-img,
+.ae-section-img,
+.ae-brand-img,
+.ae-result-img { aspect-ratio: 16/9; }

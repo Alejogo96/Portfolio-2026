@@ -500,3 +500,11 @@
     max-width: 130px;
   }
 }
+
+/* CLS prevention — aspect-ratio for key images */
+.sp-phone { aspect-ratio: 9/19; }
+.sp-gallery-phone { aspect-ratio: 9/19; }
+.sp-research-img,
+.sp-nav-img,
+.sp-flow-img,
+.sp-tests-img { aspect-ratio: 4/3; }

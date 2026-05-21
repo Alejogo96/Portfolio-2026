@@ -542,3 +542,12 @@
     font-size: clamp(3rem, 12vw, 5rem);
   }
 }
+
+/* CLS prevention — aspect-ratio for key images */
+.jm-hero-img { aspect-ratio: 4/3; }
+.jm-reflexion-img { aspect-ratio: 4/3; }
+.jm-ideation-img { aspect-ratio: 4/3; }
+.jm-tests-img { aspect-ratio: 4/3; }
+.jm-commentaires-img { aspect-ratio: 3/4; }
+.jm-assistant-img { aspect-ratio: 16/9; }
+.jm-kiosque-img { aspect-ratio: 16/9; }

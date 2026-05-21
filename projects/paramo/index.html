@@ -5,11 +5,21 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title>ParamoTotem — Cas d'étude · Alejandro Guevara</title>
     <meta name="description" content="Cas d'étude ParamoTotem : expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/paramo/index.html" />
+    <meta property="og:title" content="ParamoTotem — Cas d'étude · Alejandro Guevara" />
+    <meta property="og:description" content="Expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." />
+    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-paramo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ParamoTotem — Cas d'étude · Alejandro Guevara" />
+    <meta name="twitter:description" content="Expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." />
+    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-paramo.png" />
 
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/navbar.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="../../styles/responsive.css" />
+    <link rel="stylesheet" href="../../styles/project-nav.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap"
@@ -232,9 +242,26 @@
           </div>
         </section>
 
+      <nav class="project-nav" aria-label="Navigation entre projets">
+        <a href="../spotify/index.html" class="project-nav-link project-nav-link--prev">
+          <span class="project-nav-label">← Projet précédent</span>
+          <span class="project-nav-name">Spotify</span>
+        </a>
+        <a href="../andy-electric/index.html" class="project-nav-link project-nav-link--next">
+          <span class="project-nav-label">Projet suivant →</span>
+          <span class="project-nav-name">Andy Electric</span>
+        </a>
+      </nav>
+
       </main>
     </div>
 
+
+    <button class="back-to-top" aria-label="Retour en haut de page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
     <script type="module" src="../../scripts/i18n.js"></script>
+    <script type="module" src="../../scripts/scroll-animations.js"></script>
   </body>
 </html>

@@ -488,3 +488,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* CLS prevention — aspect-ratio for key images */
+.ub-mockup-img,
+.ub-audit-img,
+.ub-features-img,
+.ub-ux-img { aspect-ratio: 4/3; }

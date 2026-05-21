@@ -399,3 +399,13 @@
     padding: 1.25rem;
   }
 }
+
+/* CLS prevention — aspect-ratio for key images */
+.bnf-header-img { aspect-ratio: 4/3; }
+.bnf-ref-img,
+.bnf-personas-img,
+.bnf-scenario-img,
+.bnf-journey-img,
+.bnf-flow-img,
+.bnf-ia-img,
+.bnf-final-img { aspect-ratio: 4/3; }

@@ -5,11 +5,21 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title>Bellpi — Caso de estudio · Alejandro Guevara</title>
     <meta name="description" content="Caso de estudio Bellpi: e-commerce de vehículos usados." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/bellpi/index.html" />
+    <meta property="og:title" content="Bellpi — Cas d'étude · Alejandro Guevara" />
+    <meta property="og:description" content="Plateforme e-commerce transformant l'expérience d'achat et de vente de véhicules d'occasion." />
+    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-bellpi.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bellpi — Cas d'étude · Alejandro Guevara" />
+    <meta name="twitter:description" content="Plateforme e-commerce transformant l'expérience d'achat et de vente de véhicules d'occasion." />
+    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-bellpi.png" />
 
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/navbar.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="../../styles/responsive.css" />
+    <link rel="stylesheet" href="../../styles/project-nav.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -455,9 +465,26 @@
             />
           </div>
         </section>
+      <nav class="project-nav" aria-label="Navigation entre projets">
+        <a href="../jumbomana/index.html" class="project-nav-link project-nav-link--prev">
+          <span class="project-nav-label">← Projet précédent</span>
+          <span class="project-nav-name">JumboMana</span>
+        </a>
+        <a href="../bnf/index.html" class="project-nav-link project-nav-link--next">
+          <span class="project-nav-label">Projet suivant →</span>
+          <span class="project-nav-name">Musée de la BnF</span>
+        </a>
+      </nav>
+
       </main>
     </div>
 
+
+    <button class="back-to-top" aria-label="Retour en haut de page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
     <script type="module" src="../../scripts/i18n.js"></script>
+    <script type="module" src="../../scripts/scroll-animations.js"></script>
   </body>
 </html>
