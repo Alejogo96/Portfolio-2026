@@ -248,6 +248,14 @@
   font-family: var(--font-base);
 }
 
+.hw-desc p {
+  margin: 0;
+}
+
+.hw-desc p + p {
+  margin-top: 1em;
+}
+
 /* ── CTA buttons ── */
 .hw-ctas {
   display: flex;
