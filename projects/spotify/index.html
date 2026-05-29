@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="../../styles/navbar.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap" />
+      <link rel="stylesheet" href="../../styles/project-nav.css" />
+    <link rel="stylesheet" href="../../styles/case-study.css" />
   </head>
   <body>
     <div class="spotify-page">
@@ -123,215 +125,147 @@
         </nav>
       </section>
 
-      <main class="sp-frame">
+      <main class="cs-frame">
 
-        <!-- ================================================
-             SECTION 1 — Header
-             ================================================ -->
-        <section class="sp-header">
-          <div class="sp-header-info">
-            <img class="sp-logo" src="./public/spotify-logo.png" alt="Spotify logo" />
-            <div class="sp-title-block">
-              <h1 class="sp-title">Spotify</h1>
-              <p class="sp-role">UX Designer</p>
-            </div>
-            <p class="sp-body-text">
-              J'ai conçu trois nouvelles fonctionnalités en suivant un processus de conception UX structuré. Mon approche impliquait des phases d'analyse, de prototypage et de tests utilisateurs, dans le but d'optimiser l'expérience et de répondre aux besoins des utilisateurs.
-            </p>
-            <div class="sp-logiciel">
-              <h2 class="sp-logiciel-heading">Logiciel</h2>
-              <div class="sp-logiciel-icons">
-                <div class="sp-logiciel-item">
-                  <div class="sp-logiciel-icon"><img src="./public/icon-slack.png" alt="Slack" /></div>
-                  <span>Slack</span>
-                </div>
-                <div class="sp-logiciel-item">
-                  <div class="sp-logiciel-icon"><img src="./public/icon-figma.png" alt="Figma" /></div>
-                  <span>Figma</span>
-                </div>
-                <div class="sp-logiciel-item">
-                  <div class="sp-logiciel-icon"><img src="./public/icon-optimal.png" alt="Optimal Workshop" /></div>
-                  <span>Optimal Workshop</span>
-                </div>
-              </div>
-            </div>
+        <header class="cs-header" data-reveal>
+          <p class="cs-kicker">UX Designer · 2025</p>
+          <h1 class="cs-title">Spotify</h1>
+          <p class="cs-role">3 nouvelles fonctionnalités UX</p>
+          <p class="cs-body">
+            J'ai conçu trois nouvelles fonctionnalités en suivant un processus de conception UX structuré. Mon approche impliquait des phases d'analyse, de prototypage et de tests utilisateurs, dans le but d'optimiser l'expérience et de répondre aux besoins des utilisateurs.
+          </p>
+          <div class="cs-tools">
+            <div class="cs-tool"><img src="./public/icon-slack.png" alt="Slack" /></div>
+            <div class="cs-tool"><img src="./public/icon-figma.png" alt="Figma" /></div>
+            <div class="cs-tool"><img src="./public/icon-optimal.png" alt="Optimal Workshop" /></div>
           </div>
-          <div class="sp-header-phones">
-            <img class="sp-phone sp-phone--back-left"  loading="lazy" alt="Spotify — écran bibliothèque"  src="./public/phone-biblioteca.png" />
-            <img class="sp-phone sp-phone--front"      loading="lazy" alt="Spotify — écran chanson"       src="./public/phone-cancion.png" />
-            <img class="sp-phone sp-phone--back-right" loading="lazy" alt="Spotify — écran profil paiement" src="./public/phone-perfil.png" />
-          </div>
-        </section>
+        </header>
 
-        <!-- ================================================
-             SECTION 2 — Utilisateurs De L'application
-             ================================================ -->
-        <section class="sp-users">
-          <div class="sp-users-inner">
-            <div class="sp-users-left">
-              <h2 class="sp-section-heading">Utilisateurs De L'application</h2>
-              <p class="sp-label-sm">Parcours Utilisateur</p>
-              <img class="sp-desktop-img" loading="lazy" alt="Parcours utilisateur Spotify" src="./public/desktop-parcours.png" />
-            </div>
-            <div class="sp-users-right">
-              <p class="sp-body-text">
-                Actuellement, les utilisateurs de l'application signalent des problèmes concernant l'évaluation du contenu sur la plate-forme, la recherche et la classification du contenu enregistré et téléchargé, ainsi que le besoin d'options d'aide au sein de l'application pour résoudre les doutes ou les problèmes lors de l'utilisation.
-              </p>
-              <ul class="sp-list sp-list--bold">
-                <li>11 utilisateurs ont entre 25 et 31 ans.</li>
-                <li>84 % des personnes interrogées aimeraient laisser un commentaire sur le contenu qu'elles consomment.</li>
-                <li>5 utilisateurs ont entre 18 et 24 ans.</li>
-                <li>75 % des personnes interrogées ont eu des difficultés à trouver des informations techniques.</li>
-                <li>100 % des personnes interrogées utilisent la version payante.</li>
-                <li>85 % des personnes interrogées sont satisfaites des fonctionnalités de l'application.</li>
-                <li>Les gens utilisent Spotify principalement pendant leurs déplacements.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Spotify — écran bibliothèque" src="./public/phone-biblioteca.png" />
+          <img loading="lazy" alt="Spotify — écran chanson" src="./public/phone-cancion.png" />
+        </div>
 
-        <!-- ================================================
-             SECTION 3 — Chemins De Navigation Logiques
-             ================================================ -->
-        <section class="sp-navigation">
-          <div class="sp-navigation-inner">
-            <div class="sp-navigation-left">
-              <h2 class="sp-section-heading sp-green">Chemins De Navigation Logiques</h2>
-              <ul class="sp-list">
-                <li>Architecture de l'information (IA) : j'ai développé une structure claire et évolutive pour la navigation de l'application, en donnant la priorité à la découverte du contenu, à l'accessibilité et à l'autonomie des utilisateurs dans des domaines principaux tels que le profil, la recherche et la bibliothèque.</li>
-                <li>Cartographie des flux de tâches : j'ai défini des objectifs utilisateur spécifiques (évaluer un podcast, enregistrer une chanson et modifier le mode de paiement) en visualisant des séquences étape par étape pour optimiser l'efficacité des tâches et identifier rapidement les points de friction.</li>
-                <li>Conception de flux utilisateur : j'ai conçu des flux basés sur des décisions intégrant des conditions et des validations pour modéliser un comportement réaliste des utilisateurs et garantir une expérience d'interaction transparente.</li>
-                <li>Prototypage Wireflow : j'ai traduit ces flux en wireframes basse fidélité, connectant des écrans pour visualiser comment les utilisateurs se déplaceraient dans l'interface en fonction de leurs actions.</li>
-              </ul>
-            </div>
-            <div class="sp-navigation-right">
-              <div class="sp-arch-label">Architecture de l'information</div>
-              <img class="sp-desktop-img" loading="lazy" alt="Architecture de l'information — Spotify" src="./public/desktop-architecture.png" />
-              <img class="sp-desktop-img" loading="lazy" alt="User flows et wireflows — Spotify" src="./public/desktop-flows.png" />
-            </div>
-          </div>
-        </section>
+        <div class="cs-sep"></div>
 
-        <!-- ================================================
-             SECTION 4 — Tests D'utilisabilité
-             ================================================ -->
-        <section class="sp-tests">
-          <h2 class="sp-section-heading-lg">Tests d'utilisabilité</h2>
-          <div class="sp-tests-inner">
-            <div class="sp-tests-left">
-              <div class="sp-tests-block">
-                <p class="sp-tests-bold">Valider</p>
-                <p class="sp-body-text">Confirmer si nos hypothèses sur le comportement des utilisateurs sont validées lors de l'interaction avec le prototype.</p>
-              </div>
-              <div class="sp-tests-block">
-                <p class="sp-tests-bold">Analyser</p>
-                <p class="sp-body-text">Comprendre comment les utilisateurs interagissent avec le produit et avec les tâches confiées, afin d'identifier les différents chemins et options qu'ils choisissent, en mettant en évidence les opportunités d'amélioration et les points forts.</p>
-              </div>
-              <div class="sp-tests-block">
-                <p class="sp-tests-bold">Apprendre</p>
-                <p class="sp-body-text">Obtenir des informations sur nos utilisateurs et la façon dont ils utilisent le produit repensé, en comprenant leurs pensées et leurs émotions lors de l'interaction.</p>
-              </div>
-              <img class="sp-screenshot" loading="lazy" alt="Résultats des tests utilisateurs" src="./public/screenshot-tests-1.png" />
-            </div>
-            <div class="sp-tests-right">
-              <p class="sp-body-text">
-                En tant qu'application mondiale de streaming musical, les utilisateurs sont divers. Cependant, pour ce test, nous avons sélectionné un échantillon de 5 jeunes adultes entre 25 et 35 ans, tous des professionnels actifs possédant des connaissances techniques avancées.
-              </p>
-              <ul class="sp-list sp-list--participants">
-                <li><strong>Tatiana Guevara</strong> – 35 ans, designer industriel</li>
-                <li><strong>Manuel Santiago</strong> – 25 ans, cinéaste</li>
-                <li><strong>Kevin Oliveros</strong> – 26 ans, préparateur physique</li>
-                <li><strong>Anderson Martinez</strong> – 27 ans, chef</li>
-                <li><strong>Paula Romero</strong> – 25 ans, graphiste</li>
-              </ul>
-              <img class="sp-screenshot" loading="lazy" alt="Résultats des tests — tableau de bord" src="./public/screenshot-tests-2.png" />
-            </div>
-          </div>
-        </section>
+        <div class="cs-block" data-reveal>
+          <h2 class="cs-heading">Utilisateurs de l'application</h2>
+          <p class="cs-body">
+            Les utilisateurs de l'application signalent des problèmes concernant l'évaluation du contenu, la recherche et la classification du contenu enregistré, ainsi que le besoin d'options d'aide au sein de l'application.
+          </p>
+          <ul class="cs-list">
+            <li>11 utilisateurs ont entre 25 et 31 ans.</li>
+            <li>84 % aimeraient laisser un commentaire sur le contenu qu'ils consomment.</li>
+            <li>75 % ont eu des difficultés à trouver des informations techniques.</li>
+            <li>100 % utilisent la version payante.</li>
+            <li>85 % sont satisfaits des fonctionnalités de l'application.</li>
+          </ul>
+        </div>
 
-        <!-- ================================================
-             SECTION 5 — Nouvelles Fonctionnalités
-             ================================================ -->
-        <section class="sp-features">
-          <h2 class="sp-features-heading">Nouvelles Fonctionnalités</h2>
+        <div class="cs-img-box" data-reveal>
+          <img loading="lazy" alt="Parcours utilisateur Spotify" src="./public/desktop-parcours.png" />
+        </div>
 
-          <!-- 5a — Faire partie d'une communauté -->
-          <div class="sp-feature">
-            <div class="sp-feature-info">
-              <h3 class="sp-feature-title">Faire partie d'une communauté</h3>
-              <p class="sp-body-text">
-                Permettre aux utilisateurs d'évaluer et de commenter le contenu qu'ils viennent d'écouter. Lire les avis des autres utilisateurs sur le même contenu et interagir avec eux.
-              </p>
-              <div class="sp-feature-tags">
-                <span class="sp-tag">Évaluateur</span>
-                <span class="sp-tag">Commentateur</span>
-                <span class="sp-tag">Partager</span>
-              </div>
-            </div>
-            <div class="sp-feature-phones">
-              <img class="sp-phone-sm" loading="lazy" alt="Évaluation de podcast" src="./public/phone-podcast-cal-1.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Commentaire de podcast" src="./public/phone-podcast-tec-1.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Partage de podcast" src="./public/phone-podcast-tec-2.png" />
-            </div>
-          </div>
+        <div class="cs-sep"></div>
 
-          <!-- 5b — Profil simple et efficace -->
-          <div class="sp-feature sp-feature--reverse">
-            <div class="sp-feature-phones">
-              <img class="sp-phone-sm" loading="lazy" alt="Profil méthode de paiement" src="./public/phone-perfil-pago.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Formulaire paiement" src="./public/phone-perfil-form-6.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Paiement formulaire 7" src="./public/phone-perfil.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Mise à jour paiement" src="./public/phone-perfil-update.png" />
-            </div>
-            <div class="sp-feature-info">
-              <h3 class="sp-feature-title sp-feature-title--gradient">Profil simple et efficace</h3>
-              <ul class="sp-list">
-                <li>Gérez facilement les modes de paiement : mettez-les à jour ou modifiez-les directement depuis la même interface.</li>
-                <li>Efficacité utilisateur : en seulement trois étapes, la chanson sera enregistrée.</li>
-                <li>Un espace dédié où les utilisateurs peuvent gérer plusieurs paramètres de compte.</li>
-              </ul>
-            </div>
-          </div>
+        <div class="cs-block" data-reveal>
+          <h2 class="cs-heading">Chemins de navigation logiques</h2>
+          <ul class="cs-list">
+            <li><strong>Architecture de l'information</strong> — Structure claire et évolutive pour la navigation, en donnant la priorité à la découverte du contenu, à l'accessibilité et à l'autonomie des utilisateurs.</li>
+            <li><strong>Cartographie des flux de tâches</strong> — Objectifs utilisateur spécifiques visualisés en séquences étape par étape pour optimiser l'efficacité et identifier les points de friction.</li>
+            <li><strong>Conception de flux utilisateur</strong> — Flux basés sur des décisions intégrant conditions et validations pour modéliser un comportement réaliste.</li>
+            <li><strong>Prototypage Wireflow</strong> — Wireframes basse fidélité connectant des écrans pour visualiser comment les utilisateurs se déplacent dans l'interface.</li>
+          </ul>
+        </div>
 
-          <!-- 5c — Simple et rapide -->
-          <div class="sp-feature">
-            <div class="sp-feature-info">
-              <h3 class="sp-feature-title">Simple et rapide</h3>
-              <p class="sp-body-text">
-                Permettez à l'utilisateur de sauvegarder les chansons de la manière la plus simple possible et permettez-lui de choisir où il souhaite les stocker.
-              </p>
-            </div>
-            <div class="sp-feature-phones">
-              <img class="sp-phone-sm" loading="lazy" alt="Chanson générale" src="./public/phone-cancion-general.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Sauvegarder chanson" src="./public/phone-cancion-guardar.png" />
-              <img class="sp-phone-sm" loading="lazy" alt="Bibliothèque" src="./public/phone-biblioteca-3.png" />
-            </div>
-          </div>
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Architecture de l'information — Spotify" src="./public/desktop-architecture.png" />
+          <img loading="lazy" alt="User flows et wireflows — Spotify" src="./public/desktop-flows.png" />
+        </div>
 
-          <!-- Galerie finale -->
-          <div class="sp-gallery">
-            <img class="sp-gallery-phone" loading="lazy" alt="Spotify — vue bibliothèque" src="./public/phone-biblioteca-1.png" />
-            <img class="sp-gallery-phone" loading="lazy" alt="Spotify — vue bibliothèque 2" src="./public/phone-biblioteca-2.png" />
-          </div>
+        <div class="cs-sep"></div>
 
-        </section>
+        <div class="cs-block" data-reveal>
+          <h2 class="cs-heading">Tests d'utilisabilité</h2>
+          <p class="cs-body">
+            Nous avons sélectionné un échantillon de 5 jeunes adultes entre 25 et 35 ans, tous des professionnels actifs possédant des connaissances techniques avancées : Tatiana Guevara (designer industriel), Manuel Santiago (cinéaste), Kevin Oliveros (préparateur physique), Anderson Martinez (chef), Paula Romero (graphiste).
+          </p>
+          <p class="cs-body">Objectifs des tests :</p>
+          <ul class="cs-list">
+            <li><strong>Valider</strong> — Confirmer si nos hypothèses sur le comportement des utilisateurs sont validées lors de l'interaction avec le prototype.</li>
+            <li><strong>Analyser</strong> — Comprendre comment les utilisateurs interagissent avec le produit et identifier les opportunités d'amélioration.</li>
+            <li><strong>Apprendre</strong> — Obtenir des informations sur nos utilisateurs et la façon dont ils utilisent le produit repensé.</li>
+          </ul>
+        </div>
 
-      <nav class="project-nav" aria-label="Navigation entre projets">
-        <a href="../bnf/index.html" class="project-nav-link project-nav-link--prev">
-          <span class="project-nav-label">← Projet précédent</span>
-          <span class="project-nav-name">Musée de la BnF</span>
-        </a>
-        <a href="../paramo/index.html" class="project-nav-link project-nav-link--next">
-          <span class="project-nav-label">Projet suivant →</span>
-          <span class="project-nav-name">ParamoTotem</span>
-        </a>
-      </nav>
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Résultats des tests utilisateurs" src="./public/screenshot-tests-1.png" />
+          <img loading="lazy" alt="Résultats des tests — tableau de bord" src="./public/screenshot-tests-2.png" />
+        </div>
+
+        <div class="cs-sep"></div>
+
+        <div class="cs-block" data-reveal>
+          <h2 class="cs-heading">Faire partie d'une communauté</h2>
+          <p class="cs-body">
+            Permettre aux utilisateurs d'évaluer et de commenter le contenu qu'ils viennent d'écouter. Lire les avis des autres utilisateurs sur le même contenu et interagir avec eux.
+          </p>
+        </div>
+
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Évaluation de podcast" src="./public/phone-podcast-cal-1.png" />
+          <img loading="lazy" alt="Commentaire de podcast" src="./public/phone-podcast-tec-1.png" />
+        </div>
+
+        <div class="cs-sep"></div>
+
+        <div class="cs-block" data-reveal>
+          <h2 class="cs-heading">Profil simple et efficace</h2>
+          <ul class="cs-list">
+            <li>Gérez facilement les modes de paiement : mettez-les à jour ou modifiez-les directement depuis la même interface.</li>
+            <li>En seulement trois étapes, la chanson sera enregistrée.</li>
+            <li>Un espace dédié où les utilisateurs peuvent gérer plusieurs paramètres de compte.</li>
+          </ul>
+        </div>
+
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Profil méthode de paiement" src="./public/phone-perfil-pago.png" />
+          <img loading="lazy" alt="Formulaire paiement" src="./public/phone-perfil-form-6.png" />
+        </div>
+
+        <div class="cs-sep"></div>
+
+        <div class="cs-block" data-reveal>
+          <h2 class="cs-heading">Simple et rapide</h2>
+          <p class="cs-body">
+            Permettez à l'utilisateur de sauvegarder les chansons de la manière la plus simple possible et permettez-lui de choisir où il souhaite les stocker.
+          </p>
+        </div>
+
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Chanson générale" src="./public/phone-cancion-general.png" />
+          <img loading="lazy" alt="Sauvegarder chanson" src="./public/phone-cancion-guardar.png" />
+        </div>
+
+        <div class="cs-img-grid" data-reveal>
+          <img loading="lazy" alt="Spotify — vue bibliothèque 1" src="./public/phone-biblioteca-1.png" />
+          <img loading="lazy" alt="Spotify — vue bibliothèque 2" src="./public/phone-biblioteca-2.png" />
+        </div>
+
+        <nav class="project-nav" aria-label="Navigation entre projets">
+          <a href="../bnf/index.html" class="project-nav-link project-nav-link--prev">
+            <span class="project-nav-label">← Projet précédent</span>
+            <span class="project-nav-name">Musée de la BnF</span>
+          </a>
+          <a href="../paramo/index.html" class="project-nav-link project-nav-link--next">
+            <span class="project-nav-label">Projet suivant →</span>
+            <span class="project-nav-name">ParamoTotem</span>
+          </a>
+        </nav>
 
       </main>
-    </div>
 
-
-    <button class="back-to-top" aria-label="Retour en haut de page">
+        <button class="back-to-top" aria-label="Retour en haut de page">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
