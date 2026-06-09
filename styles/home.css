@@ -1055,3 +1055,415 @@
 .cv-contact-item .oago1103gmailcom a:hover {
   color: #ff5f3a;
 }
+
+/* =====================================================
+   ABOUT / CV — redesigned section (ab-*)
+   ===================================================== */
+
+.ab-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ── Header ── */
+.ab-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.ab-kicker {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-base);
+}
+
+.ab-title {
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-display);
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.ab-bio {
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.42);
+  margin: 0;
+  max-width: 580px;
+  font-family: var(--font-base);
+}
+
+/* ── Section label ── */
+.ab-label {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+  margin: 0 0 1.5rem;
+  font-family: var(--font-base);
+}
+
+/* ── 2-col body ── */
+.ab-body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ── Left: experience timeline ── */
+.ab-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Vertical line */
+.ab-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+
+.ab-job {
+  position: relative;
+  padding: 1.5rem 0 1.5rem 1.875rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ab-job:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Timeline dot */
+.ab-job::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 2.125rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.ab-job:first-child::before {
+  background: #ff5f3a;
+  border-color: #ff5f3a;
+  box-shadow: 0 0 10px rgba(255, 95, 58, 0.45);
+}
+
+.ab-job__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ab-job__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.ab-job__role {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-base);
+  line-height: 1.3;
+}
+
+.ab-job__year {
+  font-size: 0.625rem;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.ab-job__org {
+  margin: 0 0 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ab-job__company {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.38);
+  font-family: var(--font-base);
+}
+
+.ab-job__type {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.ab-job__items {
+  margin: 0;
+  padding-left: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  list-style: disc;
+}
+
+.ab-job__items li {
+  font-size: 0.8125rem;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.32);
+  font-family: var(--font-base);
+}
+
+/* ── Right column ── */
+.ab-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.ab-block {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Education list */
+.ab-edu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+}
+
+.ab-edu__item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 0.875rem;
+  align-items: start;
+}
+
+.ab-edu__year {
+  font-size: 0.6875rem;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.22);
+  font-variant-numeric: tabular-nums;
+  padding-top: 3px;
+  text-align: right;
+}
+
+.ab-edu__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ab-edu__degree {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  line-height: 1.38;
+  font-family: var(--font-base);
+}
+
+.ab-edu__school {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.32);
+  font-family: var(--font-base);
+  line-height: 1.4;
+}
+
+/* Tags */
+.ab-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ab-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--font-base);
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ab-tag--sm {
+  font-size: 0.6875rem;
+  padding: 4px 8px;
+  color: rgba(255, 255, 255, 0.38);
+  border-radius: 4px;
+}
+
+/* Languages */
+.ab-langs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ab-lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ab-lang:last-child {
+  border-bottom: none;
+}
+
+.ab-lang__name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-base);
+}
+
+.ab-lang__level {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.28);
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+/* CTA block */
+.ab-block--cta {
+  gap: 0.625rem;
+}
+
+.ab-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-base);
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.ab-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.ab-cta-btn__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.ab-cta-btn:hover .ab-cta-btn__icon {
+  transform: translate(3px, -3px);
+}
+
+.ab-cta-sub {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: var(--font-base);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* Tools full-width row */
+.ab-tools {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .ab-body {
+    grid-template-columns: 1fr 280px;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ab-body {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .ab-timeline::before {
+    display: none;
+  }
+
+  .ab-job::before {
+    display: none;
+  }
+
+  .ab-job {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ab-wrap {
+    gap: 3rem;
+  }
+
+  .ab-title {
+    font-size: 1.625rem;
+  }
+}
