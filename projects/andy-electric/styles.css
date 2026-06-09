@@ -905,3 +905,41 @@
 .ae-section-img,
 .ae-brand-img,
 .ae-result-img { aspect-ratio: 16/9; }
+
+/* ── Case study text overrides — fondo oscuro ── */
+.andyelectric .cs-title,
+.andyelectric .cs-heading,
+.andyelectric .cs-body,
+.andyelectric .cs-list li,
+.andyelectric .cs-kicker,
+.andyelectric .cs-role,
+.andyelectric .cs-metric-num,
+.andyelectric .cs-stat-num {
+  color: #fff;
+}
+
+.andyelectric .cs-metric-label,
+.andyelectric .cs-stat-label {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.andyelectric .cs-sep {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.andyelectric .project-nav-link {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.andyelectric .project-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.andyelectric .project-nav-name {
+  color: #fff;
+}
+
+.andyelectric .project-nav-label {
+  color: rgba(255, 255, 255, 0.55);
+}

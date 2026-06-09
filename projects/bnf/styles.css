@@ -409,3 +409,39 @@
 .bnf-flow-img,
 .bnf-ia-img,
 .bnf-final-img { aspect-ratio: 4/3; }
+
+/* Case study text overrides — dark background */
+.bnf .cs-title,
+.bnf .cs-heading,
+.bnf .cs-body,
+.bnf .cs-list li,
+.bnf .cs-kicker,
+.bnf .cs-role,
+.bnf .cs-stat-num {
+  color: #fff;
+}
+
+.bnf .cs-stat-label {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.bnf .cs-sep {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.bnf .project-nav-link {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bnf .project-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bnf .project-nav-name {
+  color: #fff;
+}
+
+.bnf .project-nav-label {
+  color: rgba(255, 255, 255, 0.55);
+}
