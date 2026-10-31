@@ -21,14 +21,23 @@
     var influenceRadius = reduced ? 160 : 320;
     var smoothing       = reduced ? 0.04 : 0.1;
 
-    /* Wave palette — warm tones matching --color-accent #ff5f3a */
-    var waves = [
+    /* Wave palette — warm tones matching --color-accent #ff5f3a.
+       Two variants: dark theme (glowing on dark) and light theme (ink on paper). */
+    var wavesDark = [
       { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(255, 95, 58, 1)',     opacity: 0.55 },
       { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(255, 148, 80, 0.95)', opacity: 0.42 },
       { offset: Math.PI,       amplitude: 60, frequency: 0.0034, color: 'rgba(210, 210, 210, 1)',    opacity: 0.30 },
       { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(255, 70, 30, 1)',      opacity: 0.27 },
       { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(185, 185, 185, 1)',    opacity: 0.20 },
     ];
+    var wavesLight = [
+      { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(255, 95, 58, 1)',     opacity: 0.75 },
+      { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(255, 148, 80, 1)',    opacity: 0.55 },
+      { offset: Math.PI,       amplitude: 60, frequency: 0.0034, color: 'rgba(26, 26, 26, 1)',       opacity: 0.28 },
+      { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(230, 60, 20, 1)',      opacity: 0.38 },
+      { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(90, 90, 90, 1)',       opacity: 0.22 },
+    ];
+    var waves = wavesDark;
 
     function recenter() {
       mouse.x = canvas.width / 2;
@@ -73,7 +82,7 @@
       ctx.lineWidth   = 2.5;
       ctx.strokeStyle = wave.color;
       ctx.globalAlpha = wave.opacity;
-      ctx.shadowBlur  = 35;
+      ctx.shadowBlur  = document.documentElement.getAttribute('data-theme') === 'light' ? 12 : 35;
       ctx.shadowColor = wave.color;
       ctx.stroke();
       ctx.restore();
@@ -84,11 +93,10 @@
       mouse.x += (target.x - mouse.x) * smoothing;
       mouse.y += (target.y - mouse.y) * smoothing;
 
-      var grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      grad.addColorStop(0, '#0a0a0a');
-      grad.addColorStop(1, '#141414');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      /* Transparent canvas: the page background (CSS, themed) shows through */
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      waves = light ? wavesLight : wavesDark;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       ctx.globalAlpha = 1;
       ctx.shadowBlur  = 0;

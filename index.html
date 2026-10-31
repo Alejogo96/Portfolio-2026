@@ -17,11 +17,12 @@
 <meta content="https://portfolio-alejandroguevara.vercel.app/og/card-andy.jpg" name="twitter:image"/>
 <link href="./styles/global.css" rel="stylesheet"/>
 <link href="./styles/navbar.css" rel="stylesheet"/>
-<link href="./styles/home.css" rel="stylesheet"/>
 <link href="./styles/responsive.css" rel="stylesheet"/>
+<link href="./styles/home-v2.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+<script>try{var t=localStorage.getItem("pf:theme");document.documentElement.dataset.theme=(t==="light"||t==="dark")?t:"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 </head>
 <body data-page="home">
 <div class="cover-franais">
@@ -99,6 +100,11 @@
 <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
 </div>
 </a>
+<div class="navbar-actions">
+<button aria-label="Changer de thème (clair / sombre)" class="theme-toggle" data-i18n-aria-label="h2.theme.toggle" id="theme-toggle" type="button">
+<svg aria-hidden="true" class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+<svg aria-hidden="true" class="theme-toggle__moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
 <div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
 <button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
 <span class="navbar-lang-current">FR</span>
@@ -122,330 +128,131 @@
 </button>
 </div>
 </div>
+</div>
 </nav>
 </section>
-<!-- ── Glowy Waves Hero (full-width, outside container) ── -->
-<section aria-label="Portfolio hero" class="hero-waves" id="home">
-<canvas aria-hidden="true" class="hw-canvas" id="waves-canvas"></canvas>
-<div aria-hidden="true" class="hw-glow hw-glow--top"></div>
-<div aria-hidden="true" class="hw-glow hw-glow--br"></div>
-<div class="hw-inner">
-<!-- Language selector -->
-<header class="langues hw-anim hw-anim--1">
-<h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
-<nav aria-label="Selector de idioma" class="language-option">
-<button class="label lang-btn" data-lang="en" type="button">
-<div class="label2" data-i18n="lang.en">Inglés</div>
-</button>
-<button class="label lang-btn" data-lang="fr" type="button">
-<div class="label2" data-i18n="lang.fr">Francés</div>
-</button>
-<button class="labelvariant8 lang-btn" data-active="true" data-lang="es" type="button">
-<div class="label3" data-i18n="lang.es">Español</div>
-</button>
-</nav>
-</header>
-<!-- Heading -->
-<h1 class="hw-title hw-anim hw-anim--2">
-<span data-i18n="hero.h1.line1">Hola, soy </span><span class="hw-gradient">Alejandro Guevara.</span>
-</h1>
-<!-- Description -->
-<div class="hw-desc hw-anim hw-anim--3" data-i18n-html="hero.h1.desc">
-            Diseñador especializado en UX, diseño de servicios y producto digital. Creo experiencias que no solo funcionan, sino que resuenan.
-          </div>
-<!-- Highlight pills -->
-<ul aria-label="Especialidades" class="hw-pills hw-anim hw-anim--4">
-<li data-i18n="hero.pill1">UX Design</li>
-<li data-i18n="hero.pill2">Service Design</li>
-<li data-i18n="hero.pill3">Product Design</li>
+<!-- ── Hero (motion: waves canvas + word reveal) ── -->
+<section aria-label="Portfolio hero" class="hero" id="home">
+<canvas aria-hidden="true" class="hero__canvas" id="waves-canvas"></canvas>
+<div class="hero__inner container" id="hero-inner">
+<h1 class="hero__title" data-i18n="h2.title" id="hero-title">Salut, je suis Alejandro Guevara.</h1>
+<p class="hero__kicker hero-anim" data-i18n="h2.kicker" style="--d:.9s">Product Designer · Product Owner</p>
+<ul aria-label="Spécialités" class="chips hero-anim" style="--d:1.05s">
+<li class="chip" data-i18n="h2.pill1">UX Research Design</li>
+<li class="chip" data-i18n="h2.pill2">UX Design</li>
+<li class="chip" data-i18n="h2.pill3">Service Design</li>
+<li class="chip" data-i18n="h2.pill4">Product Design</li>
+<li class="chip" data-i18n="h2.pill5">Product Owner</li>
 </ul>
-<!-- Stats -->
-<div class="hw-stats hw-anim hw-anim--5">
-<div class="hw-stat">
-<div class="hw-stat__label" data-i18n="hero.stat1.label">Proyectos</div>
-<div class="hw-stat__value">6+</div>
 </div>
-<div class="hw-stat">
-<div class="hw-stat__label" data-i18n="hero.stat2.label">Años exp.</div>
-<div class="hw-stat__value">4+</div>
+<span aria-hidden="true" class="hero__scroll">↓</span>
+</section>
+<div class="hover-bg" aria-hidden="true" id="hover-bg"></div>
+<main class="page" id="main">
+<!-- Intro: bio revealed word by word on scroll -->
+<section aria-label="Profil" class="intro container" id="profil">
+<div class="scrub" id="scrub">
+<p class="scrub__p" data-i18n="h2.bio1">Diplômé en design industriel et titulaire d'un master en design d'interfaces et multimédia, je poursuis actuellement un master en gestion de projet. Designer spécialisé en UX et en design de services, je suis orienté vers la stratégie et la conception de produits numériques, avec plus de 5 ans d'expérience. Je crois au pouvoir du design et de l'art pour créer des expériences qui ne se contentent pas de fonctionner, mais qui résonnent.</p>
+<p class="scrub__p" data-i18n="h2.bio2">Curieux de nature, passionné par le sport et les voyages, j'aime expérimenter les outils d'IA comme compagnons créatifs dans mon flux de travail et m'inspirer de méthodes et d'outils issus d'autres disciplines pour nourrir et développer ma pensée créative.</p>
 </div>
-<div class="hw-stat">
-<div class="hw-stat__label" data-i18n="hero.stat3.label">Idiomas</div>
-<div class="hw-stat__value">3</div>
+</section>
+<section class="block container" data-reveal="" id="tools">
+<h2 class="block__title" data-i18n="cv.tools">Outils</h2>
+<ul class="chips"><li class="chip">Claude Code</li><li class="chip">Figma</li><li class="chip">FigJam</li><li class="chip">Jira</li><li class="chip">Notion</li><li class="chip">Framer</li><li class="chip">Miro</li><li class="chip">Linear</li><li class="chip">Maze</li><li class="chip">Hotjar</li><li class="chip">GitHub</li><li class="chip">VS Code</li><li class="chip">ChatGPT</li><li class="chip">Gemini</li><li class="chip">Google Analytics</li><li class="chip">Adobe Creative Suite</li></ul>
+</section>
+<section class="block container profile" id="cv">
+<div class="profile__col" data-reveal="">
+<h2 class="block__title" data-i18n="cv.skills">Compétences</h2>
+<ul class="bullets" data-i18n-html="cv.skills.items"></ul>
 </div>
+<div class="profile__col" data-reveal="">
+<h2 class="block__title" data-i18n="cv.education">Formation</h2>
+<ul class="bullets"><li data-i18n="h2.edu1">Master Gestion de projet, Product manager (2026 – 2028) — OpenClassrooms, France</li><li data-i18n="h2.edu2">Master Création Numérique, Design d'interface et multimédia (2025) — Sorbonne Paris Nord, France</li><li data-i18n="h2.edu3">Bootcamp UX/UI Design (2023) — Coder House, en ligne</li><li data-i18n="h2.edu4">Licence en Design Industriel (2018) — Universidad Jorge Tadeo Lozano, Colombie</li><li data-i18n="h2.edu5">Diplôme DUEF (2023) — Université Jean Monnet, Saint-Étienne, France</li></ul>
+</div>
+<div class="profile__col" data-reveal="">
+<h2 class="block__title" data-i18n="cv.languages">Langues</h2>
+<ul class="chips">
+<li class="chip"><span data-i18n="cv.lang.es.label">Espagnol</span><b data-i18n="cv.lang.es.native">Natif</b></li>
+<li class="chip"><span data-i18n="cv.lang.fr.label">Français</span><b data-i18n="cv.lang.fr.level">C1</b></li>
+<li class="chip"><span data-i18n="cv.lang.en.label">Anglais</span><b data-i18n="cv.lang.en.level">B1</b></li>
+</ul>
+</div>
+</section>
+<section class="block container" id="experiences">
+<h2 class="block__title block__title--xl" data-i18n="cv.experience" data-reveal="">Expériences professionnelles</h2>
+<div class="grid" data-grid="">
+<div class="pcard pcard--ph" data-reveal="">
+<div class="pcard__media"><span aria-hidden="true" class="pcard__initial">Q</span></div>
+<h3 class="pcard__title">Qualnet</h3>
+<p class="pcard__role" data-i18n="h2.r.qualnet">Product Owner · 2026 – aujourd'hui</p>
+
+</div>
+<a class="pcard" data-reveal="" href="./projects/andy-electric/index.html" data-bg="./public/card-andy.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-andy.webp"/></div>
+<h3 class="pcard__title">Andy Electric</h3>
+<p class="pcard__role">UX/Brand Designer · 2025–2026</p>
+<p class="pcard__desc" data-i18n="projects.andy.desc">Branding, site web et améliorations d'expérience pour une entreprise de services électriques aux États-Unis.</p>
+</a>
+<a class="pcard" data-reveal="" href="./projects/ublo/index.html" data-bg="./public/card-ublo.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-ublo.webp"/></div>
+<h3 class="pcard__title">Ublo</h3>
+<p class="pcard__role">UX Designer · 2024–2025</p>
+<p class="pcard__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<div class="pcard pcard--ph" data-reveal="">
+<div class="pcard__media"><span aria-hidden="true" class="pcard__initial">I</span></div>
+<h3 class="pcard__title">Iridian</h3>
+<p class="pcard__role">Product Designer · 2023–2024</p>
+<p class="pcard__desc" data-i18n="h2.d.iridian">Conception et optimisation d'interfaces web et mobile en alignement avec les KPI produit et les objectifs business.</p>
+</div>
+<a class="pcard" data-reveal="" href="./projects/bellpi/index.html" data-bg="./public/card-bellpi.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-bellpi.webp"/></div>
+<h3 class="pcard__title">Bellpi</h3>
+<p class="pcard__role">UX &amp; Service Designer · 2021–2022</p>
+<p class="pcard__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<div class="pcard pcard--ph" data-reveal="">
+<div class="pcard__media"><span aria-hidden="true" class="pcard__initial">F</span></div>
+<h3 class="pcard__title">Freelance</h3>
+<p class="pcard__role" data-i18n="h2.r.freelance">Designer industriel · 2018 – 2021</p>
+
 </div>
 </div>
 </section>
-<main class="home-frame">
-<section class="description">
-<div class="professional-projects-parent" id="projects">
-<div class="hw-badge section-badge">
-<svg aria-hidden="true" class="hw-badge-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
-<path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path>
-</svg>
-<span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
-</div>
-<h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
-<!-- Project Showcase — list with floating image preview -->
-<div class="ps-showcase" id="ps-showcase">
-<!-- Floating image preview (follows cursor) -->
-<div aria-hidden="true" class="ps-preview" id="ps-preview">
-<img alt="" class="ps-preview__img" data-preview="0" loading="lazy" src="./public/card-andy.webp"/>
-<img alt="" class="ps-preview__img" data-preview="1" loading="lazy" src="./public/card-ublo.webp"/>
-<img alt="" class="ps-preview__img" data-preview="2" loading="lazy" src="./public/card-jumbo.webp"/>
-<img alt="" class="ps-preview__img" data-preview="3" loading="lazy" src="./public/card-bellpi.webp"/>
-<img alt="" class="ps-preview__img" data-preview="4" loading="lazy" src="./public/card-bnf.webp"/>
-<img alt="" class="ps-preview__img" data-preview="5" loading="lazy" src="./public/card-spotify.webp"/>
-<div class="ps-preview__overlay"></div>
-</div>
-<!-- Row: Andy Electric -->
-<a aria-label="Ver proyecto Andy Electric" class="ps-row" data-ps-index="0" href="./projects/andy-electric/index.html">
-<div class="ps-row__inner">
-<div class="ps-row__left">
-<div class="ps-row__title-wrap">
-<span class="ps-row__title">Andy Electric</span>
-<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</div>
-<p class="ps-row__desc" data-i18n="projects.andy.desc">Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.</p>
-</div>
-<span class="ps-row__year">2025</span>
-</div>
+<section class="block container" id="projects">
+<h2 class="block__title block__title--xl" data-i18n="projects.title" data-reveal="">Projets</h2>
+<div class="grid" data-grid="">
+<a class="pcard" data-reveal="" href="./projects/jumbomana/index.html" data-bg="./public/card-jumbo.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-jumbo.webp"/></div>
+<h3 class="pcard__title">JumboMana</h3>
+<p class="pcard__role">UX Designer · 2024</p>
+<p class="pcard__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
 </a>
-<!-- Row: Ublo -->
-<a aria-label="Ver proyecto Ublo" class="ps-row" data-ps-index="1" href="./projects/ublo/index.html">
-<div class="ps-row__inner">
-<div class="ps-row__left">
-<div class="ps-row__title-wrap">
-<span class="ps-row__title">Ublo</span>
-<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</div>
-<p class="ps-row__desc" data-i18n="projects.ublo.desc">Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.</p>
-</div>
-<span class="ps-row__year">2025</span>
-</div>
+<a class="pcard" data-reveal="" href="./projects/bnf/index.html" data-bg="./public/card-bnf.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-bnf.webp"/></div>
+<h3 class="pcard__title">Musée de la BnF</h3>
+<p class="pcard__role">UX &amp; Service Designer · 2024</p>
+<p class="pcard__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
 </a>
-<!-- Row: JumboMana -->
-<a aria-label="Ver proyecto JumboMana" class="ps-row" data-ps-index="2" href="./projects/jumbomana/index.html">
-<div class="ps-row__inner">
-<div class="ps-row__left">
-<div class="ps-row__title-wrap">
-<span class="ps-row__title">JumboMana</span>
-<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</div>
-<p class="ps-row__desc" data-i18n="projects.jumbomana.desc">Asistente IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.</p>
-</div>
-<span class="ps-row__year">2024</span>
-</div>
+<a class="pcard" data-reveal="" href="./projects/spotify/index.html" data-bg="./public/card-spotify.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-spotify.webp"/></div>
+<h3 class="pcard__title">Spotify</h3>
+<p class="pcard__role">UX Designer · 2025</p>
+<p class="pcard__desc" data-i18n="projects.spotify.desc">Conception de 3 nouvelles fonctionnalités UX pour Spotify.</p>
 </a>
-<!-- Row: Bellpi -->
-<a aria-label="Ver proyecto Bellpi" class="ps-row" data-ps-index="3" href="./projects/bellpi/index.html">
-<div class="ps-row__inner">
-<div class="ps-row__left">
-<div class="ps-row__title-wrap">
-<span class="ps-row__title">Bellpi</span>
-<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</div>
-<p class="ps-row__desc" data-i18n="projects.bellpi.desc">Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.</p>
-</div>
-<span class="ps-row__year">2024</span>
-</div>
+<a class="pcard" data-reveal="" href="./projects/paramo/index.html" data-bg="./public/card-paramo.webp">
+<div class="pcard__media"><img alt="" class="pcard__img" decoding="async" loading="lazy" src="./public/card-paramo.webp"/></div>
+<h3 class="pcard__title">ParamoTotem</h3>
+<p class="pcard__role">Experience Designer</p>
+<p class="pcard__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
 </a>
-<!-- Row: Musée de la BnF -->
-<a aria-label="Ver proyecto BnF" class="ps-row" data-ps-index="4" href="./projects/bnf/index.html">
-<div class="ps-row__inner">
-<div class="ps-row__left">
-<div class="ps-row__title-wrap">
-<span class="ps-row__title">Musée de la BnF</span>
-<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</div>
-<p class="ps-row__desc" data-i18n="projects.bnf.desc">Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.</p>
-</div>
-<span class="ps-row__year">2024</span>
-</div>
-</a>
-<!-- Row: Spotify -->
-<a aria-label="Ver proyecto Spotify" class="ps-row" data-ps-index="5" href="./projects/spotify/index.html">
-<div class="ps-row__inner">
-<div class="ps-row__left">
-<div class="ps-row__title-wrap">
-<span class="ps-row__title">Spotify</span>
-<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</div>
-<p class="ps-row__desc" data-i18n="projects.spotify.desc">Conception de 3 nouvelles fonctionnalités UX pour l'application Spotify.</p>
-</div>
-<span class="ps-row__year">2025</span>
-</div>
-</a>
-<div class="ps-end-border"></div>
-</div>
 </div>
 </section>
-<!-- ── CV / About section ── -->
-<section aria-labelledby="ab-title" class="ab-wrap" id="cv">
-<!-- Header -->
-<div class="ab-header" data-reveal="">
-<span class="ab-kicker" data-i18n="cv.kicker">Profil</span>
-<h2 class="ab-title" data-i18n="cv.role" id="ab-title">UX/UI Designer &amp; Product Designer</h2>
-<p class="ab-bio" data-i18n="cv.bio">Orienté vers la stratégie et la conception de produits numériques...</p>
-</div>
-<!-- 2-col body -->
-<div class="ab-body">
-<!-- Left: Experience timeline -->
-<div class="ab-left">
-<p class="ab-label" data-i18n="cv.experience">Expériences</p>
-<ol class="ab-timeline" role="list">
-<li class="ab-job" data-reveal="">
-<div class="ab-job__content">
-<div class="ab-job__meta">
-<span class="ab-job__role" data-i18n="cv.exp.andy.role">Brand &amp; UX Designer</span>
-<span class="ab-job__year">2025–26</span>
-</div>
-<p class="ab-job__org">
-<span class="ab-job__company" data-i18n="cv.exp.andy.company">Andy Electric · États-Unis</span>
-<span class="ab-job__type" data-i18n="cv.exp.andy.type">CDD</span>
-</p>
-<ul class="ab-job__items" data-i18n-html="cv.exp.freelance.items"></ul>
-</div>
-</li>
-<li class="ab-job" data-reveal="">
-<div class="ab-job__content">
-<div class="ab-job__meta">
-<span class="ab-job__role" data-i18n="cv.exp.ublo.role">UX Designer</span>
-<span class="ab-job__year">2024–25</span>
-</div>
-<p class="ab-job__org">
-<span class="ab-job__company" data-i18n="cv.exp.ublo.company">Ublo · France</span>
-<span class="ab-job__type" data-i18n="cv.exp.ublo.type">Alternance</span>
-</p>
-<ul class="ab-job__items" data-i18n-html="cv.exp.ublo.items"></ul>
-</div>
-</li>
-<li class="ab-job" data-reveal="">
-<div class="ab-job__content">
-<div class="ab-job__meta">
-<span class="ab-job__role" data-i18n="cv.exp.iridian.role">Product Designer</span>
-<span class="ab-job__year">2023–24</span>
-</div>
-<p class="ab-job__org">
-<span class="ab-job__company" data-i18n="cv.exp.iridian.company">Iridian · Colombie</span>
-<span class="ab-job__type" data-i18n="cv.exp.iridian.type">CDI</span>
-</p>
-<ul class="ab-job__items" data-i18n-html="cv.exp.iridian.items"></ul>
-</div>
-</li>
-<li class="ab-job" data-reveal="">
-<div class="ab-job__content">
-<div class="ab-job__meta">
-<span class="ab-job__role" data-i18n="cv.exp.casatoro.role">UX &amp; Service Designer</span>
-<span class="ab-job__year">2021–22</span>
-</div>
-<p class="ab-job__org">
-<span class="ab-job__company" data-i18n="cv.exp.casatoro.company">Casatoro · Colombie</span>
-<span class="ab-job__type" data-i18n="cv.exp.casatoro.type">CDI</span>
-</p>
-<ul class="ab-job__items" data-i18n-html="cv.exp.casatoro.items"></ul>
-</div>
-</li>
-</ol>
-</div>
-<!-- Right: Education + Skills + Languages + Contact -->
-<div class="ab-right">
-<!-- Education -->
-<div class="ab-block" data-reveal="">
-<p class="ab-label" data-i18n="cv.education">Formation</p>
-<ul class="ab-edu" role="list">
-<li class="ab-edu__item">
-<span class="ab-edu__year">2025</span>
-<div class="ab-edu__info">
-<span class="ab-edu__degree" data-i18n="cv.edu.master.degree">Master M2 — Design d'interface et multimédia</span>
-<span class="ab-edu__school" data-i18n="cv.edu.master.uni">Sorbonne Paris Nord · France</span>
-</div>
-</li>
-<li class="ab-edu__item">
-<span class="ab-edu__year">2023</span>
-<div class="ab-edu__info">
-<span class="ab-edu__degree" data-i18n="cv.edu.bootcamp.degree">Bootcamp UX/UI Design</span>
-<span class="ab-edu__school" data-i18n="cv.edu.bootcamp.uni">Coder House · En ligne</span>
-</div>
-</li>
-<li class="ab-edu__item">
-<span class="ab-edu__year">2018</span>
-<div class="ab-edu__info">
-<span class="ab-edu__degree" data-i18n="cv.edu.licence.degree">Licence en Design Industriel</span>
-<span class="ab-edu__school" data-i18n="cv.edu.licence.uni">Jorge Tadeo Lozano · Colombie</span>
-</div>
-</li>
-</ul>
-</div>
-<!-- Compétences as tags -->
-<div class="ab-block" data-reveal="">
-<p class="ab-label" data-i18n="cv.skills">Compétences</p>
-<div class="ab-tags">
-<span class="ab-tag">Design Thinking</span>
-<span class="ab-tag">Lean UX</span>
-<span class="ab-tag">Human-Centered Design</span>
-<span class="ab-tag">Scrum</span>
-<span class="ab-tag">Design Sprint</span>
-<span class="ab-tag">Product Discovery</span>
-<span class="ab-tag">JTBD</span>
-<span class="ab-tag">User Research</span>
-<span class="ab-tag">Audit UX</span>
-<span class="ab-tag">Prototyping</span>
-<span class="ab-tag">User Testing</span>
-<span class="ab-tag">KPI Analysis</span>
-</div>
-</div>
-<!-- Languages -->
-<div class="ab-block" data-reveal="">
-<p class="ab-label" data-i18n="cv.languages">Langues</p>
-<div class="ab-langs">
-<div class="ab-lang">
-<span class="ab-lang__name" data-i18n="cv.lang.fr.label">Français</span>
-<span class="ab-lang__level" data-i18n="cv.lang.fr.level">C1</span>
-</div>
-<div class="ab-lang">
-<span class="ab-lang__name" data-i18n="cv.lang.en.label">Anglais</span>
-<span class="ab-lang__level" data-i18n="cv.lang.en.level">B1</span>
-</div>
-<div class="ab-lang">
-<span class="ab-lang__name" data-i18n="cv.lang.es.label">Espagnol</span>
-<span class="ab-lang__level" data-i18n="cv.lang.es.native">Natif</span>
-</div>
-</div>
-</div>
-<!-- Contact CTA -->
-<div class="ab-block ab-block--cta" data-reveal="">
-<a aria-label="Envoyer un e-mail" class="ab-cta-btn" href="mailto:oago1103@gmail.com">
-<span data-i18n="cv.cta.contact">Me contacter</span>
-<svg aria-hidden="true" class="ab-cta-btn__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-</a>
-<p class="ab-cta-sub">oago1103@gmail.com  ·  +33 648 760 444</p>
-</div>
-</div>
-</div>
-<!-- Tools row (full-width) -->
-<div class="ab-tools" data-reveal="">
-<p class="ab-label" data-i18n="cv.tools">Outils</p>
-<div class="ab-tags ab-tags--tools">
-<span class="ab-tag ab-tag--sm">Figma</span>
-<span class="ab-tag ab-tag--sm">FigJam</span>
-<span class="ab-tag ab-tag--sm">Framer</span>
-<span class="ab-tag ab-tag--sm">Miro</span>
-<span class="ab-tag ab-tag--sm">Notion</span>
-<span class="ab-tag ab-tag--sm">Jira</span>
-<span class="ab-tag ab-tag--sm">Linear</span>
-<span class="ab-tag ab-tag--sm">Maze</span>
-<span class="ab-tag ab-tag--sm">Hotjar</span>
-<span class="ab-tag ab-tag--sm">Google Analytics</span>
-<span class="ab-tag ab-tag--sm">Adobe Creative Suite</span>
-<span class="ab-tag ab-tag--sm">GitHub</span>
-<span class="ab-tag ab-tag--sm">VS Code</span>
-<span class="ab-tag ab-tag--sm">Claude Code</span>
-<span class="ab-tag ab-tag--sm">ChatGPT</span>
-<span class="ab-tag ab-tag--sm">Gemini</span>
-</div>
-</div>
+<section class="block container contact" data-reveal="" id="contact">
+<h2 class="block__title block__title--xl" data-i18n="h2.contact.title">Travaillons ensemble</h2>
+<p class="contact__line"><span data-i18n="h2.contact.email">E-mail</span> : <a href="mailto:oago1103@gmail.com">oago1103@gmail.com</a></p>
+<p class="contact__line"><span data-i18n="h2.contact.phone">Téléphone</span> : <a href="tel:+33648760444">+33 648 760 444</a></p>
+<a class="btn" href="mailto:oago1103@gmail.com"><span data-i18n="cv.cta.contact">Me contacter</span></a>
 </section>
 </main>
 </div>
@@ -454,7 +261,7 @@
 </button>
 <script src="./scripts/i18n.js" type="module"></script>
 <script src="./scripts/hero.js"></script>
-<script src="./scripts/showcase.js"></script>
+<script src="./scripts/home.js"></script>
 <script src="./scripts/scroll-animations.js" type="module"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@
  * - Lee `data-i18n="key"` y reemplaza `textContent`.
  * - Lee `data-i18n-html="key"` y reemplaza `innerHTML` (para texto con <br/>).
  * - Lee `data-i18n-alt="key"` y reemplaza el atributo `alt` de las imágenes.
+ * - Lee `data-i18n-aria-label="key"` y reemplaza el atributo `aria-label`.
+ * - Emite el evento `i18n:applied` en `document` tras aplicar un idioma.
  * - Traduce <title> y meta description con las claves `meta.<data-page>.title|desc`.
  * - Persiste el idioma en localStorage (`pf:lang`).
  * - Lenguajes soportados: fr (default), en, es.
@@ -41,6 +43,10 @@ function applyDictionary(dict) {
   document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
     const key = el.getAttribute("data-i18n-alt");
     if (dict[key] != null) el.setAttribute("alt", dict[key]);
+  });
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria-label");
+    if (dict[key] != null) el.setAttribute("aria-label", dict[key]);
   });
   const page = document.body.getAttribute("data-page");
   if (page) {
@@ -79,6 +85,7 @@ function setLanguage(lang) {
     updateActiveButtons(lang);
     updateLangTrigger(lang);
     updateHtmlLang(lang);
+    document.dispatchEvent(new CustomEvent("i18n:applied", { detail: { lang } }));
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch (_) {

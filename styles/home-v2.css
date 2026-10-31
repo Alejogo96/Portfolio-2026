@@ -1,0 +1,521 @@
+/* =====================================================
+   home-v2.css — Home (maqueta Figma "FR · Home · Desktop 1440")
+   Dark (default) + light theme via [data-theme] on <html>.
+   ===================================================== */
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1a1a1a;
+  --text: #f5f1ef;
+  --muted: rgba(245, 241, 239, 0.66);
+  --faint: rgba(245, 241, 239, 0.14);
+  --accent: #ff5f3a;
+  --chip-bg: #ffffff;
+  --chip-text: #1a1a1a;
+  --chip-border: transparent;
+  --media-bg: #2a2a2a;
+  --btn-bg: #f5f1ef;
+  --btn-text: #000000;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f5f1ef;
+  --text: #1a1a1a;
+  --muted: rgba(26, 26, 26, 0.66);
+  --faint: rgba(26, 26, 26, 0.14);
+  --accent: #e8431f; /* darker orange so small labels keep 4.5:1 on #f5f1ef */
+  --chip-bg: #ffffff;
+  --chip-text: #1a1a1a;
+  --chip-border: rgba(26, 26, 26, 0.14);
+  --media-bg: #e4e0dd;
+  --btn-bg: #1a1a1a;
+  --btn-text: #f5f1ef;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.cover-franais {
+  background: var(--bg);
+  color: var(--text);
+  display: block;
+  padding: 0;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(1152px + 2 * var(--container-pad));
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  box-sizing: border-box;
+}
+
+/* Navbar sits on the themed page background */
+.navbar-wrapper {
+  background: var(--bg);
+  transition: background-color 0.35s ease;
+}
+
+/* ── Navbar actions: theme toggle + language ── */
+.navbar-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-toggle:focus-visible,
+.chip:focus-visible,
+.pcard:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  grid-area: 1 / 1;
+  transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* show the icon of the mode you will switch TO */
+:root[data-theme="dark"] .theme-toggle__moon,
+:root[data-theme="light"] .theme-toggle__sun {
+  opacity: 0;
+  transform: rotate(-60deg) scale(0.6);
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 92px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+  max-width: none !important;
+  height: 100% !important;
+}
+
+.hero__inner {
+  padding-block: 4rem 6rem;
+  will-change: transform, opacity;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 1.2rem + 5.4vw, 4rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 14em;
+  margin: 0 0 1.25rem;
+  color: var(--text);
+}
+
+/* word-by-word rise (words are wrapped by home.js) */
+.hero__title .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
+.hero__title .wi {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  animation: word-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(0.12s + var(--i, 0) * 0.09s);
+}
+
+@keyframes word-rise {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--d, 0.8s);
+}
+
+@keyframes hero-fade {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero__kicker {
+  margin: 0 0 1.5rem;
+  max-width: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  translate: -50% 0;
+  font-size: 1.25rem;
+  color: var(--muted);
+  animation: nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ── Chips ── */
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border: 1px solid var(--chip-border);
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.chip b {
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* ── Sections ── */
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.intro {
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+}
+
+.scrub__p {
+  max-width: 62ch;
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.125rem, 1rem + 0.7vw, 1.5rem);
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* bio words light up as you scroll (home.js) */
+.scrub__p .sw {
+  opacity: 0.2;
+  transition: opacity 0.35s ease;
+}
+
+.scrub__p .sw.is-on {
+  opacity: 1;
+}
+
+.block {
+  padding-block: clamp(1.75rem, 4vw, 3rem);
+}
+
+.block__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  color: var(--text);
+}
+
+.block__title--xl {
+  margin-bottom: 2rem;
+}
+
+.profile {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.6rem;
+  max-width: 78ch;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.bullets li::marker {
+  color: var(--accent);
+}
+
+/* ── Project / experience cards ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 2.75rem);
+  row-gap: clamp(2rem, 4vw, 3rem);
+}
+
+.grid > .pcard:nth-child(even) {
+  transition-delay: 90ms;
+}
+
+.pcard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  color: var(--text);
+  position: relative;
+}
+
+.pcard__media {
+  position: relative;
+  aspect-ratio: 5 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--media-bg);
+}
+
+.pcard__img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  transform: translate3d(var(--tx, 0px), var(--ty, 0px), 0) scale(var(--s, 1));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pcard__initial {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--faint);
+}
+
+.pcard__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+a.pcard .pcard__title::after {
+  content: "↗";
+  font-size: 0.6em;
+  color: var(--accent);
+  opacity: 0;
+  transform: translate(-6px, 6px);
+  transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a.pcard:hover .pcard__title::after,
+a.pcard:focus-visible .pcard__title::after {
+  opacity: 1;
+  transform: none;
+}
+
+.pcard__role {
+  margin: 0;
+  max-width: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pcard__desc {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ── Hover background: the hovered card's image bleeds into the page ── */
+.hover-bg {
+  position: fixed;
+  inset: -8%;
+  z-index: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: blur(60px) saturate(1.2);
+  transform: scale(1.05);
+  transition: opacity 0.6s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-bg.is-on {
+  opacity: 0.32;
+  transform: scale(1);
+}
+
+:root[data-theme="light"] .hover-bg.is-on {
+  opacity: 0.4;
+}
+
+/* ── Contact ── */
+.contact {
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.contact__line {
+  margin: 0 0 0.6rem;
+  font-size: 1.125rem;
+  color: var(--text);
+}
+
+.contact__line a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--faint);
+}
+
+.contact__line a:hover {
+  text-decoration-color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  padding: 14px 24px;
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ── Back to top follows the theme ── */
+:root[data-theme="light"] .back-to-top {
+  background: #1a1a1a;
+}
+
+/* ── Responsive ── */
+@media (min-width: 900px) {
+  .profile {
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas: "skills edu" "skills lang";
+    align-items: start;
+  }
+  .profile > :nth-child(1) { grid-area: skills; }
+  .profile > :nth-child(2) { grid-area: edu; }
+  .profile > :nth-child(3) { grid-area: lang; }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid > .pcard:nth-child(even) {
+    transition-delay: 0ms;
+  }
+  .hero {
+    min-height: calc(100svh - 84px);
+  }
+  .hero__inner {
+    padding-block: 3rem 5rem;
+  }
+  .navbar-actions .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (hover: none) {
+  .hover-bg {
+    display: none;
+  }
+}
+
+/* ── Reduced motion: no word rise, no scrub, no hover bleed ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero__title .wi,
+  .hero-anim {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .scrub__p .sw {
+    opacity: 1;
+    transition: none;
+  }
+  .hero__scroll {
+    animation: none;
+  }
+  .pcard__img,
+  .hover-bg {
+    transition: none;
+  }
+}
