@@ -1,346 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Andy Electric — Caso de estudio · Alejandro Guevara</title>
-    <meta
-      name="description"
-      content="Caso de estudio Andy Electric: branding y sitio web para empresa de servicios eléctricos en EE.UU."
-    />
-
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="../../styles/navbar.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../../styles/responsive.css" />
-    <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link rel="stylesheet" href="../../styles/case-study.css" />
-    <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
-    />
-  </head>
-  <body>
-    <div class="andyelectric">
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="../../index.html#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="../../projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="../../index.html#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="../../index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <main class="cs-frame">
-
-        <header class="cs-header" data-reveal>
-          <p class="cs-kicker">Brand &amp; UX Designer · 2025–2026</p>
-          <h1 class="cs-title">Andy Electric</h1>
-          <p class="cs-role">Branding · Site web · Génération de leads · USA</p>
-          <p class="cs-body">
-            J'ai travaillé en tant que Brand &amp; UX Designer avec une approche end-to-end, en intégrant des outils d'intelligence artificielle (Claude Code, Figma) pour accélérer la production et optimiser la cohérence entre conception UX et implémentation technique.
-          </p>
-          <ul class="cs-list">
-            <li>Analyse du positionnement de l'entreprise et de ses besoins business.</li>
-            <li>Définition d'une nouvelle direction artistique et stratégique.</li>
-            <li>Conception de l'identité visuelle et de ses déclinaisons.</li>
-            <li>Structuration de l'architecture du site web.</li>
-            <li>Design des interfaces et des contenus.</li>
-            <li>Mise en place des éléments de conversion (contact, messaging).</li>
-          </ul>
-        </header>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Andy Electric — aperçu du site web" src="./public/images-header@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Contexte</h2>
-          <p class="cs-body">
-            Le secteur des services électriques aux États-Unis représente plusieurs milliards de dollars et reste majoritairement dominé par des acteurs locaux avec une faible maturité digitale.
-          </p>
-          <ul class="cs-list">
-            <li>+80 % des clients recherchent des services locaux en ligne avant de contacter une entreprise.</li>
-            <li>La première impression digitale influence fortement la confiance et la décision de contact.</li>
-            <li>Une présence web optimisée peut augmenter significativement la génération de leads.</li>
-          </ul>
-          <p class="cs-body">
-            Dans ce contexte, l'absence d'un site structuré et d'une identité de marque forte représentait une perte d'opportunités business importante pour Andy Electric.
-          </p>
-        </div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Point de départ</h2>
-          <div class="cs-metrics">
-            <div>
-              <div class="cs-metric-num">+1 500</div>
-              <p class="cs-metric-label">Clients sur les 30 dernières années.</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">0 %</div>
-              <p class="cs-metric-label">Présence digitale au lancement.</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">5 %</div>
-              <p class="cs-metric-label">Part du marché adressable en ligne.</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">20 ans</div>
-              <p class="cs-metric-label">D'expérience dans le secteur.</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">75 %</div>
-              <p class="cs-metric-label">Des leads provenant du bouche-à-oreille.</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">85 %</div>
-              <p class="cs-metric-label">Des clients sans accès digital à l'entreprise.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Une approche orientée impact</h2>
-          <p class="cs-body">Le projet a été mené avec une approche structurée :</p>
-          <ul class="cs-list">
-            <li>Analyse du contexte et des besoins business</li>
-            <li>Identification des opportunités d'amélioration</li>
-            <li>Définition d'une stratégie de marque et produit</li>
-            <li>Conception et itération des solutions</li>
-            <li>Déploiement des livrables</li>
-          </ul>
-          <p class="cs-body"><strong>Objectif : améliorer la perception de la marque et générer des opportunités commerciales.</strong></p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Andy Electric — approche et stratégie" src="./public/Screenshot-2026-04-19-at-20-18-06-2@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Créer un canal d'acquisition et de conversion</h2>
-          <p class="cs-body">
-            L'entreprise ne disposait pas d'un site structuré permettant de présenter ses services et convertir ses visiteurs. J'ai conçu et développé un site web avec une approche centrée sur la clarté de l'offre, la mise en confiance et la conversion utilisateur.
-          </p>
-          <ul class="cs-list">
-            <li>Présentation détaillée des services</li>
-            <li>Mise en avant des +30 ans d'expérience</li>
-            <li>Galerie de projets réalisés</li>
-            <li>Page "About Us" pour renforcer la transparence</li>
-            <li>Intégration de points de contact (formulaire, téléphone)</li>
-          </ul>
-          <p class="cs-body"><strong>Le site devient ainsi un véritable point d'entrée pour les clients potentiels.</strong></p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Andy Electric — canal d'acquisition" src="./public/images-canal@2x.png" />
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Andy Electric — page services 1" src="./public/Screenshot-2026-04-19-at-20-19-17-1@2x.png" />
-          <img loading="lazy" alt="Andy Electric — page services 2" src="./public/Screenshot-2026-04-19-at-20-18-24-1@2x.png" />
-          <img loading="lazy" alt="Andy Electric — page détail 1" src="./public/Screenshot-2026-04-19-at-20-19-25-1@2x.png" />
-          <img loading="lazy" alt="Andy Electric — page détail 2" src="./public/Screenshot-2026-04-19-at-20-18-52-1@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Résultats et valeur apportée</h2>
-          <div class="cs-metrics">
-            <div>
-              <div class="cs-metric-num">100 %</div>
-              <p class="cs-metric-label">Identité visuelle cohérente sur l'ensemble des points de contact (online &amp; offline)</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">90 %</div>
-              <p class="cs-metric-label">Optimisation du temps de production grâce à l'intégration d'outils d'IA</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">100 %</div>
-              <p class="cs-metric-label">Structuration complète de l'offre de services en contenu digital</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">+30</div>
-              <p class="cs-metric-label">Prises de rendez-vous générées durant les 8 premiers jours après la mise en ligne</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">+3 pts</div>
-              <p class="cs-metric-label">Points de contact clés (formulaire, téléphone, CTA) pour faciliter la conversion</p>
-            </div>
-            <div>
-              <div class="cs-metric-num">1–2 clics</div>
-              <p class="cs-metric-label">Accès direct aux informations essentielles</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Repenser l'identité pour renforcer la crédibilité</h2>
-          <p class="cs-body">
-            L'identité visuelle a été entièrement repensée pour refléter le professionnalisme, la fiabilité et le dynamisme d'Andy Electric — des valeurs clés pour gagner la confiance des clients dans le secteur des services électriques.
-          </p>
-        </div>
-
-        <div class="cs-img-full" data-reveal>
-          <img loading="lazy" alt="Andy Electric — brand cover identité visuelle" src="./public/brand-cover@2x.png" />
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Andy Electric — typographie et couleurs" src="./public/7-71@2x.png" />
-          <img loading="lazy" alt="Andy Electric — composants UI" src="./public/6-7@2x.png" />
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Andy Electric — indicateurs visuels 1" src="./public/Space-Indicators@2x.png" />
-          <img loading="lazy" alt="Andy Electric — indicateurs visuels 2" src="./public/Space-Indicators1@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Application de la marque</h2>
-          <p class="cs-body">
-            La nouvelle identité a été déclinée sur l'ensemble des supports : uniformes, véhicules, signalétique et communications digitales — garantissant une cohérence totale sur tous les points de contact.
-          </p>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Andy Electric — application marque vêtements 1" src="./public/ChatGPT-Image-26-mar-2026-03-14-54-p-m-1@2x.png" />
-          <img loading="lazy" alt="Andy Electric — application marque vêtements 2" src="./public/ChatGPT-Image-26-mar-2026-03-15-07-p-m-1@2x.png" />
-          <img loading="lazy" alt="Andy Electric — application marque véhicule 1" src="./public/ChatGPT-Image-3-abr-2026-12-53-57-p-m-1@2x.png" />
-          <img loading="lazy" alt="Andy Electric — application marque véhicule 2" src="./public/ChatGPT-Image-3-abr-2026-12-55-27-p-m-1@2x.png" />
-        </div>
-
-        <nav class="project-nav" aria-label="Navigation entre projets">
-          <a href="../paramo/index.html" class="project-nav-link project-nav-link--prev">
-            <span class="project-nav-label">← Projet précédent</span>
-            <span class="project-nav-name">ParamoTotem</span>
-          </a>
-          <a href="../ublo/index.html" class="project-nav-link project-nav-link--next">
-            <span class="project-nav-label">Projet suivant →</span>
-            <span class="project-nav-name">Ublo</span>
-          </a>
-        </nav>
-
-      </main>
-
-        <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="../../scripts/i18n.js"></script>
-    <script type="module" src="../../scripts/scroll-animations.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>Andy Electric — Cas d'étude · Alejandro Guevara</title>
+<meta content="Caso de estudio Andy Electric: branding y sitio web para empresa de servicios eléctricos en EE.UU." name="description"/>
+<link href="../../styles/global.css" rel="stylesheet"/>
+<link href="../../styles/navbar.css" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="../../styles/responsive.css" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="../../styles/lightbox.css" rel="stylesheet"/>
+<link href="../../styles/case-study.css" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body data-page="andy-electric">
+<div class="andyelectric">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="../../index.html#projects">
+<img alt="" class="layout-grid-icon" src="../../public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="../../index.html#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../index.html#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="../../index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="../../public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<main class="cs-frame">
+<header class="cs-header" data-reveal="">
+<p class="cs-kicker" data-i18n="andy-electric.t001">Brand &amp; UX Designer · 2025–2026</p>
+<h1 class="cs-title" data-i18n="andy-electric.t002">Andy Electric</h1>
+<p class="cs-role" data-i18n="andy-electric.t003">Branding · Site web · Génération de leads · USA</p>
+<p class="cs-body" data-i18n="andy-electric.t004">J'ai travaillé en tant que Brand &amp; UX Designer avec une approche end-to-end, en intégrant des outils d'intelligence artificielle (Claude Code, Figma) pour accélérer la production et optimiser la cohérence entre conception UX et implémentation technique.</p>
+<ul class="cs-list">
+<li data-i18n="andy-electric.t005">Analyse du positionnement de l'entreprise et de ses besoins business.</li>
+<li data-i18n="andy-electric.t006">Définition d'une nouvelle direction artistique et stratégique.</li>
+<li data-i18n="andy-electric.t007">Conception de l'identité visuelle et de ses déclinaisons.</li>
+<li data-i18n="andy-electric.t008">Structuration de l'architecture du site web.</li>
+<li data-i18n="andy-electric.t009">Design des interfaces et des contenus.</li>
+<li data-i18n="andy-electric.t010">Mise en place des éléments de conversion (contact, messaging).</li>
+</ul>
+</header>
+<div class="cs-img-box" data-reveal="">
+<img alt="Andy Electric — aperçu du site web" data-i18n-alt="andy-electric.t062" loading="lazy" src="./public/images-header@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t011">Contexte</h2>
+<p class="cs-body" data-i18n="andy-electric.t012">Le secteur des services électriques aux États-Unis représente plusieurs milliards de dollars et reste majoritairement dominé par des acteurs locaux avec une faible maturité digitale.</p>
+<ul class="cs-list">
+<li data-i18n="andy-electric.t013">+80 % des clients recherchent des services locaux en ligne avant de contacter une entreprise.</li>
+<li data-i18n="andy-electric.t014">La première impression digitale influence fortement la confiance et la décision de contact.</li>
+<li data-i18n="andy-electric.t015">Une présence web optimisée peut augmenter significativement la génération de leads.</li>
+</ul>
+<p class="cs-body" data-i18n="andy-electric.t016">Dans ce contexte, l'absence d'un site structuré et d'une identité de marque forte représentait une perte d'opportunités business importante pour Andy Electric.</p>
+</div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t017">Point de départ</h2>
+<div class="cs-metrics">
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t018">+1 500</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t019">Clients sur les 30 dernières années.</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t020">0 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t021">Présence digitale au lancement.</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t022">5 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t023">Part du marché adressable en ligne.</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t024">20 ans</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t025">D'expérience dans le secteur.</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t026">75 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t027">Des leads provenant du bouche-à-oreille.</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t028">85 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t029">Des clients sans accès digital à l'entreprise.</p>
+</div>
+</div>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t030">Une approche orientée impact</h2>
+<p class="cs-body" data-i18n="andy-electric.t031">Le projet a été mené avec une approche structurée :</p>
+<ul class="cs-list">
+<li data-i18n="andy-electric.t032">Analyse du contexte et des besoins business</li>
+<li data-i18n="andy-electric.t033">Identification des opportunités d'amélioration</li>
+<li data-i18n="andy-electric.t034">Définition d'une stratégie de marque et produit</li>
+<li data-i18n="andy-electric.t035">Conception et itération des solutions</li>
+<li data-i18n="andy-electric.t036">Déploiement des livrables</li>
+</ul>
+<p class="cs-body"><strong data-i18n="andy-electric.t037">Objectif : améliorer la perception de la marque et générer des opportunités commerciales.</strong></p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Andy Electric — approche et stratégie" data-i18n-alt="andy-electric.t063" loading="lazy" src="./public/Screenshot-2026-04-19-at-20-18-06-2@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t038">Créer un canal d'acquisition et de conversion</h2>
+<p class="cs-body" data-i18n="andy-electric.t039">L'entreprise ne disposait pas d'un site structuré permettant de présenter ses services et convertir ses visiteurs. J'ai conçu et développé un site web avec une approche centrée sur la clarté de l'offre, la mise en confiance et la conversion utilisateur.</p>
+<ul class="cs-list">
+<li data-i18n="andy-electric.t040">Présentation détaillée des services</li>
+<li data-i18n="andy-electric.t041">Mise en avant des +30 ans d'expérience</li>
+<li data-i18n="andy-electric.t042">Galerie de projets réalisés</li>
+<li data-i18n="andy-electric.t043">Page "About Us" pour renforcer la transparence</li>
+<li data-i18n="andy-electric.t044">Intégration de points de contact (formulaire, téléphone)</li>
+</ul>
+<p class="cs-body"><strong data-i18n="andy-electric.t045">Le site devient ainsi un véritable point d'entrée pour les clients potentiels.</strong></p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Andy Electric — canal d'acquisition" data-i18n-alt="andy-electric.t064" loading="lazy" src="./public/images-canal@2x.webp"/>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Andy Electric — page services 1" data-i18n-alt="andy-electric.t065" loading="lazy" src="./public/Screenshot-2026-04-19-at-20-19-17-1@2x.webp"/>
+<img alt="Andy Electric — page services 2" data-i18n-alt="andy-electric.t066" loading="lazy" src="./public/Screenshot-2026-04-19-at-20-18-24-1@2x.webp"/>
+<img alt="Andy Electric — page détail 1" data-i18n-alt="andy-electric.t067" loading="lazy" src="./public/Screenshot-2026-04-19-at-20-19-25-1@2x.webp"/>
+<img alt="Andy Electric — page détail 2" data-i18n-alt="andy-electric.t068" loading="lazy" src="./public/Screenshot-2026-04-19-at-20-18-52-1@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t046">Résultats et valeur apportée</h2>
+<div class="cs-metrics">
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t047">100 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t048">Identité visuelle cohérente sur l'ensemble des points de contact (online &amp; offline)</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t049">90 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t050">Optimisation du temps de production grâce à l'intégration d'outils d'IA</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t047">100 %</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t051">Structuration complète de l'offre de services en contenu digital</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t052">+30</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t053">Prises de rendez-vous générées durant les 8 premiers jours après la mise en ligne</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t054">+3 pts</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t055">Points de contact clés (formulaire, téléphone, CTA) pour faciliter la conversion</p>
+</div>
+<div>
+<div class="cs-metric-num" data-i18n="andy-electric.t056">1–2 clics</div>
+<p class="cs-metric-label" data-i18n="andy-electric.t057">Accès direct aux informations essentielles</p>
+</div>
+</div>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t058">Repenser l'identité pour renforcer la crédibilité</h2>
+<p class="cs-body" data-i18n="andy-electric.t059">L'identité visuelle a été entièrement repensée pour refléter le professionnalisme, la fiabilité et le dynamisme d'Andy Electric — des valeurs clés pour gagner la confiance des clients dans le secteur des services électriques.</p>
+</div>
+<div class="cs-img-full" data-reveal="">
+<img alt="Andy Electric — brand cover identité visuelle" data-i18n-alt="andy-electric.t069" loading="lazy" src="./public/brand-cover@2x.webp"/>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Andy Electric — typographie et couleurs" data-i18n-alt="andy-electric.t070" loading="lazy" src="./public/7-71@2x.webp"/>
+<img alt="Andy Electric — composants UI" data-i18n-alt="andy-electric.t071" loading="lazy" src="./public/6-7@2x.webp"/>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Andy Electric — indicateurs visuels 1" data-i18n-alt="andy-electric.t072" loading="lazy" src="./public/Space-Indicators@2x.webp"/>
+<img alt="Andy Electric — indicateurs visuels 2" data-i18n-alt="andy-electric.t073" loading="lazy" src="./public/Space-Indicators1@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="andy-electric.t060">Application de la marque</h2>
+<p class="cs-body" data-i18n="andy-electric.t061">La nouvelle identité a été déclinée sur l'ensemble des supports : uniformes, véhicules, signalétique et communications digitales — garantissant une cohérence totale sur tous les points de contact.</p>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Andy Electric — application marque vêtements 1" data-i18n-alt="andy-electric.t074" loading="lazy" src="./public/ChatGPT-Image-26-mar-2026-03-14-54-p-m-1@2x.webp"/>
+<img alt="Andy Electric — application marque vêtements 2" data-i18n-alt="andy-electric.t075" loading="lazy" src="./public/ChatGPT-Image-26-mar-2026-03-15-07-p-m-1@2x.webp"/>
+<img alt="Andy Electric — application marque véhicule 1" data-i18n-alt="andy-electric.t076" loading="lazy" src="./public/ChatGPT-Image-3-abr-2026-12-53-57-p-m-1@2x.webp"/>
+<img alt="Andy Electric — application marque véhicule 2" data-i18n-alt="andy-electric.t077" loading="lazy" src="./public/ChatGPT-Image-3-abr-2026-12-55-27-p-m-1@2x.webp"/>
+</div>
+<nav aria-label="Navigation entre projets" class="project-nav">
+<a class="project-nav-link project-nav-link--prev" href="../paramo/index.html">
+<span class="project-nav-label">← Projet précédent</span>
+<span class="project-nav-name">ParamoTotem</span>
+</a>
+<a class="project-nav-link project-nav-link--next" href="../ublo/index.html">
+<span class="project-nav-label">Projet suivant →</span>
+<span class="project-nav-name">Ublo</span>
+</a>
+</nav>
+</main>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="../../scripts/i18n.js" type="module"></script>
+<script src="../../scripts/scroll-animations.js" type="module"></script>
+<script src="../../scripts/lightbox.js" type="module"></script>
+</div></body>
 </html>

@@ -1,257 +1,229 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Ublo — Caso de estudio · Alejandro Guevara</title>
-    <meta name="description" content="Caso de estudio Ublo: plataforma para gestores inmobiliarios en Francia." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/ublo/index.html" />
-    <meta property="og:title" content="Ublo — Cas d'étude · Alejandro Guevara" />
-    <meta property="og:description" content="Plateforme pour gestionnaires immobiliers en France — itération UX et nouvelles fonctionnalités." />
-    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-ublo.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ublo — Cas d'étude · Alejandro Guevara" />
-    <meta name="twitter:description" content="Plateforme pour gestionnaires immobiliers en France — itération UX et nouvelles fonctionnalités." />
-    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-ublo.png" />
-
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="../../styles/navbar.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../../styles/responsive.css" />
-    <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link rel="stylesheet" href="../../styles/case-study.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    />
-  </head>
-  <body>
-    <div class="ublo">
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="../../index.html#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="../../projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="../../index.html#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="../../index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <main class="cs-frame">
-
-        <header class="cs-header" data-reveal>
-          <p class="cs-kicker">UX Designer · 2024–2025</p>
-          <h1 class="cs-title">Ublo</h1>
-          <p class="cs-role">Plateforme de gestion immobilière · France</p>
-          <p class="cs-body">
-            En tant qu'UX Designer au sein de l'équipe Ublo, une <strong>plateforme de gestion immobilière basée en France avec plus de 2 000 utilisateurs et 20 clients dans tout le pays</strong>, mon rôle consistait à améliorer continuellement l'interface et l'expérience utilisateur globale.
-          </p>
-          <p class="cs-body">
-            J'ai travaillé de manière itérative sur plus de <strong>15 nouvelles fonctionnalités et 20 améliorations de la plateforme</strong>, apportant des améliorations continues directement alignées sur les retours clients et les exigences métier.
-          </p>
-        </header>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Vue d'ensemble de la plateforme Ublo" src="./public/Screenshot-2025-05-02-at-11-11-26-1@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Continue Itération</h2>
-          <p class="cs-body">
-            J'ai exploré l'utilisation d'outils d'intelligence artificielle dans les phases de conception et de recherche — de l'analyse du comportement des utilisateurs assistée par l'IA au prototypage des interactions et à la rationalisation de la génération de contenu.
-          </p>
-          <p class="cs-body">Tout au long du processus, j'ai mené :</p>
-          <ul class="cs-list">
-            <li>Recherches techniques pour comprendre les limites et les opportunités du système.</li>
-            <li>Analyse comparative pour identifier les meilleures pratiques et les normes du marché.</li>
-            <li>Cartographie du parcours utilisateur et création de user stories pour structurer des solutions logiques et efficaces.</li>
-          </ul>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Itération Ublo — vue 1" src="./public/Screenshot-2025-05-09-at-15-08-58@2x.png" />
-          <img loading="lazy" alt="Itération Ublo — vue 2" src="./public/Screenshot-2025-05-09-at-15-07-04@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Auditer l'expérience utilisateur</h2>
-          <p class="cs-body">
-            J'ai réalisé un audit UX complet de la plateforme afin d'identifier les principaux points de friction et d'aligner l'expérience utilisateur avec les objectifs business. L'analyse s'est appuyée sur une évaluation heuristique (Nielsen, Bastien &amp; Scapin), l'étude des parcours utilisateurs clés, de l'architecture de l'information, de la cohérence visuelle et de l'accessibilité (WCAG), complétée par l'analyse de données analytics.
-          </p>
-          <p class="cs-body">Les principes clés de l'UX ont guidé chaque proposition :</p>
-          <ul class="cs-list">
-            <li>Clarté des objectifs des utilisateurs</li>
-            <li>Nature et priorité de l'architecture de l'information</li>
-            <li>Hiérarchie claire du contenu et des éléments de l'interface</li>
-            <li>Identification des actions clés de l'utilisateur</li>
-            <li>Modèles d'interaction optimisés entre l'utilisateur et l'interface</li>
-          </ul>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Audit UX — vue 1" src="./public/Screenshot-2025-05-09-at-14-57-59@2x.png" />
-          <img loading="lazy" alt="Audit UX — vue 2" src="./public/Screenshot-2025-05-09-at-14-51-35@2x.png" />
-          <img loading="lazy" alt="Audit UX — vue 3" src="./public/Screenshot-2025-05-09-at-14-50-11@2x.png" />
-          <img loading="lazy" alt="Audit UX — vue 4" src="./public/Screenshot-2025-05-09-at-14-50-01@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Nouvelles fonctionnalités</h2>
-          <p class="cs-body">J'ai contribué à la réflexion et au développement de nouvelles fonctionnalités axées sur la gestion locative. Mon rôle consistait à :</p>
-          <ul class="cs-list">
-            <li><strong>Cadrage des fonctionnalités</strong></li>
-            <li><strong>Recherche et entretiens avec les utilisateurs</strong></li>
-            <li><strong>Analyse comparative concurrentielle</strong></li>
-            <li><strong>Ateliers d'idéation et de brainstorming</strong></li>
-            <li><strong>Wireframing basse et moyenne fidélité</strong></li>
-            <li><strong>Livraison des premiers prototypes fonctionnels dans Figma</strong></li>
-          </ul>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Nouvelle fonctionnalité 1" src="./public/Screenshot-2025-05-09-at-14-57-03@2x.png" />
-          <img loading="lazy" alt="Nouvelle fonctionnalité 2" src="./public/Screenshot-2025-05-09-at-15-39-04-1@2x.png" />
-          <img loading="lazy" alt="Nouvelle fonctionnalité 3" src="./public/Screenshot-2025-05-09-at-15-02-51@2x.png" />
-          <img loading="lazy" alt="Nouvelle fonctionnalité 4" src="./public/Screenshot-2025-05-09-at-15-02-38@2x.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Rédaction UX</h2>
-          <p class="cs-body">
-            J'ai rédigé une rédaction UX claire et produit toute la documentation de support, fournissant des spécifications de conception complètes et des écrans prêts à être transférés à l'équipe de développement. Pour renforcer notre prise de décision, j'ai introduit et suivi des KPI UX clés :
-          </p>
-          <ul class="cs-list">
-            <li><strong>Taux de réussite des tâches</strong></li>
-            <li><strong>Temps de travail</strong></li>
-            <li><strong>Scores SUS (System Usability Scale)</strong></li>
-            <li><strong>Points de dépôt chez l'utilisateur</strong></li>
-          </ul>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Rédaction UX — proposition 1" src="./public/Proposition-1-1@2x.png" />
-          <img loading="lazy" alt="Rédaction UX — proposition 2" src="./public/Proposition-1@2x.png" />
-          <img loading="lazy" alt="Rédaction UX — proposition 6" src="./public/Proposition-6@2x.png" />
-          <img loading="lazy" alt="Rédaction UX — texte" src="./public/Text-1@2x.png" />
-        </div>
-
-        <nav class="project-nav" aria-label="Navigation entre projets">
-          <a href="../andy-electric/index.html" class="project-nav-link project-nav-link--prev">
-            <span class="project-nav-label">← Projet précédent</span>
-            <span class="project-nav-name">Andy Electric</span>
-          </a>
-          <a href="../jumbomana/index.html" class="project-nav-link project-nav-link--next">
-            <span class="project-nav-label">Projet suivant →</span>
-            <span class="project-nav-name">JumboMana</span>
-          </a>
-        </nav>
-
-      </main>
-
-        <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="../../scripts/i18n.js"></script>
-    <script type="module" src="../../scripts/scroll-animations.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>Ublo — Cas d'étude · Alejandro Guevara</title>
+<meta content="Caso de estudio Ublo: plataforma para gestores inmobiliarios en Francia." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/projects/ublo/index.html" property="og:url"/>
+<meta content="Ublo — Cas d'étude · Alejandro Guevara" property="og:title"/>
+<meta content="Plateforme pour gestionnaires immobiliers en France — itération UX et nouvelles fonctionnalités." property="og:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-ublo.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ublo — Cas d'étude · Alejandro Guevara" name="twitter:title"/>
+<meta content="Plateforme pour gestionnaires immobiliers en France — itération UX et nouvelles fonctionnalités." name="twitter:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-ublo.jpg" name="twitter:image"/>
+<link href="../../styles/global.css" rel="stylesheet"/>
+<link href="../../styles/navbar.css" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="../../styles/responsive.css" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="../../styles/lightbox.css" rel="stylesheet"/>
+<link href="../../styles/case-study.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body data-page="ublo">
+<div class="ublo">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="../../index.html#projects">
+<img alt="" class="layout-grid-icon" src="../../public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="../../index.html#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../index.html#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="../../index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="../../public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<main class="cs-frame">
+<header class="cs-header" data-reveal="">
+<p class="cs-kicker" data-i18n="ublo.t001">UX Designer · 2024–2025</p>
+<h1 class="cs-title" data-i18n="ublo.t002">Ublo</h1>
+<p class="cs-role" data-i18n="ublo.t003">Plateforme de gestion immobilière · France</p>
+<p class="cs-body" data-i18n-html="ublo.t004">En tant qu'UX Designer au sein de l'équipe Ublo, une <strong>plateforme de gestion immobilière basée en France avec plus de 2 000 utilisateurs et 20 clients dans tout le pays</strong>, mon rôle consistait à améliorer continuellement l'interface et l'expérience utilisateur globale.</p>
+<p class="cs-body" data-i18n-html="ublo.t005">J'ai travaillé de manière itérative sur plus de <strong>15 nouvelles fonctionnalités et 20 améliorations de la plateforme</strong>, apportant des améliorations continues directement alignées sur les retours clients et les exigences métier.</p>
+</header>
+<div class="cs-img-box" data-reveal="">
+<img alt="Vue d'ensemble de la plateforme Ublo" data-i18n-alt="ublo.t034" loading="lazy" src="./public/Screenshot-2025-05-02-at-11-11-26-1@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="ublo.t006">Continue Itération</h2>
+<p class="cs-body" data-i18n="ublo.t007">J'ai exploré l'utilisation d'outils d'intelligence artificielle dans les phases de conception et de recherche — de l'analyse du comportement des utilisateurs assistée par l'IA au prototypage des interactions et à la rationalisation de la génération de contenu.</p>
+<p class="cs-body" data-i18n="ublo.t008">Tout au long du processus, j'ai mené :</p>
+<ul class="cs-list">
+<li data-i18n="ublo.t009">Recherches techniques pour comprendre les limites et les opportunités du système.</li>
+<li data-i18n="ublo.t010">Analyse comparative pour identifier les meilleures pratiques et les normes du marché.</li>
+<li data-i18n="ublo.t011">Cartographie du parcours utilisateur et création de user stories pour structurer des solutions logiques et efficaces.</li>
+</ul>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Itération Ublo — vue 1" data-i18n-alt="ublo.t035" loading="lazy" src="./public/Screenshot-2025-05-09-at-15-08-58@2x.webp"/>
+<img alt="Itération Ublo — vue 2" data-i18n-alt="ublo.t036" loading="lazy" src="./public/Screenshot-2025-05-09-at-15-07-04@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="ublo.t012">Auditer l'expérience utilisateur</h2>
+<p class="cs-body" data-i18n="ublo.t013">J'ai réalisé un audit UX complet de la plateforme afin d'identifier les principaux points de friction et d'aligner l'expérience utilisateur avec les objectifs business. L'analyse s'est appuyée sur une évaluation heuristique (Nielsen, Bastien &amp; Scapin), l'étude des parcours utilisateurs clés, de l'architecture de l'information, de la cohérence visuelle et de l'accessibilité (WCAG), complétée par l'analyse de données analytics.</p>
+<p class="cs-body" data-i18n="ublo.t014">Les principes clés de l'UX ont guidé chaque proposition :</p>
+<ul class="cs-list">
+<li data-i18n="ublo.t015">Clarté des objectifs des utilisateurs</li>
+<li data-i18n="ublo.t016">Nature et priorité de l'architecture de l'information</li>
+<li data-i18n="ublo.t017">Hiérarchie claire du contenu et des éléments de l'interface</li>
+<li data-i18n="ublo.t018">Identification des actions clés de l'utilisateur</li>
+<li data-i18n="ublo.t019">Modèles d'interaction optimisés entre l'utilisateur et l'interface</li>
+</ul>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Audit UX — vue 1" data-i18n-alt="ublo.t037" loading="lazy" src="./public/Screenshot-2025-05-09-at-14-57-59@2x.webp"/>
+<img alt="Audit UX — vue 2" data-i18n-alt="ublo.t038" loading="lazy" src="./public/Screenshot-2025-05-09-at-14-51-35@2x.webp"/>
+<img alt="Audit UX — vue 3" data-i18n-alt="ublo.t039" loading="lazy" src="./public/Screenshot-2025-05-09-at-14-50-11@2x.webp"/>
+<img alt="Audit UX — vue 4" data-i18n-alt="ublo.t040" loading="lazy" src="./public/Screenshot-2025-05-09-at-14-50-01@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="ublo.t020">Nouvelles fonctionnalités</h2>
+<p class="cs-body" data-i18n="ublo.t021">J'ai contribué à la réflexion et au développement de nouvelles fonctionnalités axées sur la gestion locative. Mon rôle consistait à :</p>
+<ul class="cs-list">
+<li><strong data-i18n="ublo.t022">Cadrage des fonctionnalités</strong></li>
+<li><strong data-i18n="ublo.t023">Recherche et entretiens avec les utilisateurs</strong></li>
+<li><strong data-i18n="ublo.t024">Analyse comparative concurrentielle</strong></li>
+<li><strong data-i18n="ublo.t025">Ateliers d'idéation et de brainstorming</strong></li>
+<li><strong data-i18n="ublo.t026">Wireframing basse et moyenne fidélité</strong></li>
+<li><strong data-i18n="ublo.t027">Livraison des premiers prototypes fonctionnels dans Figma</strong></li>
+</ul>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Nouvelle fonctionnalité 1" data-i18n-alt="ublo.t041" loading="lazy" src="./public/Screenshot-2025-05-09-at-14-57-03@2x.webp"/>
+<img alt="Nouvelle fonctionnalité 2" data-i18n-alt="ublo.t042" loading="lazy" src="./public/Screenshot-2025-05-09-at-15-39-04-1@2x.webp"/>
+<img alt="Nouvelle fonctionnalité 3" data-i18n-alt="ublo.t043" loading="lazy" src="./public/Screenshot-2025-05-09-at-15-02-51@2x.webp"/>
+<img alt="Nouvelle fonctionnalité 4" data-i18n-alt="ublo.t044" loading="lazy" src="./public/Screenshot-2025-05-09-at-15-02-38@2x.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="ublo.t028">Rédaction UX</h2>
+<p class="cs-body" data-i18n="ublo.t029">J'ai rédigé une rédaction UX claire et produit toute la documentation de support, fournissant des spécifications de conception complètes et des écrans prêts à être transférés à l'équipe de développement. Pour renforcer notre prise de décision, j'ai introduit et suivi des KPI UX clés :</p>
+<ul class="cs-list">
+<li><strong data-i18n="ublo.t030">Taux de réussite des tâches</strong></li>
+<li><strong data-i18n="ublo.t031">Temps de travail</strong></li>
+<li><strong data-i18n="ublo.t032">Scores SUS (System Usability Scale)</strong></li>
+<li><strong data-i18n="ublo.t033">Points de dépôt chez l'utilisateur</strong></li>
+</ul>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Rédaction UX — proposition 1" data-i18n-alt="ublo.t045" loading="lazy" src="./public/Proposition-1-1@2x.webp"/>
+<img alt="Rédaction UX — proposition 2" data-i18n-alt="ublo.t046" loading="lazy" src="./public/Proposition-1@2x.webp"/>
+<img alt="Rédaction UX — proposition 6" data-i18n-alt="ublo.t047" loading="lazy" src="./public/Proposition-6@2x.webp"/>
+<img alt="Rédaction UX — texte" data-i18n-alt="ublo.t048" loading="lazy" src="./public/Text-1@2x.webp"/>
+</div>
+<nav aria-label="Navigation entre projets" class="project-nav">
+<a class="project-nav-link project-nav-link--prev" href="../andy-electric/index.html">
+<span class="project-nav-label">← Projet précédent</span>
+<span class="project-nav-name">Andy Electric</span>
+</a>
+<a class="project-nav-link project-nav-link--next" href="../jumbomana/index.html">
+<span class="project-nav-label">Projet suivant →</span>
+<span class="project-nav-name">JumboMana</span>
+</a>
+</nav>
+</main>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="../../scripts/i18n.js" type="module"></script>
+<script src="../../scripts/scroll-animations.js" type="module"></script>
+<script src="../../scripts/lightbox.js" type="module"></script>
+</div></body>
 </html>

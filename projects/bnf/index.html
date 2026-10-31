@@ -1,275 +1,238 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Musée de la BnF — Cas d'étude · Alejandro Guevara</title>
-    <meta name="description" content="Cas d'étude Musée de la BnF : application web jumeau numérique du patrimoine architectural et des collections du site Richelieu." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/bnf/index.html" />
-    <meta property="og:title" content="Musée de la BnF — Cas d'étude · Alejandro Guevara" />
-    <meta property="og:description" content="Application web créant un jumeau numérique du patrimoine architectural du site Richelieu de la BnF." />
-    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-bnf.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Musée de la BnF — Cas d'étude · Alejandro Guevara" />
-    <meta name="twitter:description" content="Application web créant un jumeau numérique du patrimoine architectural du site Richelieu de la BnF." />
-    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-bnf.png" />
-
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="../../styles/navbar.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap" />
-      <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link rel="stylesheet" href="../../styles/case-study.css" />
-  </head>
-  <body>
-    <div class="bnf">
-
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="../../index.html#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="../../projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="../../index.html#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="../../index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <main class="cs-frame">
-
-        <header class="cs-header" data-reveal>
-          <p class="cs-kicker">UX Designer &amp; Service Designer · 2024</p>
-          <h1 class="cs-title">Musée de la BnF</h1>
-          <p class="cs-role">Jumeau numérique · Patrimoine culturel</p>
-          <p class="cs-body">
-            Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la Bibliothèque nationale de France. Le projet vise à offrir une expérience culturelle immersive combinant visite virtuelle 3D, découverte des collections et streaming de contenus documentaires.
-          </p>
-          <ul class="cs-list">
-            <li>Analyse du contexte et recherche utilisateur sur site</li>
-            <li>Définition des scénarios et des parcours utilisateurs</li>
-            <li>Conception des flows et de l'architecture de l'information</li>
-            <li>Prototypage, tests et itérations de l'interface</li>
-          </ul>
-        </header>
-
-        <div class="cs-img-box" data-reveal>
-          <img alt="Références visuelles — patrimoine BnF Richelieu" src="./public/img-reference.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Références</h2>
-          <p class="cs-body">
-            Une analyse comparative approfondie a été menée pour identifier les meilleures pratiques en matière d'expérience culturelle digitale. Les références incluent des applications de visite virtuelle 3D, des plateformes de streaming culturel ainsi que des musées ayant développé des expériences numériques innovantes.
-          </p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Benchmark — analyse comparative des références numériques" src="./public/benchmark.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Personas</h2>
-          <p class="cs-body">
-            Quatre profils utilisateurs ont été définis à partir des recherches terrain et des entretiens menés avec des visiteurs du site Richelieu. Ces personas ont guidé toutes les décisions de conception tout au long du projet.
-          </p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Personas — profils des visiteurs BnF" src="./public/img-personas.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Scénarios</h2>
-          <p class="cs-body"><strong>Proposition de collection</strong> — Explorer les expositions actuelles, passées et à venir du musée. Accéder aux collections par pièce et découvrir les œuvres d'art exposées.</p>
-          <p class="cs-body"><strong>Visite de la salle de collections</strong> — Explorer l'évolution du musée au fil du temps à travers la carte interactive. Visite virtuelle permettant une découverte détaillée de chaque pièce.</p>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Expositions et collections du musée BnF" src="./public/collections.png" />
-          <img loading="lazy" alt="Visite 3D du musée et de ses collections" src="./public/map3D.png" />
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Parcours utilisateur — achat de billets, visite physique" src="./public/journeymap1.png" />
-        </div>
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Parcours utilisateur — exploration culturelle" src="./public/journeymap2.png" />
-        </div>
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Parcours utilisateur — deux amies explorent le contenu" src="./public/journeymap3.png" />
-        </div>
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Parcours utilisateur — visite guidée virtuelle" src="./public/journeymap4.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Flows</h2>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Flow — Expositions et collections" src="./public/userflow1.png" />
-          <img loading="lazy" alt="Flow — Visite 3D" src="./public/userflow2.png" />
-          <img loading="lazy" alt="Flow — Événements en ligne" src="./public/userflow3.png" />
-          <img loading="lazy" alt="Flow — Streaming et documentaires" src="./public/userflow4.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Architecture de l'information</h2>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Architecture de l'information — BnF virtuelle" src="./public/img-architecture.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Streaming</h2>
-          <p class="cs-body">
-            Permettre aux utilisateurs de profiter du contenu créé par le musée via le streaming culturel et de le partager avec d'autres à distance. Un système de chat et audio intégré encourage l'interaction entre les participants en temps réel.
-          </p>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Streaming — Le musée de la BnF en direct" src="./public/img-video.png" />
-          <img loading="lazy" alt="Streaming — partage et interaction à distance" src="./public/img-video2.png" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Screening</h2>
-          <p class="cs-body">
-            Une proposition complète intégrant streaming de documentaires patrimoniaux, navigation dans la carte 3D interactive et exploration des collections — tout réuni dans une expérience digitale cohérente.
-          </p>
-        </div>
-
-        <div class="cs-img-full" data-reveal>
-          <img loading="lazy" alt="Écrans finaux — BnF virtuelle application" src="./public/group-header.png" />
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Interface finale — BnF virtuelle, résultats du design" src="./public/img-final.png" />
-        </div>
-
-        <nav class="project-nav" aria-label="Navigation entre projets">
-          <a href="../bellpi/index.html" class="project-nav-link project-nav-link--prev">
-            <span class="project-nav-label">← Projet précédent</span>
-            <span class="project-nav-name">Bellpi</span>
-          </a>
-          <a href="../spotify/index.html" class="project-nav-link project-nav-link--next">
-            <span class="project-nav-label">Projet suivant →</span>
-            <span class="project-nav-name">Spotify</span>
-          </a>
-        </nav>
-
-      </main>
-
-        <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="../../scripts/i18n.js"></script>
-    <script type="module" src="../../scripts/scroll-animations.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>Musée de la BnF — Cas d'étude · Alejandro Guevara</title>
+<meta content="Cas d'étude Musée de la BnF : application web jumeau numérique du patrimoine architectural et des collections du site Richelieu." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/projects/bnf/index.html" property="og:url"/>
+<meta content="Musée de la BnF — Cas d'étude · Alejandro Guevara" property="og:title"/>
+<meta content="Application web créant un jumeau numérique du patrimoine architectural du site Richelieu de la BnF." property="og:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-bnf.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Musée de la BnF — Cas d'étude · Alejandro Guevara" name="twitter:title"/>
+<meta content="Application web créant un jumeau numérique du patrimoine architectural du site Richelieu de la BnF." name="twitter:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-bnf.jpg" name="twitter:image"/>
+<link href="../../styles/global.css" rel="stylesheet"/>
+<link href="../../styles/navbar.css" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="../../styles/lightbox.css" rel="stylesheet"/>
+<link href="../../styles/case-study.css" rel="stylesheet"/>
+</head>
+<body data-page="bnf">
+<div class="bnf">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="../../index.html#projects">
+<img alt="" class="layout-grid-icon" src="../../public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="../../index.html#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../index.html#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="../../index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="../../public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<main class="cs-frame">
+<header class="cs-header" data-reveal="">
+<p class="cs-kicker" data-i18n="bnf.t001">UX Designer &amp; Service Designer · 2024</p>
+<h1 class="cs-title" data-i18n="bnf.t002">Musée de la BnF</h1>
+<p class="cs-role" data-i18n="bnf.t003">Jumeau numérique · Patrimoine culturel</p>
+<p class="cs-body" data-i18n="bnf.t004">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la Bibliothèque nationale de France. Le projet vise à offrir une expérience culturelle immersive combinant visite virtuelle 3D, découverte des collections et streaming de contenus documentaires.</p>
+<ul class="cs-list">
+<li data-i18n="bnf.t005">Analyse du contexte et recherche utilisateur sur site</li>
+<li data-i18n="bnf.t006">Définition des scénarios et des parcours utilisateurs</li>
+<li data-i18n="bnf.t007">Conception des flows et de l'architecture de l'information</li>
+<li data-i18n="bnf.t008">Prototypage, tests et itérations de l'interface</li>
+</ul>
+</header>
+<div class="cs-img-box" data-reveal="">
+<img alt="Références visuelles — patrimoine BnF Richelieu" data-i18n-alt="bnf.t022" src="./public/img-reference.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t009">Références</h2>
+<p class="cs-body" data-i18n="bnf.t010">Une analyse comparative approfondie a été menée pour identifier les meilleures pratiques en matière d'expérience culturelle digitale. Les références incluent des applications de visite virtuelle 3D, des plateformes de streaming culturel ainsi que des musées ayant développé des expériences numériques innovantes.</p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Benchmark — analyse comparative des références numériques" data-i18n-alt="bnf.t023" loading="lazy" src="./public/benchmark.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t011">Personas</h2>
+<p class="cs-body" data-i18n="bnf.t012">Quatre profils utilisateurs ont été définis à partir des recherches terrain et des entretiens menés avec des visiteurs du site Richelieu. Ces personas ont guidé toutes les décisions de conception tout au long du projet.</p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Personas — profils des visiteurs BnF" data-i18n-alt="bnf.t024" loading="lazy" src="./public/img-personas.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t013">Scénarios</h2>
+<p class="cs-body" data-i18n-html="bnf.t014"><strong>Proposition de collection</strong> — Explorer les expositions actuelles, passées et à venir du musée. Accéder aux collections par pièce et découvrir les œuvres d'art exposées.</p>
+<p class="cs-body" data-i18n-html="bnf.t015"><strong>Visite de la salle de collections</strong> — Explorer l'évolution du musée au fil du temps à travers la carte interactive. Visite virtuelle permettant une découverte détaillée de chaque pièce.</p>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Expositions et collections du musée BnF" data-i18n-alt="bnf.t025" loading="lazy" src="./public/collections.webp"/>
+<img alt="Visite 3D du musée et de ses collections" data-i18n-alt="bnf.t026" loading="lazy" src="./public/map3D.webp"/>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Parcours utilisateur — achat de billets, visite physique" data-i18n-alt="bnf.t027" loading="lazy" src="./public/journeymap1.webp"/>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Parcours utilisateur — exploration culturelle" data-i18n-alt="bnf.t028" loading="lazy" src="./public/journeymap2.webp"/>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Parcours utilisateur — deux amies explorent le contenu" data-i18n-alt="bnf.t029" loading="lazy" src="./public/journeymap3.webp"/>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Parcours utilisateur — visite guidée virtuelle" data-i18n-alt="bnf.t030" loading="lazy" src="./public/journeymap4.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t016">Flows</h2>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Flow — Expositions et collections" data-i18n-alt="bnf.t031" loading="lazy" src="./public/userflow1.webp"/>
+<img alt="Flow — Visite 3D" data-i18n-alt="bnf.t032" loading="lazy" src="./public/userflow2.webp"/>
+<img alt="Flow — Événements en ligne" data-i18n-alt="bnf.t033" loading="lazy" src="./public/userflow3.webp"/>
+<img alt="Flow — Streaming et documentaires" data-i18n-alt="bnf.t034" loading="lazy" src="./public/userflow4.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t017">Architecture de l'information</h2>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Architecture de l'information — BnF virtuelle" data-i18n-alt="bnf.t035" loading="lazy" src="./public/img-architecture.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t018">Streaming</h2>
+<p class="cs-body" data-i18n="bnf.t019">Permettre aux utilisateurs de profiter du contenu créé par le musée via le streaming culturel et de le partager avec d'autres à distance. Un système de chat et audio intégré encourage l'interaction entre les participants en temps réel.</p>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Streaming — Le musée de la BnF en direct" data-i18n-alt="bnf.t036" loading="lazy" src="./public/img-video.webp"/>
+<img alt="Streaming — partage et interaction à distance" data-i18n-alt="bnf.t037" loading="lazy" src="./public/img-video2.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bnf.t020">Screening</h2>
+<p class="cs-body" data-i18n="bnf.t021">Une proposition complète intégrant streaming de documentaires patrimoniaux, navigation dans la carte 3D interactive et exploration des collections — tout réuni dans une expérience digitale cohérente.</p>
+</div>
+<div class="cs-img-full" data-reveal="">
+<img alt="Écrans finaux — BnF virtuelle application" data-i18n-alt="bnf.t038" loading="lazy" src="./public/group-header.webp"/>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Interface finale — BnF virtuelle, résultats du design" data-i18n-alt="bnf.t039" loading="lazy" src="./public/img-final.webp"/>
+</div>
+<nav aria-label="Navigation entre projets" class="project-nav">
+<a class="project-nav-link project-nav-link--prev" href="../bellpi/index.html">
+<span class="project-nav-label">← Projet précédent</span>
+<span class="project-nav-name">Bellpi</span>
+</a>
+<a class="project-nav-link project-nav-link--next" href="../spotify/index.html">
+<span class="project-nav-label">Projet suivant →</span>
+<span class="project-nav-name">Spotify</span>
+</a>
+</nav>
+</main>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="../../scripts/i18n.js" type="module"></script>
+<script src="../../scripts/scroll-animations.js" type="module"></script>
+<script src="../../scripts/lightbox.js" type="module"></script>
+</div></body>
 </html>

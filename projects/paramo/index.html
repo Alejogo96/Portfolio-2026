@@ -1,267 +1,214 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>ParamoTotem — Cas d'étude · Alejandro Guevara</title>
-    <meta name="description" content="Cas d'étude ParamoTotem : expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/paramo/index.html" />
-    <meta property="og:title" content="ParamoTotem — Cas d'étude · Alejandro Guevara" />
-    <meta property="og:description" content="Expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." />
-    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-paramo.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ParamoTotem — Cas d'étude · Alejandro Guevara" />
-    <meta name="twitter:description" content="Expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." />
-    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-paramo.png" />
-
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="../../styles/navbar.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../../styles/responsive.css" />
-    <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Raleway:wght@700&display=swap"
-    />
-  </head>
-  <body>
-    <div class="paramo">
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="../../index.html#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="../../projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="../../index.html#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="../../index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <main class="paramo-frame">
-
-        <section class="pm-header">
-          <div class="pm-header-info">
-            <div class="pm-title-block">
-              <h1 class="pm-title">ParamoTotem</h1>
-              <p class="pm-role">Experience Designer</p>
-            </div>
-            <p class="pm-desc">
-              Projet expérimental conçu pour créer une expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien, à travers des stations thématiques dédiées à chaque espèce emblématique.
-            </p>
-            <div class="pm-meta">
-              <div class="pm-meta-item">
-                <span class="pm-meta-label">Type</span>
-                <span class="pm-meta-value">Projet expérimental</span>
-              </div>
-              <div class="pm-meta-item">
-                <span class="pm-meta-label">Rôle</span>
-                <span class="pm-meta-value">Experience Designer</span>
-              </div>
-              <div class="pm-meta-item">
-                <span class="pm-meta-label">Inspiration</span>
-                <span class="pm-meta-value">Páramo colombien</span>
-              </div>
-            </div>
-          </div>
-          <div class="pm-header-image">
-            <img
-              class="pm-hero-img"
-              alt="ParamoTotem — expérience immersive"
-              src="./public/header-experience.png"
-            />
-          </div>
-        </section>
-
-        <section class="pm-concept">
-          <div class="pm-concept-text">
-            <h2 class="pm-section-title">Concept</h2>
-            <p class="pm-body-text">
-              Le páramo est l'un des écosystèmes les plus précieux et les plus menacés de la planète. ParamoTotem est une installation interactive qui plonge les visiteurs dans cet environnement unique à travers des stations dédiées à chaque espèce emblématique : l'ours à lunettes, le condor des Andes, le frailejón et l'orchidée.
-            </p>
-            <p class="pm-body-text">
-              Chaque station est conçue comme un espace sensoriel autonome, combinant visuels génératifs, sons ambiants et interactions physiques pour créer un lien émotionnel fort avec la biodiversité du páramo.
-            </p>
-          </div>
-          <div class="pm-concept-image">
-            <img
-              class="pm-img-full"
-              loading="lazy"
-              alt="Concept — benchmark et références visuelles"
-              src="./public/benchmark-concept.png"
-            />
-          </div>
-        </section>
-
-        <section class="pm-stations">
-          <h2 class="pm-section-title">Stations thématiques</h2>
-          <p class="pm-body-text">
-            Les quatre stations composent un parcours narratif et sensoriel. Chacune explore une espèce du páramo à travers des interactions spécifiques et une identité visuelle propre, tout en maintenant une cohérence globale dans l'expérience.
-          </p>
-          <div class="pm-stations-grid">
-            <div class="pm-station-card">
-              <img
-                class="pm-station-img"
-                loading="lazy"
-                alt="Station Ours à lunettes"
-                src="./public/station-ours.png"
-              />
-              <p class="pm-station-label">Ours à lunettes</p>
-            </div>
-            <div class="pm-station-card">
-              <img
-                class="pm-station-img"
-                loading="lazy"
-                alt="Station Condor des Andes"
-                src="./public/station-condor.png"
-              />
-              <p class="pm-station-label">Condor des Andes</p>
-            </div>
-            <div class="pm-station-card">
-              <img
-                class="pm-station-img"
-                loading="lazy"
-                alt="Station Frailejón"
-                src="./public/station-frailejon.png"
-              />
-              <p class="pm-station-label">Frailejón</p>
-            </div>
-            <div class="pm-station-card">
-              <img
-                class="pm-station-img"
-                loading="lazy"
-                alt="Station Orchidée"
-                src="./public/station-orquidea.png"
-              />
-              <p class="pm-station-label">Orchidée</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="pm-experience">
-          <h2 class="pm-section-title">Expérience visuelle</h2>
-          <p class="pm-body-text">
-            Les visuels génératifs sont au cœur de l'expérience ParamoTotem. Les lumières, les textures et les animations répondent aux interactions des visiteurs, créant une ambiance vivante et évolutive qui traduit la dynamique des écosystèmes naturels.
-          </p>
-          <div class="pm-experience-image">
-            <img
-              class="pm-img-full"
-              loading="lazy"
-              alt="Expérience visuelle — aperçu vidéo génératif"
-              src="./public/video-preview.png"
-            />
-          </div>
-        </section>
-
-      <nav class="project-nav" aria-label="Navigation entre projets">
-        <a href="../spotify/index.html" class="project-nav-link project-nav-link--prev">
-          <span class="project-nav-label">← Projet précédent</span>
-          <span class="project-nav-name">Spotify</span>
-        </a>
-        <a href="../andy-electric/index.html" class="project-nav-link project-nav-link--next">
-          <span class="project-nav-label">Projet suivant →</span>
-          <span class="project-nav-name">Andy Electric</span>
-        </a>
-      </nav>
-
-      </main>
-    </div>
-
-
-    <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="../../scripts/i18n.js"></script>
-    <script type="module" src="../../scripts/scroll-animations.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>ParamoTotem — Cas d'étude · Alejandro Guevara</title>
+<meta content="Cas d'étude ParamoTotem : expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/projects/paramo/index.html" property="og:url"/>
+<meta content="ParamoTotem — Cas d'étude · Alejandro Guevara" property="og:title"/>
+<meta content="Expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." property="og:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-paramo.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ParamoTotem — Cas d'étude · Alejandro Guevara" name="twitter:title"/>
+<meta content="Expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." name="twitter:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-paramo.jpg" name="twitter:image"/>
+<link href="../../styles/global.css" rel="stylesheet"/>
+<link href="../../styles/navbar.css" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="../../styles/responsive.css" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="../../styles/lightbox.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body data-page="paramo">
+<div class="paramo">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="../../index.html#projects">
+<img alt="" class="layout-grid-icon" src="../../public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="../../index.html#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../index.html#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="../../index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="../../public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<main class="paramo-frame">
+<section class="pm-header">
+<div class="pm-header-info">
+<div class="pm-title-block">
+<h1 class="pm-title" data-i18n="paramo.t001">ParamoTotem</h1>
+<p class="pm-role" data-i18n="paramo.t002">Experience Designer</p>
+</div>
+<p class="pm-desc" data-i18n="paramo.t003">Projet expérimental conçu pour créer une expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien, à travers des stations thématiques dédiées à chaque espèce emblématique.</p>
+<div class="pm-meta">
+<div class="pm-meta-item">
+<span class="pm-meta-label" data-i18n="paramo.t004">Type</span>
+<span class="pm-meta-value" data-i18n="paramo.t005">Projet expérimental</span>
+</div>
+<div class="pm-meta-item">
+<span class="pm-meta-label" data-i18n="paramo.t006">Rôle</span>
+<span class="pm-meta-value" data-i18n="paramo.t002">Experience Designer</span>
+</div>
+<div class="pm-meta-item">
+<span class="pm-meta-label" data-i18n="paramo.t007">Inspiration</span>
+<span class="pm-meta-value" data-i18n="paramo.t008">Páramo colombien</span>
+</div>
+</div>
+</div>
+<div class="pm-header-image">
+<img alt="ParamoTotem — expérience immersive" class="pm-hero-img" data-i18n-alt="paramo.t020" src="./public/header-experience.webp"/>
+</div>
+</section>
+<section class="pm-concept">
+<div class="pm-concept-text">
+<h2 class="pm-section-title" data-i18n="paramo.t009">Concept</h2>
+<p class="pm-body-text" data-i18n="paramo.t010">Le páramo est l'un des écosystèmes les plus précieux et les plus menacés de la planète. ParamoTotem est une installation interactive qui plonge les visiteurs dans cet environnement unique à travers des stations dédiées à chaque espèce emblématique : l'ours à lunettes, le condor des Andes, le frailejón et l'orchidée.</p>
+<p class="pm-body-text" data-i18n="paramo.t011">Chaque station est conçue comme un espace sensoriel autonome, combinant visuels génératifs, sons ambiants et interactions physiques pour créer un lien émotionnel fort avec la biodiversité du páramo.</p>
+</div>
+<div class="pm-concept-image">
+<img alt="Concept — benchmark et références visuelles" class="pm-img-full" data-i18n-alt="paramo.t021" loading="lazy" src="./public/benchmark-concept.webp"/>
+</div>
+</section>
+<section class="pm-stations">
+<h2 class="pm-section-title" data-i18n="paramo.t012">Stations thématiques</h2>
+<p class="pm-body-text" data-i18n="paramo.t013">Les quatre stations composent un parcours narratif et sensoriel. Chacune explore une espèce du páramo à travers des interactions spécifiques et une identité visuelle propre, tout en maintenant une cohérence globale dans l'expérience.</p>
+<div class="pm-stations-grid">
+<div class="pm-station-card">
+<img alt="Station Ours à lunettes" class="pm-station-img" data-i18n-alt="paramo.t022" loading="lazy" src="./public/station-ours.webp"/>
+<p class="pm-station-label" data-i18n="paramo.t014">Ours à lunettes</p>
+</div>
+<div class="pm-station-card">
+<img alt="Station Condor des Andes" class="pm-station-img" data-i18n-alt="paramo.t023" loading="lazy" src="./public/station-condor.webp"/>
+<p class="pm-station-label" data-i18n="paramo.t015">Condor des Andes</p>
+</div>
+<div class="pm-station-card">
+<img alt="Station Frailejón" class="pm-station-img" data-i18n-alt="paramo.t024" loading="lazy" src="./public/station-frailejon.webp"/>
+<p class="pm-station-label" data-i18n="paramo.t016">Frailejón</p>
+</div>
+<div class="pm-station-card">
+<img alt="Station Orchidée" class="pm-station-img" data-i18n-alt="paramo.t025" loading="lazy" src="./public/station-orquidea.webp"/>
+<p class="pm-station-label" data-i18n="paramo.t017">Orchidée</p>
+</div>
+</div>
+</section>
+<section class="pm-experience">
+<h2 class="pm-section-title" data-i18n="paramo.t018">Expérience visuelle</h2>
+<p class="pm-body-text" data-i18n="paramo.t019">Les visuels génératifs sont au cœur de l'expérience ParamoTotem. Les lumières, les textures et les animations répondent aux interactions des visiteurs, créant une ambiance vivante et évolutive qui traduit la dynamique des écosystèmes naturels.</p>
+<div class="pm-experience-image">
+<img alt="Expérience visuelle — aperçu vidéo génératif" class="pm-img-full" data-i18n-alt="paramo.t026" loading="lazy" src="./public/video-preview.webp"/>
+</div>
+</section>
+<nav aria-label="Navigation entre projets" class="project-nav">
+<a class="project-nav-link project-nav-link--prev" href="../spotify/index.html">
+<span class="project-nav-label">← Projet précédent</span>
+<span class="project-nav-name">Spotify</span>
+</a>
+<a class="project-nav-link project-nav-link--next" href="../andy-electric/index.html">
+<span class="project-nav-label">Projet suivant →</span>
+<span class="project-nav-name">Andy Electric</span>
+</a>
+</nav>
+</main>
+</div>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="../../scripts/i18n.js" type="module"></script>
+<script src="../../scripts/scroll-animations.js" type="module"></script>
+<script src="../../scripts/lightbox.js" type="module"></script>
+</body>
 </html>
