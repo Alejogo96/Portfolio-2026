@@ -91,6 +91,15 @@ function init() {
       const a = document.createElement("a");
       a.className = "mobile-menu__link";
       a.href = href;
+      /* Same per-project icon as the desktop dropdown (Figma "Iconos 2026", 1px stroke) */
+      const src = [...dropdown.querySelectorAll("a.navbar-dropdown-item")].find((d) => norm(d.href) === norm(href));
+      const srcIcon = src && src.querySelector(".navbar-dropdown-item__icon");
+      if (srcIcon) {
+        const ic = srcIcon.cloneNode(true);
+        ic.className = "mobile-menu__icon";
+        ic.alt = "";
+        a.append(ic);
+      }
       const name = document.createElement("span");
       name.className = "mobile-menu__name";
       name.textContent = nameEl ? nameEl.textContent : fixed;

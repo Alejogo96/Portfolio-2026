@@ -163,3 +163,193 @@
     transition: none !important;
   }
 }
+
+/* ── Minimal palette (Figma "Menu/Projects", 2026-10-31):
+   neutral at rest, brand accent only on hover/focus ── */
+.navbar-dropdown__label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-dropdown__foot {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.navbar-dropdown-item__desc {
+  color: #aba8a7;
+}
+
+.navbar-dropdown-item {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-dropdown-item__name,
+.navbar-dropdown-item__icon {
+  transition: color 0.2s ease, filter 0.2s ease;
+}
+
+.navbar-dropdown-item:hover,
+.navbar-dropdown-item:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+}
+
+.navbar-dropdown-item:hover .navbar-dropdown-item__name,
+.navbar-dropdown-item:focus-visible .navbar-dropdown-item__name {
+  color: #ff5f3a;
+}
+
+/* white SVG icon → brand orange #ff5f3a */
+.navbar-dropdown-item:hover .navbar-dropdown-item__icon,
+.navbar-dropdown-item:focus-visible .navbar-dropdown-item__icon {
+  filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2496%) hue-rotate(343deg) brightness(101%) contrast(101%);
+}
+
+.navbar-dropdown-item:hover .navbar-dropdown-item__desc,
+.navbar-dropdown-item:focus-visible .navbar-dropdown-item__desc {
+  color: #d6d2d0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-dropdown-item,
+  .navbar-dropdown-item__name,
+  .navbar-dropdown-item__icon {
+    transition: none;
+  }
+}
+
+/* =====================================================
+   Header lock (2026-10-31) — one header on every page.
+   The Home and the case pages load different stylesheets
+   (responsive.css is missing on some case pages, home-v2.css only
+   on the Home), so the header changed size between pages.
+   These rules pin it to the Figma "Nav/Desktop" (3881:32):
+   1344 wide at 1440, 48px side padding, radius 16,
+   Inter Semi Bold 16/20, actions capsule radius 10.
+   ===================================================== */
+.navbar-wrapper {
+  /* own side padding: same steps as responsive.css, which some case pages don't load */
+  --nav-pad: clamp(16px, 4vw, 48px);
+  padding: 16px var(--nav-pad) 8px !important;
+}
+@media (max-width: 1024px) { .navbar-wrapper { --nav-pad: clamp(16px, 3vw, 32px); } }
+@media (max-width: 480px)  { .navbar-wrapper { --nav-pad: 16px; } }
+
+.navbar-wrapper .navbar {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100% !important;
+  max-width: 1344px;
+  min-height: 0;
+  margin-inline: auto;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.navbar-wrapper .layout-grid-parent,
+.navbar-wrapper .capa-1-parent {
+  width: auto !important;
+  height: auto !important;
+  min-height: 44px;
+  padding: 0 12px !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+}
+
+.navbar-wrapper .layout-grid-icon,
+.navbar-wrapper .capa-1-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0;
+}
+
+.navbar-wrapper .button,
+.navbar-wrapper .button2 {
+  font-size: 16px !important;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+@media (min-width: 769px) {
+  .navbar-wrapper .navbar {
+    padding: 0 36px !important; /* 48px to the text, as in Figma: 36 + 12 of the link padding */
+  }
+  .navbar-wrapper .navbar-menu-wrapper,
+  .navbar-wrapper .navbar-actions {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .navbar-wrapper .navbar-actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-wrapper .navbar {
+    padding: 8px 16px !important;
+  }
+  .navbar-wrapper .layout-grid-parent .button-text,
+  .navbar-wrapper .capa-1-parent .button-text {
+    display: none;
+  }
+  .navbar-wrapper .capa-1-parent {
+    padding: 0 !important;
+    justify-content: center;
+    min-width: 44px;
+  }
+}
+
+/* Hover bridge. The old one (.navbar-dropdown::before) is clipped since the
+   panel scrolls (overflow-y: auto), so moving the pointer from "Menu" down to
+   the panel crossed a 12px gap and the menu closed before reaching a project.
+   The bridge now lives on the wrapper and only exists while the menu is open. */
+.navbar-dropdown::before {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .navbar-menu-wrapper:hover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -12px;
+    width: min(700px, calc(100vw - 2 * var(--container-pad, 16px)));
+    height: 24px;
+  }
+}
+
+/* Icon set 2026 (Figma "Iconos 2026"): every line icon is drawn with a 1px stroke,
+   whatever size it is displayed at. */
+svg[stroke="currentColor"] * {
+  vector-effect: non-scaling-stroke;
+}
+.navbar-dropdown-item:hover .navbar-dropdown-item__icon,
+.navbar-dropdown-item:focus-visible .navbar-dropdown-item__icon {
+  opacity: 1;
+}
+
+/* ── Header · Estado=Abierto (Figma Nav/Desktop): "Menu" pasa al acento
+   mientras el menú está desplegado ── */
+@media (min-width: 769px) {
+  .layout-grid-parent .button,
+  .layout-grid-parent .layout-grid-icon {
+    transition: color 0.2s ease, filter 0.2s ease;
+  }
+  .navbar-menu-wrapper:not([data-dismissed]):hover .layout-grid-parent .button,
+  .navbar-menu-wrapper:not([data-dismissed]):has(:focus-visible) .layout-grid-parent .button,
+  .layout-grid-parent[aria-expanded="true"] .button {
+    color: #ff5f3a;
+  }
+  .navbar-menu-wrapper:not([data-dismissed]):hover .layout-grid-icon,
+  .navbar-menu-wrapper:not([data-dismissed]):has(:focus-visible) .layout-grid-icon,
+  .layout-grid-parent[aria-expanded="true"] .layout-grid-icon {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2496%) hue-rotate(343deg) brightness(101%) contrast(101%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .layout-grid-parent .button,
+  .layout-grid-parent .layout-grid-icon { transition: none; }
+}
