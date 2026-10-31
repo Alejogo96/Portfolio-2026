@@ -31,30 +31,37 @@ function resolveLang() {
   return DEFAULT_LANG;
 }
 
-function applyDictionary(dict) {
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
+function applyDictionary(dict, root = document) {
+  root.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (dict[key] != null) el.textContent = dict[key];
   });
-  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+  root.querySelectorAll("[data-i18n-html]").forEach((el) => {
     const key = el.getAttribute("data-i18n-html");
     if (dict[key] != null) el.innerHTML = dict[key];
   });
-  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+  root.querySelectorAll("[data-i18n-alt]").forEach((el) => {
     const key = el.getAttribute("data-i18n-alt");
     if (dict[key] != null) el.setAttribute("alt", dict[key]);
   });
-  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+  root.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
     const key = el.getAttribute("data-i18n-aria-label");
     if (dict[key] != null) el.setAttribute("aria-label", dict[key]);
   });
   const page = document.body.getAttribute("data-page");
-  if (page) {
+  if (page && root === document) {
     if (dict[`meta.${page}.title`] != null) document.title = dict[`meta.${page}.title`];
     const desc = document.querySelector('meta[name="description"]');
     if (desc && dict[`meta.${page}.desc`] != null) desc.setAttribute("content", dict[`meta.${page}.desc`]);
   }
 }
+
+/* Other modules (navbar.js) create labels at runtime and ask for them to be translated. */
+document.addEventListener("i18n:refresh", (e) => {
+  const lang = document.documentElement.lang;
+  const root = (e.detail && e.detail.root) || document;
+  applyDictionary(DICTS[lang] || DICTS[DEFAULT_LANG], root);
+});
 
 function updateActiveButtons(lang) {
   document.querySelectorAll(".lang-btn").forEach((btn) => {

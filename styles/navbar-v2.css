@@ -1,0 +1,123 @@
+/* =====================================================
+   navbar-v2.css — Header as in the Figma "Maquetas 2026"
+   - Burger on mobile (opens the projects list), 44px tap targets
+   - Theme toggle + language grouped in one capsule
+   - Desktop dropdown: 640px, system type styles (title 16 / text 14)
+   Loaded after navbar.css / responsive.css on every page.
+   ===================================================== */
+
+/* ── 44px tap targets ── */
+.layout-grid-parent,
+.navbar-lang-trigger,
+.navbar-actions .theme-toggle {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.navbar a:focus-visible,
+.navbar button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.navbar-capsule {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Capsule: theme + language (desktop; the mobile capsule is in mobile-menu.css) ── */
+@media (min-width: 769px) {
+  .navbar-capsule {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .navbar-capsule .navbar-lang-wrapper {
+    position: relative;
+  }
+
+  .navbar-capsule .navbar-lang-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-50%);
+  }
+
+  .navbar-lang-trigger {
+    justify-content: center;
+  }
+}
+
+/* ── Desktop dropdown (Figma: 640 wide, 8 padding, radius 14) ── */
+.navbar-dropdown {
+  width: 640px;
+  padding: 8px;
+  gap: 4px;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.navbar-dropdown-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.navbar-dropdown-item__header {
+  align-items: center;
+}
+
+.navbar-dropdown-item__name {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.navbar-dropdown-item__desc {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-dropdown-item[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-dropdown-item__current {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.navbar-dropdown-item__current::before {
+  content: "● ";
+}
+
+/* Open with keyboard focus on desktop; Esc dismisses until the pointer/focus leaves */
+@media (min-width: 769px) {
+  .navbar-menu-wrapper:has(:focus-visible) .navbar-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navbar-menu-wrapper[data-dismissed] .navbar-dropdown {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-dropdown {
+    transition: none !important;
+  }
+}

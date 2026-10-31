@@ -268,7 +268,7 @@ body {
   background: color-mix(in srgb, var(--c) 20%, transparent);
   color: color-mix(in srgb, var(--c) 55%, var(--text));
   border: 1px solid color-mix(in srgb, var(--c) 60%, transparent);
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.5;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease,
@@ -321,7 +321,7 @@ body {
 .bio__p {
   max-width: none; /* override global p measure (65ch) */
   margin: 0 0 1rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.65;
   color: var(--text);
 }
@@ -370,7 +370,7 @@ body {
   display: grid;
   gap: 0.6rem;
   max-width: none;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--text);
 }
@@ -497,7 +497,7 @@ a.pcard:focus-visible .pcard__title::after {
 
 .pcard__desc {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.55;
   color: var(--muted);
 }
@@ -532,7 +532,7 @@ a.pcard:focus-visible .pcard__title::after {
 
 .contact__line {
   margin: 0 0 0.6rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--text);
 }
 
@@ -548,6 +548,8 @@ a.pcard:focus-visible .pcard__title::after {
 
 .btn {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 1.25rem;
   padding: 14px 24px;
   border-radius: 8px;
@@ -556,6 +558,21 @@ a.pcard:focus-visible .pcard__title::after {
   font-weight: 600;
   font-size: 0.9375rem;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn .icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.contact__line .icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  color: var(--accent);
+  margin-right: 0.5rem;
 }
 
 .btn:hover {

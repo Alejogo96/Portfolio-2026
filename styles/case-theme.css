@@ -185,7 +185,7 @@ body[data-page] .cs-body {
 
 @media (max-width: 768px) {
   body[data-page] {
-    --fs-body: 0.9375rem;
+    --fs-body: 0.875rem;
   }
 }
 
