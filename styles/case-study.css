@@ -320,3 +320,20 @@
 .cs-img-full img {
   height: auto;
 }
+
+/* Capturas verticales (pantallas de móvil): no más de 1200px de alto,
+   centradas, para que no ocupen varias pantallas seguidas. */
+.cs-img-box img,
+.cs-img-grid img {
+  width: auto;
+  max-width: 100%;
+  max-height: 1200px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .cs-img-box img,
+  .cs-img-grid img {
+    max-height: 900px;
+  }
+}
