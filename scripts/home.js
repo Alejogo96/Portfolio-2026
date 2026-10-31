@@ -15,12 +15,15 @@
   /* ── Theme ─────────────────────────────────────── */
   function setTheme(theme) {
     root.dataset.theme = theme;
+    var t = document.getElementById('theme-toggle');
+    if (t) t.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
     try { localStorage.setItem('pf:theme', theme); } catch (_) { /* ignore */ }
   }
 
   function initTheme() {
     var btn = document.getElementById('theme-toggle');
     if (!btn) return;
+    btn.setAttribute('aria-checked', root.dataset.theme === 'dark' ? 'true' : 'false');
     btn.addEventListener('click', function () {
       setTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
     });

@@ -101,9 +101,11 @@
 </div>
 </a>
 <div class="navbar-actions">
-<button aria-label="Changer de thème (clair / sombre)" class="theme-toggle" data-i18n-aria-label="h2.theme.toggle" id="theme-toggle" type="button">
-<svg aria-hidden="true" class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+<button aria-checked="true" aria-label="Changer de thème (clair / sombre)" class="theme-toggle" data-i18n-aria-label="h2.theme.toggle" id="theme-toggle" role="switch" type="button">
 <svg aria-hidden="true" class="theme-toggle__moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+<span aria-hidden="true" class="theme-toggle__label"><span class="theme-toggle__dark">Dark</span><span class="theme-toggle__light">Light</span></span>
+<span aria-hidden="true" class="theme-toggle__track"><span class="theme-toggle__knob"></span></span>
 </button>
 <div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
 <button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
