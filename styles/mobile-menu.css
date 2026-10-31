@@ -171,3 +171,106 @@
 
 /* Burger / close drawn with 1px lines, like the rest of the icon set */
 .nav-burger__box span { height: 1px; }
+
+/* =====================================================
+   Mobile bottom bar (Figma "FR · Home · Mobile 390" 3902:241, Navbar 3932:19747)
+   ≤768px: the header is a floating bar fixed at the bottom of the screen
+   (16px sides, 8px above, 16px + safe area below), always visible while scrolling.
+   Layout: burger + "Portfolio" on the left, theme/language capsule on the right.
+   The menu panel and the language list open upwards.
+   ===================================================== */
+@media (max-width: 768px) {
+  body .navbar-wrapper,
+  body[data-page] .navbar-wrapper {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 16px calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+    background: transparent !important;
+    pointer-events: none; /* only the bar itself catches taps */
+    z-index: 300;
+  }
+  .navbar-wrapper::after { display: none; }
+
+  .navbar-wrapper .navbar {
+    pointer-events: auto;
+    justify-content: flex-start;
+    min-height: 56px;
+    padding: 6px 12px !important;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  .navbar-wrapper .navbar-menu-wrapper { flex: none; }
+  .navbar-wrapper .navbar-actions { flex: none; margin-left: auto; }
+
+  /* "Portfolio" next to the burger, text only (no logo), Inter Semi Bold 14/20 */
+  .navbar-wrapper .capa-1-parent {
+    padding: 0 4px !important;
+    min-width: 44px;
+    justify-content: flex-start;
+  }
+  .navbar-wrapper .capa-1-parent .capa-1-icon { display: none; }
+  .navbar-wrapper .capa-1-parent .button-text { display: block; }
+  .navbar-wrapper .capa-1-parent .button2 {
+    font-size: 14px !important;
+    line-height: 20px;
+  }
+
+  /* Content never ends hidden behind the bar */
+  body { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+
+  /* Menu panel opens upwards, above the bar, and scrolls if taller than the screen */
+  .mobile-menu__backdrop:not([hidden]) { pointer-events: auto; }
+  .mobile-menu:not([hidden]) {
+    pointer-events: auto;
+    top: auto;
+    bottom: 100%;
+    left: 16px;
+    right: 16px;
+    max-height: calc(100dvh - 96px - env(safe-area-inset-bottom, 0px));
+    border-radius: 16px;
+    transform: translateY(8px);
+  }
+  .mobile-menu.is-open { transform: none; }
+
+  /* Language list opens upwards too */
+  .navbar-lang-options {
+    top: auto !important;
+    bottom: calc(100% + 8px);
+    transform: translateY(6px);
+  }
+
+  /* Back-to-top button sits above the bar */
+  .back-to-top {
+    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+    z-index: 250; /* under the bar and under the open menu's backdrop */
+  }
+
+  /* Tags: one row, swiped sideways by hand (Figma: chips run past the screen edge) */
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    margin-inline: calc(-1 * var(--container-pad, 16px));
+    padding: 4px var(--container-pad, 16px); /* room for the hover lift, edge-to-edge swipe */
+    scroll-padding-inline: var(--container-pad, 16px);
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .profile__col, .hero__inner, .block { min-width: 0; } /* grid/flex items: let the row scroll instead of growing */
+  .chip { flex: none; white-space: nowrap; scroll-snap-align: start; }
+  .chips:focus-visible {
+    outline: 2px solid #ff5f3a;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .mobile-menu:not([hidden]) { transform: none; }
+}

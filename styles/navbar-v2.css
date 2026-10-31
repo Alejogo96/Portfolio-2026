@@ -291,14 +291,8 @@
   .navbar-wrapper .navbar {
     padding: 8px 16px !important;
   }
-  .navbar-wrapper .layout-grid-parent .button-text,
-  .navbar-wrapper .capa-1-parent .button-text {
+  .navbar-wrapper .layout-grid-parent .button-text {
     display: none;
-  }
-  .navbar-wrapper .capa-1-parent {
-    padding: 0 !important;
-    justify-content: center;
-    min-width: 44px;
   }
 }
 
