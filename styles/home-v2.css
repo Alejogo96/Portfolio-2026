@@ -548,6 +548,8 @@ a.pcard:focus-visible .pcard__title::after {
 
 .btn {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 1.25rem;
   padding: 14px 24px;
   border-radius: 8px;
@@ -556,6 +558,21 @@ a.pcard:focus-visible .pcard__title::after {
   font-weight: 600;
   font-size: 0.9375rem;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn .icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.contact__line .icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  color: var(--accent);
+  margin-right: 0.5rem;
 }
 
 .btn:hover {
