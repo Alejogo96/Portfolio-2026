@@ -353,3 +353,38 @@ svg[stroke="currentColor"] * {
   .layout-grid-parent .button,
   .layout-grid-parent .layout-grid-icon { transition: none; }
 }
+
+/* ── Menú desplegado compacto (Figma Menu/Projects · Item description 12/17):
+   cabe completo sin scroll interno en pantallas de escritorio normales ── */
+@media (min-width: 769px) {
+  .navbar-dropdown {
+    gap: 4px;
+    padding: 8px;
+    max-height: none;
+    overflow: visible;
+  }
+  .navbar-dropdown__group {
+    gap: 0;
+  }
+  .navbar-dropdown__label {
+    padding: 8px 12px 4px;
+  }
+  .navbar-dropdown-item {
+    gap: 2px;
+    padding: 8px 12px;
+  }
+  .navbar-dropdown-item__desc {
+    font-size: 0.75rem;
+    line-height: 1.42;
+  }
+  .navbar-dropdown__foot {
+    padding-top: 4px;
+  }
+}
+/* Solo en ventanas muy bajas el panel vuelve a desplazarse, como último recurso */
+@media (min-width: 769px) and (max-height: 640px) {
+  .navbar-dropdown {
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
+  }
+}
