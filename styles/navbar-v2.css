@@ -2,7 +2,7 @@
    navbar-v2.css — Header as in the Figma "Maquetas 2026"
    - Burger on mobile (opens the projects list), 44px tap targets
    - Theme toggle + language grouped in one capsule
-   - Desktop dropdown: 640px, system type styles (title 16 / text 14)
+   - Desktop dropdown: 700px, two groups + footer row, system type styles (title 16 / text 14)
    Loaded after navbar.css / responsive.css on every page.
    ===================================================== */
 
@@ -56,13 +56,55 @@
   }
 }
 
-/* ── Desktop dropdown (Figma: 640 wide, 8 padding, radius 14) ── */
+/* ── Desktop dropdown (Figma: 700 wide, 8 padding, gap 8, radius 14; two groups + Home/CV row) ── */
 .navbar-dropdown {
-  width: 640px;
+  display: flex;
+  flex-direction: column;
+  width: min(700px, calc(100vw - 2 * var(--container-pad, 16px)));
   padding: 8px;
-  gap: 4px;
+  gap: 8px;
   border-radius: 14px;
+  background: #000;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  z-index: 350;
+  /* never taller than the space under the header: scrolls instead of being cut */
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.navbar-dropdown__cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-items: start;
+}
+
+.navbar-dropdown__group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.navbar-dropdown__label {
+  margin: 0;
+  padding: 8px 12px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-dropdown__foot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-items: start;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .navbar-dropdown-item {
