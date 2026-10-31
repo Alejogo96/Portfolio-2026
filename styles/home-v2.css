@@ -136,7 +136,6 @@ body {
 
 .hero__inner {
   padding-block: 4rem 6rem;
-  will-change: transform, opacity;
 }
 
 .hero__title {
@@ -232,7 +231,7 @@ body {
   background: var(--chip-bg);
   color: var(--chip-text);
   border: 1px solid var(--chip-border);
-  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.125rem);
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -247,26 +246,34 @@ body {
   z-index: 1;
 }
 
-.intro {
-  padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+/* Bio sits under the chips (as in the mockup); words appear on the
+   user's first scroll down (home.js adds .is-on). */
+.bio {
+  margin-top: 2rem;
+  max-width: 62ch;
 }
 
-.scrub__p {
-  max-width: 62ch;
-  margin: 0 0 1.5rem;
-  font-size: clamp(1.125rem, 1rem + 0.7vw, 1.5rem);
-  line-height: 1.55;
+.bio__p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--text);
 }
 
-/* bio words light up as you scroll (home.js) */
-.scrub__p .sw {
-  opacity: 0.2;
-  transition: opacity 0.35s ease;
+.bio__p .sw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(4px);
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s ease;
+  transition-delay: calc(var(--i, 0) * 22ms);
 }
 
-.scrub__p .sw.is-on {
+.bio.is-on .bio__p .sw {
   opacity: 1;
+  transform: none;
+  filter: none;
 }
 
 .block {
@@ -297,7 +304,7 @@ body {
   display: grid;
   gap: 0.6rem;
   max-width: 78ch;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
 }
@@ -314,16 +321,44 @@ body {
   row-gap: clamp(2rem, 4vw, 3rem);
 }
 
-.grid > .pcard:nth-child(even) {
-  transition-delay: 90ms;
-}
-
 .pcard {
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
   color: var(--text);
   position: relative;
+  padding: 12px 12px 20px;
+  border: 1px solid var(--faint);
+  border-radius: 18px;
+  background: transparent;
+  /* keep the scroll-reveal fade, add hover transitions */
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+}
+
+a.pcard {
+  cursor: pointer;
+}
+
+a.pcard:hover,
+a.pcard:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+a.pcard.is-visible:hover,
+a.pcard.is-visible:focus-visible {
+  transform: translateY(-8px);
+}
+
+a.pcard:active {
+  transform: translateY(-3px) !important;
+}
+
+.pcard > :not(.pcard__media) {
+  padding-inline: 6px;
 }
 
 .pcard__media {
@@ -391,7 +426,7 @@ a.pcard:focus-visible .pcard__title::after {
 
 .pcard__desc {
   margin: 0;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.55;
   color: var(--muted);
 }
@@ -426,7 +461,7 @@ a.pcard:focus-visible .pcard__title::after {
 
 .contact__line {
   margin: 0 0 0.6rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--text);
 }
 
@@ -478,9 +513,6 @@ a.pcard:focus-visible .pcard__title::after {
   .grid {
     grid-template-columns: 1fr;
   }
-  .grid > .pcard:nth-child(even) {
-    transition-delay: 0ms;
-  }
   .hero {
     min-height: calc(100svh - 84px);
   }
@@ -507,15 +539,19 @@ a.pcard:focus-visible .pcard__title::after {
     opacity: 1;
     transform: none;
   }
-  .scrub__p .sw {
+  .bio__p .sw {
     opacity: 1;
+    transform: none;
+    filter: none;
     transition: none;
   }
   .hero__scroll {
     animation: none;
   }
   .pcard__img,
-  .hover-bg {
+  .hover-bg,
+  a.pcard {
     transition: none;
   }
+  a.pcard.is-visible:hover { transform: none; }
 }

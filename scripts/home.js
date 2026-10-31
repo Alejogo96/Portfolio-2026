@@ -1,8 +1,8 @@
 /* =====================================================
    home.js — Home interactions
    - Theme toggle (dark / light), persisted in localStorage `pf:theme`
-   - Hero title: word-by-word rise; hero fades/lifts while scrolling
-   - Bio: words light up progressively with scroll (scrub)
+   - Hero title: word-by-word rise on load
+   - Bio (under the chips): its words appear on the user's first scroll down
    - Cards: hovered card's image bleeds into the page background
      (+ small pointer parallax on the card image)
    ===================================================== */
@@ -54,59 +54,36 @@
     return spans;
   }
 
-  var scrubWords = [];
+  var bioWords = [];
+  var bioShown = false;
+
+  function showBio() {
+    if (bioShown) return;
+    bioShown = true;
+    var bio = document.getElementById('bio');
+    if (bio) bio.classList.add('is-on');
+    ['wheel', 'touchmove', 'keydown', 'scroll'].forEach(function (ev) {
+      window.removeEventListener(ev, onFirstScroll);
+    });
+  }
+
+  /* The first scroll-down gesture "activates" the text */
+  function onFirstScroll(e) {
+    if (e.type === 'wheel' && e.deltaY <= 0) return;
+    if (e.type === 'keydown' &&
+        ['ArrowDown', 'PageDown', ' ', 'End', 'Spacebar'].indexOf(e.key) === -1) return;
+    showBio();
+  }
 
   function setupText() {
     var title = document.getElementById('hero-title');
-    if (title) {
-      /* Re-trigger the CSS animation after a language switch */
-      splitWords(title, 'w', 'wi');
-    }
-    scrubWords = [];
-    document.querySelectorAll('#scrub .scrub__p').forEach(function (p) {
-      scrubWords = scrubWords.concat(splitWords(p, null, 'sw'));
+    if (title) splitWords(title, 'w', 'wi');
+    bioWords = [];
+    document.querySelectorAll('#bio .bio__p').forEach(function (p) {
+      bioWords = bioWords.concat(splitWords(p, null, 'sw'));
     });
-    updateScrub();
-  }
-
-  /* ── Scroll-driven motion ─────────────────────── */
-  var ticking = false;
-
-  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
-
-  function updateScrub() {
-    var scrub = document.getElementById('scrub');
-    if (!scrub || !scrubWords.length) return;
-    if (reduced) {
-      scrubWords.forEach(function (w) { w.classList.add('is-on'); });
-      return;
-    }
-    var vh = window.innerHeight;
-    var r = scrub.getBoundingClientRect();
-    /* 0 when the block's top reaches 85% of the viewport, 1 when its bottom reaches 55% */
-    var p = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.3), 0, 1);
-    var lit = Math.round(p * scrubWords.length);
-    for (var i = 0; i < scrubWords.length; i++) {
-      scrubWords[i].classList.toggle('is-on', i < lit);
-    }
-  }
-
-  function updateHero() {
-    var inner = document.getElementById('hero-inner');
-    if (!inner || reduced) return;
-    var p = clamp(window.scrollY / (window.innerHeight * 0.7), 0, 1);
-    inner.style.transform = 'translate3d(0,' + (-p * 60).toFixed(1) + 'px,0)';
-    inner.style.opacity = (1 - p * 0.85).toFixed(3);
-  }
-
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () {
-      updateHero();
-      updateScrub();
-      ticking = false;
-    });
+    /* continuous index across both paragraphs for the stagger */
+    bioWords.forEach(function (w, i) { w.style.setProperty('--i', Math.min(i, 60)); });
   }
 
   /* ── Cards: stagger + hover background ───────── */
@@ -157,9 +134,13 @@
     initTheme();
     initCards();
     setupText();
-    updateHero();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    if (reduced || window.scrollY > 40) {
+      showBio();
+    } else {
+      ['wheel', 'touchmove', 'keydown', 'scroll'].forEach(function (ev) {
+        window.addEventListener(ev, onFirstScroll, { passive: true });
+      });
+    }
   });
 
   /* Language changed → text was replaced; split again */
