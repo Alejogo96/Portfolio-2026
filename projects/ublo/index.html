@@ -3,6 +3,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
+<script>try{var t=localStorage.getItem("pf:theme");document.documentElement.dataset.theme=(t==="light"||t==="dark")?t:"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 <meta content="initial-scale=1, width=device-width" name="viewport"/>
 <title>Ublo — Cas d'étude · Alejandro Guevara</title>
 <meta content="Caso de estudio Ublo: plataforma para gestores inmobiliarios en Francia." name="description"/>
@@ -25,6 +26,8 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/theme-toggle.css" rel="stylesheet"/>
+<link href="../../styles/case-theme.css" rel="stylesheet"/>
 </head>
 <body data-page="ublo">
 <div class="ublo">
@@ -102,6 +105,13 @@
 <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
 </div>
 </a>
+<div class="navbar-actions">
+<button aria-checked="true" aria-label="Changer de thème (clair / sombre)" class="theme-toggle" data-i18n-aria-label="h2.theme.toggle" id="theme-toggle" role="switch" type="button">
+<svg aria-hidden="true" class="theme-toggle__moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+<span aria-hidden="true" class="theme-toggle__label"><span class="theme-toggle__dark">Dark</span><span class="theme-toggle__light">Light</span></span>
+<span aria-hidden="true" class="theme-toggle__track"><span class="theme-toggle__knob"></span></span>
+</button>
 <div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
 <button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
 <span class="navbar-lang-current">FR</span>
@@ -123,6 +133,7 @@
 <span class="lang-btn-name" data-i18n="lang.es">Español</span>
 <span class="lang-btn-check">✓</span>
 </button>
+</div>
 </div>
 </div>
 </nav>
@@ -222,6 +233,7 @@
 <button aria-label="Retour en haut de page" class="back-to-top">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </button>
+<script src="../../scripts/theme.js" type="module"></script>
 <script src="../../scripts/i18n.js" type="module"></script>
 <script src="../../scripts/scroll-animations.js" type="module"></script>
 <script src="../../scripts/case-motion.js" type="module"></script>

@@ -351,8 +351,20 @@
   gap: 1.5rem;
 }
 
-.cs-img-grid--phones .cs-media {
+.cs-img-grid--phones .cs-media,
+.cs-img-grid--phones > img {
   flex: 0 1 340px;
+}
+
+.cs-img-box > img,
+.cs-img-grid > img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.cs-img-grid--phones > img {
+  width: auto;
 }
 
 @media (max-width: 640px) {

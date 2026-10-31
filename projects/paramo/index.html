@@ -3,6 +3,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
+<script>try{var t=localStorage.getItem("pf:theme");document.documentElement.dataset.theme=(t==="light"||t==="dark")?t:"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 <meta content="initial-scale=1, width=device-width" name="viewport"/>
 <title>ParamoTotem — Cas d'étude · Alejandro Guevara</title>
 <meta content="Cas d'étude ParamoTotem : expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien." name="description"/>
@@ -21,9 +22,12 @@
 <link href="../../styles/responsive.css" rel="stylesheet"/>
 <link href="../../styles/project-nav.css" rel="stylesheet"/>
 <link href="../../styles/lightbox.css" rel="stylesheet"/>
+<link href="../../styles/case-study.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/theme-toggle.css" rel="stylesheet"/>
+<link href="../../styles/case-theme.css" rel="stylesheet"/>
 </head>
 <body data-page="paramo">
 <div class="paramo">
@@ -101,6 +105,13 @@
 <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
 </div>
 </a>
+<div class="navbar-actions">
+<button aria-checked="true" aria-label="Changer de thème (clair / sombre)" class="theme-toggle" data-i18n-aria-label="h2.theme.toggle" id="theme-toggle" role="switch" type="button">
+<svg aria-hidden="true" class="theme-toggle__moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+<span aria-hidden="true" class="theme-toggle__label"><span class="theme-toggle__dark">Dark</span><span class="theme-toggle__light">Light</span></span>
+<span aria-hidden="true" class="theme-toggle__track"><span class="theme-toggle__knob"></span></span>
+</button>
 <div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
 <button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
 <span class="navbar-lang-current">FR</span>
@@ -124,74 +135,58 @@
 </button>
 </div>
 </div>
+</div>
 </nav>
 </section>
-<main class="paramo-frame">
-<section class="pm-header">
-<div class="pm-header-info">
-<div class="pm-title-block">
-<h1 class="pm-title" data-i18n="paramo.t001">ParamoTotem</h1>
-<p class="pm-role" data-i18n="paramo.t002">Experience Designer</p>
+<main class="cs-frame">
+<header class="cs-header">
+<p class="cs-kicker" data-i18n="paramo.t005">Projet expérimental</p>
+<h1 class="cs-title" data-i18n="paramo.t001">ParamoTotem</h1>
+<p class="cs-role" data-i18n="paramo.t002">Experience Designer</p>
+<p class="cs-body" data-i18n="paramo.t003">Projet expérimental conçu pour créer une expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien, à travers des stations thématiques dédiées à chaque espèce emblématique.</p>
+<ul class="cs-list">
+<li><strong data-i18n="paramo.t004">Type</strong> · <span data-i18n="paramo.t005">Projet expérimental</span></li>
+<li><strong data-i18n="paramo.t006">Rôle</strong> · <span data-i18n="paramo.t002">Experience Designer</span></li>
+<li><strong data-i18n="paramo.t007">Inspiration</strong> · <span data-i18n="paramo.t008">Páramo colombien</span></li>
+</ul>
+</header>
+<div class="cs-img-box">
+<img width="2000" height="1113" alt="ParamoTotem — expérience immersive" data-i18n-alt="paramo.t020" src="./public/header-experience.webp"/>
 </div>
-<p class="pm-desc" data-i18n="paramo.t003">Projet expérimental conçu pour créer une expérience immersive et interactive inspirée des écosystèmes naturels du páramo colombien, à travers des stations thématiques dédiées à chaque espèce emblématique.</p>
-<div class="pm-meta">
-<div class="pm-meta-item">
-<span class="pm-meta-label" data-i18n="paramo.t004">Type</span>
-<span class="pm-meta-value" data-i18n="paramo.t005">Projet expérimental</span>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="paramo.t009">Concept</h2>
+<p class="cs-body" data-i18n="paramo.t010">Le páramo est l'un des écosystèmes les plus précieux et les plus menacés de la planète. ParamoTotem est une installation interactive qui plonge les visiteurs dans cet environnement unique à travers des stations dédiées à chaque espèce emblématique : l'ours à lunettes, le condor des Andes, le frailejón et l'orchidée.</p>
+<p class="cs-body" data-i18n="paramo.t011">Chaque station est conçue comme un espace sensoriel autonome, combinant visuels génératifs, sons ambiants et interactions physiques pour créer un lien émotionnel fort avec la biodiversité du páramo.</p>
 </div>
-<div class="pm-meta-item">
-<span class="pm-meta-label" data-i18n="paramo.t006">Rôle</span>
-<span class="pm-meta-value" data-i18n="paramo.t002">Experience Designer</span>
+<div class="cs-img-box cs-img-box--wide">
+<img width="2000" height="992" alt="Concept — benchmark et références visuelles" data-i18n-alt="paramo.t021" loading="lazy" src="./public/benchmark-concept.webp"/>
 </div>
-<div class="pm-meta-item">
-<span class="pm-meta-label" data-i18n="paramo.t007">Inspiration</span>
-<span class="pm-meta-value" data-i18n="paramo.t008">Páramo colombien</span>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="paramo.t012">Stations thématiques</h2>
+<p class="cs-body" data-i18n="paramo.t013">Les quatre stations composent un parcours narratif et sensoriel. Chacune explore une espèce du páramo à travers des interactions spécifiques et une identité visuelle propre, tout en maintenant une cohérence globale dans l'expérience.</p>
+<ul class="cs-list">
+<li data-i18n="paramo.t014">Ours à lunettes</li>
+<li data-i18n="paramo.t015">Condor des Andes</li>
+<li data-i18n="paramo.t016">Frailejón</li>
+<li data-i18n="paramo.t017">Orchidée</li>
+</ul>
 </div>
+<div class="cs-img-grid cs-img-grid--duo">
+<img width="1899" height="981" alt="Station Ours à lunettes" data-i18n-alt="paramo.t022" loading="lazy" src="./public/station-ours.webp"/>
+<img width="1927" height="982" alt="Station Condor des Andes" data-i18n-alt="paramo.t023" loading="lazy" src="./public/station-condor.webp"/>
+<img width="1926" height="908" alt="Station Frailejón" data-i18n-alt="paramo.t024" loading="lazy" src="./public/station-frailejon.webp"/>
+<img width="1899" height="916" alt="Station Orchidée" data-i18n-alt="paramo.t025" loading="lazy" src="./public/station-orquidea.webp"/>
 </div>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="paramo.t018">Expérience visuelle</h2>
+<p class="cs-body" data-i18n="paramo.t019">Les visuels génératifs sont au cœur de l'expérience ParamoTotem. Les lumières, les textures et les animations répondent aux interactions des visiteurs, créant une ambiance vivante et évolutive qui traduit la dynamique des écosystèmes naturels.</p>
 </div>
-<div class="pm-header-image">
-<img width="2000" height="1113" alt="ParamoTotem — expérience immersive" class="pm-hero-img" data-i18n-alt="paramo.t020" src="./public/header-experience.webp"/>
+<div class="cs-img-box cs-img-box--wide">
+<img width="2000" height="1369" alt="Expérience visuelle — aperçu vidéo génératif" data-i18n-alt="paramo.t026" loading="lazy" src="./public/video-preview.webp"/>
 </div>
-</section>
-<section class="pm-concept">
-<div class="pm-concept-text">
-<h2 class="pm-section-title" data-i18n="paramo.t009">Concept</h2>
-<p class="pm-body-text" data-i18n="paramo.t010">Le páramo est l'un des écosystèmes les plus précieux et les plus menacés de la planète. ParamoTotem est une installation interactive qui plonge les visiteurs dans cet environnement unique à travers des stations dédiées à chaque espèce emblématique : l'ours à lunettes, le condor des Andes, le frailejón et l'orchidée.</p>
-<p class="pm-body-text" data-i18n="paramo.t011">Chaque station est conçue comme un espace sensoriel autonome, combinant visuels génératifs, sons ambiants et interactions physiques pour créer un lien émotionnel fort avec la biodiversité du páramo.</p>
-</div>
-<div class="pm-concept-image">
-<img width="2000" height="992" alt="Concept — benchmark et références visuelles" class="pm-img-full" data-i18n-alt="paramo.t021" loading="lazy" src="./public/benchmark-concept.webp"/>
-</div>
-</section>
-<section class="pm-stations">
-<h2 class="pm-section-title" data-i18n="paramo.t012">Stations thématiques</h2>
-<p class="pm-body-text" data-i18n="paramo.t013">Les quatre stations composent un parcours narratif et sensoriel. Chacune explore une espèce du páramo à travers des interactions spécifiques et une identité visuelle propre, tout en maintenant une cohérence globale dans l'expérience.</p>
-<div class="pm-stations-grid">
-<div class="pm-station-card">
-<img width="1899" height="981" alt="Station Ours à lunettes" class="pm-station-img" data-i18n-alt="paramo.t022" loading="lazy" src="./public/station-ours.webp"/>
-<p class="pm-station-label" data-i18n="paramo.t014">Ours à lunettes</p>
-</div>
-<div class="pm-station-card">
-<img width="1927" height="982" alt="Station Condor des Andes" class="pm-station-img" data-i18n-alt="paramo.t023" loading="lazy" src="./public/station-condor.webp"/>
-<p class="pm-station-label" data-i18n="paramo.t015">Condor des Andes</p>
-</div>
-<div class="pm-station-card">
-<img width="1926" height="908" alt="Station Frailejón" class="pm-station-img" data-i18n-alt="paramo.t024" loading="lazy" src="./public/station-frailejon.webp"/>
-<p class="pm-station-label" data-i18n="paramo.t016">Frailejón</p>
-</div>
-<div class="pm-station-card">
-<img width="1899" height="916" alt="Station Orchidée" class="pm-station-img" data-i18n-alt="paramo.t025" loading="lazy" src="./public/station-orquidea.webp"/>
-<p class="pm-station-label" data-i18n="paramo.t017">Orchidée</p>
-</div>
-</div>
-</section>
-<section class="pm-experience">
-<h2 class="pm-section-title" data-i18n="paramo.t018">Expérience visuelle</h2>
-<p class="pm-body-text" data-i18n="paramo.t019">Les visuels génératifs sont au cœur de l'expérience ParamoTotem. Les lumières, les textures et les animations répondent aux interactions des visiteurs, créant une ambiance vivante et évolutive qui traduit la dynamique des écosystèmes naturels.</p>
-<div class="pm-experience-image">
-<img width="2000" height="1369" alt="Expérience visuelle — aperçu vidéo génératif" class="pm-img-full" data-i18n-alt="paramo.t026" loading="lazy" src="./public/video-preview.webp"/>
-</div>
-</section>
 <nav aria-label="Navigation entre projets" class="project-nav">
 <a class="project-nav-link project-nav-link--prev" href="../spotify/index.html">
 <span class="project-nav-label">← Projet précédent</span>
@@ -207,6 +202,7 @@
 <button aria-label="Retour en haut de page" class="back-to-top">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </button>
+<script src="../../scripts/theme.js" type="module"></script>
 <script src="../../scripts/i18n.js" type="module"></script>
 <script src="../../scripts/scroll-animations.js" type="module"></script>
 <script src="../../scripts/case-motion.js" type="module"></script>

@@ -1,0 +1,349 @@
+/* =====================================================
+   case-theme.css — Dark / light for every project page.
+   Loaded LAST on case pages. Palette per project + per theme
+   (html[data-theme]), plus a fixed decorative background
+   (colours and shapes of each project) that drifts on scroll.
+   ===================================================== */
+
+/* ── Palettes ─────────────────────────────────────────
+   --cs-bg      page background
+   --cs-text    titles / body
+   --cs-muted   secondary text
+   --cs-accent  numbers, kicker, links, deco
+   --cs-accent2 second deco colour
+   --cs-border  separators / cards                         */
+body[data-page] {
+  --cs-bg: #1a1a1a;
+  --cs-text: #f5f1ef;
+  --cs-muted: rgba(245, 241, 239, 0.68);
+  --cs-accent: #ff5f3a;
+  --cs-accent2: #8b7bff;
+  --cs-border: rgba(255, 255, 255, 0.14);
+  --deco-a: 0.32;
+}
+
+html[data-theme="light"] body[data-page] {
+  --cs-bg: #f5f1ef;
+  --cs-text: #1a1a1a;
+  --cs-muted: rgba(26, 26, 26, 0.68);
+  --cs-accent: #e8431f;
+  --cs-accent2: #6b57e8;
+  --cs-border: rgba(0, 0, 0, 0.12);
+  --deco-a: 0.2;
+}
+
+/* Andy Electric — black → red, electric diagonals */
+html[data-theme="dark"] body[data-page="andy-electric"] {
+  --cs-bg: #131313; --cs-text: #f4f2f2; --cs-muted: rgba(244, 242, 242, 0.7);
+  --cs-accent: #ff2a42; --cs-accent2: #b12324; --cs-border: rgba(255, 255, 255, 0.14); --deco-a: 0.42;
+}
+html[data-theme="light"] body[data-page="andy-electric"] {
+  --cs-bg: #fbf5f4; --cs-text: #1b1111; --cs-muted: rgba(27, 17, 17, 0.68);
+  --cs-accent: #d4001a; --cs-accent2: #ff6b78; --cs-border: rgba(80, 20, 20, 0.14); --deco-a: 0.22;
+}
+
+/* Ublo — violet */
+html[data-theme="dark"] body[data-page="ublo"] {
+  --cs-bg: #120e29; --cs-text: #efeaff; --cs-muted: rgba(239, 234, 255, 0.7);
+  --cs-accent: #8f78ff; --cs-accent2: #3f22aa; --cs-border: rgba(180, 160, 255, 0.2); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="ublo"] {
+  --cs-bg: #f6f4ff; --cs-text: #17122f; --cs-muted: rgba(23, 18, 47, 0.68);
+  --cs-accent: #3f22aa; --cs-accent2: #9b86ff; --cs-border: rgba(63, 34, 170, 0.16); --deco-a: 0.2;
+}
+
+/* Bellpi — blue & green */
+html[data-theme="dark"] body[data-page="bellpi"] {
+  --cs-bg: #09111f; --cs-text: #eef4ff; --cs-muted: rgba(238, 244, 255, 0.7);
+  --cs-accent: #3d9bff; --cs-accent2: #01b695; --cs-border: rgba(120, 170, 255, 0.2); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="bellpi"] {
+  --cs-bg: #f7fbff; --cs-text: #08101c; --cs-muted: rgba(8, 16, 28, 0.68);
+  --cs-accent: #0066d9; --cs-accent2: #01b695; --cs-border: rgba(0, 80, 200, 0.14); --deco-a: 0.2;
+}
+
+/* JumboMana — navy & warm yellow */
+html[data-theme="dark"] body[data-page="jumbomana"] {
+  --cs-bg: #0e0e1c; --cs-text: #f3f1e8; --cs-muted: rgba(243, 241, 232, 0.7);
+  --cs-accent: #8c96ff; --cs-accent2: #ffc94d; --cs-border: rgba(160, 170, 255, 0.2); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="jumbomana"] {
+  --cs-bg: #fffcf5; --cs-text: #141428; --cs-muted: rgba(20, 20, 40, 0.68);
+  --cs-accent: #1a237e; --cs-accent2: #ffc94d; --cs-border: rgba(26, 35, 126, 0.16); --deco-a: 0.24;
+}
+
+/* Musée de la BnF — purple & orange arches */
+html[data-theme="dark"] body[data-page="bnf"] {
+  --cs-bg: #24092f; --cs-text: #fbf6ff; --cs-muted: rgba(251, 246, 255, 0.72);
+  --cs-accent: #ffa94d; --cs-accent2: #a64fd0; --cs-border: rgba(255, 255, 255, 0.18); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="bnf"] {
+  --cs-bg: #f7eefb; --cs-text: #25102f; --cs-muted: rgba(37, 16, 47, 0.7);
+  --cs-accent: #7b28a0; --cs-accent2: #ff9f43; --cs-border: rgba(123, 40, 160, 0.18); --deco-a: 0.22;
+}
+
+/* Spotify — green rings */
+html[data-theme="dark"] body[data-page="spotify"] {
+  --cs-bg: #0d0d0d; --cs-text: #f2f2f2; --cs-muted: rgba(242, 242, 242, 0.72);
+  --cs-accent: #1ed760; --cs-accent2: #158a3e; --cs-border: rgba(255, 255, 255, 0.14); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="spotify"] {
+  --cs-bg: #f3faf5; --cs-text: #0f1a13; --cs-muted: rgba(15, 26, 19, 0.7);
+  --cs-accent: #12823a; --cs-accent2: #1ed760; --cs-border: rgba(18, 130, 58, 0.18); --deco-a: 0.22;
+}
+
+/* ParamoTotem — páramo greens */
+html[data-theme="dark"] body[data-page="paramo"] {
+  --cs-bg: #07140c; --cs-text: #e9f8ee; --cs-muted: rgba(233, 248, 238, 0.72);
+  --cs-accent: #4ade80; --cs-accent2: #16a34a; --cs-border: rgba(110, 230, 160, 0.2); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="paramo"] {
+  --cs-bg: #f0fdf4; --cs-text: #10381f; --cs-muted: rgba(16, 56, 31, 0.7);
+  --cs-accent: #166534; --cs-accent2: #4ade80; --cs-border: rgba(22, 101, 52, 0.18); --deco-a: 0.24;
+}
+
+/* ── Base surfaces ───────────────────────────────── */
+body[data-page] {
+  --fs-body: 0.875rem; /* 14px desktop text */
+  --color-text: var(--cs-text);
+  --color-text-muted: var(--cs-muted);
+  --color-border: var(--cs-border);
+  --color-accent: var(--cs-accent);
+  --accent: var(--cs-accent);
+  background: var(--cs-bg);
+  color: var(--cs-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body[data-page] > div:first-of-type {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  color: var(--cs-text);
+}
+
+body[data-page] .navbar-wrapper {
+  background: var(--cs-bg) !important;
+  transition: background-color 0.4s ease;
+}
+
+body[data-page] .navbar-wrapper::after {
+  display: none;
+}
+
+/* ── Text colours (win over per-project overrides) ─── */
+body[data-page] .cs-title,
+body[data-page] .cs-heading,
+body[data-page] .cs-body,
+body[data-page] .cs-list li,
+body[data-page] .cs-list li strong,
+body[data-page] .cs-body strong,
+body[data-page] .cs-soon__title {
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  display: block;
+}
+
+body[data-page] .cs-kicker {
+  color: var(--cs-accent);
+}
+
+body[data-page] .cs-role,
+body[data-page] .cs-metric-label,
+body[data-page] .cs-stat-label,
+body[data-page] .cs-soon__text {
+  color: var(--cs-muted);
+}
+
+body[data-page] .cs-metric-num,
+body[data-page] .cs-stat-num {
+  color: var(--cs-accent);
+}
+
+body[data-page] .cs-sep {
+  background: var(--cs-border);
+}
+
+body[data-page] .cs-soon {
+  border-color: var(--cs-border);
+}
+
+/* 14px text on desktop */
+body[data-page] .cs-body,
+body[data-page] .cs-list li,
+body[data-page] .cs-card-text {
+  font-size: var(--fs-body);
+  line-height: 1.75;
+}
+
+body[data-page] .cs-body {
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  body[data-page] {
+    --fs-body: 0.9375rem;
+  }
+}
+
+/* Cards (JumboMana questions) follow the theme */
+body[data-page] .cs-card {
+  background: color-mix(in srgb, var(--cs-text) 7%, transparent);
+  border: 1px solid var(--cs-border);
+}
+
+body[data-page] .cs-card-label {
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-card-text {
+  color: var(--cs-muted);
+}
+
+body[data-page] .cs-tool {
+  background: #fff;
+}
+
+/* Project navigation */
+body[data-page] .project-nav {
+  border-top-color: var(--cs-border);
+}
+
+body[data-page] .project-nav-link {
+  border-color: var(--cs-border);
+  color: var(--cs-text);
+}
+
+body[data-page] .project-nav-link:hover {
+  background: color-mix(in srgb, var(--cs-text) 6%, transparent);
+  border-color: var(--cs-accent);
+}
+
+body[data-page] .project-nav-label {
+  color: var(--cs-muted);
+}
+
+body[data-page] .project-nav-name {
+  color: var(--cs-text);
+}
+
+/* Images keep a soft frame in both themes */
+body[data-page] .cs-media {
+  box-shadow: 0 0 0 1px var(--cs-border);
+}
+
+/* ── Decorative background: colours + shapes of each project ──
+   ::before = colour field, ::after = signature shape.
+   --sy (scroll px, set by case-motion.js) makes them drift. */
+body[data-page]::before,
+body[data-page]::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+body[data-page]::before {
+  inset: -10vmax;
+  transform: translate3d(0, calc(var(--sy, 0) * -0.05px), 0);
+  background:
+    radial-gradient(60vmax 45vmax at 100% 100%, color-mix(in srgb, var(--cs-accent) calc(var(--deco-a) * 100%), transparent), transparent 65%),
+    radial-gradient(45vmax 35vmax at 0% 0%, color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 70%), transparent), transparent 65%);
+}
+
+body[data-page]::after {
+  opacity: 1;
+  transform: translate3d(0, calc(var(--sy, 0) * -0.09px), 0) rotate(calc(var(--sy, 0) * 0.004deg));
+}
+
+/* Andy Electric — electric diagonals */
+body[data-page="andy-electric"]::after {
+  inset: -20vmax;
+  background: repeating-linear-gradient(115deg, transparent 0 54px, color-mix(in srgb, var(--cs-accent) 14%, transparent) 54px 56px);
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 75%);
+  mask-image: linear-gradient(to bottom, #000, transparent 75%);
+}
+
+/* Ublo — dot grid + soft discs */
+body[data-page="ublo"]::after {
+  inset: -10vmax;
+  background: radial-gradient(circle, color-mix(in srgb, var(--cs-accent) 38%, transparent) 1.5px, transparent 1.8px) 0 0 / 30px 30px;
+  -webkit-mask-image: radial-gradient(60vmax 50vmax at 100% 0%, #000, transparent 70%);
+  mask-image: radial-gradient(60vmax 50vmax at 100% 0%, #000, transparent 70%);
+}
+
+/* Bellpi — big ring and solid disc */
+body[data-page="bellpi"]::after {
+  width: 46vmax;
+  height: 46vmax;
+  left: -14vmax;
+  bottom: -12vmax;
+  border-radius: 50%;
+  border: 4vmax solid color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 100%), transparent);
+}
+
+/* JumboMana — rounded square (tilted) */
+body[data-page="jumbomana"]::after {
+  width: 38vmax;
+  height: 38vmax;
+  right: -10vmax;
+  top: 14vh;
+  border-radius: 26%;
+  background: color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 70%), transparent);
+  transform: translate3d(0, calc(var(--sy, 0) * -0.09px), 0) rotate(calc(18deg + var(--sy, 0) * 0.01deg));
+}
+
+/* Musée de la BnF — architectural arch */
+body[data-page="bnf"]::after {
+  width: 44vmax;
+  height: 56vmax;
+  left: -8vmax;
+  bottom: -10vmax;
+  border-radius: 50vmax 50vmax 0 0;
+  border: 2.4vmax solid color-mix(in srgb, var(--cs-accent) calc(var(--deco-a) * 100%), transparent);
+  border-bottom: 0;
+}
+
+/* Spotify — vinyl rings */
+body[data-page="spotify"]::after {
+  width: 70vmax;
+  height: 70vmax;
+  right: -26vmax;
+  bottom: -26vmax;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 3.2vmax, color-mix(in srgb, var(--cs-accent) calc(var(--deco-a) * 100%), transparent) 3.2vmax 3.5vmax);
+}
+
+/* ParamoTotem — leaf */
+body[data-page="paramo"]::after {
+  width: 40vmax;
+  height: 40vmax;
+  left: -8vmax;
+  top: 30vh;
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 100%), transparent), transparent 80%);
+  transform: translate3d(0, calc(var(--sy, 0) * -0.09px), 0) rotate(calc(-12deg + var(--sy, 0) * 0.006deg));
+}
+
+/* Qualnet / Iridian / Freelance — soft orange ring like the Home */
+body[data-page="qualnet"]::after,
+body[data-page="iridian"]::after,
+body[data-page="freelance"]::after {
+  width: 52vmax;
+  height: 52vmax;
+  right: -16vmax;
+  top: -8vmax;
+  border-radius: 50%;
+  border: 3vmax solid color-mix(in srgb, var(--cs-accent) calc(var(--deco-a) * 70%), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page]::before,
+  body[data-page]::after {
+    transform: none !important;
+  }
+}

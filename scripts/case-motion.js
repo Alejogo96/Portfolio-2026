@@ -53,10 +53,10 @@ function tagText() {
 }
 
 function init() {
+  const medias = wrapImages();
   if (reduced) return;
   document.documentElement.classList.add("cm-on");
 
-  const medias = wrapImages();
   const targets = tagText();
 
   const io = new IntersectionObserver(
@@ -70,7 +70,10 @@ function init() {
     },
     { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
   );
-  targets.forEach((el) => io.observe(el));
+  /* Titles are clipped when hidden, and IntersectionObserver ignores clipped
+     targets, so they are revealed from the scroll position instead. */
+  const titles = new Set(targets.filter((el) => el.classList.contains("cm-title")));
+  targets.filter((el) => !titles.has(el)).forEach((el) => io.observe(el));
 
   /* Imágenes: progreso de entrada + parallax, solo mientras son visibles */
   const visible = new Set();
@@ -85,6 +88,13 @@ function init() {
 
   function update() {
     const vh = window.innerHeight;
+    document.documentElement.style.setProperty("--sy", Math.round(window.scrollY));
+    titles.forEach((t) => {
+      if (t.getBoundingClientRect().top < vh * 0.9) {
+        t.classList.add("is-in");
+        titles.delete(t);
+      }
+    });
     visible.forEach((m) => {
       const r = m.getBoundingClientRect();
       const p = clamp((vh * 0.98 - r.top) / (vh * 0.55), 0, 1);

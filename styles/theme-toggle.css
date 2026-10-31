@@ -1,0 +1,97 @@
+/* =====================================================
+   theme-toggle.css — dark/light switch in the navbar (case pages).
+   Same component as the Home (copied from home-v2.css).
+   ===================================================== */
+.navbar-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 8px;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-toggle:focus-visible,
+.chip:focus-visible,
+.pcard:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent, var(--cs-accent, #ff5f3a));
+  outline-offset: 3px;
+}
+
+/* icon + word show the CURRENT theme (as in the Figma component) */
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__sun,
+:root[data-theme="light"] .theme-toggle__moon,
+:root[data-theme="dark"] .theme-toggle__light,
+:root[data-theme="light"] .theme-toggle__dark {
+  display: none;
+}
+
+.theme-toggle__label {
+  min-width: 2.6em;
+}
+
+.theme-toggle__track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.25s ease;
+}
+
+.theme-toggle__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="dark"] .theme-toggle__track {
+  background: var(--accent, var(--cs-accent, #ff5f3a));
+}
+
+:root[data-theme="dark"] .theme-toggle__knob {
+  transform: translateX(16px);
+}
+
+@media (max-width: 768px) {
+  .navbar-actions .theme-toggle { padding: 0 4px; gap: 6px; }
+  .theme-toggle__label { display: none; }
+}
+
+/* Keep "Portfolio" truly centered now that the right-hand actions are wider */
+@media (min-width: 769px) {
+  .navbar-menu-wrapper,
+  .navbar-actions { flex: 1 1 0; min-width: 0; }
+  .navbar-actions { justify-content: flex-end; }
+}
