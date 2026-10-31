@@ -1,7 +1,7 @@
 /**
  * mobile-menu.js — accessible burger menu for the header on mobile (≤768px).
  * Builds the panel from the desktop dropdown links (same names and order = Jakob),
- * grouped into Projets / Expériences / Profil (Hick + Miller: ≤7 per group).
+ * grouped like the desktop menu: Expériences professionnelles / Projets personnels / Profil (Hick + Miller: ≤7 per group).
  * a11y: aria-expanded/controls, X with "Fermer le menu", Esc + tap outside + link closes,
  * focus enters the panel and returns to the burger, Tab stays inside, background scroll locked.
  */
@@ -9,9 +9,9 @@ const MQ = window.matchMedia("(max-width: 768px)");
 const EXPERIENCES = ["qualnet", "iridian", "freelance"];
 
 const T = {
-  fr: { open: "Ouvrir le menu", close: "Fermer le menu", menu: "Menu", projects: "Projets", exp: "Expériences", profile: "Profil", current: "Page actuelle" },
-  en: { open: "Open menu", close: "Close menu", menu: "Menu", projects: "Projects", exp: "Experience", profile: "Profile", current: "Current page" },
-  es: { open: "Abrir el menú", close: "Cerrar el menú", menu: "Menú", projects: "Proyectos", exp: "Experiencias", profile: "Perfil", current: "Página actual" },
+  fr: { open: "Ouvrir le menu", close: "Fermer le menu", menu: "Menu", projects: "Projets personnels", exp: "Expériences professionnelles", profile: "Profil", current: "Page actuelle" },
+  en: { open: "Open menu", close: "Close menu", menu: "Menu", projects: "Personal projects", exp: "Professional experience", profile: "Profile", current: "Current page" },
+  es: { open: "Abrir el menú", close: "Cerrar el menú", menu: "Menú", projects: "Proyectos personales", exp: "Experiencia profesional", profile: "Perfil", current: "Página actual" },
 };
 const t = () => T[document.documentElement.lang] || T.fr;
 
@@ -55,16 +55,20 @@ function init() {
   const page = (slug) => new URL(`projects/${slug}/index.html`, root).href;
   const item = (slug, name) => ({ href: page(slug), name });
   const groups = {
-    projects: [
+    exp: [
+      item("qualnet", "Qualnet"),
       item("andy-electric", "Andy Electric"),
       item("ublo", "Ublo"),
-      item("jumbomana", "JumboMana"),
+      item("iridian", "Iridian"),
       item("bellpi", "Bellpi"),
+      item("freelance", "Freelance"),
+    ],
+    projects: [
+      item("jumbomana", "JumboMana"),
       item("bnf", "Musée de la BnF"),
       item("spotify", "Spotify"),
       item("paramo", "ParamoTotem"),
     ],
-    exp: [item("qualnet", "Qualnet"), item("iridian", "Iridian"), item("freelance", "Freelance")],
     profile: [],
   };
   dropdown.querySelectorAll("a.navbar-dropdown-item").forEach((a) => {
@@ -76,7 +80,7 @@ function init() {
   const here = norm(location.href);
   const links = [];
   const titles = {};
-  for (const key of ["projects", "exp", "profile"]) {
+  for (const key of ["exp", "projects", "profile"]) {
     if (!groups[key].length) continue;
     const sec = document.createElement("nav");
     sec.className = "mobile-menu__group";
