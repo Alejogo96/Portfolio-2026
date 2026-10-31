@@ -1,493 +1,460 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Alejandro Guevara — Portfolio UX/UI</title>
-    <meta name="description" content="Portafolio profesional de Alejandro Guevara, UX/UI Designer & Product Designer." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/" />
-    <meta property="og:title" content="Alejandro Guevara — Portfolio UX/UI" />
-    <meta property="og:description" content="UX/UI Designer & Product Designer — 6 projets en design de service, produit digital et expérience utilisateur." />
-    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-andy.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alejandro Guevara — Portfolio UX/UI" />
-    <meta name="twitter:description" content="UX/UI Designer & Product Designer — 6 projets en design de service, produit digital et expérience utilisateur." />
-    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-andy.jpg" />
-
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/navbar.css" />
-    <link rel="stylesheet" href="./styles/home.css" />
-    <link rel="stylesheet" href="./styles/responsive.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Raleway:wght@700&display=swap" />
-  </head>
-  <body>
-    <div class="cover-franais">
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="./public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="./projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="./projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="./projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="./projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="./projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="./projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="./public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="./index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="./public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <!-- ── Glowy Waves Hero (full-width, outside container) ── -->
-      <section class="hero-waves" id="home" aria-label="Portfolio hero">
-        <canvas id="waves-canvas" class="hw-canvas" aria-hidden="true"></canvas>
-        <div class="hw-glow hw-glow--top" aria-hidden="true"></div>
-        <div class="hw-glow hw-glow--br"  aria-hidden="true"></div>
-
-        <div class="hw-inner">
-          <!-- Language selector -->
-          <header class="langues hw-anim hw-anim--1">
-            <h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
-            <nav class="language-option" aria-label="Selector de idioma">
-              <button class="label lang-btn" data-lang="en" type="button">
-                <div class="label2" data-i18n="lang.en">Inglés</div>
-              </button>
-              <button class="label lang-btn" data-lang="fr" type="button">
-                <div class="label2" data-i18n="lang.fr">Francés</div>
-              </button>
-              <button class="labelvariant8 lang-btn" data-lang="es" data-active="true" type="button">
-                <div class="label3" data-i18n="lang.es">Español</div>
-              </button>
-            </nav>
-          </header>
-
-          <!-- Heading -->
-          <h1 class="hw-title hw-anim hw-anim--2">
-            <span data-i18n="hero.h1.line1">Hola, soy </span><span class="hw-gradient">Alejandro Guevara.</span>
-          </h1>
-
-          <!-- Description -->
-          <div class="hw-desc hw-anim hw-anim--3" data-i18n-html="hero.h1.desc">
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>Alejandro Guevara — Portfolio UX/UI</title>
+<meta content="Portafolio profesional de Alejandro Guevara, UX/UI Designer &amp; Product Designer." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/" property="og:url"/>
+<meta content="Alejandro Guevara — Portfolio UX/UI" property="og:title"/>
+<meta content="UX/UI Designer &amp; Product Designer — 6 projets en design de service, produit digital et expérience utilisateur." property="og:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-andy.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Alejandro Guevara — Portfolio UX/UI" name="twitter:title"/>
+<meta content="UX/UI Designer &amp; Product Designer — 6 projets en design de service, produit digital et expérience utilisateur." name="twitter:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-andy.jpg" name="twitter:image"/>
+<link href="./styles/global.css" rel="stylesheet"/>
+<link href="./styles/navbar.css" rel="stylesheet"/>
+<link href="./styles/home.css" rel="stylesheet"/>
+<link href="./styles/responsive.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body data-page="home">
+<div class="cover-franais">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="#projects">
+<img alt="" class="layout-grid-icon" src="./public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="./projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="./projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="./projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="./projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="./projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="./projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="./index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="./public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<!-- ── Glowy Waves Hero (full-width, outside container) ── -->
+<section aria-label="Portfolio hero" class="hero-waves" id="home">
+<canvas aria-hidden="true" class="hw-canvas" id="waves-canvas"></canvas>
+<div aria-hidden="true" class="hw-glow hw-glow--top"></div>
+<div aria-hidden="true" class="hw-glow hw-glow--br"></div>
+<div class="hw-inner">
+<!-- Language selector -->
+<header class="langues hw-anim hw-anim--1">
+<h2 class="choisissez-votre-langue" data-i18n="lang.title">Elige tu idioma</h2>
+<nav aria-label="Selector de idioma" class="language-option">
+<button class="label lang-btn" data-lang="en" type="button">
+<div class="label2" data-i18n="lang.en">Inglés</div>
+</button>
+<button class="label lang-btn" data-lang="fr" type="button">
+<div class="label2" data-i18n="lang.fr">Francés</div>
+</button>
+<button class="labelvariant8 lang-btn" data-active="true" data-lang="es" type="button">
+<div class="label3" data-i18n="lang.es">Español</div>
+</button>
+</nav>
+</header>
+<!-- Heading -->
+<h1 class="hw-title hw-anim hw-anim--2">
+<span data-i18n="hero.h1.line1">Hola, soy </span><span class="hw-gradient">Alejandro Guevara.</span>
+</h1>
+<!-- Description -->
+<div class="hw-desc hw-anim hw-anim--3" data-i18n-html="hero.h1.desc">
             Diseñador especializado en UX, diseño de servicios y producto digital. Creo experiencias que no solo funcionan, sino que resuenan.
           </div>
-
-          <!-- Highlight pills -->
-          <ul class="hw-pills hw-anim hw-anim--4" aria-label="Especialidades">
-            <li data-i18n="hero.pill1">UX Design</li>
-            <li data-i18n="hero.pill2">Service Design</li>
-            <li data-i18n="hero.pill3">Product Design</li>
-          </ul>
-
-          <!-- Stats -->
-          <div class="hw-stats hw-anim hw-anim--5">
-            <div class="hw-stat">
-              <div class="hw-stat__label" data-i18n="hero.stat1.label">Proyectos</div>
-              <div class="hw-stat__value">6+</div>
-            </div>
-            <div class="hw-stat">
-              <div class="hw-stat__label" data-i18n="hero.stat2.label">Años exp.</div>
-              <div class="hw-stat__value">4+</div>
-            </div>
-            <div class="hw-stat">
-              <div class="hw-stat__label" data-i18n="hero.stat3.label">Idiomas</div>
-              <div class="hw-stat__value">3</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <main class="home-frame">
-        <section class="description">
-          <div class="professional-projects-parent" id="projects">
-            <div class="hw-badge section-badge">
-              <svg class="hw-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
-                <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
-              </svg>
-              <span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
-            </div>
-            <h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
-            <!-- Project Showcase — list with floating image preview -->
-            <div class="ps-showcase" id="ps-showcase">
-
-              <!-- Floating image preview (follows cursor) -->
-              <div class="ps-preview" id="ps-preview" aria-hidden="true">
-                <img class="ps-preview__img" data-preview="0" src="./public/card-andy.webp"    alt="" loading="lazy" />
-                <img class="ps-preview__img" data-preview="1" src="./public/card-ublo.webp"    alt="" loading="lazy" />
-                <img class="ps-preview__img" data-preview="2" src="./public/card-jumbo.webp"   alt="" loading="lazy" />
-                <img class="ps-preview__img" data-preview="3" src="./public/card-bellpi.webp"  alt="" loading="lazy" />
-                <img class="ps-preview__img" data-preview="4" src="./public/card-bnf.webp"     alt="" loading="lazy" />
-                <img class="ps-preview__img" data-preview="5" src="./public/card-spotify.webp" alt="" loading="lazy" />
-                <div class="ps-preview__overlay"></div>
-              </div>
-
-              <!-- Row: Andy Electric -->
-              <a href="./projects/andy-electric/index.html" class="ps-row" data-ps-index="0" aria-label="Ver proyecto Andy Electric">
-                <div class="ps-row__inner">
-                  <div class="ps-row__left">
-                    <div class="ps-row__title-wrap">
-                      <span class="ps-row__title">Andy Electric</span>
-                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                    </div>
-                    <p class="ps-row__desc" data-i18n="projects.andy.desc">Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.</p>
-                  </div>
-                  <span class="ps-row__year">2025</span>
-                </div>
-              </a>
-
-              <!-- Row: Ublo -->
-              <a href="./projects/ublo/index.html" class="ps-row" data-ps-index="1" aria-label="Ver proyecto Ublo">
-                <div class="ps-row__inner">
-                  <div class="ps-row__left">
-                    <div class="ps-row__title-wrap">
-                      <span class="ps-row__title">Ublo</span>
-                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                    </div>
-                    <p class="ps-row__desc" data-i18n="projects.ublo.desc">Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.</p>
-                  </div>
-                  <span class="ps-row__year">2025</span>
-                </div>
-              </a>
-
-              <!-- Row: JumboMana -->
-              <a href="./projects/jumbomana/index.html" class="ps-row" data-ps-index="2" aria-label="Ver proyecto JumboMana">
-                <div class="ps-row__inner">
-                  <div class="ps-row__left">
-                    <div class="ps-row__title-wrap">
-                      <span class="ps-row__title">JumboMana</span>
-                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                    </div>
-                    <p class="ps-row__desc" data-i18n="projects.jumbomana.desc">Asistente IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.</p>
-                  </div>
-                  <span class="ps-row__year">2024</span>
-                </div>
-              </a>
-
-              <!-- Row: Bellpi -->
-              <a href="./projects/bellpi/index.html" class="ps-row" data-ps-index="3" aria-label="Ver proyecto Bellpi">
-                <div class="ps-row__inner">
-                  <div class="ps-row__left">
-                    <div class="ps-row__title-wrap">
-                      <span class="ps-row__title">Bellpi</span>
-                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                    </div>
-                    <p class="ps-row__desc" data-i18n="projects.bellpi.desc">Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.</p>
-                  </div>
-                  <span class="ps-row__year">2024</span>
-                </div>
-              </a>
-
-              <!-- Row: Musée de la BnF -->
-              <a href="./projects/bnf/index.html" class="ps-row" data-ps-index="4" aria-label="Ver proyecto BnF">
-                <div class="ps-row__inner">
-                  <div class="ps-row__left">
-                    <div class="ps-row__title-wrap">
-                      <span class="ps-row__title">Musée de la BnF</span>
-                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                    </div>
-                    <p class="ps-row__desc" data-i18n="projects.bnf.desc">Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.</p>
-                  </div>
-                  <span class="ps-row__year">2024</span>
-                </div>
-              </a>
-
-              <!-- Row: Spotify -->
-              <a href="./projects/spotify/index.html" class="ps-row" data-ps-index="5" aria-label="Ver proyecto Spotify">
-                <div class="ps-row__inner">
-                  <div class="ps-row__left">
-                    <div class="ps-row__title-wrap">
-                      <span class="ps-row__title">Spotify</span>
-                      <svg class="ps-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                    </div>
-                    <p class="ps-row__desc" data-i18n="projects.spotify.desc">Conception de 3 nouvelles fonctionnalités UX pour l'application Spotify.</p>
-                  </div>
-                  <span class="ps-row__year">2025</span>
-                </div>
-              </a>
-
-              <div class="ps-end-border"></div>
-            </div>
-          </div>
-        </section>
-        <!-- ── CV / About section ── -->
-        <section class="ab-wrap" id="cv" aria-labelledby="ab-title">
-
-          <!-- Header -->
-          <div class="ab-header" data-reveal>
-            <span class="ab-kicker" data-i18n="cv.kicker">Profil</span>
-            <h2 class="ab-title" id="ab-title" data-i18n="cv.role">UX/UI Designer & Product Designer</h2>
-            <p class="ab-bio" data-i18n="cv.bio">Orienté vers la stratégie et la conception de produits numériques...</p>
-          </div>
-
-          <!-- 2-col body -->
-          <div class="ab-body">
-
-            <!-- Left: Experience timeline -->
-            <div class="ab-left">
-              <p class="ab-label" data-i18n="cv.experience">Expériences</p>
-              <ol class="ab-timeline" role="list">
-
-                <li class="ab-job" data-reveal>
-                  <div class="ab-job__content">
-                    <div class="ab-job__meta">
-                      <span class="ab-job__role" data-i18n="cv.exp.andy.role">Brand & UX Designer</span>
-                      <span class="ab-job__year">2025–26</span>
-                    </div>
-                    <p class="ab-job__org">
-                      <span class="ab-job__company" data-i18n="cv.exp.andy.company">Andy Electric · États-Unis</span>
-                      <span class="ab-job__type" data-i18n="cv.exp.andy.type">CDD</span>
-                    </p>
-                    <ul class="ab-job__items" data-i18n-html="cv.exp.freelance.items"></ul>
-                  </div>
-                </li>
-
-                <li class="ab-job" data-reveal>
-                  <div class="ab-job__content">
-                    <div class="ab-job__meta">
-                      <span class="ab-job__role" data-i18n="cv.exp.ublo.role">UX Designer</span>
-                      <span class="ab-job__year">2024–25</span>
-                    </div>
-                    <p class="ab-job__org">
-                      <span class="ab-job__company" data-i18n="cv.exp.ublo.company">Ublo · France</span>
-                      <span class="ab-job__type" data-i18n="cv.exp.ublo.type">Alternance</span>
-                    </p>
-                    <ul class="ab-job__items" data-i18n-html="cv.exp.ublo.items"></ul>
-                  </div>
-                </li>
-
-                <li class="ab-job" data-reveal>
-                  <div class="ab-job__content">
-                    <div class="ab-job__meta">
-                      <span class="ab-job__role" data-i18n="cv.exp.iridian.role">Product Designer</span>
-                      <span class="ab-job__year">2023–24</span>
-                    </div>
-                    <p class="ab-job__org">
-                      <span class="ab-job__company" data-i18n="cv.exp.iridian.company">Iridian · Colombie</span>
-                      <span class="ab-job__type" data-i18n="cv.exp.iridian.type">CDI</span>
-                    </p>
-                    <ul class="ab-job__items" data-i18n-html="cv.exp.iridian.items"></ul>
-                  </div>
-                </li>
-
-                <li class="ab-job" data-reveal>
-                  <div class="ab-job__content">
-                    <div class="ab-job__meta">
-                      <span class="ab-job__role" data-i18n="cv.exp.casatoro.role">UX & Service Designer</span>
-                      <span class="ab-job__year">2021–22</span>
-                    </div>
-                    <p class="ab-job__org">
-                      <span class="ab-job__company" data-i18n="cv.exp.casatoro.company">Casatoro · Colombie</span>
-                      <span class="ab-job__type" data-i18n="cv.exp.casatoro.type">CDI</span>
-                    </p>
-                    <ul class="ab-job__items" data-i18n-html="cv.exp.casatoro.items"></ul>
-                  </div>
-                </li>
-
-              </ol>
-            </div>
-
-            <!-- Right: Education + Skills + Languages + Contact -->
-            <div class="ab-right">
-
-              <!-- Education -->
-              <div class="ab-block" data-reveal>
-                <p class="ab-label" data-i18n="cv.education">Formation</p>
-                <ul class="ab-edu" role="list">
-                  <li class="ab-edu__item">
-                    <span class="ab-edu__year">2025</span>
-                    <div class="ab-edu__info">
-                      <span class="ab-edu__degree" data-i18n="cv.edu.master.degree">Master M2 — Design d'interface et multimédia</span>
-                      <span class="ab-edu__school" data-i18n="cv.edu.master.uni">Sorbonne Paris Nord · France</span>
-                    </div>
-                  </li>
-                  <li class="ab-edu__item">
-                    <span class="ab-edu__year">2023</span>
-                    <div class="ab-edu__info">
-                      <span class="ab-edu__degree" data-i18n="cv.edu.bootcamp.degree">Bootcamp UX/UI Design</span>
-                      <span class="ab-edu__school" data-i18n="cv.edu.bootcamp.uni">Coder House · En ligne</span>
-                    </div>
-                  </li>
-                  <li class="ab-edu__item">
-                    <span class="ab-edu__year">2018</span>
-                    <div class="ab-edu__info">
-                      <span class="ab-edu__degree" data-i18n="cv.edu.licence.degree">Licence en Design Industriel</span>
-                      <span class="ab-edu__school" data-i18n="cv.edu.licence.uni">Jorge Tadeo Lozano · Colombie</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Compétences as tags -->
-              <div class="ab-block" data-reveal>
-                <p class="ab-label" data-i18n="cv.skills">Compétences</p>
-                <div class="ab-tags">
-                  <span class="ab-tag">Design Thinking</span>
-                  <span class="ab-tag">Lean UX</span>
-                  <span class="ab-tag">Human-Centered Design</span>
-                  <span class="ab-tag">Scrum</span>
-                  <span class="ab-tag">Design Sprint</span>
-                  <span class="ab-tag">Product Discovery</span>
-                  <span class="ab-tag">JTBD</span>
-                  <span class="ab-tag">User Research</span>
-                  <span class="ab-tag">Audit UX</span>
-                  <span class="ab-tag">Prototyping</span>
-                  <span class="ab-tag">User Testing</span>
-                  <span class="ab-tag">KPI Analysis</span>
-                </div>
-              </div>
-
-              <!-- Languages -->
-              <div class="ab-block" data-reveal>
-                <p class="ab-label" data-i18n="cv.languages">Langues</p>
-                <div class="ab-langs">
-                  <div class="ab-lang">
-                    <span class="ab-lang__name" data-i18n="cv.lang.fr.label">Français</span>
-                    <span class="ab-lang__level" data-i18n="cv.lang.fr.level">C1</span>
-                  </div>
-                  <div class="ab-lang">
-                    <span class="ab-lang__name" data-i18n="cv.lang.en.label">Anglais</span>
-                    <span class="ab-lang__level" data-i18n="cv.lang.en.level">B1</span>
-                  </div>
-                  <div class="ab-lang">
-                    <span class="ab-lang__name" data-i18n="cv.lang.es.label">Espagnol</span>
-                    <span class="ab-lang__level" data-i18n="cv.lang.es.native">Natif</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Contact CTA -->
-              <div class="ab-block ab-block--cta" data-reveal>
-                <a href="mailto:oago1103@gmail.com" class="ab-cta-btn" aria-label="Envoyer un e-mail">
-                  <span data-i18n="cv.cta.contact">Me contacter</span>
-                  <svg class="ab-cta-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-                </a>
-                <p class="ab-cta-sub">oago1103@gmail.com &nbsp;·&nbsp; +33 648 760 444</p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Tools row (full-width) -->
-          <div class="ab-tools" data-reveal>
-            <p class="ab-label" data-i18n="cv.tools">Outils</p>
-            <div class="ab-tags ab-tags--tools">
-              <span class="ab-tag ab-tag--sm">Figma</span>
-              <span class="ab-tag ab-tag--sm">FigJam</span>
-              <span class="ab-tag ab-tag--sm">Framer</span>
-              <span class="ab-tag ab-tag--sm">Miro</span>
-              <span class="ab-tag ab-tag--sm">Notion</span>
-              <span class="ab-tag ab-tag--sm">Jira</span>
-              <span class="ab-tag ab-tag--sm">Linear</span>
-              <span class="ab-tag ab-tag--sm">Maze</span>
-              <span class="ab-tag ab-tag--sm">Hotjar</span>
-              <span class="ab-tag ab-tag--sm">Google Analytics</span>
-              <span class="ab-tag ab-tag--sm">Adobe Creative Suite</span>
-              <span class="ab-tag ab-tag--sm">GitHub</span>
-              <span class="ab-tag ab-tag--sm">VS Code</span>
-              <span class="ab-tag ab-tag--sm">Claude Code</span>
-              <span class="ab-tag ab-tag--sm">ChatGPT</span>
-              <span class="ab-tag ab-tag--sm">Gemini</span>
-            </div>
-          </div>
-
-        </section>
-      </main>
-    </div>
-
-    <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="./scripts/i18n.js"></script>
-    <script src="./scripts/hero.js"></script>
-    <script src="./scripts/showcase.js"></script>
-    <script type="module" src="./scripts/scroll-animations.js"></script>
-  </body>
+<!-- Highlight pills -->
+<ul aria-label="Especialidades" class="hw-pills hw-anim hw-anim--4">
+<li data-i18n="hero.pill1">UX Design</li>
+<li data-i18n="hero.pill2">Service Design</li>
+<li data-i18n="hero.pill3">Product Design</li>
+</ul>
+<!-- Stats -->
+<div class="hw-stats hw-anim hw-anim--5">
+<div class="hw-stat">
+<div class="hw-stat__label" data-i18n="hero.stat1.label">Proyectos</div>
+<div class="hw-stat__value">6+</div>
+</div>
+<div class="hw-stat">
+<div class="hw-stat__label" data-i18n="hero.stat2.label">Años exp.</div>
+<div class="hw-stat__value">4+</div>
+</div>
+<div class="hw-stat">
+<div class="hw-stat__label" data-i18n="hero.stat3.label">Idiomas</div>
+<div class="hw-stat__value">3</div>
+</div>
+</div>
+</div>
+</section>
+<main class="home-frame">
+<section class="description">
+<div class="professional-projects-parent" id="projects">
+<div class="hw-badge section-badge">
+<svg aria-hidden="true" class="hw-badge-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+<path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path>
+</svg>
+<span data-i18n="hero.badge">UX/UI Designer · Portfolio 2026</span>
+</div>
+<h2 class="professional-projects" data-i18n="projects.title">Proyectos</h2>
+<!-- Project Showcase — list with floating image preview -->
+<div class="ps-showcase" id="ps-showcase">
+<!-- Floating image preview (follows cursor) -->
+<div aria-hidden="true" class="ps-preview" id="ps-preview">
+<img alt="" class="ps-preview__img" data-preview="0" loading="lazy" src="./public/card-andy.webp"/>
+<img alt="" class="ps-preview__img" data-preview="1" loading="lazy" src="./public/card-ublo.webp"/>
+<img alt="" class="ps-preview__img" data-preview="2" loading="lazy" src="./public/card-jumbo.webp"/>
+<img alt="" class="ps-preview__img" data-preview="3" loading="lazy" src="./public/card-bellpi.webp"/>
+<img alt="" class="ps-preview__img" data-preview="4" loading="lazy" src="./public/card-bnf.webp"/>
+<img alt="" class="ps-preview__img" data-preview="5" loading="lazy" src="./public/card-spotify.webp"/>
+<div class="ps-preview__overlay"></div>
+</div>
+<!-- Row: Andy Electric -->
+<a aria-label="Ver proyecto Andy Electric" class="ps-row" data-ps-index="0" href="./projects/andy-electric/index.html">
+<div class="ps-row__inner">
+<div class="ps-row__left">
+<div class="ps-row__title-wrap">
+<span class="ps-row__title">Andy Electric</span>
+<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</div>
+<p class="ps-row__desc" data-i18n="projects.andy.desc">Branding, sitio web y mejoras de experiencia para una empresa de servicios eléctricos en Estados Unidos.</p>
+</div>
+<span class="ps-row__year">2025</span>
+</div>
+</a>
+<!-- Row: Ublo -->
+<a aria-label="Ver proyecto Ublo" class="ps-row" data-ps-index="1" href="./projects/ublo/index.html">
+<div class="ps-row__inner">
+<div class="ps-row__left">
+<div class="ps-row__title-wrap">
+<span class="ps-row__title">Ublo</span>
+<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</div>
+<p class="ps-row__desc" data-i18n="projects.ublo.desc">Plataforma francesa que ayuda a los gestores inmobiliarios a administrar sus carteras de manera eficiente.</p>
+</div>
+<span class="ps-row__year">2025</span>
+</div>
+</a>
+<!-- Row: JumboMana -->
+<a aria-label="Ver proyecto JumboMana" class="ps-row" data-ps-index="2" href="./projects/jumbomana/index.html">
+<div class="ps-row__inner">
+<div class="ps-row__left">
+<div class="ps-row__title-wrap">
+<span class="ps-row__title">JumboMana</span>
+<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</div>
+<p class="ps-row__desc" data-i18n="projects.jumbomana.desc">Asistente IA que guía a los viajeros en su búsqueda de información en el aeropuerto internacional Lyon–Saint-Exupéry.</p>
+</div>
+<span class="ps-row__year">2024</span>
+</div>
+</a>
+<!-- Row: Bellpi -->
+<a aria-label="Ver proyecto Bellpi" class="ps-row" data-ps-index="3" href="./projects/bellpi/index.html">
+<div class="ps-row__inner">
+<div class="ps-row__left">
+<div class="ps-row__title-wrap">
+<span class="ps-row__title">Bellpi</span>
+<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</div>
+<p class="ps-row__desc" data-i18n="projects.bellpi.desc">Plataforma e-commerce que busca transformar la experiencia de compra y venta de vehículos usados.</p>
+</div>
+<span class="ps-row__year">2024</span>
+</div>
+</a>
+<!-- Row: Musée de la BnF -->
+<a aria-label="Ver proyecto BnF" class="ps-row" data-ps-index="4" href="./projects/bnf/index.html">
+<div class="ps-row__inner">
+<div class="ps-row__left">
+<div class="ps-row__title-wrap">
+<span class="ps-row__title">Musée de la BnF</span>
+<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</div>
+<p class="ps-row__desc" data-i18n="projects.bnf.desc">Aplicación web para crear un gemelo digital del patrimonio arquitectónico y las colecciones del sitio Richelieu de la BnF.</p>
+</div>
+<span class="ps-row__year">2024</span>
+</div>
+</a>
+<!-- Row: Spotify -->
+<a aria-label="Ver proyecto Spotify" class="ps-row" data-ps-index="5" href="./projects/spotify/index.html">
+<div class="ps-row__inner">
+<div class="ps-row__left">
+<div class="ps-row__title-wrap">
+<span class="ps-row__title">Spotify</span>
+<svg aria-hidden="true" class="ps-row__arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</div>
+<p class="ps-row__desc" data-i18n="projects.spotify.desc">Conception de 3 nouvelles fonctionnalités UX pour l'application Spotify.</p>
+</div>
+<span class="ps-row__year">2025</span>
+</div>
+</a>
+<div class="ps-end-border"></div>
+</div>
+</div>
+</section>
+<!-- ── CV / About section ── -->
+<section aria-labelledby="ab-title" class="ab-wrap" id="cv">
+<!-- Header -->
+<div class="ab-header" data-reveal="">
+<span class="ab-kicker" data-i18n="cv.kicker">Profil</span>
+<h2 class="ab-title" data-i18n="cv.role" id="ab-title">UX/UI Designer &amp; Product Designer</h2>
+<p class="ab-bio" data-i18n="cv.bio">Orienté vers la stratégie et la conception de produits numériques...</p>
+</div>
+<!-- 2-col body -->
+<div class="ab-body">
+<!-- Left: Experience timeline -->
+<div class="ab-left">
+<p class="ab-label" data-i18n="cv.experience">Expériences</p>
+<ol class="ab-timeline" role="list">
+<li class="ab-job" data-reveal="">
+<div class="ab-job__content">
+<div class="ab-job__meta">
+<span class="ab-job__role" data-i18n="cv.exp.andy.role">Brand &amp; UX Designer</span>
+<span class="ab-job__year">2025–26</span>
+</div>
+<p class="ab-job__org">
+<span class="ab-job__company" data-i18n="cv.exp.andy.company">Andy Electric · États-Unis</span>
+<span class="ab-job__type" data-i18n="cv.exp.andy.type">CDD</span>
+</p>
+<ul class="ab-job__items" data-i18n-html="cv.exp.freelance.items"></ul>
+</div>
+</li>
+<li class="ab-job" data-reveal="">
+<div class="ab-job__content">
+<div class="ab-job__meta">
+<span class="ab-job__role" data-i18n="cv.exp.ublo.role">UX Designer</span>
+<span class="ab-job__year">2024–25</span>
+</div>
+<p class="ab-job__org">
+<span class="ab-job__company" data-i18n="cv.exp.ublo.company">Ublo · France</span>
+<span class="ab-job__type" data-i18n="cv.exp.ublo.type">Alternance</span>
+</p>
+<ul class="ab-job__items" data-i18n-html="cv.exp.ublo.items"></ul>
+</div>
+</li>
+<li class="ab-job" data-reveal="">
+<div class="ab-job__content">
+<div class="ab-job__meta">
+<span class="ab-job__role" data-i18n="cv.exp.iridian.role">Product Designer</span>
+<span class="ab-job__year">2023–24</span>
+</div>
+<p class="ab-job__org">
+<span class="ab-job__company" data-i18n="cv.exp.iridian.company">Iridian · Colombie</span>
+<span class="ab-job__type" data-i18n="cv.exp.iridian.type">CDI</span>
+</p>
+<ul class="ab-job__items" data-i18n-html="cv.exp.iridian.items"></ul>
+</div>
+</li>
+<li class="ab-job" data-reveal="">
+<div class="ab-job__content">
+<div class="ab-job__meta">
+<span class="ab-job__role" data-i18n="cv.exp.casatoro.role">UX &amp; Service Designer</span>
+<span class="ab-job__year">2021–22</span>
+</div>
+<p class="ab-job__org">
+<span class="ab-job__company" data-i18n="cv.exp.casatoro.company">Casatoro · Colombie</span>
+<span class="ab-job__type" data-i18n="cv.exp.casatoro.type">CDI</span>
+</p>
+<ul class="ab-job__items" data-i18n-html="cv.exp.casatoro.items"></ul>
+</div>
+</li>
+</ol>
+</div>
+<!-- Right: Education + Skills + Languages + Contact -->
+<div class="ab-right">
+<!-- Education -->
+<div class="ab-block" data-reveal="">
+<p class="ab-label" data-i18n="cv.education">Formation</p>
+<ul class="ab-edu" role="list">
+<li class="ab-edu__item">
+<span class="ab-edu__year">2025</span>
+<div class="ab-edu__info">
+<span class="ab-edu__degree" data-i18n="cv.edu.master.degree">Master M2 — Design d'interface et multimédia</span>
+<span class="ab-edu__school" data-i18n="cv.edu.master.uni">Sorbonne Paris Nord · France</span>
+</div>
+</li>
+<li class="ab-edu__item">
+<span class="ab-edu__year">2023</span>
+<div class="ab-edu__info">
+<span class="ab-edu__degree" data-i18n="cv.edu.bootcamp.degree">Bootcamp UX/UI Design</span>
+<span class="ab-edu__school" data-i18n="cv.edu.bootcamp.uni">Coder House · En ligne</span>
+</div>
+</li>
+<li class="ab-edu__item">
+<span class="ab-edu__year">2018</span>
+<div class="ab-edu__info">
+<span class="ab-edu__degree" data-i18n="cv.edu.licence.degree">Licence en Design Industriel</span>
+<span class="ab-edu__school" data-i18n="cv.edu.licence.uni">Jorge Tadeo Lozano · Colombie</span>
+</div>
+</li>
+</ul>
+</div>
+<!-- Compétences as tags -->
+<div class="ab-block" data-reveal="">
+<p class="ab-label" data-i18n="cv.skills">Compétences</p>
+<div class="ab-tags">
+<span class="ab-tag">Design Thinking</span>
+<span class="ab-tag">Lean UX</span>
+<span class="ab-tag">Human-Centered Design</span>
+<span class="ab-tag">Scrum</span>
+<span class="ab-tag">Design Sprint</span>
+<span class="ab-tag">Product Discovery</span>
+<span class="ab-tag">JTBD</span>
+<span class="ab-tag">User Research</span>
+<span class="ab-tag">Audit UX</span>
+<span class="ab-tag">Prototyping</span>
+<span class="ab-tag">User Testing</span>
+<span class="ab-tag">KPI Analysis</span>
+</div>
+</div>
+<!-- Languages -->
+<div class="ab-block" data-reveal="">
+<p class="ab-label" data-i18n="cv.languages">Langues</p>
+<div class="ab-langs">
+<div class="ab-lang">
+<span class="ab-lang__name" data-i18n="cv.lang.fr.label">Français</span>
+<span class="ab-lang__level" data-i18n="cv.lang.fr.level">C1</span>
+</div>
+<div class="ab-lang">
+<span class="ab-lang__name" data-i18n="cv.lang.en.label">Anglais</span>
+<span class="ab-lang__level" data-i18n="cv.lang.en.level">B1</span>
+</div>
+<div class="ab-lang">
+<span class="ab-lang__name" data-i18n="cv.lang.es.label">Espagnol</span>
+<span class="ab-lang__level" data-i18n="cv.lang.es.native">Natif</span>
+</div>
+</div>
+</div>
+<!-- Contact CTA -->
+<div class="ab-block ab-block--cta" data-reveal="">
+<a aria-label="Envoyer un e-mail" class="ab-cta-btn" href="mailto:oago1103@gmail.com">
+<span data-i18n="cv.cta.contact">Me contacter</span>
+<svg aria-hidden="true" class="ab-cta-btn__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+</a>
+<p class="ab-cta-sub">oago1103@gmail.com  ·  +33 648 760 444</p>
+</div>
+</div>
+</div>
+<!-- Tools row (full-width) -->
+<div class="ab-tools" data-reveal="">
+<p class="ab-label" data-i18n="cv.tools">Outils</p>
+<div class="ab-tags ab-tags--tools">
+<span class="ab-tag ab-tag--sm">Figma</span>
+<span class="ab-tag ab-tag--sm">FigJam</span>
+<span class="ab-tag ab-tag--sm">Framer</span>
+<span class="ab-tag ab-tag--sm">Miro</span>
+<span class="ab-tag ab-tag--sm">Notion</span>
+<span class="ab-tag ab-tag--sm">Jira</span>
+<span class="ab-tag ab-tag--sm">Linear</span>
+<span class="ab-tag ab-tag--sm">Maze</span>
+<span class="ab-tag ab-tag--sm">Hotjar</span>
+<span class="ab-tag ab-tag--sm">Google Analytics</span>
+<span class="ab-tag ab-tag--sm">Adobe Creative Suite</span>
+<span class="ab-tag ab-tag--sm">GitHub</span>
+<span class="ab-tag ab-tag--sm">VS Code</span>
+<span class="ab-tag ab-tag--sm">Claude Code</span>
+<span class="ab-tag ab-tag--sm">ChatGPT</span>
+<span class="ab-tag ab-tag--sm">Gemini</span>
+</div>
+</div>
+</section>
+</main>
+</div>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="./scripts/i18n.js" type="module"></script>
+<script src="./scripts/hero.js"></script>
+<script src="./scripts/showcase.js"></script>
+<script src="./scripts/scroll-animations.js" type="module"></script>
+</body>
 </html>

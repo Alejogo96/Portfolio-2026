@@ -1,276 +1,243 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>JumboMana — Cas d'étude · Alejandro Guevara</title>
-    <meta name="description" content="Cas d'étude JumboMana : assistant IA guidant les voyageurs à l'aéroport international Lyon–Saint-Exupéry." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/jumbomana/index.html" />
-    <meta property="og:title" content="JumboMana — Cas d'étude · Alejandro Guevara" />
-    <meta property="og:description" content="Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport Lyon–Saint-Exupéry." />
-    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-jumbo.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JumboMana — Cas d'étude · Alejandro Guevara" />
-    <meta name="twitter:description" content="Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport Lyon–Saint-Exupéry." />
-    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-jumbo.jpg" />
-
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="../../styles/navbar.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Raleway:wght@700&display=swap" />
-      <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link rel="stylesheet" href="../../styles/case-study.css" />
-  </head>
-  <body>
-    <div class="jumbomana">
-
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="../../index.html#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="../../projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="../../index.html#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="../../index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <main class="cs-frame">
-
-        <header class="cs-header" data-reveal>
-          <p class="cs-kicker">UX Designer · 2024</p>
-          <h1 class="cs-title">JumboMana</h1>
-          <p class="cs-role">Assistant IA · Aéroport Lyon-Saint-Exupéry</p>
-          <p class="cs-body">
-            Le défi était de concevoir une expérience claire et engageante, capable de capter l'attention dans un environnement aussi fréquenté sans être confondue avec de la publicité. L'interface devait faciliter une compréhension rapide des fonctionnalités, garantir une utilisation fluide et compléter efficacement les systèmes d'information existants à l'aéroport.
-          </p>
-          <ul class="cs-list">
-            <li>Offrir un service intuitif et accessible capable de servir des millions de voyageurs ayant des besoins et des langues différents.</li>
-            <li>Réduire la résistance des utilisateurs grâce à un avatar convivial et à une interaction naturelle (toucher ou vocale).</li>
-            <li>Améliorer l'orientation à l'aide de cartes interactives, de codes QR et de réponses précises et contextuelles.</li>
-          </ul>
-          <div class="cs-tools">
-            <div class="cs-tool"><img src="./public/icon-logiciel-1.webp" alt="ChatGPT" /></div>
-            <div class="cs-tool"><img src="./public/icon-logiciel-2.webp" alt="Gamma AI" /></div>
-            <div class="cs-tool"><img src="./public/icon-logiciel-3.webp" alt="Sora" /></div>
-          </div>
-        </header>
-
-        <div class="cs-img-full" data-reveal>
-          <img alt="JumboMana — interface de l'assistant IA" src="./public/frame-hero.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Défi de conception</h2>
-          <p class="cs-body">
-            Dans quelle mesure la mise en œuvre du système compléterait-elle efficacement les services d'information traditionnels de l'aéroport, sans provoquer de confusion ni de résistance chez les usagers, tout en restant identifiable, compréhensible et accessible ?
-          </p>
-          <div class="cs-cards">
-            <div class="cs-card">
-              <p class="cs-card-label">Qui ?</p>
-              <p class="cs-card-text">Visiteurs, voyageurs, compagnons — en recherche d'informations, d'orientation ou d'assistance.</p>
-            </div>
-            <div class="cs-card">
-              <p class="cs-card-label">Quand ?</p>
-              <p class="cs-card-text">Lors d'un voyage à l'aéroport, en cas de besoin d'orientation ou d'information en temps réel.</p>
-            </div>
-            <div class="cs-card">
-              <p class="cs-card-label">Où ?</p>
-              <p class="cs-card-text">Aéroport Lyon-Saint-Exupéry — zones de transit, halls d'arrivée et départ, services.</p>
-            </div>
-            <div class="cs-card">
-              <p class="cs-card-label">Quoi ?</p>
-              <p class="cs-card-text">Assistant IA conversationnel multiformat — kiosque tactile et application mobile.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Réflexion sur notre démarche</h2>
-          <p class="cs-body">
-            Nous avons structuré notre processus de conception à l'aide d'un outil collaboratif permettant de cartographier les insights utilisateurs, de prioriser les fonctionnalités clés et de valider les hypothèses de conception. Cette approche a facilité l'alignement de l'équipe et la prise de décisions éclairées à chaque étape du projet.
-          </p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Post-its et notes d'atelier de conception" src="./public/group-05.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Phase d'idéation</h2>
-          <p class="cs-body">
-            Le projet comprenait deux versions d'interface : <strong>une pour les appareils mobiles et une autre conçue pour les grands écrans tactiles</strong>. Le storyboard nous a aidé à déterminer comment les utilisateurs navigueraient dans chaque version, en mettant l'accent sur les moments clés d'interaction, d'accessibilité et de cohérence du flux.
-          </p>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Wireframes et storyboard" src="./public/group-09.webp" />
-          <img loading="lazy" alt="Flux kiosque et mobile" src="./public/group-08.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Tests utilisateur</h2>
-          <p class="cs-body">
-            Lors des tests, les participants ont interagi avec succès avec les fonctionnalités clés : couper le son, changer de langue, rechercher un restaurant et localiser l'itinéraire menant au restaurant sélectionné.
-          </p>
-        </div>
-
-        <div class="cs-img-grid" data-reveal>
-          <img loading="lazy" alt="Tests utilisateur — version kiosque" src="./public/group-01.webp" />
-          <img loading="lazy" alt="Tests utilisateur — service mobile" src="./public/group-02.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Commentaires des utilisateurs</h2>
-          <p class="cs-body">Ces résultats indiquent que l'interface était généralement intuitive et aidait les utilisateurs à atteindre leurs objectifs avec un minimum de frictions.</p>
-          <div class="cs-stats">
-            <div>
-              <div class="cs-stat-num">100%</div>
-              <p class="cs-stat-label">Certains utilisateurs ont réussi à changer la langue.</p>
-            </div>
-            <div>
-              <div class="cs-stat-num">84%</div>
-              <p class="cs-stat-label">Certains utilisateurs ont pu couper le son.</p>
-            </div>
-            <div>
-              <div class="cs-stat-num">100%</div>
-              <p class="cs-stat-label">Certains utilisateurs ont réussi à rechercher un restaurant.</p>
-            </div>
-            <div>
-              <div class="cs-stat-num">84%</div>
-              <p class="cs-stat-label">Certains utilisateurs ont terminé la tâche en trouvant l'itinéraire.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-img-full" data-reveal>
-          <img loading="lazy" alt="Un assistant IA qui accompagne les voyageurs — écrans mobiles" src="./public/group-13.webp" />
-        </div>
-
-        <div class="cs-img-full" data-reveal>
-          <img loading="lazy" alt="Version kiosque — écrans du dispositif tactile" src="./public/group-14.webp" />
-        </div>
-
-        <nav class="project-nav" aria-label="Navigation entre projets">
-          <a href="../ublo/index.html" class="project-nav-link project-nav-link--prev">
-            <span class="project-nav-label">← Projet précédent</span>
-            <span class="project-nav-name">Ublo</span>
-          </a>
-          <a href="../bellpi/index.html" class="project-nav-link project-nav-link--next">
-            <span class="project-nav-label">Projet suivant →</span>
-            <span class="project-nav-name">Bellpi</span>
-          </a>
-        </nav>
-
-      </main>
-
-        <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="../../scripts/i18n.js"></script>
-    <script type="module" src="../../scripts/scroll-animations.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>JumboMana — Cas d'étude · Alejandro Guevara</title>
+<meta content="Cas d'étude JumboMana : assistant IA guidant les voyageurs à l'aéroport international Lyon–Saint-Exupéry." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/projects/jumbomana/index.html" property="og:url"/>
+<meta content="JumboMana — Cas d'étude · Alejandro Guevara" property="og:title"/>
+<meta content="Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport Lyon–Saint-Exupéry." property="og:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-jumbo.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JumboMana — Cas d'étude · Alejandro Guevara" name="twitter:title"/>
+<meta content="Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport Lyon–Saint-Exupéry." name="twitter:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-jumbo.jpg" name="twitter:image"/>
+<link href="../../styles/global.css" rel="stylesheet"/>
+<link href="../../styles/navbar.css" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="../../styles/case-study.css" rel="stylesheet"/>
+</head>
+<body data-page="jumbomana">
+<div class="jumbomana">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="../../index.html#projects">
+<img alt="" class="layout-grid-icon" src="../../public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="../../index.html#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../index.html#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="../../index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="../../public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<main class="cs-frame">
+<header class="cs-header" data-reveal="">
+<p class="cs-kicker" data-i18n="jumbomana.t001">UX Designer · 2024</p>
+<h1 class="cs-title" data-i18n="jumbomana.t002">JumboMana</h1>
+<p class="cs-role" data-i18n="jumbomana.t003">Assistant IA · Aéroport Lyon-Saint-Exupéry</p>
+<p class="cs-body" data-i18n="jumbomana.t004">Le défi était de concevoir une expérience claire et engageante, capable de capter l'attention dans un environnement aussi fréquenté sans être confondue avec de la publicité. L'interface devait faciliter une compréhension rapide des fonctionnalités, garantir une utilisation fluide et compléter efficacement les systèmes d'information existants à l'aéroport.</p>
+<ul class="cs-list">
+<li data-i18n="jumbomana.t005">Offrir un service intuitif et accessible capable de servir des millions de voyageurs ayant des besoins et des langues différents.</li>
+<li data-i18n="jumbomana.t006">Réduire la résistance des utilisateurs grâce à un avatar convivial et à une interaction naturelle (toucher ou vocale).</li>
+<li data-i18n="jumbomana.t007">Améliorer l'orientation à l'aide de cartes interactives, de codes QR et de réponses précises et contextuelles.</li>
+</ul>
+<div class="cs-tools">
+<div class="cs-tool"><img alt="ChatGPT" data-i18n-alt="jumbomana.t032" src="./public/icon-logiciel-1.webp"/></div>
+<div class="cs-tool"><img alt="Gamma AI" data-i18n-alt="jumbomana.t033" src="./public/icon-logiciel-2.webp"/></div>
+<div class="cs-tool"><img alt="Sora" data-i18n-alt="jumbomana.t034" src="./public/icon-logiciel-3.webp"/></div>
+</div>
+</header>
+<div class="cs-img-full" data-reveal="">
+<img alt="JumboMana — interface de l'assistant IA" data-i18n-alt="jumbomana.t035" src="./public/frame-hero.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="jumbomana.t008">Défi de conception</h2>
+<p class="cs-body" data-i18n="jumbomana.t009">Dans quelle mesure la mise en œuvre du système compléterait-elle efficacement les services d'information traditionnels de l'aéroport, sans provoquer de confusion ni de résistance chez les usagers, tout en restant identifiable, compréhensible et accessible ?</p>
+<div class="cs-cards">
+<div class="cs-card">
+<p class="cs-card-label" data-i18n="jumbomana.t010">Qui ?</p>
+<p class="cs-card-text" data-i18n="jumbomana.t011">Visiteurs, voyageurs, compagnons — en recherche d'informations, d'orientation ou d'assistance.</p>
+</div>
+<div class="cs-card">
+<p class="cs-card-label" data-i18n="jumbomana.t012">Quand ?</p>
+<p class="cs-card-text" data-i18n="jumbomana.t013">Lors d'un voyage à l'aéroport, en cas de besoin d'orientation ou d'information en temps réel.</p>
+</div>
+<div class="cs-card">
+<p class="cs-card-label" data-i18n="jumbomana.t014">Où ?</p>
+<p class="cs-card-text" data-i18n="jumbomana.t015">Aéroport Lyon-Saint-Exupéry — zones de transit, halls d'arrivée et départ, services.</p>
+</div>
+<div class="cs-card">
+<p class="cs-card-label" data-i18n="jumbomana.t016">Quoi ?</p>
+<p class="cs-card-text" data-i18n="jumbomana.t017">Assistant IA conversationnel multiformat — kiosque tactile et application mobile.</p>
+</div>
+</div>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="jumbomana.t018">Réflexion sur notre démarche</h2>
+<p class="cs-body" data-i18n="jumbomana.t019">Nous avons structuré notre processus de conception à l'aide d'un outil collaboratif permettant de cartographier les insights utilisateurs, de prioriser les fonctionnalités clés et de valider les hypothèses de conception. Cette approche a facilité l'alignement de l'équipe et la prise de décisions éclairées à chaque étape du projet.</p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Post-its et notes d'atelier de conception" data-i18n-alt="jumbomana.t036" loading="lazy" src="./public/group-05.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="jumbomana.t020">Phase d'idéation</h2>
+<p class="cs-body" data-i18n-html="jumbomana.t021">Le projet comprenait deux versions d'interface : <strong>une pour les appareils mobiles et une autre conçue pour les grands écrans tactiles</strong>. Le storyboard nous a aidé à déterminer comment les utilisateurs navigueraient dans chaque version, en mettant l'accent sur les moments clés d'interaction, d'accessibilité et de cohérence du flux.</p>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Wireframes et storyboard" data-i18n-alt="jumbomana.t037" loading="lazy" src="./public/group-09.webp"/>
+<img alt="Flux kiosque et mobile" data-i18n-alt="jumbomana.t038" loading="lazy" src="./public/group-08.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="jumbomana.t022">Tests utilisateur</h2>
+<p class="cs-body" data-i18n="jumbomana.t023">Lors des tests, les participants ont interagi avec succès avec les fonctionnalités clés : couper le son, changer de langue, rechercher un restaurant et localiser l'itinéraire menant au restaurant sélectionné.</p>
+</div>
+<div class="cs-img-grid" data-reveal="">
+<img alt="Tests utilisateur — version kiosque" data-i18n-alt="jumbomana.t039" loading="lazy" src="./public/group-01.webp"/>
+<img alt="Tests utilisateur — service mobile" data-i18n-alt="jumbomana.t040" loading="lazy" src="./public/group-02.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="jumbomana.t024">Commentaires des utilisateurs</h2>
+<p class="cs-body" data-i18n="jumbomana.t025">Ces résultats indiquent que l'interface était généralement intuitive et aidait les utilisateurs à atteindre leurs objectifs avec un minimum de frictions.</p>
+<div class="cs-stats">
+<div>
+<div class="cs-stat-num" data-i18n="jumbomana.t026">100%</div>
+<p class="cs-stat-label" data-i18n="jumbomana.t027">Certains utilisateurs ont réussi à changer la langue.</p>
+</div>
+<div>
+<div class="cs-stat-num" data-i18n="jumbomana.t028">84%</div>
+<p class="cs-stat-label" data-i18n="jumbomana.t029">Certains utilisateurs ont pu couper le son.</p>
+</div>
+<div>
+<div class="cs-stat-num" data-i18n="jumbomana.t026">100%</div>
+<p class="cs-stat-label" data-i18n="jumbomana.t030">Certains utilisateurs ont réussi à rechercher un restaurant.</p>
+</div>
+<div>
+<div class="cs-stat-num" data-i18n="jumbomana.t028">84%</div>
+<p class="cs-stat-label" data-i18n="jumbomana.t031">Certains utilisateurs ont terminé la tâche en trouvant l'itinéraire.</p>
+</div>
+</div>
+</div>
+<div class="cs-img-full" data-reveal="">
+<img alt="Un assistant IA qui accompagne les voyageurs — écrans mobiles" data-i18n-alt="jumbomana.t041" loading="lazy" src="./public/group-13.webp"/>
+</div>
+<div class="cs-img-full" data-reveal="">
+<img alt="Version kiosque — écrans du dispositif tactile" data-i18n-alt="jumbomana.t042" loading="lazy" src="./public/group-14.webp"/>
+</div>
+<nav aria-label="Navigation entre projets" class="project-nav">
+<a class="project-nav-link project-nav-link--prev" href="../ublo/index.html">
+<span class="project-nav-label">← Projet précédent</span>
+<span class="project-nav-name">Ublo</span>
+</a>
+<a class="project-nav-link project-nav-link--next" href="../bellpi/index.html">
+<span class="project-nav-label">Projet suivant →</span>
+<span class="project-nav-name">Bellpi</span>
+</a>
+</nav>
+</main>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="../../scripts/i18n.js" type="module"></script>
+<script src="../../scripts/scroll-animations.js" type="module"></script>
+</div></body>
 </html>

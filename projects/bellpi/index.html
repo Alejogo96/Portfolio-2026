@@ -1,243 +1,210 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Bellpi — Caso de estudio · Alejandro Guevara</title>
-    <meta name="description" content="Caso de estudio Bellpi: e-commerce de vehículos usados." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-alejandroguevara.vercel.app/projects/bellpi/index.html" />
-    <meta property="og:title" content="Bellpi — Cas d'étude · Alejandro Guevara" />
-    <meta property="og:description" content="Plateforme e-commerce transformant l'expérience d'achat et de vente de véhicules d'occasion." />
-    <meta property="og:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-bellpi.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Bellpi — Cas d'étude · Alejandro Guevara" />
-    <meta name="twitter:description" content="Plateforme e-commerce transformant l'expérience d'achat et de vente de véhicules d'occasion." />
-    <meta name="twitter:image" content="https://portfolio-alejandroguevara.vercel.app/og/card-bellpi.jpg" />
-
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="../../styles/navbar.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../../styles/responsive.css" />
-    <link rel="stylesheet" href="../../styles/project-nav.css" />
-    <link rel="stylesheet" href="../../styles/case-study.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Raleway:wght@700&display=swap" />
-  </head>
-  <body>
-    <div class="bellpi">
-      <section class="navbar-wrapper">
-        <nav class="navbar" aria-label="Navigation principale">
-          <div class="navbar-menu-wrapper">
-            <a href="../../index.html#projects" class="layout-grid-parent" aria-label="Ouvrir le menu">
-              <img class="layout-grid-icon" alt="" src="../../public/layout-grid.svg" />
-              <div class="button-text">
-                <b class="button" data-i18n="nav.menu">Menu</b>
-              </div>
-            </a>
-            <nav class="navbar-dropdown" aria-label="Navigation des projets">
-              <a href="../../index.html#home" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
-              </a>
-              <a href="../../projects/jumbomana/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">JumboMana</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
-              </a>
-              <a href="../../projects/ublo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Ublo</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
-              </a>
-              <a href="../../projects/bnf/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Musée de la BnF</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
-              </a>
-              <a href="../../projects/bellpi/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Bellpi</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
-              </a>
-              <a href="../../projects/spotify/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">Spotify</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
-              </a>
-              <a href="../../projects/paramo/index.html" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name">ParamoTotem</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
-              </a>
-              <a href="../../index.html#cv" class="navbar-dropdown-item">
-                <div class="navbar-dropdown-item__header">
-                  <img class="navbar-dropdown-item__icon" alt="" src="../../public/layout-grid.svg" />
-                  <span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
-                </div>
-                <p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
-              </a>
-            </nav>
-          </div>
-          <a href="../../index.html" class="capa-1-parent" aria-label="Accueil">
-            <img class="capa-1-icon" loading="lazy" alt="" src="../../public/Capa-1.svg" />
-            <div class="button-text">
-              <b class="button2" data-i18n="nav.portfolio">Portfolio</b>
-            </div>
-          </a>
-          <div class="navbar-lang-wrapper" aria-label="Sélecteur de langue">
-            <button class="navbar-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="navbar-lang-current">FR</span>
-              <span class="navbar-lang-arrow">▾</span>
-            </button>
-            <div class="navbar-lang-options" role="listbox">
-              <button class="navbar-lang-btn lang-btn" data-lang="fr" type="button" role="option">
-                <span class="lang-btn-code">FR</span>
-                <span class="lang-btn-name" data-i18n="lang.fr">Français</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="en" type="button" role="option">
-                <span class="lang-btn-code">EN</span>
-                <span class="lang-btn-name" data-i18n="lang.en">English</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-              <button class="navbar-lang-btn lang-btn" data-lang="es" type="button" role="option">
-                <span class="lang-btn-code">ES</span>
-                <span class="lang-btn-name" data-i18n="lang.es">Español</span>
-                <span class="lang-btn-check">✓</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </section>
-
-      <main class="cs-frame">
-
-        <header class="cs-header" data-reveal>
-          <p class="cs-kicker">UX &amp; Service Designer · 2024</p>
-          <h1 class="cs-title">Bellpi</h1>
-          <p class="cs-role">Plateforme e-commerce · Véhicules d'occasion · Colombie</p>
-          <p class="cs-body">
-            Bellpi est une plateforme e-commerce innovante de vente et d'achat de véhicules d'occasion en Colombie, visant à transformer une expérience traditionnellement complexe en un parcours numérique 100 % centré utilisateur.
-          </p>
-          <p class="cs-body">En tant que UX &amp; Service Designer, j'ai contribué au lancement de la version 1 de la plateforme et à ses itérations successives :</p>
-          <ul class="cs-list">
-            <li>Concevoir et optimiser des parcours utilisateur de bout en bout pour les acheteurs et les vendeurs.</li>
-            <li>Effectuer des recherches sur les utilisateurs et traduire les résultats en informations exploitables.</li>
-            <li>Collaborer avec des équipes interfonctionnelles pour aligner les décisions de conception sur les objectifs commerciaux.</li>
-            <li>Créer des wireframes, des prototypes et des plans de service pour visualiser et valider les solutions proposées.</li>
-          </ul>
-        </header>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Bellpi — introduction de la plateforme" src="./public/bellpi-introduction.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Lancement de produit</h2>
-          <p class="cs-body">
-            J'ai travaillé au sein d'une équipe multidisciplinaire où, dès le lancement initial du produit, nous avons établi des <strong>OKR et KPI</strong> clairs pour surveiller les performances et guider le développement itératif. Cette approche structurée a conduit à une <strong>deuxième phase centrée sur l'empathie des utilisateurs</strong>, dans laquelle nous avons évalué les parcours utilisateur conçus pour les <strong>vendeurs et les acheteurs</strong>.
-          </p>
-          <p class="cs-body">Méthodologies appliquées :</p>
-          <ul class="cs-list">
-            <li>Design Thinking</li>
-            <li>Lean UX</li>
-            <li>Scrum</li>
-          </ul>
-          <p class="cs-body">
-            Mon rôle consistait également à adapter la plateforme à <strong>plusieurs formats — totems mobiles, tablettes, ordinateurs de bureau et écrans tactiles</strong> — tout en maintenant une expérience utilisateur cohérente.
-          </p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Bellpi — lancement de la plateforme" src="./public/bellpi-lancement.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Itération continue</h2>
-          <p class="cs-body">
-            La recherche et l'analyse UX ont révélé des informations clés qui <strong>ont guidé l'amélioration continue de la plateforme</strong>. J'ai joué un rôle stratégique en traduisant ces résultats en solutions de conception exploitables, en alignant les besoins des utilisateurs sur les objectifs de l'entreprise.
-          </p>
-          <p class="cs-body">
-            <strong>Grâce à une étroite collaboration avec les développeurs et les parties prenantes</strong>, j'ai assuré la cohérence entre les points de contact tout en me concentrant sur l'accessibilité, l'architecture de l'information et la convivialité dans un environnement agile.
-          </p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Bellpi — processus et services" src="./public/bellpi-processus.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Expérience sur site</h2>
-          <p class="cs-body">
-            En parallèle, j'ai également contribué à l'évaluation et à l'amélioration de l'expérience physique. Cela impliquait de mener des séances d'observation, une analyse approfondie et une modélisation spatiale de la disposition et des flux au sein du premier emplacement physique de Bellpi.
-          </p>
-          <ul class="cs-list">
-            <li>Zones d'attente</li>
-            <li>Zone de points d'information</li>
-            <li>Zones de rencontre avec les acheteurs</li>
-            <li>Zones de snacks</li>
-            <li>Écrans tactiles et ordinateurs pour les utilisateurs</li>
-          </ul>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Bellpi — détails du service sur site" src="./public/bellpi-service-details.webp" />
-        </div>
-
-        <div class="cs-sep"></div>
-
-        <div class="cs-block" data-reveal>
-          <h2 class="cs-heading">Expérience interactive</h2>
-          <p class="cs-body">
-            Dans le cadre du processus de conception UX, j'ai contribué à la <strong>création d'une expérience web réactive</strong> optimisée pour les <strong>interactions tactiles</strong>, spécifiquement pour une utilisation lors d'<strong>événements et salons professionnels</strong>. L'objectif était de garantir une navigation intuitive, une compréhension rapide et une interaction accessible dans des <strong>environnements publics et à fort trafic</strong>.
-          </p>
-        </div>
-
-        <div class="cs-img-box" data-reveal>
-          <img loading="lazy" alt="Bellpi — bornes tactiles et expérience interactive" src="./public/bellpi-bornes.webp" />
-        </div>
-
-        <nav class="project-nav" aria-label="Navigation entre projets">
-          <a href="../jumbomana/index.html" class="project-nav-link project-nav-link--prev">
-            <span class="project-nav-label">← Projet précédent</span>
-            <span class="project-nav-name">JumboMana</span>
-          </a>
-          <a href="../bnf/index.html" class="project-nav-link project-nav-link--next">
-            <span class="project-nav-label">Projet suivant →</span>
-            <span class="project-nav-name">Musée de la BnF</span>
-          </a>
-        </nav>
-
-      </main>
-
-        <button class="back-to-top" aria-label="Retour en haut de page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script type="module" src="../../scripts/i18n.js"></script>
-    <script type="module" src="../../scripts/scroll-animations.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, width=device-width" name="viewport"/>
+<title>Bellpi — Cas d'étude · Alejandro Guevara</title>
+<meta content="Caso de estudio Bellpi: e-commerce de vehículos usados." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/projects/bellpi/index.html" property="og:url"/>
+<meta content="Bellpi — Cas d'étude · Alejandro Guevara" property="og:title"/>
+<meta content="Plateforme e-commerce transformant l'expérience d'achat et de vente de véhicules d'occasion." property="og:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-bellpi.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bellpi — Cas d'étude · Alejandro Guevara" name="twitter:title"/>
+<meta content="Plateforme e-commerce transformant l'expérience d'achat et de vente de véhicules d'occasion." name="twitter:description"/>
+<meta content="https://portfolio-alejandroguevara.vercel.app/og/card-bellpi.jpg" name="twitter:image"/>
+<link href="../../styles/global.css" rel="stylesheet"/>
+<link href="../../styles/navbar.css" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="../../styles/responsive.css" rel="stylesheet"/>
+<link href="../../styles/project-nav.css" rel="stylesheet"/>
+<link href="../../styles/case-study.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body data-page="bellpi">
+<div class="bellpi">
+<section class="navbar-wrapper">
+<nav aria-label="Navigation principale" class="navbar">
+<div class="navbar-menu-wrapper">
+<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="../../index.html#projects">
+<img alt="" class="layout-grid-icon" src="../../public/layout-grid.svg"/>
+<div class="button-text">
+<b class="button" data-i18n="nav.menu">Menu</b>
+</div>
+</a>
+<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<a class="navbar-dropdown-item" href="../../index.html#home">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.home">Home</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.home.desc">Présentation du portfolio</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/jumbomana/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">JumboMana</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.jumbomana.desc">Assistant IA guidant les voyageurs dans leur recherche d'informations à l'aéroport international Lyon–Saint-Exupéry.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/ublo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Ublo</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.ublo.desc">Plateforme basée en France, aidant les gestionnaires immobiliers à gérer efficacement leurs portefeuilles.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bnf/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Musée de la BnF</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bnf.desc">Application web conçue pour créer un jumeau numérique mettant en valeur le patrimoine architectural et les collections du site Richelieu de la BnF.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/bellpi/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Bellpi</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.bellpi.desc">Plateforme e-commerce visant à transformer l'expérience d'achat et de vente de véhicules d'occasion.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/spotify/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">Spotify</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.spotify.desc">Amélioration des fonctionnalités de création de playlists musicales, de la gestion des paiements et de l'engagement communautaire.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../projects/paramo/index.html">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name">ParamoTotem</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="projects.paramo.desc">Projet expérimental axé sur la création d'une expérience immersive inspirée des écosystèmes naturels.</p>
+</a>
+<a class="navbar-dropdown-item" href="../../index.html#cv">
+<div class="navbar-dropdown-item__header">
+<img alt="" class="navbar-dropdown-item__icon" src="../../public/layout-grid.svg"/>
+<span class="navbar-dropdown-item__name" data-i18n="nav.cv">CV</span>
+</div>
+<p class="navbar-dropdown-item__desc" data-i18n="menu.cv.desc">Mon profil professionnel, ma formation, mon expérience, mes compétences et mes centres d'intérêt.</p>
+</a>
+</nav>
+</div>
+<a aria-label="Accueil" class="capa-1-parent" href="../../index.html">
+<img alt="" class="capa-1-icon" loading="lazy" src="../../public/Capa-1.svg"/>
+<div class="button-text">
+<b class="button2" data-i18n="nav.portfolio">Portfolio</b>
+</div>
+</a>
+<div aria-label="Sélecteur de langue" class="navbar-lang-wrapper">
+<button aria-expanded="false" aria-haspopup="listbox" class="navbar-lang-trigger" type="button">
+<span class="navbar-lang-current">FR</span>
+<span class="navbar-lang-arrow">▾</span>
+</button>
+<div class="navbar-lang-options" role="listbox">
+<button class="navbar-lang-btn lang-btn" data-lang="fr" role="option" type="button">
+<span class="lang-btn-code">FR</span>
+<span class="lang-btn-name" data-i18n="lang.fr">Français</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="en" role="option" type="button">
+<span class="lang-btn-code">EN</span>
+<span class="lang-btn-name" data-i18n="lang.en">English</span>
+<span class="lang-btn-check">✓</span>
+</button>
+<button class="navbar-lang-btn lang-btn" data-lang="es" role="option" type="button">
+<span class="lang-btn-code">ES</span>
+<span class="lang-btn-name" data-i18n="lang.es">Español</span>
+<span class="lang-btn-check">✓</span>
+</button>
+</div>
+</div>
+</nav>
+</section>
+<main class="cs-frame">
+<header class="cs-header" data-reveal="">
+<p class="cs-kicker" data-i18n="bellpi.t001">UX &amp; Service Designer · 2024</p>
+<h1 class="cs-title" data-i18n="bellpi.t002">Bellpi</h1>
+<p class="cs-role" data-i18n="bellpi.t003">Plateforme e-commerce · Véhicules d'occasion · Colombie</p>
+<p class="cs-body" data-i18n="bellpi.t004">Bellpi est une plateforme e-commerce innovante de vente et d'achat de véhicules d'occasion en Colombie, visant à transformer une expérience traditionnellement complexe en un parcours numérique 100 % centré utilisateur.</p>
+<p class="cs-body" data-i18n="bellpi.t005">En tant que UX &amp; Service Designer, j'ai contribué au lancement de la version 1 de la plateforme et à ses itérations successives :</p>
+<ul class="cs-list">
+<li data-i18n="bellpi.t006">Concevoir et optimiser des parcours utilisateur de bout en bout pour les acheteurs et les vendeurs.</li>
+<li data-i18n="bellpi.t007">Effectuer des recherches sur les utilisateurs et traduire les résultats en informations exploitables.</li>
+<li data-i18n="bellpi.t008">Collaborer avec des équipes interfonctionnelles pour aligner les décisions de conception sur les objectifs commerciaux.</li>
+<li data-i18n="bellpi.t009">Créer des wireframes, des prototypes et des plans de service pour visualiser et valider les solutions proposées.</li>
+</ul>
+</header>
+<div class="cs-img-box" data-reveal="">
+<img alt="Bellpi — introduction de la plateforme" data-i18n-alt="bellpi.t029" loading="lazy" src="./public/bellpi-introduction.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bellpi.t010">Lancement de produit</h2>
+<p class="cs-body" data-i18n-html="bellpi.t011">J'ai travaillé au sein d'une équipe multidisciplinaire où, dès le lancement initial du produit, nous avons établi des <strong>OKR et KPI</strong> clairs pour surveiller les performances et guider le développement itératif. Cette approche structurée a conduit à une <strong>deuxième phase centrée sur l'empathie des utilisateurs</strong>, dans laquelle nous avons évalué les parcours utilisateur conçus pour les <strong>vendeurs et les acheteurs</strong>.</p>
+<p class="cs-body" data-i18n="bellpi.t012">Méthodologies appliquées :</p>
+<ul class="cs-list">
+<li data-i18n="bellpi.t013">Design Thinking</li>
+<li data-i18n="bellpi.t014">Lean UX</li>
+<li data-i18n="bellpi.t015">Scrum</li>
+</ul>
+<p class="cs-body" data-i18n-html="bellpi.t016">Mon rôle consistait également à adapter la plateforme à <strong>plusieurs formats — totems mobiles, tablettes, ordinateurs de bureau et écrans tactiles</strong> — tout en maintenant une expérience utilisateur cohérente.</p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Bellpi — lancement de la plateforme" data-i18n-alt="bellpi.t030" loading="lazy" src="./public/bellpi-lancement.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bellpi.t017">Itération continue</h2>
+<p class="cs-body" data-i18n-html="bellpi.t018">La recherche et l'analyse UX ont révélé des informations clés qui <strong>ont guidé l'amélioration continue de la plateforme</strong>. J'ai joué un rôle stratégique en traduisant ces résultats en solutions de conception exploitables, en alignant les besoins des utilisateurs sur les objectifs de l'entreprise.</p>
+<p class="cs-body" data-i18n-html="bellpi.t019"><strong>Grâce à une étroite collaboration avec les développeurs et les parties prenantes</strong>, j'ai assuré la cohérence entre les points de contact tout en me concentrant sur l'accessibilité, l'architecture de l'information et la convivialité dans un environnement agile.</p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Bellpi — processus et services" data-i18n-alt="bellpi.t031" loading="lazy" src="./public/bellpi-processus.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bellpi.t020">Expérience sur site</h2>
+<p class="cs-body" data-i18n="bellpi.t021">En parallèle, j'ai également contribué à l'évaluation et à l'amélioration de l'expérience physique. Cela impliquait de mener des séances d'observation, une analyse approfondie et une modélisation spatiale de la disposition et des flux au sein du premier emplacement physique de Bellpi.</p>
+<ul class="cs-list">
+<li data-i18n="bellpi.t022">Zones d'attente</li>
+<li data-i18n="bellpi.t023">Zone de points d'information</li>
+<li data-i18n="bellpi.t024">Zones de rencontre avec les acheteurs</li>
+<li data-i18n="bellpi.t025">Zones de snacks</li>
+<li data-i18n="bellpi.t026">Écrans tactiles et ordinateurs pour les utilisateurs</li>
+</ul>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Bellpi — détails du service sur site" data-i18n-alt="bellpi.t032" loading="lazy" src="./public/bellpi-service-details.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block" data-reveal="">
+<h2 class="cs-heading" data-i18n="bellpi.t027">Expérience interactive</h2>
+<p class="cs-body" data-i18n-html="bellpi.t028">Dans le cadre du processus de conception UX, j'ai contribué à la <strong>création d'une expérience web réactive</strong> optimisée pour les <strong>interactions tactiles</strong>, spécifiquement pour une utilisation lors d'<strong>événements et salons professionnels</strong>. L'objectif était de garantir une navigation intuitive, une compréhension rapide et une interaction accessible dans des <strong>environnements publics et à fort trafic</strong>.</p>
+</div>
+<div class="cs-img-box" data-reveal="">
+<img alt="Bellpi — bornes tactiles et expérience interactive" data-i18n-alt="bellpi.t033" loading="lazy" src="./public/bellpi-bornes.webp"/>
+</div>
+<nav aria-label="Navigation entre projets" class="project-nav">
+<a class="project-nav-link project-nav-link--prev" href="../jumbomana/index.html">
+<span class="project-nav-label">← Projet précédent</span>
+<span class="project-nav-name">JumboMana</span>
+</a>
+<a class="project-nav-link project-nav-link--next" href="../bnf/index.html">
+<span class="project-nav-label">Projet suivant →</span>
+<span class="project-nav-name">Musée de la BnF</span>
+</a>
+</nav>
+</main>
+<button aria-label="Retour en haut de page" class="back-to-top">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script src="../../scripts/i18n.js" type="module"></script>
+<script src="../../scripts/scroll-animations.js" type="module"></script>
+</div></body>
 </html>

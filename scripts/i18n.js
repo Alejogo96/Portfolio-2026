@@ -4,6 +4,8 @@
  * - Importa los diccionarios estáticamente (Parcel los empaqueta).
  * - Lee `data-i18n="key"` y reemplaza `textContent`.
  * - Lee `data-i18n-html="key"` y reemplaza `innerHTML` (para texto con <br/>).
+ * - Lee `data-i18n-alt="key"` y reemplaza el atributo `alt` de las imágenes.
+ * - Traduce <title> y meta description con las claves `meta.<data-page>.title|desc`.
  * - Persiste el idioma en localStorage (`pf:lang`).
  * - Lenguajes soportados: fr (default), en, es.
  */
@@ -36,6 +38,16 @@ function applyDictionary(dict) {
     const key = el.getAttribute("data-i18n-html");
     if (dict[key] != null) el.innerHTML = dict[key];
   });
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-alt");
+    if (dict[key] != null) el.setAttribute("alt", dict[key]);
+  });
+  const page = document.body.getAttribute("data-page");
+  if (page) {
+    if (dict[`meta.${page}.title`] != null) document.title = dict[`meta.${page}.title`];
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc && dict[`meta.${page}.desc`] != null) desc.setAttribute("content", dict[`meta.${page}.desc`]);
+  }
 }
 
 function updateActiveButtons(lang) {
