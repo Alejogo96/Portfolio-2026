@@ -21,62 +21,39 @@
   border-radius: 8px;
 }
 
-/* ── Burger (mobile only) ── */
-.burger {
-  display: none;
-  width: 44px;
-  height: 44px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.burger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
-  background: #fff;
-  transition: transform 0.25s ease, opacity 0.2s ease;
-}
-
-.layout-grid-parent[aria-expanded="true"] .burger span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.layout-grid-parent[aria-expanded="true"] .burger span:nth-child(2) {
-  opacity: 0;
-}
-.layout-grid-parent[aria-expanded="true"] .burger span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* ── Capsule: theme + language ── */
 .navbar-capsule {
   display: flex;
   align-items: center;
-  gap: 0;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
 }
 
-.navbar-capsule .navbar-lang-wrapper {
-  position: relative;
-}
+/* ── Capsule: theme + language (desktop; the mobile capsule is in mobile-menu.css) ── */
+@media (min-width: 769px) {
+  .navbar-capsule {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
 
-.navbar-capsule .navbar-lang-wrapper::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-50%);
-}
+  .navbar-capsule .navbar-lang-wrapper {
+    position: relative;
+  }
 
-.navbar-lang-trigger {
-  justify-content: center;
+  .navbar-capsule .navbar-lang-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-50%);
+  }
+
+  .navbar-lang-trigger {
+    justify-content: center;
+  }
 }
 
 /* ── Desktop dropdown (Figma: 640 wide, 8 padding, radius 14) ── */
@@ -139,65 +116,7 @@
   }
 }
 
-/* ── Mobile (≤768px): burger + full-width list ── */
-@media (max-width: 768px) {
-  .layout-grid-icon {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
-  .layout-grid-parent {
-    padding: 0;
-  }
-  .navbar {
-    min-height: 56px;
-    padding-block: 6px;
-  }
-  .navbar-menu-wrapper:hover .navbar-dropdown {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .navbar-dropdown {
-    position: fixed;
-    top: var(--nav-bottom, 72px);
-    left: var(--container-pad, 1rem);
-    right: var(--container-pad, 1rem);
-    width: auto;
-    max-height: calc(100dvh - var(--nav-bottom, 72px) - 16px);
-    overflow-y: auto;
-    grid-template-columns: 1fr;
-    gap: 2px;
-    visibility: hidden;
-    transform: translateY(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-  }
-
-  .navbar-dropdown::before {
-    display: none;
-  }
-
-  .navbar-menu-wrapper[data-open="true"] .navbar-dropdown {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: none;
-  }
-
-  .navbar-dropdown-item {
-    min-height: 48px;
-    justify-content: center;
-    padding: 12px;
-  }
-
-  .navbar-dropdown-item__desc {
-    display: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .burger span,
   .navbar-dropdown {
     transition: none !important;
   }
