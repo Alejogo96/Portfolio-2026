@@ -320,3 +320,13 @@
     height: 24px;
   }
 }
+
+/* Icon set 2026 (Figma "Iconos 2026"): every line icon is drawn with a 1px stroke,
+   whatever size it is displayed at. */
+svg[stroke="currentColor"] * {
+  vector-effect: non-scaling-stroke;
+}
+.navbar-dropdown-item:hover .navbar-dropdown-item__icon,
+.navbar-dropdown-item:focus-visible .navbar-dropdown-item__icon {
+  opacity: 1;
+}
