@@ -1,0 +1,47 @@
+/* =====================================================
+   case-base.css — Base template for case pages without full content yet
+   (Qualnet, Iridian, Freelance). Reuses case-study.css patterns.
+   ===================================================== */
+.cs-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f1ef;
+  color: #1a1a1a;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-page .navbar-wrapper {
+  background: #f5f1ef;
+}
+
+.cs-page .cs-frame {
+  flex: 1;
+}
+
+.cs-soon {
+  max-width: 860px;
+  width: calc(100% - 4rem);
+  margin: 1rem auto 5rem;
+  padding: 2rem;
+  border: 1px dashed rgba(26, 26, 26, 0.3);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.cs-soon__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: #1a1a1a;
+}
+
+.cs-soon__text {
+  margin: 0;
+  color: rgba(26, 26, 26, 0.7);
+}

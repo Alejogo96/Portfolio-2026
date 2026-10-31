@@ -439,5 +439,21 @@
   "h2.contact.title": "Travaillons ensemble",
   "h2.contact.email": "E-mail",
   "h2.contact.phone": "Téléphone",
-  "h2.theme.toggle": "Changer de thème (clair / sombre)"
+  "h2.theme.toggle": "Changer de thème (clair / sombre)",
+  "cs.soon.title": "Étude de cas détaillée à venir",
+  "cs.soon.text": "Cette page présente le cadre de cette expérience. Le détail — contexte, démarche et résultats — sera ajouté prochainement.",
+  "cs.missions": "Missions principales",
+  "ui.prev": "← Projet précédent",
+  "ui.next": "Projet suivant →",
+  "meta.qualnet.title": "Qualnet — Expérience · Alejandro Guevara",
+  "meta.qualnet.desc": "Expérience de Product Owner chez Qualnet (2026 – aujourd'hui).",
+  "qualnet.intro": "Depuis 2026, j'exerce le rôle de Product Owner chez Qualnet.",
+  "meta.iridian.title": "Iridian — Expérience · Alejandro Guevara",
+  "meta.iridian.desc": "Expérience de Product Designer chez Iridian, Colombie (2023–2024).",
+  "iridian.role": "Iridian · Colombie · CDI",
+  "iridian.intro": "Au sein d'Iridian, j'ai travaillé comme Product Designer sur des interfaces web et mobile.",
+  "meta.freelance.title": "Freelance — Expérience · Alejandro Guevara",
+  "meta.freelance.desc": "Expérience de designer industriel en freelance (2018 – 2021).",
+  "freelance.role": "Freelance · Design industriel",
+  "freelance.intro": "Entre 2018 et 2021, j'ai travaillé en indépendant comme designer industriel."
 }

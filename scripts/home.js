@@ -4,7 +4,7 @@
    - Hero title: word-by-word rise on load
    - Bio (under the chips): its words appear on the user's first scroll down
    - Cards: hovered card's image bleeds into the page background
-     (+ small pointer parallax on the card image)
+  
    ===================================================== */
 (function () {
   'use strict';
@@ -102,7 +102,6 @@
     if (!canHover || reduced) return;
 
     document.querySelectorAll('.pcard').forEach(function (card) {
-      var img = card.querySelector('.pcard__img');
       var src = card.getAttribute('data-bg');
 
       card.addEventListener('pointerenter', function () {
@@ -110,25 +109,10 @@
           bg.style.backgroundImage = 'url("' + src + '")';
           bg.classList.add('is-on');
         }
-        if (img) img.style.setProperty('--s', '1.06');
-      });
-
-      card.addEventListener('pointermove', function (e) {
-        if (!img) return;
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        img.style.setProperty('--tx', (-x * 14).toFixed(1) + 'px');
-        img.style.setProperty('--ty', (-y * 10).toFixed(1) + 'px');
       });
 
       card.addEventListener('pointerleave', function () {
         if (bg) bg.classList.remove('is-on');
-        if (img) {
-          img.style.setProperty('--s', '1');
-          img.style.setProperty('--tx', '0px');
-          img.style.setProperty('--ty', '0px');
-        }
       });
     });
   }
