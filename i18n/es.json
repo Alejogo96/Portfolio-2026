@@ -455,5 +455,8 @@
   "meta.freelance.title": "Freelance — Experiencia · Alejandro Guevara",
   "meta.freelance.desc": "Experiencia como diseñador industrial freelance (2018 – 2021).",
   "freelance.role": "Freelance · Diseño industrial",
-  "freelance.intro": "Entre 2018 y 2021 trabajé de forma independiente como diseñador industrial."
+  "freelance.intro": "Entre 2018 y 2021 trabajé de forma independiente como diseñador industrial.",
+  "nav.open": "Abrir el menú",
+  "nav.closeMenu": "Cerrar el menú",
+  "nav.current": "Página actual"
 }

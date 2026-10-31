@@ -19,6 +19,7 @@
 <link href="./styles/navbar.css" rel="stylesheet"/>
 <link href="./styles/responsive.css" rel="stylesheet"/>
 <link href="./styles/home-v2.css" rel="stylesheet"/>
+<link href="./styles/navbar-v2.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Raleway:wght@700&amp;display=swap" rel="stylesheet"/>
@@ -29,13 +30,14 @@
 <section class="navbar-wrapper">
 <nav aria-label="Navigation principale" class="navbar">
 <div class="navbar-menu-wrapper">
-<a aria-label="Ouvrir le menu" class="layout-grid-parent" href="#projects">
+<a aria-controls="nav-menu" aria-expanded="false" aria-haspopup="true" aria-label="Ouvrir le menu" class="layout-grid-parent" data-i18n-aria-label="nav.open" href="#projects">
 <img alt="" class="layout-grid-icon" src="./public/layout-grid.svg"/>
+<span aria-hidden="true" class="burger"><span></span><span></span><span></span></span>
 <div class="button-text">
 <b class="button" data-i18n="nav.menu">Menu</b>
 </div>
 </a>
-<nav aria-label="Navigation des projets" class="navbar-dropdown">
+<nav aria-label="Navigation des projets" class="navbar-dropdown" id="nav-menu">
 <a class="navbar-dropdown-item" href="#home">
 <div class="navbar-dropdown-item__header">
 <img alt="" class="navbar-dropdown-item__icon" src="./public/layout-grid.svg"/>
@@ -122,6 +124,7 @@
 </div>
 </a>
 <div class="navbar-actions">
+<div class="navbar-capsule">
 <button aria-checked="true" aria-label="Changer de thème (clair / sombre)" class="theme-toggle" data-i18n-aria-label="h2.theme.toggle" id="theme-toggle" role="switch" type="button">
 <svg aria-hidden="true" class="theme-toggle__moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 <svg aria-hidden="true" class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
@@ -149,6 +152,7 @@
 <span class="lang-btn-name" data-i18n="lang.es">Español</span>
 <span class="lang-btn-check">✓</span>
 </button>
+</div>
 </div>
 </div>
 </div>
@@ -282,6 +286,7 @@
 <script src="./scripts/i18n.js" type="module"></script>
 <script src="./scripts/hero.js"></script>
 <script src="./scripts/home.js"></script>
+<script src="./scripts/navbar.js" type="module"></script>
 <script src="./scripts/scroll-animations.js" type="module"></script>
 </body>
 </html>
