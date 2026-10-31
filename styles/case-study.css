@@ -296,3 +296,27 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ===================================================
+   Legibilidad de imágenes (diagramas, flujos, capturas)
+   - El texto mantiene 860px (medida de lectura); las imágenes
+     se ensanchan hasta 1240px para que las capturas sean legibles.
+   - La rejilla pasa a una columna: a 2 columnas los diagramas de
+     ~1900px quedaban a ~30% de su tamaño y el texto era ilegible.
+   - Clic / toque sobre una imagen la abre a tamaño completo (lightbox).
+   =================================================== */
+.cs-img-box,
+.cs-img-grid {
+  max-width: 1240px;
+}
+
+.cs-img-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.cs-img-box img,
+.cs-img-grid img,
+.cs-img-full img {
+  height: auto;
+}
