@@ -330,3 +330,26 @@ svg[stroke="currentColor"] * {
 .navbar-dropdown-item:focus-visible .navbar-dropdown-item__icon {
   opacity: 1;
 }
+
+/* ── Header · Estado=Abierto (Figma Nav/Desktop): "Menu" pasa al acento
+   mientras el menú está desplegado ── */
+@media (min-width: 769px) {
+  .layout-grid-parent .button,
+  .layout-grid-parent .layout-grid-icon {
+    transition: color 0.2s ease, filter 0.2s ease;
+  }
+  .navbar-menu-wrapper:not([data-dismissed]):hover .layout-grid-parent .button,
+  .navbar-menu-wrapper:not([data-dismissed]):has(:focus-visible) .layout-grid-parent .button,
+  .layout-grid-parent[aria-expanded="true"] .button {
+    color: #ff5f3a;
+  }
+  .navbar-menu-wrapper:not([data-dismissed]):hover .layout-grid-icon,
+  .navbar-menu-wrapper:not([data-dismissed]):has(:focus-visible) .layout-grid-icon,
+  .layout-grid-parent[aria-expanded="true"] .layout-grid-icon {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2496%) hue-rotate(343deg) brightness(101%) contrast(101%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .layout-grid-parent .button,
+  .layout-grid-parent .layout-grid-icon { transition: none; }
+}
