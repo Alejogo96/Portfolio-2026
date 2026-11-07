@@ -67,7 +67,7 @@
   text-transform: capitalize;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .i-a-description {
@@ -80,7 +80,7 @@
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   font-weight: 400;
 }
 
@@ -130,7 +130,7 @@
   text-transform: capitalize;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .information-architecture-ia-wrapper {
@@ -143,7 +143,7 @@
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* Stats column */
@@ -168,7 +168,7 @@
   text-transform: capitalize;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* Figma: flex-wrap gap 53px 125px, block width ~180px */
@@ -199,7 +199,7 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* Figma: 12.6px */
@@ -257,7 +257,7 @@
   line-height: 1.2;
   margin: 0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .information-architecture-ia-frame {
@@ -271,7 +271,7 @@
   font-weight: 500;
   color: #e0e0e0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* Figma: 24px bold white */
@@ -316,7 +316,7 @@
   line-height: 1.2;
   margin: 0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .information-architecture-ia-container4 {
@@ -447,7 +447,7 @@
   color: #e0e0e0;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   max-width: 8ch;
 }
 
@@ -497,7 +497,7 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* =====================================================
@@ -528,7 +528,7 @@
   line-height: 1.2;
   margin: 0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .currently-app-users-report-is-wrapper {
@@ -541,7 +541,7 @@
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .brand-cover-icon {
@@ -611,7 +611,7 @@
   color: #e0e0e0;
   line-height: 1.2;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .currently-app-users-container2 {
@@ -619,7 +619,7 @@
   line-height: 1.65;
   color: #e0e0e0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .livrables-group-child {

@@ -654,3 +654,30 @@ a.pcard:focus-visible .pcard__title::after {
     justify-content: flex-end;
   }
 }
+
+/* ── Figma "Maquetas 2026" · Home Light 1440 / 390 (2026-11-07) ──
+   Montserrat; título del hero en una línea en desktop (columna 1152),
+   Display 64/72 · mobile 40/46; H2 de sección 36 · mobile 28;
+   títulos de tarjeta 36 en ambos. */
+.hero__title {
+  max-width: 1152px;
+  letter-spacing: 0;
+  line-height: 1.125;
+}
+
+.block__title,
+.pcard__title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.5rem;
+    line-height: 46px;
+  }
+
+  .block__title {
+    font-size: 1.75rem;
+  }
+}
