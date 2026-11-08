@@ -683,3 +683,60 @@ body[data-page] .cs-list--strong li strong {
 body[data-page] .cs-lead > strong {
   font-weight: 600;
 }
+
+/* ───── Qualnet — orange (provisional hex) & Iridian — blue ───── */
+html[data-theme="dark"] body[data-page="qualnet"] {
+  --cs-bg: #170d05; --cs-text: #fff1e5; --cs-muted: rgba(255, 241, 229, 0.72);
+  --cs-accent: #ff9d3a; --cs-accent2: #c25700; --cs-border: rgba(255, 157, 58, 0.22); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="qualnet"] {
+  --cs-bg: #fff5ec; --cs-text: #24160a; --cs-muted: rgba(36, 22, 10, 0.68);
+  --cs-accent: #c25700; --cs-accent2: #f39200; --cs-border: rgba(194, 87, 0, 0.18); --deco-a: 0.2;
+}
+html[data-theme="dark"] body[data-page="iridian"] {
+  --cs-bg: #080d22; --cs-text: #e8edff; --cs-muted: rgba(232, 237, 255, 0.72);
+  --cs-accent: #7aa2ff; --cs-accent2: #2a4fd6; --cs-border: rgba(122, 162, 255, 0.22); --deco-a: 0.4;
+}
+html[data-theme="light"] body[data-page="iridian"] {
+  --cs-bg: #f4f6ff; --cs-text: #101634; --cs-muted: rgba(16, 22, 52, 0.68);
+  --cs-accent: #2a4fd6; --cs-accent2: #7aa2ff; --cs-border: rgba(42, 79, 214, 0.18); --deco-a: 0.2;
+}
+
+/* Image placeholders (until real visuals arrive) */
+.cs-ph {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  width: 100%; aspect-ratio: 16 / 9; padding: 1.5rem; border-radius: 16px;
+  background: color-mix(in srgb, var(--cs-accent) 10%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--cs-accent) 45%, transparent);
+  color: var(--cs-muted); font-size: 0.875rem;
+}
+.cs-ph--duo { aspect-ratio: 4 / 3; }
+.cs-img-grid--duo .cs-ph { height: 100%; }
+
+/* Scrum cycle */
+.cs-steps {
+  list-style: none; margin: 2rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.cs-step {
+  padding: 1.5rem; border-radius: 16px;
+  background: color-mix(in srgb, var(--cs-accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cs-accent) 35%, transparent);
+}
+.cs-step__num { display: block; font-size: 0.875rem; font-weight: 700; color: var(--cs-accent); margin-bottom: 0.75rem; }
+.cs-step__title { font-size: 1.125rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--cs-text); }
+.cs-step__text { font-size: 0.875rem; line-height: 1.5; margin: 0; color: var(--cs-muted); }
+.cs-loop {
+  margin: 1rem 0 0; padding: 1.25rem 1.5rem; border-radius: 16px;
+  background: var(--cs-accent); color: var(--cs-bg); font-weight: 600; font-size: 0.9375rem; line-height: 1.5;
+}
+
+/* Iridian projects */
+.cs-projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; margin-top: 2rem; }
+.cs-project__title { font-size: 1.125rem; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--cs-text); }
+.cs-project__text { font-size: 0.875rem; line-height: 1.55; margin: 0 0 0.5rem; color: var(--cs-muted); }
+body[data-page] .cs-project__text strong { font-weight: 700; color: var(--cs-text); }
+
+@media (max-width: 768px) {
+  .cs-steps, .cs-projects { grid-template-columns: 1fr; }
+}
