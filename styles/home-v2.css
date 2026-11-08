@@ -854,3 +854,17 @@ a.pcard:focus-visible .pcard__title::after {
     aspect-ratio: 332 / 314;
   }
 }
+
+/* Card/Project: el título mide 44 px como en Figma. Antes era flex con
+   align-items:baseline y la flecha ↗ (::after) lo estiraba a 49 px, lo que
+   separaba de más el título del rol. */
+.pcard__title {
+  display: block;
+  line-height: 44px;
+}
+
+a.pcard .pcard__title::after {
+  display: inline-block;
+  margin-left: 0.5rem;
+  line-height: 1;
+}
