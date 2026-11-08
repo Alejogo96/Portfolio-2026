@@ -822,3 +822,35 @@ a.pcard:focus-visible .pcard__title::after {
     line-height: 17px;
   }
 }
+
+/* ── Variaciones mobile de la Home (Figma "FR · Home · Mobile 390 · Light") ──
+   Hero: título a 149 px (la barra va abajo), kicker 14 a 12 px del título,
+   116 px hasta los chips, bio a 28 px de los chips, 56 px abajo.
+   Cards: imagen más alta (332 × 314). */
+@media (max-width: 768px) {
+  .hero__inner {
+    padding-block: 149px 56px;
+  }
+
+  .hero__title {
+    margin-bottom: 12px;
+  }
+
+  .hero__kicker {
+    font-size: 0.875rem;
+    line-height: 17px;
+    margin-bottom: 116px;
+  }
+
+  .hero .bio {
+    margin-top: 28px;
+  }
+
+  .hero .bio__p + .bio__p {
+    margin-top: 16px;
+  }
+
+  .pcard__media {
+    aspect-ratio: 332 / 314;
+  }
+}

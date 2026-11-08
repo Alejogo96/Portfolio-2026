@@ -524,3 +524,144 @@ body[data-page] .cs-cover img {
     animation: none;
   }
 }
+
+/* ═════════════════════════════════════════════════════
+   Variaciones mobile de Figma (frames Mobile 390 · Light, 2026-11-08)
+   - "Contexte" solo en desktop (en mobile no aparece, salvo Andy Electric).
+   - Bellpi / BnF: en mobile la primera imagen va antes de la lista.
+   - Todas las imágenes en una sola columna de 350 px, separadas 20 px.
+   - ParamoTotem: cada estación = imagen + nombre debajo.
+   ═════════════════════════════════════════════════════ */
+body[data-page] .cs-only-mobile {
+  display: none;
+}
+
+body[data-page] .cs-header > .cs-heading--context {
+  margin-top: calc(var(--cs-gap) + var(--cs-section));
+}
+
+body[data-page] .cs-header > .cs-img-box {
+  width: 100%;
+  margin-top: var(--cs-gap);
+}
+
+body[data-page] .cs-station {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+body[data-page] .cs-station img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+body[data-page] .cs-caption {
+  font-size: 0.875rem;
+  line-height: 23px;
+  font-weight: 600;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-img-grid--stack {
+  gap: var(--cs-gap);
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-only-mobile {
+    display: block;
+  }
+
+  body[data-page] .cs-only-desktop,
+  body[data-page] .cs-heading--context {
+    display: none;
+  }
+
+  /* Una sola columna, ancho de la columna (350 px a 390) */
+  body[data-page] .cs-img-grid,
+  body[data-page] .cs-img-grid--duo,
+  body[data-page] .cs-img-grid--wide,
+  body[data-page] .cs-img-grid--stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body[data-page] .cs-img-grid--phones {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  body[data-page] .cs-img-grid--phones .cs-media,
+  body[data-page] .cs-img-grid--phones > img {
+    flex: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  body[data-page] .cs-img-full {
+    width: var(--cs-col);
+    margin-inline: auto;
+  }
+
+  body[data-page] .cs-img-full .cs-media,
+  body[data-page] .cs-img-full img {
+    border-radius: 12px;
+  }
+
+  body[data-page] .cs-img-box--tall .cs-media {
+    max-width: none;
+  }
+
+  body[data-page] .cs-img-box + .cs-img-box,
+  body[data-page] .cs-img-box + .cs-img-grid,
+  body[data-page] .cs-img-grid + .cs-img-box,
+  body[data-page] .cs-img-grid + .cs-img-grid,
+  body[data-page] .cs-img-full + .cs-img-box,
+  body[data-page] .cs-img-full + .cs-img-full,
+  body[data-page] .cs-img-box + .cs-img-full {
+    margin-top: 20px;
+  }
+}
+
+/* Ritmo vertical exacto de Figma: elementos a --cs-gap (28 / 20),
+   y cada título de sección con --cs-section (56 / 28) extra encima. */
+body[data-page] .cs-block {
+  padding: var(--cs-section) 0 var(--cs-gap);
+}
+
+body[data-page] :is(.cs-img-box, .cs-img-grid, .cs-img-full) + .cs-block {
+  margin-top: var(--cs-gap);
+}
+
+body[data-page] :is(.cs-img-box, .cs-img-grid, .cs-img-full) + .cs-block:not(:has(> .cs-heading:first-child)) {
+  margin-top: 0;
+  padding-top: var(--cs-gap);
+}
+
+body[data-page] .cs-header + .cs-block:not(:has(> .cs-heading:first-child)) {
+  padding-top: 0;
+}
+
+/* Figma no usa líneas separadoras entre secciones */
+body[data-page] .cs-sep {
+  display: none;
+}
+
+body[data-page] :is(.cs-img-box, .cs-img-grid, .cs-img-full) + .cs-sep + .cs-block {
+  margin-top: var(--cs-gap);
+}
+
+body[data-page] :is(.cs-img-box, .cs-img-grid, .cs-img-full) + :is(.cs-img-box, .cs-img-grid, .cs-img-full) {
+  margin-top: var(--cs-gap);
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-only-desktop + .cs-sep + .cs-block,
+  body[data-page] .cs-only-desktop + .cs-block {
+    margin-top: 0;
+  }
+}
