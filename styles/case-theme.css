@@ -347,3 +347,180 @@ body[data-page="freelance"]::after {
     transform: none !important;
   }
 }
+
+/* ═════════════════════════════════════════════════════
+   Figma "Maquetas 2026" · frames Light 1440 / 390 (2026-11-07)
+   Design System: Montserrat · columna 1152 px (x 144) ·
+   ritmo 28 px (mobile 20) · títulos de sección +56 (mobile +28).
+   Orden del encabezado: Título → Rol → Kicker.
+   ═════════════════════════════════════════════════════ */
+body[data-page] {
+  --cs-col: min(1152px, calc(100% - 2.5rem));
+  --cs-gap: 28px;
+  --cs-section: 56px;
+}
+
+body[data-page] .cs-header,
+body[data-page] .cs-block,
+body[data-page] .cs-sep,
+body[data-page] .cs-img-box,
+body[data-page] .cs-img-grid {
+  width: var(--cs-col);
+  max-width: none;
+}
+
+body[data-page] .cs-img-box,
+body[data-page] .cs-img-grid {
+  padding-inline: 0;
+}
+
+body[data-page] .cs-header {
+  padding: 82px 0 var(--cs-gap); /* título a y 152 como en Figma */
+  gap: 0;
+}
+
+body[data-page] .cs-header > .cs-body,
+body[data-page] .cs-header > .cs-list {
+  margin-top: var(--cs-gap);
+}
+
+body[data-page] .cs-block {
+  padding: calc(var(--cs-section) / 2) 0;
+  gap: var(--cs-gap);
+}
+
+body[data-page] .cs-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4rem; /* Portfolio/Desktop/Display 64/72 */
+  line-height: 72px;
+  letter-spacing: 0;
+}
+
+body[data-page] .cs-role {
+  margin-top: 4px;
+  font-size: 0.9375rem; /* Portfolio/Desktop/Role 15/22 */
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body[data-page] .cs-kicker {
+  margin-top: var(--cs-gap);
+  font-size: 1rem; /* Portfolio/Desktop/Kicker 16/18 */
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body[data-page] .cs-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.25rem; /* Portfolio/Desktop/H2 36/43 */
+  line-height: 43px;
+}
+
+body[data-page] .cs-body,
+body[data-page] .cs-list li,
+body[data-page] .cs-card-text {
+  font-size: 0.875rem; /* Portfolio/Desktop/Body 14/23 */
+  line-height: 23px;
+}
+
+body[data-page] .cs-list {
+  gap: 10px;
+}
+
+body[data-page] .cs-list li {
+  margin: 0;
+}
+
+body[data-page] .cs-metric-num,
+body[data-page] .cs-stat-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4rem; /* Portfolio/Desktop/Figure 64/68 */
+  line-height: 68px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  body[data-page] {
+    --cs-gap: 20px;
+    --cs-section: 28px;
+  }
+
+  body[data-page] .cs-header {
+    padding-top: 24px;
+  }
+
+  body[data-page] .cs-title {
+    font-size: 2.375rem; /* Portfolio/Mobile/Display 38/44 */
+    line-height: 44px;
+  }
+
+  body[data-page] .cs-role {
+    font-size: 0.8125rem; /* Mobile/Role 13/20 */
+    line-height: 20px;
+  }
+
+  body[data-page] .cs-kicker {
+    font-size: 0.75rem; /* Mobile/Kicker 12/16 */
+    line-height: 16px;
+  }
+
+  body[data-page] .cs-heading {
+    font-size: 1.625rem; /* Mobile/H2 26/34 */
+    line-height: 34px;
+  }
+
+  body[data-page] .cs-list {
+    gap: 8px;
+  }
+
+  body[data-page] .cs-metric-num,
+  body[data-page] .cs-stat-num {
+    font-size: 2.5rem; /* Mobile/Figure 40/44 */
+    line-height: 44px;
+  }
+}
+
+/* ── Imagen principal del proyecto (banda de portada del hero en Figma) ──
+   Aparece desenfocada y se enfoca al abrir el proyecto. */
+body[data-page] .cs-cover {
+  margin: var(--cs-gap) 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--cs-text) 8%, transparent);
+  box-shadow: 0 0 0 1px var(--cs-border);
+}
+
+body[data-page] .cs-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  animation: cs-cover-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes cs-cover-in {
+  from {
+    opacity: 0;
+    filter: blur(24px);
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page] .cs-cover img {
+    animation: none;
+  }
+}

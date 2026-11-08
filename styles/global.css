@@ -66,9 +66,9 @@ picture {
   --base: linear-gradient(180deg, #f5f1ef, #f4f0ed);
 
   /* Typography — escala fluida con clamp(min, preferred, max) */
-  --font-base: "Inter", "Helvetica", "Segoe UI", system-ui, -apple-system,
+  --font-base: "Montserrat", "Helvetica", "Segoe UI", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
-  --font-display: "Raleway", "Inter", system-ui, sans-serif;
+  --font-display: "Montserrat", system-ui, sans-serif;
 
   /* Texto */
   --fs-body: 1rem; /* 16px fijo */

@@ -71,7 +71,7 @@
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   width: 100%;
   height: auto;
 }
@@ -236,7 +236,7 @@
   align-self: stretch;
   display: flex;
   align-items: center;
-  font-family: Raleway, sans-serif;
+  font-family: var(--font-display);
 }
 
 .info-detail {
@@ -245,7 +245,7 @@
   color: #000;
   width: 100%;
   height: auto;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .images-icon {
@@ -291,7 +291,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .info-text {
@@ -401,7 +401,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
-  font-family: Raleway, sans-serif;
+  font-family: var(--font-display);
 }
 
 .interactive-detail {
@@ -415,7 +415,7 @@
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* 3 fotos de bornes tactiles */

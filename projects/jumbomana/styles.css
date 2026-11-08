@@ -37,7 +37,7 @@
   font-weight: 700;
   color: #1a237e;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   line-height: 1.15;
 }
 
@@ -103,7 +103,7 @@
   font-weight: 800;
   color: #1a237e;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   line-height: 1.0;
   letter-spacing: -0.02em;
 }
@@ -112,7 +112,7 @@
   font-size: var(--fs-body);
   color: rgba(26, 35, 126, 0.6);
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -129,7 +129,7 @@
   font-weight: 700;
   color: #1a237e;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -199,7 +199,7 @@
   font-weight: 800;
   color: #1a237e;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   line-height: 1.0;
   letter-spacing: -0.03em;
 }
@@ -215,7 +215,7 @@
   font-weight: 700;
   color: #111;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   line-height: 1.2;
 }
 
@@ -239,7 +239,7 @@
   font-weight: 700;
   color: #fff;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .jm-question-text {
@@ -336,7 +336,7 @@
   font-weight: 700;
   color: #111;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   text-align: center;
 }
 
@@ -391,7 +391,7 @@
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 800;
   color: #1a237e;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   line-height: 1.0;
   letter-spacing: -0.02em;
 }

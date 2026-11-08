@@ -56,7 +56,7 @@
   color: #166534;
   line-height: 1.0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .pm-role {
@@ -64,7 +64,7 @@
   font-weight: 500;
   color: #4ade80;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -74,7 +74,7 @@
   line-height: 1.65;
   color: #14532d;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .pm-meta {
@@ -97,14 +97,14 @@
   color: #166534;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   min-width: 80px;
 }
 
 .pm-meta-value {
   font-size: var(--fs-body);
   color: #15803d;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .pm-header-image {
@@ -142,7 +142,7 @@
   color: #166534;
   line-height: 1.0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .pm-body-text {
@@ -150,7 +150,7 @@
   line-height: 1.65;
   color: #14532d;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .pm-concept-image {
@@ -201,7 +201,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: #166534;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
   margin: 0;
   text-align: center;
   letter-spacing: 0.03em;

@@ -62,7 +62,7 @@
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 
@@ -130,7 +130,7 @@
   line-height: 1.0;
   margin: 0;
   width: 100%;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .i-explored-the-use-of-artifici-parent {
@@ -266,7 +266,7 @@
   color: #3f22aa;
   line-height: 1.0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .i-conducted-a-comprehensive-ux-parent {
@@ -276,7 +276,7 @@
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .i-conducted-a {
@@ -327,14 +327,14 @@
   color: #3f22aa;
   line-height: 1.0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .i-also-contributed-container {
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .cadrage-cadrage-des-fonction {
@@ -391,14 +391,14 @@
   color: #3f22aa;
   line-height: 1.0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 .in-addition-i-container {
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #000;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-base);
 }
 
 /* Grid 2×2 de imágenes de Rédaction UX */
