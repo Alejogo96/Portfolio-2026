@@ -868,3 +868,13 @@ a.pcard .pcard__title::after {
   margin-left: 0.5rem;
   line-height: 1;
 }
+
+/* Formation: título del diploma en Bold 16, fecha y escuela en Regular 14 (Figma Home Light) */
+.bullets li > strong {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.bullets__meta {
+  white-space: normal;
+}

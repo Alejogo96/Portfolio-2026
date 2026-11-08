@@ -665,3 +665,21 @@ body[data-page] :is(.cs-img-box, .cs-img-grid, .cs-img-full) + :is(.cs-img-box, 
     margin-top: 0;
   }
 }
+
+/* Negritas de Figma (Maquetas 2026, 2026-11-08): solo van en negrilla las
+   viñetas que Alejandro marcó (Bold 700) y los dos destacados de Andy
+   ("Objectif…", "Le site devient ainsi…", SemiBold 600). El resto del texto
+   de cuerpo va en Regular, también los <strong> internos de los párrafos. */
+body[data-page] .cs-body strong,
+body[data-page] .cs-list:not(.cs-list--strong) li strong {
+  font-weight: 400;
+}
+
+body[data-page] .cs-list--strong li,
+body[data-page] .cs-list--strong li strong {
+  font-weight: 700;
+}
+
+body[data-page] .cs-lead > strong {
+  font-weight: 600;
+}
