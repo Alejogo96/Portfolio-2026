@@ -237,7 +237,8 @@ body[data-page] .cs-media {
 
 /* ── Decorative background: colours + shapes of each project ──
    ::before = colour field, ::after = signature shape.
-   --sy (scroll px, set by case-motion.js) makes them drift. */
+   --sp (scroll progress 0→1, set by case-motion.js) makes them drift.
+   Bounded in vmax so the layer never runs out at the bottom of long pages. */
 body[data-page]::before,
 body[data-page]::after {
   content: "";
@@ -249,7 +250,8 @@ body[data-page]::after {
 
 body[data-page]::before {
   inset: -10vmax;
-  transform: translate3d(0, calc(var(--sy, 0) * -0.05px), 0);
+  transform: translate3d(0, calc(var(--sp, 0) * -6vmax), 0);
+  animation: cs-drift 22s ease-in-out infinite alternate;
   background:
     radial-gradient(60vmax 45vmax at 100% 100%, color-mix(in srgb, var(--cs-accent) calc(var(--deco-a) * 100%), transparent), transparent 65%),
     radial-gradient(45vmax 35vmax at 0% 0%, color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 70%), transparent), transparent 65%);
@@ -257,7 +259,8 @@ body[data-page]::before {
 
 body[data-page]::after {
   opacity: 1;
-  transform: translate3d(0, calc(var(--sy, 0) * -0.09px), 0) rotate(calc(var(--sy, 0) * 0.004deg));
+  transform: translate3d(0, calc(var(--sp, 0) * -8vmax), 0) rotate(calc(var(--sp, 0) * 20deg));
+  animation: cs-float 16s ease-in-out infinite alternate;
 }
 
 /* Andy Electric — electric diagonals */
@@ -294,7 +297,7 @@ body[data-page="jumbomana"]::after {
   top: 14vh;
   border-radius: 26%;
   background: color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 70%), transparent);
-  transform: translate3d(0, calc(var(--sy, 0) * -0.09px), 0) rotate(calc(18deg + var(--sy, 0) * 0.01deg));
+  transform: translate3d(0, calc(var(--sp, 0) * -8vmax), 0) rotate(calc(18deg + var(--sp, 0) * 40deg));
 }
 
 /* Musée de la BnF — architectural arch */
@@ -326,7 +329,7 @@ body[data-page="paramo"]::after {
   top: 30vh;
   border-radius: 0 100% 0 100%;
   background: linear-gradient(135deg, color-mix(in srgb, var(--cs-accent2) calc(var(--deco-a) * 100%), transparent), transparent 80%);
-  transform: translate3d(0, calc(var(--sy, 0) * -0.09px), 0) rotate(calc(-12deg + var(--sy, 0) * 0.006deg));
+  transform: translate3d(0, calc(var(--sp, 0) * -8vmax), 0) rotate(calc(-12deg + var(--sp, 0) * 25deg));
 }
 
 /* Qualnet / Iridian / Freelance — soft orange ring like the Home */
@@ -341,10 +344,29 @@ body[data-page="freelance"]::after {
   border: 3vmax solid color-mix(in srgb, var(--cs-accent) calc(var(--deco-a) * 70%), transparent);
 }
 
+@keyframes cs-drift {
+  0%   { translate: 0 0; scale: 1; }
+  50%  { translate: 3vmax -2vmax; scale: 1.06; }
+  100% { translate: -2vmax 2vmax; scale: 1.03; }
+}
+@keyframes cs-float {
+  0%   { translate: 0 0; }
+  100% { translate: -2.5vmax 2vmax; }
+}
+
+/* Waves in the first section, like the Home hero (canvas from case-motion.js) */
+.cs-waves {
+  position: absolute; top: 0; left: 0; width: 100%;
+  z-index: 0; pointer-events: none; display: block;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   body[data-page]::before,
   body[data-page]::after {
     transform: none !important;
+    animation: none !important;
   }
 }
 
@@ -713,30 +735,73 @@ html[data-theme="light"] body[data-page="iridian"] {
 .cs-ph--duo { aspect-ratio: 4 / 3; }
 .cs-img-grid--duo .cs-ph { height: 100%; }
 
-/* Scrum cycle */
+/* Scrum cycle — timeline with a dashed return loop (no cards) */
 .cs-steps {
-  list-style: none; margin: 2rem 0 0; padding: 0;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  --dot: 52px;
+  list-style: none; margin: 2.5rem 0 0; padding: 0; position: relative;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem;
 }
-.cs-step {
-  padding: 1.5rem; border-radius: 16px;
-  background: color-mix(in srgb, var(--cs-accent) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--cs-accent) 35%, transparent);
+.cs-steps::before {
+  content: ""; position: absolute; left: calc(100% / 12); right: calc(100% / 12);
+  top: calc(var(--dot) / 2); height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--cs-accent), var(--cs-accent2));
 }
-.cs-step__num { display: block; font-size: 0.875rem; font-weight: 700; color: var(--cs-accent); margin-bottom: 0.75rem; }
-.cs-step__title { font-size: 1.125rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--cs-text); }
+.cs-step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.cs-step__dot {
+  position: relative; z-index: 1; flex: none;
+  width: var(--dot); height: var(--dot); border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 0.875rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--cs-accent); background: var(--cs-bg);
+  border: 2px solid var(--cs-accent);
+  box-shadow: 0 0 0 6px var(--cs-bg), 0 0 24px color-mix(in srgb, var(--cs-accent) 35%, transparent);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.cs-step:hover .cs-step__dot { background: var(--cs-accent); color: var(--cs-bg); transform: scale(1.08); }
+.cs-step__title { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: var(--cs-text); }
 .cs-step__text { font-size: 0.875rem; line-height: 1.5; margin: 0; color: var(--cs-muted); }
 .cs-loop {
-  margin: 1rem 0 0; padding: 1.25rem 1.5rem; border-radius: 16px;
-  background: var(--cs-accent); color: var(--cs-bg); font-weight: 600; font-size: 0.9375rem; line-height: 1.5;
+  position: relative; display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  margin: 1.5rem calc(100% / 12) 0; padding: 2rem 1.5rem 1.25rem;
+  border: 2px dashed color-mix(in srgb, var(--cs-accent) 60%, transparent); border-top: 0;
+  border-radius: 0 0 32px 32px; text-align: left;
 }
+.cs-loop__icon {
+  flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--cs-accent); color: var(--cs-bg); font-weight: 700;
+  animation: cs-spin 6s linear infinite;
+}
+.cs-loop__text { margin: 0; max-width: 60ch; font-size: 0.9375rem; line-height: 1.5; font-weight: 600; color: var(--cs-text); }
+@keyframes cs-spin { to { rotate: 360deg; } }
 
-/* Iridian projects */
-.cs-projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; margin-top: 2rem; }
-.cs-project__title { font-size: 1.125rem; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--cs-text); }
-.cs-project__text { font-size: 0.875rem; line-height: 1.55; margin: 0 0 0.5rem; color: var(--cs-muted); }
-body[data-page] .cs-project__text strong { font-weight: 700; color: var(--cs-text); }
+/* Iridian projects — description + 4 results each */
+.cs-projects { display: flex; flex-direction: column; gap: 4rem; margin-top: 2.5rem; }
+.cs-project { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem 2.5rem; align-items: center; }
+.cs-project__title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; color: var(--cs-text); }
+.cs-project__text { font-size: 1rem; line-height: 1.6; margin: 0; color: var(--cs-muted); }
+.cs-wins { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.cs-win {
+  display: flex; flex-direction: column; gap: 0.375rem; padding: 1.25rem 1.25rem 1.5rem; border-radius: 16px;
+  background: color-mix(in srgb, var(--cs-accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cs-accent) 28%, transparent);
+}
+.cs-win__num { font-size: 2rem; line-height: 1.1; font-weight: 700; color: var(--cs-accent); }
+.cs-win__label { font-size: 0.875rem; line-height: 1.4; color: var(--cs-muted); }
 
+@media (max-width: 1023px) {
+  .cs-steps { grid-template-columns: 1fr; gap: 1.75rem; }
+  .cs-steps::before { left: calc(var(--dot) / 2 - 1px); right: auto; top: 0; bottom: 0; width: 2px; height: auto;
+    background: linear-gradient(180deg, var(--cs-accent), var(--cs-accent2)); }
+  .cs-step { flex-direction: row; align-items: flex-start; text-align: left; gap: 1.25rem; }
+  .cs-step__title { margin-top: 0.75rem; }
+  .cs-loop { margin: 1.5rem 0 0 calc(var(--dot) / 2 - 1px); border: 2px dashed color-mix(in srgb, var(--cs-accent) 60%, transparent);
+    border-left: 0; border-radius: 0 24px 24px 0; padding: 1.25rem; justify-content: flex-start; }
+}
 @media (max-width: 768px) {
-  .cs-steps, .cs-projects { grid-template-columns: 1fr; }
+  .cs-project { grid-template-columns: 1fr; }
+  .cs-wins { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .cs-win { padding: 1rem; }
+  .cs-win__num { font-size: 1.5rem; }
 }
+@media (prefers-reduced-motion: reduce) { .cs-loop__icon { animation: none; } }
+
