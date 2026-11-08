@@ -681,3 +681,8 @@ a.pcard:focus-visible .pcard__title::after {
     font-size: 1.75rem;
   }
 }
+
+/* Kicker del hero en azul en modo light (Figma Home Light, OK de Alejandro 2026-11-08) */
+:root[data-theme="light"] .hero__kicker {
+  color: #0066d9;
+}

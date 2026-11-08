@@ -486,3 +486,41 @@ body[data-page] .cs-stat-num {
     line-height: 44px;
   }
 }
+
+/* ── Imagen principal del proyecto (banda de portada del hero en Figma) ──
+   Aparece desenfocada y se enfoca al abrir el proyecto. */
+body[data-page] .cs-cover {
+  margin: var(--cs-gap) 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--cs-text) 8%, transparent);
+  box-shadow: 0 0 0 1px var(--cs-border);
+}
+
+body[data-page] .cs-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  animation: cs-cover-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes cs-cover-in {
+  from {
+    opacity: 0;
+    filter: blur(24px);
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page] .cs-cover img {
+    animation: none;
+  }
+}
