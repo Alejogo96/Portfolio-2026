@@ -686,3 +686,171 @@ a.pcard:focus-visible .pcard__title::after {
 :root[data-theme="light"] .hero__kicker {
   color: #0066d9;
 }
+
+/* ═════════════════════════════════════════════════════
+   Figma "Maquetas 2026" · Home Light 1440 / 390 (2026-11-08)
+   Cards, espaciados de texto, orden mobile del perfil y
+   sección "Travaillons ensemble".
+   ═════════════════════════════════════════════════════ */
+
+/* Secciones: 40 px arriba/abajo (mobile 24), título → contenido 32 */
+#main > .block {
+  padding-block: 40px;
+}
+
+/* Grilla de cards: 44 px en ambos ejes */
+.grid {
+  column-gap: 44px;
+  row-gap: 44px;
+}
+
+/* Card/Project: imagen → texto 14 · título → rol 6 · rol → descripción 14 */
+.pcard {
+  gap: 14px;
+}
+
+.pcard__title {
+  line-height: 44px;
+}
+
+.pcard__role {
+  margin-top: -8px;
+  line-height: 18px;
+}
+
+.pcard__desc {
+  font-size: 1rem; /* Figma desktop 16 · muted */
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+/* Perfil: dos columnas iguales (552 + 48 + 552); Formation → Langues 20 */
+@media (min-width: 900px) {
+  .profile {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 20px;
+  }
+}
+
+/* ── Travaillons ensemble ──
+   Desktop: título a la izquierda y, a 200 px, la columna de datos
+   (e-mail, teléfono y botón de 250 px), todo centrado.
+   Mobile: columna centrada. */
+#contact.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  padding-block: 80px 112px;
+}
+
+#contact .block__title {
+  margin: 0;
+}
+
+#contact .contact__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 250px;
+}
+
+#contact .contact__lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+#contact .contact__line {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+#contact .contact__line .icon {
+  display: none;
+}
+
+#contact .btn {
+  margin: 0;
+  width: 250px;
+  justify-content: center;
+  gap: 20px;
+  line-height: 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  #main > .block {
+    padding-block: 24px;
+  }
+
+  .pcard__desc {
+    font-size: 0.875rem; /* Figma mobile 14 */
+  }
+
+  /* Orden mobile del perfil: Formation → Langues → Compétences */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .profile > :nth-child(1) {
+    order: 3;
+    margin-top: 8px; /* 48 entre Langues y Compétences */
+  }
+  .profile > :nth-child(2) { order: 1; }
+  .profile > :nth-child(3) { order: 2; }
+
+  #contact.contact {
+    flex-direction: column;
+    gap: 48px;
+    padding-block: 24px 64px;
+    text-align: center;
+  }
+
+  #contact .contact__lines {
+    gap: 4px;
+  }
+
+  #contact .contact__line {
+    font-size: 0.875rem;
+    line-height: 17px;
+  }
+}
+
+/* ── Variaciones mobile de la Home (Figma "FR · Home · Mobile 390 · Light") ──
+   Hero: título a 149 px (la barra va abajo), kicker 14 a 12 px del título,
+   116 px hasta los chips, bio a 28 px de los chips, 56 px abajo.
+   Cards: imagen más alta (332 × 314). */
+@media (max-width: 768px) {
+  .hero__inner {
+    padding-block: 149px 56px;
+  }
+
+  .hero__title {
+    margin-bottom: 12px;
+  }
+
+  .hero__kicker {
+    font-size: 0.875rem;
+    line-height: 17px;
+    margin-bottom: 116px;
+  }
+
+  .hero .bio {
+    margin-top: 28px;
+  }
+
+  .hero .bio__p + .bio__p {
+    margin-top: 16px;
+  }
+
+  .pcard__media {
+    aspect-ratio: 332 / 314;
+  }
+}
