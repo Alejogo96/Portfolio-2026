@@ -20,11 +20,17 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-const MODES = ["off", "a", "b", "c"];
-const LABELS = { off: "Actuel", a: "A · Chapitres", b: "B · Le fil", c: "C · Morph" };
+const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5"];
+const LABELS = {
+  off: "Actuel", a: "A · Chapitres", b: "B · Le fil",
+  c1: "C1 · Processus", c2: "C2 · Chapitres", c3: "C3 · Ondes", c4: "C4 · Signature", c5: "C5 · Magnétique",
+};
+/* En el selector solo se muestran las variantes de Morph (la opción elegida) */
+const SWITCH = ["off", "c1", "c2", "c3", "c4", "c5"];
 
 function readMode() {
-  const q = new URLSearchParams(location.search).get("bg");
+  let q = new URLSearchParams(location.search).get("bg");
+  if (q === "c") q = "c1";
   if (q && MODES.includes(q)) {
     try { localStorage.setItem("pf:bg", q); } catch (e) {}
     return q;
@@ -226,8 +232,107 @@ function modeB() {
   build();
 }
 
-/* ───────────────────────── C · Morph ───────────────────────── */
-function modeC() {
+/* ───────────────────────── C · Morph (variantes) ─────────────────────────
+   Un mismo motor de partículas; cada variante define la secuencia de formas
+   (el guion), cómo avanza (scroll global o por capítulo), densidad, color
+   y reacción al cursor.
+     c1 · Processus   : dispersas → cuadrícula → anillo (investigación → estructura → resultado)
+     c2 · Chapitres   : una forma por sección, el color pasa de accent a accent2
+     c3 · Ondes       : nacen como las ondas del Home → espiral → anillo
+     c4 · Signature   : dispersas → espiral → el icono del proyecto (su firma)
+     c5 · Magnétique  : campo denso que sigue al cursor y se ordena en anillo al final */
+const C_VARIANTS = {
+  c1: { seq: ["scatter", "grid", "ring"], drive: "page", n: [120, 64], links: 1, cursor: 0.4 },
+  c2: { seq: ["scatter", "wave", "grid", "spiral", "ring"], drive: "chapters", n: [130, 70], links: 1, cursor: 0.4, hueShift: true },
+  c3: { seq: ["wave", "wave2", "spiral", "ring"], drive: "page", n: [150, 80], links: 0.5, cursor: 0.6, flow: true },
+  c4: { seq: ["scatter", "spiral", "letter"], drive: "page", n: [240, 120], links: 0.35, cursor: 0.4, dot: 1.5 },
+  c5: { seq: ["field", "field", "ring"], drive: "page", n: [260, 110], links: 0.8, cursor: 1.6, dot: 1.4 },
+};
+
+function shapeTargets(name, i, N, ctx) {
+  const { W, H, cx, cy, size, mobile, letterPts } = ctx;
+  const golden = Math.PI * (3 - Math.sqrt(5));
+  switch (name) {
+    case "scatter":
+      return { x: rnd(i + 1) * W, y: rnd(i + 101) * H };
+    case "grid": {
+      const cols = Math.ceil(Math.sqrt(N)), gap = (size * 1.4) / (cols - 1);
+      return { x: cx - size * 0.7 + (i % cols) * gap, y: cy - size * 0.7 + Math.floor(i / cols) * gap };
+    }
+    case "ring": {
+      const a = (i / N) * Math.PI * 2, r = size * (0.5 + (i % 3) * 0.06);
+      return { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r };
+    }
+    case "spiral": {
+      const r = size * 0.72 * Math.sqrt((i + 0.5) / N);
+      return { x: cx + Math.cos(i * golden) * r, y: cy + Math.sin(i * golden) * r };
+    }
+    case "wave":
+    case "wave2": {
+      // 3 ondas a lo ancho, como el hero del Home
+      const lines = 3, li = i % lines, k = Math.floor(i / lines), per = Math.ceil(N / lines);
+      const x = (k / (per - 1)) * W;
+      const amp = (mobile ? 40 : 70) * (name === "wave2" ? 1.4 : 1);
+      const y = H * (name === "wave2" ? 0.55 : 0.5) + (li - 1) * (mobile ? 26 : 38)
+        + Math.sin(x * 0.006 + li * 1.6) * amp;
+      return { x, y, wave: li };
+    }
+    case "letter": {
+      const pt = letterPts.length ? letterPts[i % letterPts.length] : { x: 0, y: 0 };
+      return { x: cx + pt.x * size * 1.5, y: cy + pt.y * size * 1.5 };
+    }
+    case "field": {
+      const cols = Math.ceil(Math.sqrt(N * (W / H))), rows = Math.ceil(N / cols);
+      const gx = W / cols, gy = H / rows;
+      return { x: (i % cols) * gx + gx / 2, y: Math.floor(i / cols) * gy + gy / 2 };
+    }
+  }
+  return { x: cx, y: cy };
+}
+const rnd = (s) => { const x = Math.sin(s * 9301 + 49297) * 233280; return x - Math.floor(x); };
+
+/* Firma del proyecto: su icono del menú (SVG de 1 px, se engrosa para muestrearlo).
+   Si no hay icono, la inicial del título. Puntos normalizados a [-0.5, 0.5]. */
+function samplePoints(draw, N) {
+  const c = document.createElement("canvas"), S = 240;
+  c.width = c.height = S;
+  const g = c.getContext("2d");
+  draw(g, S);
+  const d = g.getImageData(0, 0, S, S).data, pts = [];
+  for (let y = 0; y < S; y += 2) for (let x = 0; x < S; x += 2) if (d[(y * S + x) * 4 + 3] > 100) pts.push({ x: x / S - 0.5, y: y / S - 0.5 });
+  if (!pts.length) return [];
+  const out = [];
+  for (let i = 0; i < N; i++) out.push(pts[Math.floor(rnd(i + 31) * pts.length)]);
+  return out;
+}
+function letterPoints(N) {
+  const t = (document.querySelector(".cs-title")?.textContent || "P").trim().charAt(0).toUpperCase();
+  return samplePoints((g, S) => {
+    g.fillStyle = "#000";
+    g.font = `800 ${S * 0.9}px Montserrat, system-ui, sans-serif`;
+    g.textAlign = "center"; g.textBaseline = "middle";
+    g.fillText(t, S / 2, S / 2 + S * 0.04);
+  }, N);
+}
+async function iconPoints(N) {
+  const page = document.body.dataset.page;
+  const img = [...document.querySelectorAll("img")].find((i) => new RegExp(`/${page}\\.[^/]*svg$`).test(i.getAttribute("src") || ""));
+  if (!img) return null;
+  try {
+    let svg = await (await fetch(img.src)).text();
+    svg = svg.replace(/stroke-width="[^"]*"/g, 'stroke-width="2.2"').replace(/vector-effect="[^"]*"/g, "").replace(/stroke="#[0-9a-fA-F]+"/g, 'stroke="#000"');
+    const im = new Image();
+    im.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    await im.decode();
+    const pts = samplePoints((g, S) => g.drawImage(im, S * 0.05, S * 0.05, S * 0.9, S * 0.9), N);
+    return pts.length ? pts : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function modeC(variant) {
+  const V = C_VARIANTS[variant] || C_VARIANTS.c1;
   const canvas = document.createElement("canvas");
   canvas.className = "bgC";
   canvas.setAttribute("aria-hidden", "true");
@@ -235,80 +340,121 @@ function modeC() {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  let W = 0, H = 0, N = 0, P = [], col = colours();
-  const rnd = (s) => { const x = Math.sin(s * 9301 + 49297) * 233280; return x - Math.floor(x); };
+  const chs = chapters();
+  let W = 0, H = 0, N = 0, P = [], col = colours(), mobile = false, icon = null;
+  const mouse = { x: -9999, y: -9999 };
 
   function layout() {
     W = window.innerWidth; H = window.innerHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + "px"; canvas.style.height = H + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const mobile = W < 769;
-    N = mobile ? 64 : 120;
-    // zona de la forma: a la derecha en desktop, centrada y tenue en móvil
+    mobile = W < 769;
+    N = V.n[mobile ? 1 : 0];
     const cx = mobile ? W * 0.5 : W * 0.78, cy = H * 0.5;
     const size = mobile ? Math.min(W, H) * 0.42 : Math.min(W * 0.3, H * 0.62);
-    const cols = Math.ceil(Math.sqrt(N)), gap = (size * 1.4) / (cols - 1);
-    P = Array.from({ length: N }, (_, i) => {
-      const a = (i / N) * Math.PI * 2;
-      const r = size * (0.5 + (i % 3) * 0.06);
-      return {
-        // 1 · investigación: puntos dispersos por toda la pantalla
-        s: { x: rnd(i + 1) * W, y: rnd(i + 101) * H },
-        // 2 · estructura: cuadrícula ordenada
-        g: { x: cx - (size * 0.7) + (i % cols) * gap, y: cy - (size * 0.7) + Math.floor(i / cols) * gap },
-        // 3 · resultado: el anillo del proyecto
-        o: { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r },
-        ph: rnd(i + 7) * Math.PI * 2,
-        k: i % 3 === 0 ? 1 : 0,
-        x: 0, y: 0,
-      };
-    });
+    const sctx = { W, H, cx, cy, size, mobile, letterPts: V.seq.includes("letter") ? (icon && icon.length === N ? icon : letterPoints(N)) : [] };
+    P = Array.from({ length: N }, (_, i) => ({
+      T: V.seq.map((name) => shapeTargets(name, i, N, sctx)),
+      ph: rnd(i + 7) * Math.PI * 2,
+      k: i % 3 === 0 ? 1 : 0,
+      x: W / 2, y: H / 2, vx: 0, vy: 0,
+    }));
   }
-  let t = 0, prog = 0, shown = 0;
-  function progress() {
+
+  /* Posición en el guion: u ∈ [0, seq.length − 1] */
+  function story() {
+    const K = V.seq.length - 1;
+    if (V.drive === "chapters" && chs.length > 1) {
+      const mid = window.innerHeight * 0.5;
+      let idx = 0, frac = 0;
+      chs.forEach((c, i) => {
+        const r = c.getBoundingClientRect();
+        if (r.top < mid) { idx = i; frac = clamp((mid - r.top) / Math.max(1, r.height), 0, 1); }
+      });
+      const atEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+      const u = atEnd ? chs.length - 1 : idx + frac;
+      return (u / (chs.length - 1)) * K;
+    }
     const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    return clamp(window.scrollY / max, 0, 1);
+    return clamp(window.scrollY / max, 0, 1) * K;
   }
+
+  let t = 0, shown = 0;
   function frame() {
     t += 1;
-    prog = progress();
-    shown += (prog - shown) * 0.08;
-    // 0–0.3 dispersos · 0.3–0.6 hacia cuadrícula · 0.6–0.9 hacia anillo
-    const a = ease(clamp((shown - 0.18) / 0.3, 0, 1));
-    const b = ease(clamp((shown - 0.55) / 0.3, 0, 1));
+    shown += (story() - shown) * 0.08;
+    const K = V.seq.length - 1;
+    const seg = Math.min(Math.floor(shown), K - 1);
+    // retención: la forma se mantiene en el centro de cada tramo, transición entre medias
+    const lt = ease(clamp((shown - seg - 0.2) / 0.6, 0, 1));
+    const done = clamp(shown / K, 0, 1);
     ctx.clearRect(0, 0, W, H);
     const light = document.documentElement.getAttribute("data-theme") === "light";
-    const wob = (1 - a) * 18 + (1 - b) * a * 4 + b * 3;
+    const order = clamp((seg + lt) / K, 0, 1); // 0 = caos, 1 = forma final
+    const wob = lerp(16, 3, order);
+    const hue = V.hueShift ? done : 0;
+    const cur = mobile ? 0 : V.cursor;
+
     P.forEach((p) => {
-      const x1 = lerp(p.s.x, p.g.x, a), y1 = lerp(p.s.y, p.g.y, a);
-      p.x = lerp(x1, p.o.x, b) + Math.cos(t * 0.01 + p.ph) * wob;
-      p.y = lerp(y1, p.o.y, b) + Math.sin(t * 0.012 + p.ph) * wob;
+      const A = p.T[seg], B = p.T[seg + 1];
+      let tx = lerp(A.x, B.x, lt), ty = lerp(A.y, B.y, lt);
+      if (V.flow && (A.wave !== undefined || B.wave !== undefined)) {
+        // las ondas fluyen como en el hero
+        const w = (1 - (B.wave === undefined ? lt : 0));
+        ty += Math.sin(tx * 0.006 + t * 0.02 + (A.wave || 0)) * 26 * w;
+      }
+      tx += Math.cos(t * 0.01 + p.ph) * wob;
+      ty += Math.sin(t * 0.012 + p.ph) * wob;
+      // cursor: empuja suavemente las partículas cercanas
+      if (cur) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy, R = 140;
+        if (d2 < R * R) {
+          const f = (1 - Math.sqrt(d2) / R) * cur * 3;
+          p.vx += (dx / (Math.sqrt(d2) + 0.1)) * f;
+          p.vy += (dy / (Math.sqrt(d2) + 0.1)) * f;
+        }
+      }
+      p.vx = (p.vx + (tx - p.x) * 0.06) * 0.82;
+      p.vy = (p.vy + (ty - p.y) * 0.06) * 0.82;
+      p.x += p.vx; p.y += p.vy;
     });
-    // conexiones: aparecen en la fase de estructura, unen la forma final
-    const link = (W < 769 ? 70 : 90) * (0.4 + a * 0.6);
-    ctx.lineWidth = 1;
-    for (let i = 0; i < N; i++) {
-      for (let j = i + 1; j < N; j++) {
-        const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d2 = dx * dx + dy * dy;
-        if (d2 < link * link) {
-          ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * (0.15 + a * 0.35) * (light ? 0.8 : 1);
-          ctx.strokeStyle = col[0];
-          ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
+
+    const link = (mobile ? 60 : 84) * (0.5 + order * 0.5);
+    if (V.links) {
+      ctx.lineWidth = 1;
+      for (let i = 0; i < N; i++) {
+        for (let j = i + 1; j < N; j++) {
+          const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d2 = dx * dx + dy * dy;
+          if (d2 < link * link) {
+            ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * (0.12 + order * 0.35) * V.links * (light ? 0.8 : 1);
+            ctx.strokeStyle = hue > 0.5 ? col[1] : col[0];
+            ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
+          }
         }
       }
     }
-    P.forEach((p) => {
-      ctx.globalAlpha = 0.55 + b * 0.4;
-      ctx.fillStyle = col[p.k];
-      ctx.beginPath(); ctx.arc(p.x, p.y, 2 + b * 1.5, 0, Math.PI * 2); ctx.fill();
+    const r = (V.dot || 2) + order * 1.2;
+    P.forEach((p, i) => {
+      ctx.globalAlpha = 0.5 + order * 0.45;
+      ctx.fillStyle = V.hueShift ? (rnd(i + 3) < hue ? col[1] : col[0]) : col[p.k];
+      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
     });
     ctx.globalAlpha = 1;
     if (!reduced) requestAnimationFrame(frame);
   }
   layout();
-  window.addEventListener("resize", layout, { passive: true });
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(layout, 150); }, { passive: true });
+  window.addEventListener("pointermove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  document.addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; });
   new MutationObserver(() => (col = colours())).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  // la inicial depende de la fuente: recalcular cuando esté cargada
+  if (V.seq.includes("letter")) {
+    const n = () => V.n[window.innerWidth < 769 ? 1 : 0];
+    iconPoints(n()).then((pts) => { if (pts) { icon = pts; layout(); } else if (document.fonts) document.fonts.ready.then(layout); });
+    window.addEventListener("resize", () => iconPoints(n()).then((pts) => { if (pts) { icon = pts; layout(); } }), { passive: true });
+  }
   if (reduced) window.addEventListener("scroll", () => requestAnimationFrame(frame), { passive: true });
   requestAnimationFrame(frame);
 }
@@ -320,7 +466,7 @@ function switcher(mode) {
   box.setAttribute("role", "group");
   box.setAttribute("aria-label", "Propositions de fond");
   box.innerHTML = '<span class="bg-switch__label">Fond</span>' +
-    MODES.map((m) => `<button type="button" data-bg="${m}" aria-pressed="${m === mode}">${LABELS[m]}</button>`).join("");
+    SWITCH.map((m) => `<button type="button" data-bg="${m}" aria-pressed="${m === mode}">${LABELS[m]}</button>`).join("");
   box.addEventListener("click", (e) => {
     const b = e.target.closest("button[data-bg]");
     if (!b) return;
@@ -337,6 +483,6 @@ export function initCaseBg() {
   document.documentElement.dataset.bg = mode;
   if (mode === "a") modeA();
   if (mode === "b") modeB();
-  if (mode === "c") modeC();
+  if (mode.startsWith("c")) modeC(mode);
   if (isPreview()) switcher(mode);
 }

@@ -813,7 +813,7 @@ html[data-theme="light"] body[data-page="iridian"] {
 html[data-bg="a"] body[data-page]::before,
 html[data-bg="a"] body[data-page]::after,
 html[data-bg="b"] body[data-page]::after,
-html[data-bg="c"] body[data-page]::after { display: none; }
+html[data-bg^="c"] body[data-page]::after { display: none; }
 
 /* A · Chapitres */
 .bgA { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; --g: .35; --r: 40vmax; }
@@ -855,10 +855,10 @@ html[data-bg="c"] body[data-page]::after { display: none; }
 
 /* C · Morph */
 .bgC { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
-@media (max-width: 768px) { .bgC { opacity: .45; } }
+@media (max-width: 768px) { .bgC { opacity: .6; } }
 
 /* Selector de propuestas (solo preview) */
-.bg-switch { position: fixed; z-index: 60; right: 16px; top: 76px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px;
+.bg-switch { position: fixed; z-index: 60; right: 16px; top: 76px; max-width: calc(100vw - 32px); display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px;
   border-radius: 12px; background: #000; color: #fff; font-size: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 .bg-switch__label { padding: 0 8px; opacity: .6; }
 .bg-switch button { min-height: 32px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
