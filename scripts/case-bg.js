@@ -23,7 +23,7 @@ const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5"];
 const LABELS = {
   off: "Actuel", a: "A · Chapitres", b: "B · Le fil",
-  c1: "C1 · Processus", c2: "C2 · Chapitres", c3: "C3 · Ondes", c4: "C4 · Signature", c5: "C5 · Magnétique",
+  c1: "C1 · Processus", c2: "C2 · Chapitres", c3: "C3 · Ondes", c4: "C4 · Signature", c5: "C5 · Magnétique · par projet",
 };
 /* En el selector solo se muestran las variantes de Morph (la opción elegida) */
 const SWITCH = ["off", "c1", "c2", "c3", "c4", "c5"];
@@ -246,7 +246,22 @@ const C_VARIANTS = {
   c2: { seq: ["scatter", "wave", "grid", "spiral", "ring"], drive: "chapters", n: [130, 70], links: 1, cursor: 0.4, hueShift: true },
   c3: { seq: ["wave", "wave2", "spiral", "ring"], drive: "page", n: [150, 80], links: 0.5, cursor: 0.6, flow: true },
   c4: { seq: ["scatter", "spiral", "letter"], drive: "page", n: [240, 120], links: 0.35, cursor: 0.4, dot: 1.5 },
-  c5: { seq: ["field", "field", "ring"], drive: "page", n: [260, 110], links: 0.8, cursor: 1.6, dot: 1.4 },
+  c5: { seq: ["field", "field", "ring"], drive: "page", n: [260, 120], links: 0.7, cursor: 1.6, dot: 1.4 },
+};
+
+/* C5 por proyecto: la trama del campo, el gesto del cursor y la forma final
+   salen de la identidad de cada caso (sus decoraciones de case-theme.css y su icono). */
+const C5_PROFILES = {
+  "andy-electric": { field: "diag", fx: "spark", end: "icon" },   // diagonales eléctricas · rayo
+  ublo: { field: "dots", fx: "soft", end: "icon" },               // trama de puntos del producto
+  bellpi: { field: "radial", fx: "orbit", end: "icon" },          // círculos de la marca
+  jumbomana: { field: "tilt", fx: "soft", end: "icon" },          // cuadrícula girada 18°, como su cuadrado
+  bnf: { field: "columns", fx: "soft", end: "icon" },             // columnas y arcos del museo
+  spotify: { field: "radial", fx: "spin", end: "icon" },          // surcos de vinilo que giran
+  paramo: { field: "organic", fx: "sway", end: "icon" },          // páramo: trama orgánica que ondea
+  qualnet: { field: "grid", fx: "soft", end: "icon" },            // calidad: orden y estructura
+  iridian: { field: "hex", fx: "soft", end: "icon" },             // red tecnológica hexagonal
+  freelance: { field: "scatter", fx: "soft", end: "icon" },
 };
 
 function shapeTargets(name, i, N, ctx) {
@@ -279,7 +294,43 @@ function shapeTargets(name, i, N, ctx) {
     }
     case "letter": {
       const pt = letterPts.length ? letterPts[i % letterPts.length] : { x: 0, y: 0 };
-      return { x: cx + pt.x * size * 1.5, y: cy + pt.y * size * 1.5 };
+      const e = ctx.end || { cx, cy, size: size * 1.5 };
+      return { x: e.cx + pt.x * e.size, y: e.cy + pt.y * e.size };
+    }
+    case "diag": {
+      // líneas a 115°, como el fondo de Andy Electric
+      const lines = Math.max(6, Math.round(Math.sqrt(N) * 0.9)), li = i % lines, k = Math.floor(i / lines), per = Math.ceil(N / lines);
+      const span = W + H, off = (li / lines) * span - H * 0.6, u = (k / Math.max(1, per - 1));
+      return { x: off + u * H * 0.47, y: u * H };
+    }
+    case "dots": {
+      const cols = Math.ceil(Math.sqrt(N * (W / H))), rows = Math.ceil(N / cols), g = Math.min(W / cols, H / rows);
+      const x0 = (W - (cols - 1) * g) / 2, y0 = (H - (rows - 1) * g) / 2;
+      return { x: x0 + (i % cols) * g, y: y0 + Math.floor(i / cols) * g };
+    }
+    case "tilt": {
+      const cols = Math.ceil(Math.sqrt(N)), g = (Math.max(W, H) * 1.1) / cols, a = (18 * Math.PI) / 180;
+      const gx = (i % cols - cols / 2) * g, gy = (Math.floor(i / cols) - cols / 2) * g;
+      return { x: W / 2 + gx * Math.cos(a) - gy * Math.sin(a), y: H / 2 + gx * Math.sin(a) + gy * Math.cos(a) };
+    }
+    case "radial": {
+      const rings = 6, ri = i % rings, k = Math.floor(i / rings), per = Math.ceil(N / rings);
+      const R = (Math.max(W, H) * 0.75 * (ri + 1)) / rings, a = (k / per) * Math.PI * 2 + ri * 0.3;
+      const ox = mobile ? W * 0.5 : W * 0.8, oy = H * 0.85;
+      return { x: ox + Math.cos(a) * R, y: oy + Math.sin(a) * R, ring: true, ox, oy, R, a };
+    }
+    case "columns": {
+      const cols = mobile ? 5 : 9, ci = i % cols, k = Math.floor(i / cols), per = Math.ceil(N / cols);
+      const x = ((ci + 0.5) / cols) * W, y = (k / Math.max(1, per - 1)) * H * 0.92 + H * 0.04;
+      // arcos: la parte alta de cada columna se curva hacia la siguiente
+      const top = H * 0.18, arc = y < top ? Math.sin(((top - y) / top) * Math.PI * 0.5) * (W / cols) * 0.5 : 0;
+      return { x: x + arc, y };
+    }
+    case "organic":
+      return { x: (rnd(i + 11) * 0.8 + 0.1 * Math.sin(i)) * W + rnd(i + 5) * W * 0.1, y: rnd(i + 211) * H };
+    case "hex": {
+      const cols = Math.ceil(Math.sqrt(N * (W / H)) * 1.1), g = W / cols, row = Math.floor(i / cols);
+      return { x: (i % cols) * g + (row % 2 ? g / 2 : 0) + g / 4, y: row * g * 0.866 + g / 2 };
     }
     case "field": {
       const cols = Math.ceil(Math.sqrt(N * (W / H))), rows = Math.ceil(N / cols);
@@ -332,7 +383,9 @@ async function iconPoints(N) {
 }
 
 function modeC(variant) {
-  const V = C_VARIANTS[variant] || C_VARIANTS.c1;
+  let V = C_VARIANTS[variant] || C_VARIANTS.c1;
+  const prof = variant === "c5" ? (C5_PROFILES[document.body.dataset.page] || C5_PROFILES.freelance) : null;
+  if (prof) V = { ...V, seq: [prof.field, prof.field, "letter"], fx: prof.fx };
   const canvas = document.createElement("canvas");
   canvas.className = "bgC";
   canvas.setAttribute("aria-hidden", "true");
@@ -353,7 +406,14 @@ function modeC(variant) {
     N = V.n[mobile ? 1 : 0];
     const cx = mobile ? W * 0.5 : W * 0.78, cy = H * 0.5;
     const size = mobile ? Math.min(W, H) * 0.42 : Math.min(W * 0.3, H * 0.62);
-    const sctx = { W, H, cx, cy, size, mobile, letterPts: V.seq.includes("letter") ? (icon && icon.length === N ? icon : letterPoints(N)) : [] };
+    // C5: la firma final aparece en el hueco de la navegación entre proyectos
+    // (al final del scroll), donde ninguna imagen la tapa.
+    let end = null;
+    if (prof) {
+      const sz = Math.min(H * 0.5, mobile ? W * 0.75 : 440);
+      end = { cx: W / 2, cy: H - sz * 0.5 - (mobile ? 104 : 12), size: sz };
+    }
+    const sctx = { end, W, H, cx, cy, size, mobile, letterPts: V.seq.includes("letter") ? (icon && icon.length === N ? icon : letterPoints(N)) : [] };
     P = Array.from({ length: N }, (_, i) => ({
       T: V.seq.map((name) => shapeTargets(name, i, N, sctx)),
       ph: rnd(i + 7) * Math.PI * 2,
@@ -404,6 +464,15 @@ function modeC(variant) {
         const w = (1 - (B.wave === undefined ? lt : 0));
         ty += Math.sin(tx * 0.006 + t * 0.02 + (A.wave || 0)) * 26 * w;
       }
+      // gestos propios de cada proyecto mientras el campo está abierto
+      const open = 1 - order;
+      if (V.fx === "spin" && A.ring) {
+        const a = A.a + t * 0.0025 * (1 + (A.R / W));
+        const sx = A.ox + Math.cos(a) * A.R, sy = A.oy + Math.sin(a) * A.R;
+        tx = lerp(sx, B.x, lt); ty = lerp(sy, B.y, lt);
+      }
+      if (V.fx === "sway") tx += Math.sin(ty * 0.012 + t * 0.018) * 22 * open;
+      if (V.fx === "spark" && rnd(p.ph * 1000 + Math.floor(t / 6)) > 0.985) { p.vx += (rnd(t + p.ph) - 0.5) * 14; p.vy += (rnd(t * 2 + p.ph) - 0.5) * 14; }
       tx += Math.cos(t * 0.01 + p.ph) * wob;
       ty += Math.sin(t * 0.012 + p.ph) * wob;
       // cursor: empuja suavemente las partículas cercanas
@@ -411,8 +480,10 @@ function modeC(variant) {
         const dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy, R = 140;
         if (d2 < R * R) {
           const f = (1 - Math.sqrt(d2) / R) * cur * 3;
-          p.vx += (dx / (Math.sqrt(d2) + 0.1)) * f;
-          p.vy += (dy / (Math.sqrt(d2) + 0.1)) * f;
+          const d = Math.sqrt(d2) + 0.1, nx = dx / d, ny = dy / d;
+          if (V.fx === "orbit") { p.vx += -ny * f * 1.4 + nx * f * 0.3; p.vy += nx * f * 1.4 + ny * f * 0.3; }
+          else if (V.fx === "spark") { p.vx -= nx * f * 0.6 + (rnd(t + p.ph) - 0.5) * f * 3; p.vy -= ny * f * 0.6 + (rnd(t * 3 + p.ph) - 0.5) * f * 3; }
+          else { p.vx += nx * f; p.vy += ny * f; }
         }
       }
       p.vx = (p.vx + (tx - p.x) * 0.06) * 0.82;
@@ -420,7 +491,7 @@ function modeC(variant) {
       p.x += p.vx; p.y += p.vy;
     });
 
-    const link = (mobile ? 60 : 84) * (0.5 + order * 0.5);
+    const link = (mobile ? 60 : 84) * (V.fx ? 1 - order * 0.45 : 0.5 + order * 0.5);
     if (V.links) {
       ctx.lineWidth = 1;
       for (let i = 0; i < N; i++) {
