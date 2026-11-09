@@ -20,13 +20,13 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5"];
+const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5", "c6", "c7"];
 const LABELS = {
   off: "Actuel", a: "A · Chapitres", b: "B · Le fil",
-  c1: "C1 · Processus", c2: "C2 · Chapitres", c3: "C3 · Ondes", c4: "C4 · Signature", c5: "C5 · Magnétique · par projet",
+  c1: "C1 · Processus", c2: "C2 · Chapitres", c3: "C3 · Ondes", c4: "C4 · Signature", c5: "C5 · Magnétique · par projet", c6: "C6 · Flux", c7: "C7 · Échos",
 };
 /* En el selector solo se muestran las variantes de Morph (la opción elegida) */
-const SWITCH = ["off", "c1", "c2", "c3", "c4", "c5"];
+const SWITCH = ["off", "c5", "c6", "c7"];
 
 function readMode() {
   let q = new URLSearchParams(location.search).get("bg");
@@ -299,9 +299,9 @@ function shapeTargets(name, i, N, ctx) {
     }
     case "diag": {
       // líneas a 115°, como el fondo de Andy Electric
-      const lines = Math.max(6, Math.round(Math.sqrt(N) * 0.9)), li = i % lines, k = Math.floor(i / lines), per = Math.ceil(N / lines);
+      const lines = Math.max(6, Math.round(N / 28)), li = i % lines, k = Math.floor(i / lines), per = Math.ceil(N / lines);
       const span = W + H, off = (li / lines) * span - H * 0.6, u = (k / Math.max(1, per - 1));
-      return { x: off + u * H * 0.47, y: u * H };
+      return { x: off + u * H * 0.47, y: u * H, g: li };
     }
     case "dots": {
       const cols = Math.ceil(Math.sqrt(N * (W / H))), rows = Math.ceil(N / cols), g = Math.min(W / cols, H / rows);
@@ -317,14 +317,14 @@ function shapeTargets(name, i, N, ctx) {
       const rings = 6, ri = i % rings, k = Math.floor(i / rings), per = Math.ceil(N / rings);
       const R = (Math.max(W, H) * 0.75 * (ri + 1)) / rings, a = (k / per) * Math.PI * 2 + ri * 0.3;
       const ox = mobile ? W * 0.5 : W * 0.8, oy = H * 0.85;
-      return { x: ox + Math.cos(a) * R, y: oy + Math.sin(a) * R, ring: true, ox, oy, R, a };
+      return { x: ox + Math.cos(a) * R, y: oy + Math.sin(a) * R, ring: true, ox, oy, R, a, g: ri };
     }
     case "columns": {
       const cols = mobile ? 5 : 9, ci = i % cols, k = Math.floor(i / cols), per = Math.ceil(N / cols);
       const x = ((ci + 0.5) / cols) * W, y = (k / Math.max(1, per - 1)) * H * 0.92 + H * 0.04;
       // arcos: la parte alta de cada columna se curva hacia la siguiente
       const top = H * 0.18, arc = y < top ? Math.sin(((top - y) / top) * Math.PI * 0.5) * (W / cols) * 0.5 : 0;
-      return { x: x + arc, y };
+      return { x: x + arc, y, g: ci };
     }
     case "organic":
       return { x: (rnd(i + 11) * 0.8 + 0.1 * Math.sin(i)) * W + rnd(i + 5) * W * 0.1, y: rnd(i + 211) * H };
@@ -530,6 +530,163 @@ function modeC(variant) {
   requestAnimationFrame(frame);
 }
 
+/* ───────────────────────── C6 / C7 · Trama viva (sin figura final) ─────────────────────────
+   Se queda la trama y el gesto de cada proyecto (C5_PROFILES); cambia la relación con el scroll:
+     c6 · Flux    : la trama viaja en su propia dirección al hacer scroll (diagonales suben en
+                    diagonal, surcos giran, columnas ascienden, el páramo sopla), con 3 capas de
+                    profundidad y estelas proporcionales a la velocidad.
+     c7 · Échos   : la trama se queda en su sitio; cada título que entra en pantalla lanza una onda
+                    que recorre el campo, y la velocidad del scroll la hace respirar.
+   Al final no hay forma: el campo se calma y queda en reposo. */
+const FLOW_DIR = {
+  diag: [-0.43, -0.9], dots: [0, -1], tilt: [-0.31, -0.95], columns: [0, -1],
+  organic: [0.55, -0.83], grid: [0, -1], hex: [0, -1], scatter: [0, -1],
+};
+function modeFlow(variant) {
+  const prof = C5_PROFILES[document.body.dataset.page] || C5_PROFILES.freelance;
+  const canvas = document.createElement("canvas");
+  canvas.className = "bgC";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.prepend(canvas);
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const heads = [...document.querySelectorAll("main.cs-frame .cs-heading, main.cs-frame .cs-title")];
+  let W = 0, H = 0, N = 0, P = [], col = colours(), mobile = false;
+  const mouse = { x: -9999, y: -9999 };
+  const M = 60; // margen de envoltura
+
+  function layout() {
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + "px"; canvas.style.height = H + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    mobile = W < 769;
+    N = mobile ? 140 : 300;
+    const size = Math.min(W, H) * 0.4;
+    P = Array.from({ length: N }, (_, i) => {
+      const b = shapeTargets(prof.field, i, N, { W, H, cx: W / 2, cy: H / 2, size, mobile, letterPts: [] });
+      const g = b.g !== undefined ? b.g : Math.round(b.y / (mobile ? 90 : 130));
+      return { b, z: [0.45, 0.75, 1][g % 3], ph: rnd(i + 7) * Math.PI * 2, k: i % 3 === 0 ? 1 : 0, x: b.x, y: b.y, vx: 0, vy: 0, px: b.x, py: b.y };
+    });
+  }
+  const wrap = (v, size) => ((((v + M) % (size + 2 * M)) + (size + 2 * M)) % (size + 2 * M)) - M;
+
+  let t = 0, sy = window.scrollY, vel = 0, lastY = window.scrollY;
+  const ripples = [];
+  const fired = new Set();
+  function checkRipples() {
+    heads.forEach((h, i) => {
+      const r = h.getBoundingClientRect();
+      const inside = r.top < H * 0.7 && r.bottom > H * 0.2;
+      if (inside && !fired.has(i)) { fired.add(i); ripples.push({ x: mobile ? W * 0.2 : r.left, y: r.top + r.height / 2, r: 0 }); }
+      if (!inside && fired.has(i) && (r.top > H || r.bottom < 0)) fired.delete(i);
+    });
+  }
+
+  function frame() {
+    t += 1;
+    const y = window.scrollY;
+    vel += ((y - lastY) - vel) * 0.15;
+    lastY = y;
+    sy += (y - sy) * 0.12; // scroll suavizado
+    const max = Math.max(1, document.documentElement.scrollHeight - H);
+    const calm = 1 - ease(clamp((y / max - 0.85) / 0.15, 0, 1)) * 0.7; // al final el campo se calma
+    const light = document.documentElement.getAttribute("data-theme") === "light";
+    const speed = clamp(Math.abs(vel) / 30, 0, 1);
+    if (variant === "c7") checkRipples();
+    ripples.forEach((r) => (r.r += mobile ? 9 : 14));
+    while (ripples.length && ripples[0].r > Math.hypot(W, H) + 200) ripples.shift();
+    const dir = FLOW_DIR[prof.field] || [0, -1];
+    const cur = mobile ? 0 : 1.4;
+
+    ctx.clearRect(0, 0, W, H);
+    P.forEach((p) => {
+      let tx = p.b.x, ty = p.b.y;
+      if (variant === "c6") {
+        if (p.b.ring) {
+          const a = p.b.a + (sy * 0.0012 + t * 0.0006) * (prof.fx === "spin" ? 2 : 1) * p.z;
+          tx = p.b.ox + Math.cos(a) * p.b.R; ty = p.b.oy + Math.sin(a) * p.b.R;
+        } else {
+          const d = sy * 0.35 * p.z;
+          tx = wrap(p.b.x + dir[0] * d, W); ty = wrap(p.b.y + dir[1] * d, H);
+        }
+      } else {
+        // c7: respiración con la velocidad del scroll
+        const k = 1 + speed * 0.05 * Math.sin(p.ph + t * 0.05);
+        tx = W / 2 + (tx - W / 2) * k; ty = H / 2 + (ty - H / 2) * k;
+        if (p.b.ring && prof.fx === "spin") {
+          const a = p.b.a + t * 0.0015 * p.z;
+          tx = p.b.ox + Math.cos(a) * p.b.R; ty = p.b.oy + Math.sin(a) * p.b.R;
+        }
+      }
+      // gestos propios
+      if (prof.fx === "sway") tx += Math.sin(ty * 0.012 + t * 0.018) * 18 * calm;
+      tx += Math.cos(t * 0.01 + p.ph) * 4 * calm;
+      ty += Math.sin(t * 0.012 + p.ph) * 4 * calm;
+      if (prof.fx === "spark" && rnd(p.ph * 1000 + Math.floor(t / 6)) > 0.988) { p.vx += (rnd(t + p.ph) - 0.5) * 12; p.vy += (rnd(t * 2 + p.ph) - 0.5) * 12; }
+      // ondas de sección (c7)
+      ripples.forEach((r) => {
+        const dx = p.x - r.x, dy = p.y - r.y, d = Math.hypot(dx, dy) + 0.1, band = 70;
+        const w = 1 - Math.abs(d - r.r) / band;
+        if (w > 0) { const f = w * 7 * p.z; p.vx += (dx / d) * f; p.vy += (dy / d) * f; }
+      });
+      // cursor
+      if (cur) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy, R = 140;
+        if (d2 < R * R) {
+          const d = Math.sqrt(d2) + 0.1, nx = dx / d, ny = dy / d, f = (1 - d / R) * cur * 3;
+          if (prof.fx === "orbit") { p.vx += -ny * f * 1.4 + nx * f * 0.3; p.vy += nx * f * 1.4 + ny * f * 0.3; }
+          else if (prof.fx === "spark") { p.vx -= nx * f * 0.6 + (rnd(t + p.ph) - 0.5) * f * 3; p.vy -= ny * f * 0.6 + (rnd(t * 3 + p.ph) - 0.5) * f * 3; }
+          else { p.vx += nx * f; p.vy += ny * f; }
+        }
+      }
+      // si la envoltura salta de lado, no arrastrar la partícula por la pantalla
+      if (Math.abs(tx - p.x) > W * 0.5 || Math.abs(ty - p.y) > H * 0.5) { p.x = tx; p.y = ty; p.vx = p.vy = 0; }
+      p.px = p.x; p.py = p.y;
+      p.vx = (p.vx + (tx - p.x) * 0.08) * 0.8;
+      p.vy = (p.vy + (ty - p.y) * 0.08) * 0.8;
+      p.x += p.vx; p.y += p.vy;
+    });
+
+    // enlaces cortos: dibujan la trama
+    const link = mobile ? 52 : 70;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = col[0];
+    for (let i = 0; i < N; i++) {
+      for (let j = i + 1; j < N; j++) {
+        const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d2 = dx * dx + dy * dy;
+        if (d2 < link * link) {
+          ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * 0.38 * P[i].z * (light ? 0.85 : 1) * (0.6 + calm * 0.4);
+          ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
+        }
+      }
+    }
+    // partículas + estela según la velocidad (c6)
+    P.forEach((p) => {
+      ctx.globalAlpha = Math.min(1, 0.45 + p.z * 0.55) * (0.75 + calm * 0.25);
+      const c = col[p.k];
+      if (variant === "c6" && speed > 0.05 && !p.b.ring) {
+        const len = speed * 40 * p.z;
+        ctx.strokeStyle = c; ctx.lineWidth = 1.2 + p.z;
+        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - dir[0] * len * Math.sign(vel), p.y - dir[1] * len * Math.sign(vel)); ctx.stroke();
+      }
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.arc(p.x, p.y, 1 + p.z * 1.8, 0, Math.PI * 2); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    if (!reduced) requestAnimationFrame(frame);
+  }
+  layout();
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(layout, 150); }, { passive: true });
+  window.addEventListener("pointermove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  document.addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; });
+  new MutationObserver(() => (col = colours())).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  if (reduced) window.addEventListener("scroll", () => requestAnimationFrame(frame), { passive: true });
+  requestAnimationFrame(frame);
+}
+
 /* ───────────────────────── Selector (solo preview) ───────────────────────── */
 function switcher(mode) {
   const box = document.createElement("div");
@@ -554,6 +711,7 @@ export function initCaseBg() {
   document.documentElement.dataset.bg = mode;
   if (mode === "a") modeA();
   if (mode === "b") modeB();
-  if (mode.startsWith("c")) modeC(mode);
+  if (mode === "c6" || mode === "c7") modeFlow(mode);
+  else if (mode.startsWith("c")) modeC(mode);
   if (isPreview()) switcher(mode);
 }
