@@ -146,17 +146,8 @@ html.ml-c1.cm-on [data-ch="2"] .cm-fade:not(.is-in) {
 
 /* 03 Solution: se construye (escala + recorte desde abajo) */
 html.ml-c1.cm-on [data-ch="3"] .cm-fade:not(.is-in) {
-  transform: scale(0.94);
-  clip-path: inset(100% 0 0 0);
+  transform: translate3d(0, 24px, 0) scale(0.96);
   filter: none;
-}
-
-html.ml-c1.cm-on [data-ch="3"] .cm-fade {
-  clip-path: inset(0 0 0 0);
-}
-
-html.ml-c1.cm-on [data-ch="3"] .cm-fade.is-in {
-  transition-property: opacity, transform, filter, clip-path;
 }
 
 /* 04 Résultat: sube con más energía */
