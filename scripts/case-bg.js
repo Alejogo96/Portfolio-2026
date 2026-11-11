@@ -29,6 +29,9 @@ const LABELS = {
 const SWITCH = ["off", "c5", "c6", "c7"];
 
 function readMode() {
+  /* Una página puede fijar su fondo (p. ej. el Motion lab usa data-bg="off") */
+  const lock = document.body.dataset.bg;
+  if (lock && MODES.includes(lock)) return lock;
   let q = new URLSearchParams(location.search).get("bg");
   if (q === "c") q = "c1";
   if (q && MODES.includes(q)) {
@@ -713,5 +716,5 @@ export function initCaseBg() {
   if (mode === "b") modeB();
   if (mode === "c6" || mode === "c7") modeFlow(mode);
   else if (mode.startsWith("c")) modeC(mode);
-  if (isPreview()) switcher(mode);
+  if (isPreview() && !document.body.dataset.bg) switcher(mode);
 }
