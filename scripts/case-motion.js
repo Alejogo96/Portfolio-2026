@@ -50,6 +50,61 @@ function capHeight(img, wrap) {
   window.matchMedia("(min-width: 769px)").addEventListener("change", apply);
 }
 
+/* Carrusel horizontal (scroll-snap) con flechas y contador: reduce el scroll vertical. */
+function initCarousels() {
+  const L = { fr: ["Précédent", "Suivant"], en: ["Previous", "Next"], es: ["Anterior", "Siguiente"] };
+  document.querySelectorAll(".cs-carousel").forEach((root) => {
+    const imgs = [...root.querySelectorAll(":scope > img")];
+    if (!imgs.length) return;
+    const track = document.createElement("div");
+    track.className = "cs-carousel__track";
+    track.tabIndex = 0;
+    track.setAttribute("role", "group");
+    track.setAttribute("aria-roledescription", "carousel");
+    track.setAttribute("aria-label", root.getAttribute("aria-label") || "");
+    imgs.forEach((img, i) => {
+      const slide = document.createElement("div");
+      slide.className = "cs-carousel__slide";
+      slide.setAttribute("aria-label", `${i + 1} / ${imgs.length}`);
+      slide.appendChild(img);
+      track.appendChild(slide);
+    });
+    const bar = document.createElement("div");
+    bar.className = "cs-carousel__bar";
+    const mk = (cls, txt) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "cs-carousel__btn " + cls;
+      b.textContent = txt;
+      return b;
+    };
+    const prev = mk("cs-carousel__btn--prev", "←");
+    const next = mk("cs-carousel__btn--next", "→");
+    const count = document.createElement("span");
+    count.className = "cs-carousel__count";
+    count.setAttribute("aria-live", "polite");
+    bar.append(prev, count, next);
+    root.append(track, bar);
+    const labels = () => L[document.documentElement.lang] || L.fr;
+    const step = () => (track.querySelector(".cs-carousel__slide")?.getBoundingClientRect().width || track.clientWidth) + 16;
+    const index = () => Math.round(track.scrollLeft / step());
+    const update = () => {
+      const i = Math.min(imgs.length - 1, Math.max(0, index()));
+      count.textContent = `${i + 1} / ${imgs.length}`;
+      prev.disabled = i <= 0;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      prev.setAttribute("aria-label", labels()[0]);
+      next.setAttribute("aria-label", labels()[1]);
+    };
+    const go = (d) => track.scrollBy({ left: d * step(), behavior: reduced ? "auto" : "smooth" });
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  });
+}
+
 function wrapImages() {
   const medias = [];
   document
@@ -208,6 +263,7 @@ function waves() {
 }
 
 function init() {
+  initCarousels();
   const medias = wrapImages();
   justifyGrids();
   waves();
