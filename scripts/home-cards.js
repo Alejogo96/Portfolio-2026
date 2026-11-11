@@ -1,106 +1,100 @@
 /* =====================================================
-   home-cards.js — Propuestas de cards de proyectos (Home)
-   Comparador temporal (pedido de Alejandro, 2026-11-11):
-
-     actuel  Card actual (portada arriba, título, rol, descripción)
-     metric  4 · Card con métrica: portada más pequeña + cifra real o rol clave
-     list    1 · Lista editorial: filas a ancho completo, número, título
-             grande, rol y años; la portada aparece al pasar el cursor
-     bleed   2 · Imagen a sangre: portada completa con degradado y texto abajo
-     combo   Recomendado: 4 en desktop, 1 en mobile (≤ 768 px)
-
-   La variante se elige con ?cards=… y queda en <html data-cards>.
-   El selector flotante solo aparece en local o en el preview de Vercel;
-   en producción, sin parámetro, se ve la card actual.
+   home-cards.js — Hover de las cards de proyectos (Home)
+   Mismo patrón que el fondo de los casos (G1 Grille, scripts/case-bg.js):
+   cuadrícula de puntos de 1 px en el color de acento que se desliza con
+   el scroll; cerca del cursor los puntos crecen un poco (lupa).
+   Solo se dibuja mientras la card está en hover o con foco.
+   Reduced motion: trama estática, sin lupa.
    ===================================================== */
 (function () {
   'use strict';
 
-  var VARIANTS = ['actuel', 'metric', 'list', 'bleed', 'combo'];
-  var LABELS = {
-    actuel: 'Actuelle',
-    metric: '4 · Métrique',
-    list: '1 · Liste',
-    bleed: '2 · Plein cadre',
-    combo: '4 + 1 · Reco'
-  };
-
-  var root = document.documentElement;
-  var mobile = window.matchMedia('(max-width: 768px)');
+  var TONE = { alpha: 0.4, dotZ: 0.6 }; /* = TONE de case-bg.js */
+  var GAP = 18;
+  var R = 110;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canHover = window.matchMedia('(hover: hover)').matches;
-  var choice = 'actuel';
 
-  function isPreview() {
-    var h = location.hostname;
-    return (/localhost|127\.0\.0\.1|git-ajustes|vercel\.app$/.test(h) &&
-      !/portfolio-alejandroguevara/.test(h)) ||
-      new URLSearchParams(location.search).has('cards');
+  function accent() {
+    return getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#ff5f3a';
   }
 
-  function readChoice() {
-    var v = new URLSearchParams(location.search).get('cards');
-    return VARIANTS.indexOf(v) > -1 ? v : 'actuel';
-  }
+  function setup(card) {
+    var canvas = document.createElement('canvas');
+    canvas.className = 'pcard__grid';
+    canvas.setAttribute('aria-hidden', 'true');
+    card.prepend(canvas);
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-  /* "combo" se resuelve según el ancho: métrica en desktop, lista en mobile */
-  function apply() {
-    var v = choice === 'combo' ? (mobile.matches ? 'list' : 'metric') : choice;
-    if (v === 'actuel') delete root.dataset.cards;
-    else root.dataset.cards = v;
-  }
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, col = accent(), running = false, raf = 0;
+    var mouse = { x: -9999, y: -9999 }, lens = { x: -9999, y: -9999 };
 
-  function setChoice(v) {
-    choice = v;
-    apply();
-    var u = new URL(location.href);
-    if (v === 'actuel') u.searchParams.delete('cards');
-    else u.searchParams.set('cards', v);
-    history.replaceState(null, '', u.toString());
-    document.querySelectorAll('.cards-switch button').forEach(function (b) {
-      b.setAttribute('aria-pressed', b.dataset.cards === v ? 'true' : 'false');
-    });
-  }
+    function layout() {
+      W = card.clientWidth; H = card.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
 
-  function switcher() {
-    var box = document.createElement('div');
-    box.className = 'cards-switch';
-    box.setAttribute('role', 'group');
-    box.setAttribute('aria-label', 'Propositions de cards');
-    box.innerHTML = '<span class="cards-switch__label">Cards</span>' +
-      VARIANTS.map(function (v) {
-        return '<button type="button" data-cards="' + v + '" aria-pressed="' +
-          (v === choice) + '">' + LABELS[v] + '</button>';
-      }).join('');
-    box.addEventListener('click', function (e) {
-      var b = e.target.closest('button[data-cards]');
-      if (b) setChoice(b.dataset.cards);
-    });
-    document.body.appendChild(box);
-  }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = col;
+      var oy = -((window.scrollY * 0.2) % GAP);
+      for (var y = oy + GAP / 2; y < H + GAP; y += GAP) {
+        for (var x = GAP / 2; x < W; x += GAP) {
+          var dx = x - lens.x, dy = y - lens.y, d = Math.sqrt(dx * dx + dy * dy);
+          var k = d < R ? 1 - d / R : 0;
+          ctx.globalAlpha = TONE.alpha * (0.7 + k * 0.6);
+          ctx.beginPath();
+          ctx.arc(x + (k ? (dx / (d + 0.1)) * k * 3 : 0), y + (k ? (dy / (d + 0.1)) * k * 3 : 0),
+            0.9 + k * TONE.dotZ * 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
 
-  /* Lista editorial: la portada sigue al cursor en horizontal (solo transform) */
-  function followCursor() {
-    if (!canHover || reduced) return;
-    var W = 300; /* ancho de la portada flotante, igual que en el CSS */
-    document.querySelectorAll('#main .pcard').forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        if (root.dataset.cards !== 'list') return;
+    function frame() {
+      lens.x += (mouse.x - lens.x) * 0.14;
+      lens.y += (mouse.y - lens.y) * 0.14;
+      draw();
+      if (running) raf = requestAnimationFrame(frame);
+    }
+
+    function start(e) {
+      col = accent();
+      layout();
+      if (e && e.clientX != null && !reduced) {
         var r = card.getBoundingClientRect();
-        var base = r.width * 0.56; /* left: 56% en el CSS */
-        var x = e.clientX - r.left - W / 2;
-        x = Math.max(0, Math.min(r.width - W, x));
-        card.style.setProperty('--mx', Math.round(x - base) + 'px');
-      });
-    });
-  }
+        lens.x = mouse.x = e.clientX - r.left;
+        lens.y = mouse.y = e.clientY - r.top;
+      } else {
+        lens.x = mouse.x = lens.y = mouse.y = -9999;
+      }
+      if (reduced) { draw(); return; }
+      if (!running) { running = true; raf = requestAnimationFrame(frame); }
+    }
 
-  choice = readChoice();
-  apply();
-  if (mobile.addEventListener) mobile.addEventListener('change', apply);
+    function stop() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    if (canHover) {
+      card.addEventListener('pointerenter', start);
+      card.addEventListener('pointerleave', stop);
+      card.addEventListener('pointermove', function (e) {
+        if (reduced) return;
+        var r = card.getBoundingClientRect();
+        mouse.x = e.clientX - r.left;
+        mouse.y = e.clientY - r.top;
+      });
+    }
+    card.addEventListener('focus', function () { start(null); if (!reduced) setTimeout(stop, 600); });
+  }
 
   document.addEventListener('DOMContentLoaded', function () {
-    followCursor();
-    if (isPreview()) switcher();
+    document.querySelectorAll('#main a.pcard').forEach(setup);
   });
 })();
