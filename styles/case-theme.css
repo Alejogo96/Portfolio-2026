@@ -953,3 +953,88 @@ body[data-page] .cs-img-grid.cs-justified.cs-only-mobile {
     display: none;
   }
 }
+
+/* Carrusel horizontal de láminas (initCarousels en case-motion.js) */
+body[data-page] .cs-carousel {
+  width: var(--cs-col);
+  margin-inline: auto;
+}
+
+body[data-page] .cs-carousel__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 12px;
+}
+
+body[data-page] .cs-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+body[data-page] .cs-carousel__track:focus-visible {
+  outline: 2px solid var(--cs-accent);
+  outline-offset: 4px;
+}
+
+body[data-page] .cs-carousel__slide {
+  flex: 0 0 min(78%, 820px);
+  scroll-snap-align: start;
+}
+
+body[data-page] .cs-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--cs-border);
+}
+
+body[data-page] .cs-carousel__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+body[data-page] .cs-carousel__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--cs-border);
+  background: transparent;
+  color: var(--cs-text);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+body[data-page] .cs-carousel__btn:hover:not(:disabled) {
+  border-color: var(--cs-accent);
+  color: var(--cs-accent);
+}
+
+body[data-page] .cs-carousel__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+body[data-page] .cs-carousel__btn:focus-visible {
+  outline: 2px solid var(--cs-accent);
+  outline-offset: 2px;
+}
+
+body[data-page] .cs-carousel__count {
+  min-width: 56px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--cs-text);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-carousel__slide {
+    flex-basis: 88%;
+  }
+}
