@@ -854,8 +854,10 @@ html[data-bg^="c"] body[data-page]::after { display: none; }
 .project-nav.bgB-arrive .project-nav-link--next { border-color: var(--cs-accent); box-shadow: 0 0 0 1px var(--cs-accent), 0 0 32px color-mix(in srgb, var(--cs-accent) 30%, transparent); transition: box-shadow .6s ease, border-color .6s ease; }
 
 /* C · Morph */
-.bgC { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
-@media (max-width: 768px) { .bgC { opacity: .6; } }
+/* Trama de fondo: misma intensidad en todos los proyectos */
+body[data-page] { --bg-trama-opacity: 0.7; }
+.bgC { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; opacity: var(--bg-trama-opacity); }
+@media (max-width: 768px) { body[data-page] { --bg-trama-opacity: 0.5; } }
 
 /* Selector de propuestas (solo preview) */
 .bg-switch { position: fixed; z-index: 60; right: 16px; top: 76px; max-width: calc(100vw - 32px); display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px;

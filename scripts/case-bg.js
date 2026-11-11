@@ -20,6 +20,12 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+/* Tono común de las tramas de fondo (puntos y enlaces), igual en todos los
+   proyectos: puntos pequeños, un solo color (el acento) y poca opacidad,
+   para que la trama acompañe sin competir con el contenido.
+   La opacidad final del lienzo se ajusta con --bg-trama-opacity (case-theme.css). */
+const TONE = { dot: 1, dotZ: 0.6, alpha: 0.4, link: 0.12, trail: false };
+
 const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5", "c6", "c7"];
 const LABELS = {
   off: "Actuel", a: "A · Chapitres", b: "B · Le fil",
@@ -501,17 +507,17 @@ function modeC(variant) {
         for (let j = i + 1; j < N; j++) {
           const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d2 = dx * dx + dy * dy;
           if (d2 < link * link) {
-            ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * (0.12 + order * 0.35) * V.links * (light ? 0.8 : 1);
-            ctx.strokeStyle = hue > 0.5 ? col[1] : col[0];
+            ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * TONE.link * V.links;
+            ctx.strokeStyle = col[0];
             ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
           }
         }
       }
     }
-    const r = (V.dot || 2) + order * 1.2;
-    P.forEach((p, i) => {
-      ctx.globalAlpha = 0.5 + order * 0.45;
-      ctx.fillStyle = V.hueShift ? (rnd(i + 3) < hue ? col[1] : col[0]) : col[p.k];
+    const r = TONE.dot + order * TONE.dotZ;
+    P.forEach((p) => {
+      ctx.globalAlpha = TONE.alpha * (0.7 + order * 0.3);
+      ctx.fillStyle = col[0];
       ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
     });
     ctx.globalAlpha = 1;
@@ -660,22 +666,22 @@ function modeFlow(variant) {
       for (let j = i + 1; j < N; j++) {
         const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d2 = dx * dx + dy * dy;
         if (d2 < link * link) {
-          ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * 0.38 * P[i].z * (light ? 0.85 : 1) * (0.6 + calm * 0.4);
+          ctx.globalAlpha = (1 - Math.sqrt(d2) / link) * TONE.link * 2 * P[i].z * (0.6 + calm * 0.4);
           ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
         }
       }
     }
     // partículas + estela según la velocidad (c6)
     P.forEach((p) => {
-      ctx.globalAlpha = Math.min(1, 0.45 + p.z * 0.55) * (0.75 + calm * 0.25);
-      const c = col[p.k];
-      if (variant === "c6" && speed > 0.05 && !p.b.ring) {
+      ctx.globalAlpha = TONE.alpha * (0.5 + p.z * 0.5) * (0.75 + calm * 0.25);
+      const c = col[0];
+      if (TONE.trail && variant === "c6" && speed > 0.05 && !p.b.ring) {
         const len = speed * 40 * p.z;
         ctx.strokeStyle = c; ctx.lineWidth = 1.2 + p.z;
         ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - dir[0] * len * Math.sign(vel), p.y - dir[1] * len * Math.sign(vel)); ctx.stroke();
       }
       ctx.fillStyle = c;
-      ctx.beginPath(); ctx.arc(p.x, p.y, 1 + p.z * 1.8, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(p.x, p.y, TONE.dot + p.z * TONE.dotZ, 0, Math.PI * 2); ctx.fill();
     });
     ctx.globalAlpha = 1;
     if (!reduced) requestAnimationFrame(frame);
