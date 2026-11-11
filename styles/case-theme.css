@@ -938,3 +938,18 @@ body[data-page] .cs-row > * {
     gap: 20px;
   }
 }
+
+/* Variantes solo mobile / solo desktop: la fila no debe anular su display:none */
+body[data-page] .cs-img-grid.cs-justified.cs-only-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-img-grid.cs-justified.cs-only-mobile {
+    display: flex;
+  }
+
+  body[data-page] .cs-img-grid.cs-justified.cs-only-desktop {
+    display: none;
+  }
+}
