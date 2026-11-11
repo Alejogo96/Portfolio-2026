@@ -268,10 +268,11 @@ html.cm-on .cm-fade[data-ch="4"]:not(.is-in) {
   transform: translateY(-50%) scale(1);
 }
 
+/* La etiqueta va al lado de la línea (a la derecha), nunca encima */
 .cs-thread__label {
   position: absolute;
-  left: 50%;
-  bottom: 18px;
+  left: 18px;
+  bottom: 14px;
   writing-mode: vertical-rl;
   white-space: nowrap;
   font: 600 11px/14px var(--font-display, "Montserrat", sans-serif);
@@ -279,13 +280,13 @@ html.cm-on .cm-fade[data-ch="4"]:not(.is-in) {
   text-transform: uppercase;
   color: var(--cs-muted);
   opacity: 0;
-  transform: translate(-50%, 8px) rotate(180deg);
+  transform: translate(0, 8px) rotate(180deg);
   transition: opacity 0.5s, transform 0.5s var(--st-ease-fast);
 }
 
 .cs-thread__node.is-on .cs-thread__label {
   opacity: 1;
-  transform: translate(-50%, 0) rotate(180deg);
+  transform: translate(0, 0) rotate(180deg);
 }
 
 /* las etiquetas solo caben con margen lateral amplio */
