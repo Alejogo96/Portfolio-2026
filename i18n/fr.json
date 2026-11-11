@@ -632,5 +632,7 @@
   "qualnet.chiff.img.s3": "Benchmark Amazon S3",
   "qualnet.chiff.img.storymap": "Story map du parcours de chiffrement",
   "qualnet.chiff.img.flux": "Flux proposé avec les points de friction",
-  "qualnet.chiff.img.maquettes": "Maquettes de la solution retenue avec notes pour les développeurs"
+  "qualnet.chiff.img.maquettes": "Maquettes de la solution retenue avec notes pour les développeurs",
+  "section.exp.intro": "Des missions réelles, en équipe ou en solo : produit logiciel, plateformes et marque, où j'ai conçu, priorisé et livré, du besoin utilisateur à l'interface.",
+  "section.proj.intro": "Des projets personnels et académiques, nés de la curiosité : concepts, prototypes et expériences où j'explore l'IA, le patrimoine et l'immersif, sans contrainte client."
 }

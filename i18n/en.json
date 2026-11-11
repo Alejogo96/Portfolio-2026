@@ -632,5 +632,7 @@
   "qualnet.chiff.img.s3": "Amazon S3 benchmark",
   "qualnet.chiff.img.storymap": "Story map of the encryption journey",
   "qualnet.chiff.img.flux": "Proposed flow with friction points",
-  "qualnet.chiff.img.maquettes": "Mock-ups of the chosen solution with developer notes"
+  "qualnet.chiff.img.maquettes": "Mock-ups of the chosen solution with developer notes",
+  "section.exp.intro": "Real engagements, in a team or solo: software products, platforms and brand, where I designed, prioritised and delivered, from user need to interface.",
+  "section.proj.intro": "Personal and academic projects born from curiosity: concepts, prototypes and experiences where I explore AI, heritage and immersive design, free of client constraints."
 }
