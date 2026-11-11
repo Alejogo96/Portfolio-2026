@@ -182,6 +182,10 @@ html.ml-c1.cm-on [data-ch="4"] .cm-fade:not(.is-in) {
   }
 }
 
+.ml-rail__list li {
+  margin: 0;
+}
+
 .ml-rail__list {
   display: none;
   list-style: none;

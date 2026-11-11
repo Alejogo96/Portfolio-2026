@@ -156,6 +156,11 @@ html.cm-on .cm-fade[data-ch="4"]:not(.is-in) {
   }
 }
 
+/* global.css da margen inferior a ol y li: se anula para centrar el texto en la cápsula */
+.cs-story-nav li {
+  margin: 0;
+}
+
 .cs-story-nav ol {
   display: flex;
   align-items: center;
