@@ -857,6 +857,9 @@ html[data-bg^="c"] body[data-page]::after { display: none; }
 /* Trama de fondo: misma intensidad en todos los proyectos */
 body[data-page] { --bg-trama-opacity: 0.7; }
 .bgC { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; opacity: var(--bg-trama-opacity); }
+/* Patrones genéricos (G1 Grille, G2 Lignes): sin la forma propia de cada proyecto */
+html[data-bg="g1"] body[data-page]::after,
+html[data-bg="g2"] body[data-page]::after { display: none; }
 @media (max-width: 768px) { body[data-page] { --bg-trama-opacity: 0.5; } }
 
 /* Selector de propuestas (solo preview) */

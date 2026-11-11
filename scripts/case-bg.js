@@ -26,13 +26,14 @@ const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
    La opacidad final del lienzo se ajusta con --bg-trama-opacity (case-theme.css). */
 const TONE = { dot: 1, dotZ: 0.6, alpha: 0.4, link: 0.12, trail: false };
 
-const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5", "c6", "c7"];
+const MODES = ["off", "a", "b", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "g1", "g2"];
 const LABELS = {
   off: "Actuel", a: "A · Chapitres", b: "B · Le fil",
   c1: "C1 · Processus", c2: "C2 · Chapitres", c3: "C3 · Ondes", c4: "C4 · Signature", c5: "C5 · Magnétique · par projet", c6: "C6 · Flux", c7: "C7 · Échos",
+  g1: "G1 · Grille", g2: "G2 · Lignes",
 };
 /* En el selector solo se muestran las variantes de Morph (la opción elegida) */
-const SWITCH = ["off", "c5", "c6", "c7"];
+const SWITCH = ["off", "c5", "c6", "g1", "g2"];
 
 function readMode() {
   /* Una página puede fijar su fondo (p. ej. el Motion lab usa data-bg="off") */
@@ -697,6 +698,93 @@ function modeFlow(variant) {
 }
 
 /* ───────────────────────── Selector (solo preview) ───────────────────────── */
+/* G · Patrones genéricos, iguales en todos los proyectos (solo cambia el
+   color de acento). Mismo TONE y --bg-trama-opacity que el resto.
+   g1 Grille : cuadrícula de puntos de 1 px que se desliza con el scroll;
+               cerca del cursor los puntos crecen un poco (lupa).
+   g2 Lignes : líneas horizontales de 1 px, como curvas de nivel, que
+               ondulan despacio y se desplazan con el scroll. */
+function modeGeneric(variant) {
+  const canvas = document.createElement("canvas");
+  canvas.className = "bgC";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.prepend(canvas);
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0, H = 0, col = colours(), mobile = false, t = 0;
+  const mouse = { x: -9999, y: -9999 }, lens = { x: -9999, y: -9999 };
+
+  function layout() {
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + "px"; canvas.style.height = H + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    mobile = W < 769;
+  }
+
+  function grid() {
+    const gap = mobile ? 26 : 32;
+    const oy = -((window.scrollY * 0.2) % gap);
+    const R = 150;
+    ctx.fillStyle = col[0];
+    for (let y = oy; y < H + gap; y += gap) {
+      for (let x = gap / 2; x < W; x += gap) {
+        const dx = x - lens.x, dy = y - lens.y, d = Math.sqrt(dx * dx + dy * dy);
+        const k = d < R ? 1 - d / R : 0;
+        ctx.globalAlpha = TONE.alpha * (0.7 + k * 0.6);
+        ctx.beginPath();
+        ctx.arc(x + (k ? (dx / (d + 0.1)) * k * 4 : 0), y + (k ? (dy / (d + 0.1)) * k * 4 : 0), 0.9 + k * TONE.dotZ * 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  function lines() {
+    const gap = mobile ? 40 : 52;
+    const sy = window.scrollY;
+    const oy = -((sy * 0.15) % gap);
+    ctx.strokeStyle = col[0];
+    ctx.lineWidth = 1;
+    const step = mobile ? 10 : 8;
+    let row = Math.floor((sy * 0.15) / gap);
+    for (let y0 = oy - gap; y0 < H + gap; y0 += gap, row++) {
+      ctx.globalAlpha = TONE.link * (row % 4 === 0 ? 1.6 : 1);
+      ctx.beginPath();
+      for (let x = 0; x <= W + step; x += step) {
+        const dx = x - lens.x, dy = y0 - lens.y, d = Math.sqrt(dx * dx + dy * dy);
+        const bend = d < 160 ? (1 - d / 160) * 14 * Math.sign(dy || 1) : 0;
+        const y = y0
+          + Math.sin(x * 0.004 + row * 0.5 + t * 0.004) * 10
+          + Math.sin(x * 0.0013 - row * 0.3 + sy * 0.002) * 16
+          + bend;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  function frame() {
+    t += 1;
+    lens.x += (mouse.x - lens.x) * 0.12;
+    lens.y += (mouse.y - lens.y) * 0.12;
+    ctx.clearRect(0, 0, W, H);
+    variant === "g1" ? grid() : lines();
+    ctx.globalAlpha = 1;
+    if (!reduced) requestAnimationFrame(frame);
+  }
+  layout();
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { layout(); if (reduced) frame(); }, 150); }, { passive: true });
+  if (!reduced) {
+    window.addEventListener("pointermove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+    document.addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; });
+  }
+  new MutationObserver(() => { col = colours(); if (reduced) frame(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  if (reduced) window.addEventListener("scroll", () => requestAnimationFrame(frame), { passive: true });
+  requestAnimationFrame(frame);
+}
+
 function switcher(mode) {
   const box = document.createElement("div");
   box.className = "bg-switch";
@@ -720,7 +808,8 @@ export function initCaseBg() {
   document.documentElement.dataset.bg = mode;
   if (mode === "a") modeA();
   if (mode === "b") modeB();
-  if (mode === "c6" || mode === "c7") modeFlow(mode);
+  if (mode === "g1" || mode === "g2") modeGeneric(mode);
+  else if (mode === "c6" || mode === "c7") modeFlow(mode);
   else if (mode.startsWith("c")) modeC(mode);
   if (isPreview() && !document.body.dataset.bg) switcher(mode);
 }
