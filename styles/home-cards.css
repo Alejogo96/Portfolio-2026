@@ -157,3 +157,25 @@
     transition: none;
   }
 }
+
+/* ── Fondo del Home: trama G1 de los proyectos (scripts/home-bg.js) ──
+   Mismo tono que en los casos (--bg-trama-opacity); aparece al dejar el
+   hero (--bg-k de 0 a 1) y queda detrás de las secciones (.page z-index 1). */
+body[data-page="home"] {
+  --bg-trama-opacity: 0.7;
+}
+
+body[data-page="home"] .bgC {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: calc(var(--bg-trama-opacity) * var(--bg-k, 0));
+}
+
+@media (max-width: 768px) {
+  body[data-page="home"] {
+    --bg-trama-opacity: 0.5;
+  }
+}
