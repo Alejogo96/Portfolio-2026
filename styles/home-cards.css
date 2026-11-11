@@ -1,0 +1,425 @@
+/* =====================================================
+   home-cards.css — Propuestas de cards de proyectos (Home)
+   Se activan con <html data-cards="metric|list|bleed"> (scripts/home-cards.js).
+   Sin atributo = card actual. Solo tokens de home-v2.css (--text, --muted,
+   --faint, --accent, --media-bg); animaciones solo opacity/transform.
+   ===================================================== */
+
+/* El dato de la card (cifra real o rol clave) solo se ve en la variante 4 */
+.pcard__fact {
+  display: none;
+}
+
+/* ─────────────────────────────────────────────────────
+   4 · Card con métrica
+   3 columnas; portada 16:9 más pequeña; título 24; el dato abajo,
+   separado por una línea de 1 px. Sin descripción.
+   ───────────────────────────────────────────────────── */
+[data-cards="metric"] #main .grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+[data-cards="metric"] .pcard {
+  gap: 12px;
+  padding: 10px 10px 20px;
+}
+
+[data-cards="metric"] .pcard__media {
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+[data-cards="metric"] .pcard__initial {
+  font-size: 2.5rem;
+}
+
+[data-cards="metric"] .pcard__title {
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+[data-cards="metric"] .pcard__role {
+  margin-top: -6px;
+  font-size: 0.8125rem;
+  line-height: 18px;
+}
+
+[data-cards="metric"] .pcard__desc {
+  display: none;
+}
+
+[data-cards="metric"] .pcard__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: auto 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--faint);
+}
+
+[data-cards="metric"] .pcard__num {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  transition: color 0.25s ease;
+}
+
+[data-cards="metric"] .pcard__num--word {
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+[data-cards="metric"] .pcard__label {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+[data-cards="metric"] a.pcard:hover .pcard__num,
+[data-cards="metric"] a.pcard:focus-visible .pcard__num {
+  color: var(--accent);
+}
+
+@media (max-width: 1100px) {
+  [data-cards="metric"] #main .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  [data-cards="metric"] #main .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   1 · Lista editorial
+   Filas a ancho completo: número · título grande · rol y años.
+   La portada aparece al pasar el cursor y lo sigue en horizontal.
+   Mobile: miniatura fija a la izquierda, sin número.
+   ───────────────────────────────────────────────────── */
+[data-cards="list"] #main .grid {
+  display: block;
+  counter-reset: pcard;
+  border-top: 1px solid var(--faint);
+}
+
+[data-cards="list"] .pcard {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 24px;
+  padding: 28px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--faint);
+  border-radius: 0;
+  counter-increment: pcard;
+}
+
+[data-cards="list"] .pcard::before {
+  content: counter(pcard, decimal-leading-zero);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+[data-cards="list"] .pcard > :not(.pcard__media) {
+  padding-inline: 0;
+}
+
+[data-cards="list"] .pcard__title {
+  grid-column: 2;
+  font-size: clamp(1.75rem, 1rem + 2.4vw, 3.25rem);
+  line-height: 1.1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cards="list"] .pcard__role {
+  grid-column: 3;
+  margin: 0;
+  font-size: 0.8125rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+[data-cards="list"] .pcard__desc,
+[data-cards="list"] .pcard__fact {
+  display: none;
+}
+
+/* hover: sin elevación ni sombra; fondo apenas tintado y el título avanza */
+[data-cards="list"] a.pcard:hover,
+[data-cards="list"] a.pcard:focus-visible {
+  border-color: var(--faint);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  box-shadow: none;
+}
+
+[data-cards="list"] a.pcard.is-visible:hover,
+[data-cards="list"] a.pcard.is-visible:focus-visible,
+[data-cards="list"] a.pcard:active {
+  transform: none !important;
+}
+
+[data-cards="list"] a.pcard:hover .pcard__title,
+[data-cards="list"] a.pcard:focus-visible .pcard__title {
+  transform: translateX(8px);
+}
+
+/* portada flotante (300 px, igual que W en home-cards.js) */
+[data-cards="list"] .pcard__media {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 56%;
+  width: 300px;
+  aspect-ratio: 5 / 3;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(var(--mx, 0px), -50%) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.5);
+}
+
+[data-cards="list"] .pcard__initial {
+  font-size: 3rem;
+}
+
+@media (hover: hover) {
+  [data-cards="list"] a.pcard:hover .pcard__media {
+    opacity: 1;
+    transform: translate(var(--mx, 0px), -50%) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  [data-cards="list"] .pcard {
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 4px;
+    padding: 16px 0;
+  }
+
+  [data-cards="list"] .pcard::before {
+    display: none;
+  }
+
+  [data-cards="list"] .pcard__media,
+  [data-cards="list"] a.pcard:hover .pcard__media {
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 72px;
+    aspect-ratio: 1;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+  }
+
+  [data-cards="list"] .pcard__initial {
+    font-size: 1.75rem;
+  }
+
+  [data-cards="list"] .pcard__title {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+
+  [data-cards="list"] .pcard__role {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    text-align: left;
+    white-space: normal;
+    font-size: 0.75rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   2 · Imagen a sangre
+   La portada ocupa toda la card; degradado oscuro abajo y el texto
+   encima, siempre en blanco (mismo contraste en claro y oscuro).
+   ───────────────────────────────────────────────────── */
+[data-cards="bleed"] .pcard {
+  justify-content: flex-end;
+  gap: 10px;
+  aspect-ratio: 1;
+  padding: 32px;
+  border: 0;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+}
+
+[data-cards="bleed"] .pcard > :not(.pcard__media) {
+  position: relative;
+  z-index: 2;
+  padding-inline: 0;
+}
+
+[data-cards="bleed"] .pcard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top,
+    rgba(12, 12, 12, 0.95) 0%,
+    rgba(12, 12, 12, 0.9) 35%,
+    rgba(12, 12, 12, 0.5) 58%,
+    rgba(12, 12, 12, 0) 80%);
+}
+
+[data-cards="bleed"] .pcard__media {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+[data-cards="bleed"] .pcard__img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-cards="bleed"] a.pcard:hover .pcard__img,
+[data-cards="bleed"] a.pcard:focus-visible .pcard__img {
+  transform: scale(1.04);
+}
+
+[data-cards="bleed"] .pcard__initial {
+  place-items: start center;
+  padding-top: 18%;
+  font-size: 6rem;
+}
+
+[data-cards="bleed"] .pcard__role {
+  margin-top: -4px;
+  color: #ffb39f; /* naranja claro: ≥ 7:1 sobre el degradado */
+}
+
+[data-cards="bleed"] .pcard__desc {
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+[data-cards="bleed"] .pcard__fact {
+  display: none;
+}
+
+[data-cards="bleed"] a.pcard .pcard__title::after {
+  color: #ffb39f;
+}
+
+[data-cards="bleed"] a.pcard:hover,
+[data-cards="bleed"] a.pcard:focus-visible {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  [data-cards="bleed"] #main .grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+  }
+
+  [data-cards="bleed"] .pcard {
+    aspect-ratio: 4 / 5;
+    padding: 20px;
+  }
+
+  [data-cards="bleed"] .pcard__title {
+    font-size: 1.75rem;
+    line-height: 34px;
+  }
+}
+
+/* ── Reduced motion: estático (sin seguimiento, sin zoom, sin desplazamiento) ── */
+@media (prefers-reduced-motion: reduce) {
+  [data-cards] .pcard__media,
+  [data-cards] .pcard__img,
+  [data-cards] .pcard__title,
+  [data-cards] .pcard__num {
+    transition: none;
+  }
+  [data-cards="bleed"] a.pcard:hover .pcard__img,
+  [data-cards="list"] a.pcard:hover .pcard__title {
+    transform: none;
+  }
+  [data-cards="list"] a.pcard:hover .pcard__media {
+    transform: translate(0, -50%);
+  }
+}
+
+/* ── Selector temporal (solo preview) ── */
+.cards-switch {
+  position: fixed;
+  z-index: 60;
+  left: 16px;
+  bottom: 16px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.cards-switch__label {
+  padding: 0 8px;
+  opacity: 0.6;
+}
+
+.cards-switch button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.cards-switch button[aria-pressed="true"] {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+}
+
+.cards-switch button:focus-visible {
+  outline: 2px solid #ff5f3a;
+  outline-offset: 1px;
+}
+
+@media (max-width: 768px) {
+  /* la barra de navegación va abajo en mobile: el selector sube arriba */
+  .cards-switch {
+    top: 8px;
+    bottom: auto;
+    left: 8px;
+    right: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    font-size: 11px;
+  }
+  .cards-switch button {
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+}

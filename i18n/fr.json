@@ -595,5 +595,16 @@
   "story.experience": "Expérience",
   "story.tests": "Tests",
   "story.result": "Résultats",
-  "story.projects": "Projets"
+  "story.projects": "Projets",
+  "cards.fact.qualnet": "Mission en cours, résultats à venir",
+  "cards.fact.andy": "nouveaux chantiers estimés grâce à la nouvelle image et au site",
+  "cards.fact.ublo": "Plateforme pour les gestionnaires immobiliers",
+  "cards.fact.iridian": "Interfaces alignées sur les KPI produit",
+  "cards.fact.bellpi": "lancement de la plateforme, en CDI au sein du groupe Casatoro",
+  "cards.fact.freelance": "ans de design industriel en indépendant",
+  "cards.fact.jumbomana": "designers dans l'équipe, j'ai mené le design",
+  "cards.fact.bnf": "Concept et carte interactive du site Richelieu",
+  "cards.fact.spotify": "nouvelles fonctionnalités conçues et testées",
+  "cards.fact.paramo": "Expérience immersive inspirée des écosystèmes naturels",
+  "cards.num.paramo": "Concept"
 }
