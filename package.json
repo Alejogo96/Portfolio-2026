@@ -8,6 +8,7 @@
     "start": "parcel index.html projects/andy-electric/index.html projects/andy-electric/motion.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html projects/paramo/index.html projects/qualnet/index.html projects/iridian/index.html projects/freelance/index.html --port 1234",
     "build": "parcel build index.html projects/andy-electric/index.html projects/andy-electric/motion.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html projects/paramo/index.html projects/qualnet/index.html projects/iridian/index.html projects/freelance/index.html --dist-dir build && mkdir -p build/og && cp public/card-*.jpg build/og/",
     "clean": "rm -rf .parcel-cache build",
+    "check": "node tools/check-reveal.mjs",
     "build:pages": "parcel build index.html projects/andy-electric/index.html projects/andy-electric/motion.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html projects/paramo/index.html projects/qualnet/index.html projects/iridian/index.html projects/freelance/index.html --dist-dir build --public-url /Portfolio-2026/ && mkdir -p build/og && cp public/card-*.jpg build/og/"
   },
   "devDependencies": {
