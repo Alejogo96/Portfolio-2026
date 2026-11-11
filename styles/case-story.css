@@ -120,16 +120,11 @@ html.cm-on .cm-fade[data-ch="2"]:not(.is-in) {
   filter: none;
 }
 
-html.cm-on [data-ch="3"] .cm-fade,
-html.cm-on .cm-fade[data-ch="3"] {
-  clip-path: inset(-0.2em -0.2em -0.2em -0.2em);
-  transition-property: opacity, transform, filter, clip-path;
-}
-
+/* OJO: sin clip-path en los capítulos. IntersectionObserver ignora los
+   elementos recortados y el texto se quedaba invisible (opacity 0). */
 html.cm-on [data-ch="3"] .cm-fade:not(.is-in),
 html.cm-on .cm-fade[data-ch="3"]:not(.is-in) {
-  transform: scale(0.96);
-  clip-path: inset(100% 0 0 0);
+  transform: translate3d(0, 24px, 0) scale(0.96);
   filter: none;
 }
 
