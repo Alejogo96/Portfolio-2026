@@ -12,8 +12,8 @@ import { initStory } from "./case-story.js";
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
-/* Imágenes altas: en desktop limitan su alto (no ocupan 2 pantallas) conservando
-   la proporción. El ancho del marco se ajusta; clic abre el lightbox a tamaño completo. */
+/* Tamaño de las imágenes de los casos en desktop: tope de alto y de ancho según el tipo,
+   sin superar su tamaño real (así no se ven pixeladas). Clic abre el lightbox completo. */
 const MAX_IMG_H = 520; // imagen suelta
 const GRID_IMG_H = 440; // imágenes en rejilla (2 o más por fila)
 const PHONE_IMG_H = 460;
@@ -22,7 +22,8 @@ function capHeight(img, wrap) {
   if (img.closest(".cs-cover")) return;
   const full = !!img.closest(".cs-img-full");
   const phones = !!img.closest(".cs-img-grid--phones");
-  const inGrid = !!img.closest(".cs-img-grid");
+  const grid = img.closest(".cs-img-grid");
+  const wide = !!img.closest(".cs-img-box--wide, .cs-img-grid--wide");
   const apply = () => {
     if (!window.matchMedia("(min-width: 769px)").matches) {
       wrap.style.maxWidth = "";
@@ -31,10 +32,15 @@ function capHeight(img, wrap) {
     const w = img.naturalWidth || Number(img.getAttribute("width"));
     const h = img.naturalHeight || Number(img.getAttribute("height"));
     if (!w || !h) return;
-    const maxH = Number(img.closest("[data-maxh]")?.dataset.maxh) || (phones ? PHONE_IMG_H : full ? FULL_IMG_H : inGrid ? GRID_IMG_H : MAX_IMG_H);
-    const colW = full ? 1440 : phones ? 340 : 1152;
-    if ((h / w) * colW <= maxH) return; // ya es baja: no se toca
-    wrap.style.maxWidth = Math.round((w / h) * maxH) + "px";
+    const maxH = Number(img.closest("[data-maxh]")?.dataset.maxh) || (phones ? PHONE_IMG_H : full ? FULL_IMG_H : grid ? GRID_IMG_H : MAX_IMG_H);
+    const maxW = full ? 1000 : phones ? Infinity : grid && !grid.classList.contains("cs-img-grid--stack") ? Infinity : wide ? 900 : 720;
+    const real = /@2x/.test(img.getAttribute("src") || "") ? w / 2 : w; // tamaño real a 1x
+    const target = Math.min((w / h) * maxH, maxW, real);
+    if (target >= (wrap.parentElement?.clientWidth || 1152) - 1) {
+      wrap.style.maxWidth = "";
+      return;
+    }
+    wrap.style.maxWidth = Math.round(target) + "px";
     wrap.style.marginInline = "auto";
   };
   apply();
