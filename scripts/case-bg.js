@@ -12,7 +12,7 @@
  *       proceso de diseño: dispersas (investigación) → cuadrícula (estructura)
  *       → forma final (resultado) según el avance del scroll.
  *
- * Selección: ?bg=a|b|c|off (se recuerda en localStorage "pf:bg").
+ * Selección: ?bg=a|b|c…|g1|g2|off (se recuerda en localStorage "pf:bg"). Por defecto: g1.
  * El selector flotante solo aparece en local, en el preview de Vercel o con ?bg.
  */
 
@@ -49,7 +49,8 @@ function readMode() {
     const s = localStorage.getItem("pf:bg");
     if (s && MODES.includes(s)) return s;
   } catch (e) {}
-  return "off";
+  /* Fondo por defecto en todos los proyectos: G1 Grille (elegido 2026-11-11) */
+  return "g1";
 }
 
 const isPreview = () =>
