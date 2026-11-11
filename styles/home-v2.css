@@ -353,6 +353,15 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Texto descriptivo bajo el título de sección (Home) */
+.block__title--xl + .block__intro {
+  margin: -1.25rem 0 2rem;
+  max-width: 62ch;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--muted, var(--text));
+}
+
 .profile {
   display: grid;
   gap: clamp(2rem, 4vw, 3rem);
