@@ -1,0 +1,159 @@
+/* =====================================================
+   home-cards.css — Cards de proyectos del Home (2026-11-11)
+   Pedido de Alejandro: cards simétricas, portada más pequeña y abajo
+   solo una frase corta del proyecto. Hover sin brillo neón: aparece la
+   trama de puntos G1 de los proyectos (scripts/home-cards.js) y la línea
+   de 1 px se dibuja en acento, como el hilo de los casos.
+   Solo tokens de home-v2.css; animaciones solo opacity/transform.
+   ===================================================== */
+
+/* 3 columnas; todas las filas de una sección miden lo mismo */
+#main .grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+/* Estructura fija: portada · título (1 línea) · rol (1 línea) · frase.
+   La línea de la frase queda a la misma altura en todas las cards. */
+#main .pcard {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 12px;
+  padding: 10px 10px 22px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#main .pcard > :not(.pcard__grid) {
+  position: relative;
+  z-index: 1;
+}
+
+#main .pcard__media {
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+#main .pcard__initial {
+  font-size: 2.5rem;
+}
+
+#main .pcard__title {
+  font-size: 1.5rem;
+  line-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#main .pcard__role {
+  margin-top: -6px;
+  font-size: 0.8125rem;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#main .pcard__hook {
+  position: relative;
+  margin: 4px 0 0;
+  padding-top: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+/* línea de 1 px: neutra en reposo; en hover se dibuja en acento (hilo) */
+#main .pcard__hook::before,
+#main .pcard__hook::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+#main .pcard__hook::before {
+  background: var(--faint);
+}
+
+#main .pcard__hook::after {
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* trama de puntos (canvas creado por home-cards.js) */
+.pcard__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0 !important;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* ── Hover / foco: sin elevación, sin sombra de color, sin borde naranja ── */
+#main a.pcard:hover,
+#main a.pcard:focus-visible {
+  border-color: color-mix(in srgb, var(--text) 28%, transparent);
+  background: transparent;
+  box-shadow: none;
+}
+
+#main a.pcard.is-visible:hover,
+#main a.pcard.is-visible:focus-visible,
+#main a.pcard:active {
+  transform: none !important;
+}
+
+#main a.pcard:hover .pcard__grid,
+#main a.pcard:focus-visible .pcard__grid {
+  opacity: 1;
+}
+
+#main a.pcard:hover .pcard__hook,
+#main a.pcard:focus-visible .pcard__hook {
+  color: var(--text);
+}
+
+#main a.pcard:hover .pcard__hook::after,
+#main a.pcard:focus-visible .pcard__hook::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 1100px) {
+  #main .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  #main .grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 16px;
+  }
+
+  #main .pcard__media {
+    aspect-ratio: 16 / 9;
+  }
+
+  #main .pcard__hook {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard__grid,
+  #main .pcard__hook,
+  #main .pcard__hook::after {
+    transition: none;
+  }
+}

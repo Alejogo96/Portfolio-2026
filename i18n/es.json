@@ -595,5 +595,15 @@
   "story.experience": "Experiencia",
   "story.tests": "Pruebas",
   "story.result": "Resultados",
-  "story.projects": "Proyectos"
+  "story.projects": "Proyectos",
+  "cards.hook.qualnet": "Hacer evolucionar un software de negocio, de la necesidad del usuario al backlog.",
+  "cards.hook.andy": "Una marca y una web para una empresa de 30 años, hechas en solitario en 2 meses.",
+  "cards.hook.ublo": "Simplificar el día a día de los administradores inmobiliarios y sus carteras.",
+  "cards.hook.iridian": "Interfaces web y móviles pensadas para los KPI de producto y de negocio.",
+  "cards.hook.bellpi": "Repensar la compra y venta de autos usados en línea, desde la V1.",
+  "cards.hook.freelance": "Tres años de diseño industrial independiente, antes de lo digital.",
+  "cards.hook.jumbomana": "Un asistente con IA que guía a los viajeros en el aeropuerto, en varios idiomas.",
+  "cards.hook.bnf": "Recorrer el sitio Richelieu sala por sala gracias a un gemelo digital.",
+  "cards.hook.spotify": "Tres nuevas funcionalidades para Spotify, probadas con usuarios reales.",
+  "cards.hook.paramo": "Una experiencia inmersiva inspirada en los ecosistemas naturales."
 }
