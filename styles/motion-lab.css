@@ -1,0 +1,1029 @@
+/* =====================================================
+   Motion lab (projects/andy-electric/motion.html)
+   7 conceptos de motion + storytelling, conmutables.
+   Cada concepto solo actúa con html.ml-cN (motion-lab.js).
+   Usa los tokens del caso (--cs-*), Montserrat y líneas de 1 px.
+   ===================================================== */
+
+body.ml-page {
+  --ml-slow: 1.6s;
+  --ml-fast: 0.45s;
+  --ml-ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ml-ease-fast: cubic-bezier(0.2, 0.9, 0.1, 1);
+  --ml-gutter: max(20px, calc((100% - 1152px) / 2));
+}
+
+.ml-main {
+  position: relative;
+}
+
+/* ── Etiquetas de concepto (solo demo) ── */
+.ml-tag {
+  display: none;
+  align-self: flex-start;
+  width: fit-content;
+  padding: 2px 8px;
+  border: 1px dashed var(--cs-accent);
+  border-radius: 999px;
+  font: 600 11px/16px var(--font-display, "Montserrat", sans-serif);
+  letter-spacing: 0.04em;
+  color: var(--cs-accent);
+  background: color-mix(in srgb, var(--cs-bg) 80%, transparent);
+  white-space: nowrap;
+}
+
+html.ml-tags .ml-tag {
+  display: inline-block;
+}
+
+html:not(.ml-c1) .ml-tag[data-c="1"],
+html:not(.ml-c2) .ml-tag[data-c="2"],
+html:not(.ml-c4) .ml-tag[data-c="4"],
+html:not(.ml-c5) .ml-tag[data-c="5"],
+html:not(.ml-c6) .ml-tag[data-c="6"],
+html:not(.ml-c7) .ml-tag[data-c="7"] {
+  display: none;
+}
+
+.ml-reflect .ml-tag {
+  display: none;
+  margin: 0 0 8px;
+}
+
+html.ml-tags.ml-c5 .ml-reflect .ml-tag {
+  display: table;
+}
+
+/* ═════ C1 · Capítulos de scroll ═════ */
+.ml-chapter {
+  position: relative;
+}
+
+.ml-ch-head {
+  display: none;
+}
+
+html.ml-c1 .ml-ch-head {
+  width: var(--cs-col);
+  margin: 0 auto;
+  padding-top: calc(var(--cs-section) * 1.5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+html.ml-c1 .ml-chapter:first-of-type .ml-ch-head {
+  padding-top: var(--cs-section);
+}
+
+.ml-ch-num {
+  font: 700 64px/1 var(--font-display, "Montserrat", sans-serif);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--cs-accent);
+}
+
+.ml-ch-name {
+  font: 600 15px/22px var(--font-display, "Montserrat", sans-serif);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+.ml-ch-rule {
+  flex: 1 1 120px;
+  height: 1px;
+  background: var(--cs-border);
+  transform-origin: left;
+}
+
+html.ml-c1 .ml-ch-head {
+  position: relative;
+}
+
+.ml-ch-head .ml-tag {
+  position: absolute;
+  left: 0;
+  top: calc(var(--cs-section) * 1.5 - 28px);
+}
+
+html.ml-c1 .ml-chapter:first-of-type .ml-ch-head .ml-tag {
+  top: calc(var(--cs-section) - 28px);
+}
+
+/* el H2 queda más pegado a su capítulo */
+html.ml-c1 .ml-ch-head + .cs-block {
+  padding-top: var(--cs-gap);
+}
+
+/* Cada capítulo entra con una transición propia */
+html.ml-c1.cm-on .ml-ch-head .ml-ch-num,
+html.ml-c1.cm-on .ml-ch-head .ml-ch-name {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.9s var(--ml-ease-slow), transform 0.9s var(--ml-ease-slow);
+}
+
+html.ml-c1.cm-on .ml-ch-head .ml-ch-rule {
+  transform: scaleX(0);
+  transition: transform 1.4s var(--ml-ease-slow) 0.2s;
+}
+
+html.ml-c1.cm-on .ml-chapter.is-entered .ml-ch-head :is(.ml-ch-num, .ml-ch-name) {
+  opacity: 1;
+  transform: none;
+}
+
+html.ml-c1.cm-on .ml-chapter.is-entered .ml-ch-head .ml-ch-rule {
+  transform: scaleX(1);
+}
+
+/* 01 Contexte: fundido suave (por defecto). 02 Problème: entra desde la izquierda. */
+html.ml-c1.cm-on [data-ch="2"] .cm-fade:not(.is-in) {
+  transform: translate3d(-48px, 0, 0);
+  filter: none;
+}
+
+/* 03 Solution: se construye (escala + recorte desde abajo) */
+html.ml-c1.cm-on [data-ch="3"] .cm-fade:not(.is-in) {
+  transform: scale(0.94);
+  clip-path: inset(100% 0 0 0);
+  filter: none;
+}
+
+html.ml-c1.cm-on [data-ch="3"] .cm-fade {
+  clip-path: inset(0 0 0 0);
+}
+
+html.ml-c1.cm-on [data-ch="3"] .cm-fade.is-in {
+  transition-property: opacity, transform, filter, clip-path;
+}
+
+/* 04 Résultat: sube con más energía */
+html.ml-c1.cm-on [data-ch="4"] .cm-fade:not(.is-in) {
+  transform: translate3d(0, 64px, 0) scale(0.98);
+  filter: none;
+}
+
+/* Barra flotante de capítulos + estado + tempo (C1 / C7 / C5) */
+.ml-rail {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 40;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: 4px;
+  max-width: calc(100vw - 32px);
+  padding: 4px;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cs-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  transition: background-color 0.6s, border-color 0.6s;
+}
+
+@media (min-width: 769px) {
+  html:is(.ml-c1, .ml-c5, .ml-c7) .ml-rail {
+    display: flex;
+  }
+}
+
+.ml-rail__list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 4px;
+  align-items: center;
+  gap: 2px;
+}
+
+html.ml-c1 .ml-rail__list {
+  display: flex;
+}
+
+.ml-rail__list a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ml-rail__list a span {
+  font-variant-numeric: tabular-nums;
+}
+
+/* solo el capítulo actual muestra su nombre */
+.ml-rail__list a {
+  font-size: 0;
+}
+
+.ml-rail__list a span,
+.ml-rail__list a[aria-current="step"] {
+  font-size: 12px;
+}
+
+.ml-rail__list a::after {
+  content: "";
+  width: 12px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s var(--ml-ease-fast), background-color 0.3s;
+}
+
+.ml-rail__list a:hover,
+.ml-rail__list a:focus-visible,
+.ml-rail__list a[aria-current="step"] {
+  color: var(--cs-text);
+}
+
+.ml-rail__list a[aria-current="step"]::after {
+  width: 28px;
+  background: var(--cs-accent);
+}
+
+.ml-rail .ml-state {
+  border: 0;
+  background: color-mix(in srgb, var(--cs-text) 8%, transparent);
+  backdrop-filter: none;
+}
+
+.ml-rail .ml-tempo {
+  padding: 0 10px 0 6px;
+}
+
+/* ═════ C2 · Antes / después ═════ */
+.ml-ba,
+.ml-zoom {
+  position: relative;
+  width: var(--cs-col);
+  margin: var(--cs-gap) auto 0;
+}
+
+.ml-sticky {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ml-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--cs-border);
+  background: color-mix(in srgb, var(--cs-text) 6%, var(--cs-bg));
+}
+
+.ml-stage--site {
+  aspect-ratio: 2000 / 1598;
+}
+
+.ml-stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ml-ba__before,
+.ml-ba__edge,
+.ml-ba__label,
+.ml-ba__range {
+  display: none;
+}
+
+html.ml-c2 .ml-ba {
+  height: 240vh;
+}
+
+html.ml-c2 .ml-ba .ml-sticky,
+html.ml-c4 .ml-zoom .ml-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  justify-content: center;
+}
+
+html.ml-c2 .ml-ba .ml-stage,
+html.ml-c4 .ml-zoom .ml-stage {
+  width: min(100%, calc((100svh - 220px) * 1.2516));
+}
+
+html.ml-c2 .ml-ba__before {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--cs-text) 5%, var(--cs-bg));
+  clip-path: inset(0 0 0 var(--cut));
+  font-family: var(--font-display, "Montserrat", sans-serif);
+}
+
+.ml-ba__browser {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--cs-border);
+}
+
+.ml-ba__browser span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--cs-border);
+}
+
+.ml-ba__browser em {
+  margin-left: 12px;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--cs-muted);
+  text-decoration: line-through;
+}
+
+.ml-ba__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  filter: grayscale(1);
+}
+
+.ml-ba__big {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 44px);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--cs-muted);
+}
+
+.ml-ba__small {
+  max-width: 46ch;
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--cs-muted);
+}
+
+.ml-ba__skel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: min(70%, 420px);
+  margin-top: 12px;
+}
+
+.ml-ba__skel i {
+  height: 44px;
+  border: 1px dashed var(--cs-border);
+  border-radius: 8px;
+}
+
+html.ml-c2 .ml-ba__edge {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--cut, 0%);
+  width: 1px;
+  background: var(--cs-accent);
+  box-shadow: 0 0 16px var(--cs-accent);
+}
+
+html.ml-c2 .ml-ba__label {
+  display: block;
+  position: absolute;
+  top: 52px;
+  padding: 4px 10px;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  font: 600 12px/16px var(--font-display, "Montserrat", sans-serif);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-text);
+  background: var(--cs-bg);
+}
+
+.ml-ba__label--before { right: 16px; }
+.ml-ba__label--after { left: 16px; }
+
+/* Sin movimiento: control manual en vez de scroll */
+html.ml-rm.ml-c2 .ml-ba {
+  height: auto;
+}
+
+html.ml-rm.ml-c2 .ml-ba .ml-sticky {
+  position: relative;
+  height: auto;
+}
+
+html.ml-rm.ml-c2 .ml-ba__range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 600 12px/16px var(--font-display, "Montserrat", sans-serif);
+  color: var(--cs-muted);
+}
+
+.ml-ba__range input {
+  width: min(320px, 60vw);
+  min-height: 44px;
+  accent-color: var(--cs-accent);
+}
+
+/* ═════ C3 · Hilo conductor ═════ */
+.ml-thread {
+  display: none;
+}
+
+html.ml-c3 .ml-thread {
+  display: block;
+  position: absolute;
+  left: calc(var(--ml-gutter) / 2);
+  top: var(--t0, 0px);
+  height: var(--th, 0px);
+  width: 1px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ml-thread__track,
+.ml-thread__line {
+  position: absolute;
+  inset: 0;
+}
+
+.ml-thread__track {
+  background: repeating-linear-gradient(to bottom, var(--cs-border) 0 4px, transparent 4px 8px);
+}
+
+.ml-thread__line {
+  background: var(--cs-accent);
+  transform-origin: top;
+  transform: scaleY(var(--tp, 0));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cs-accent) 60%, transparent);
+}
+
+.ml-node {
+  position: absolute;
+  left: -4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--cs-border);
+  background: var(--cs-bg);
+  transform: translateY(-50%) scale(0.8);
+  transition: transform 0.4s var(--ml-ease-fast), border-color 0.3s, background-color 0.3s;
+}
+
+.ml-node.is-on {
+  border-color: var(--cs-accent);
+  background: var(--cs-accent);
+  transform: translateY(-50%) scale(1);
+}
+
+.ml-node__label {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  writing-mode: vertical-rl;
+  transform: translate(-50%, 8px) rotate(180deg);
+  opacity: 0;
+  white-space: nowrap;
+  font: 600 11px/14px var(--font-display, "Montserrat", sans-serif);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+  transition: opacity 0.5s, transform 0.5s var(--ml-ease-fast);
+}
+
+.ml-node.is-on .ml-node__label {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(180deg);
+}
+
+/* las etiquetas de hitos solo caben con margen lateral amplio */
+@media (max-width: 1279px) {
+  .ml-node__label { display: none; }
+}
+
+/* ═════ C4 · Cámara y zoom narrativo ═════ */
+.ml-zoom__caps {
+  display: none;
+}
+
+html.ml-c4 .ml-zoom {
+  height: 360vh;
+}
+
+.ml-zoom__img {
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+html.ml-c4 .ml-zoom__caps {
+  position: relative;
+  display: grid;
+  width: min(100%, 560px);
+  min-height: 52px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+html.ml-c4 .ml-zoom__caps li {
+  grid-area: 1 / 1;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--cs-muted);
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  transition: opacity 0.4s, transform 0.4s var(--ml-ease-fast);
+}
+
+html.ml-c4 .ml-zoom__caps li b {
+  display: block;
+  font-weight: 700;
+  color: var(--cs-text);
+}
+
+html.ml-c4 .ml-zoom__caps li.is-on {
+  opacity: 1;
+  transform: none;
+}
+
+.ml-zoom__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.ml-zoom__dots i {
+  width: 16px;
+  height: 1px;
+  background: var(--cs-border);
+  transition: background 0.3s, width 0.3s;
+}
+
+.ml-zoom__dots i.is-on {
+  width: 32px;
+  background: var(--cs-accent);
+}
+
+/* Sin movimiento: imagen completa y los pies como lista */
+html.ml-rm.ml-c4 .ml-zoom {
+  height: auto;
+}
+
+html.ml-rm.ml-c4 .ml-zoom .ml-sticky {
+  position: relative;
+  height: auto;
+}
+
+html.ml-rm.ml-c4 .ml-zoom__caps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+html.ml-rm.ml-c4 .ml-zoom__caps li {
+  opacity: 1;
+  transform: none;
+}
+
+/* ═════ C5 · Ritmo emocional ═════
+   Reflexión (Contexte, Problème): lento y suave.
+   Resolución (Solution, Résultat): rápido y seco. */
+html.ml-c5.cm-on [data-tempo="slow"] :is(.cm-fade, .cm-title) {
+  transition-duration: var(--ml-slow);
+  transition-timing-function: var(--ml-ease-slow);
+  transition-delay: calc(var(--d, 0s) * 2.4);
+}
+
+html.ml-c5.cm-on [data-tempo="fast"] :is(.cm-fade, .cm-title) {
+  transition-duration: var(--ml-fast);
+  transition-timing-function: var(--ml-ease-fast);
+  transition-delay: calc(var(--d, 0s) * 0.5);
+}
+
+/* Frases de reflexión: palabra a palabra */
+.ml-w {
+  display: inline-block;
+  white-space: pre;
+}
+
+html.ml-c5.cm-on .ml-reflect.is-split .ml-w {
+  opacity: 0.12;
+  transition: opacity 0.9s var(--ml-ease-slow);
+  transition-delay: calc(var(--i) * 70ms);
+}
+
+html.ml-c5.cm-on .ml-reflect.is-split.is-read .ml-w {
+  opacity: 1;
+}
+
+.ml-tempo {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+html.ml-c5 .ml-tempo {
+  display: inline-flex;
+}
+
+.ml-tempo__bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.ml-tempo__bars i {
+  width: 1px;
+  height: 100%;
+  background: var(--cs-accent);
+  transform-origin: bottom;
+  animation: ml-beat var(--beat, 1.6s) ease-in-out infinite;
+}
+
+.ml-tempo__bars i:nth-child(2) { animation-delay: calc(var(--beat, 1.6s) * -0.33); }
+.ml-tempo__bars i:nth-child(3) { animation-delay: calc(var(--beat, 1.6s) * -0.66); }
+
+@keyframes ml-beat {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* ═════ C6 · Datos que se cuentan solos ═════ */
+.ml-bar {
+  display: none;
+}
+
+html.ml-c6 .ml-bar {
+  display: block;
+  position: relative;
+  height: 1px;
+  margin: 8px 0 4px;
+  background: var(--cs-border);
+}
+
+.ml-bar i {
+  position: absolute;
+  inset: 0;
+  background: var(--cs-accent);
+  transform-origin: left;
+  transform: scaleX(var(--v, 0));
+}
+
+.cs-metric-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ═════ C7 · Estado que evoluciona ═════
+   --ml-s (0 → 1) avanza con los capítulos: el acento pasa de gris
+   (sin presencia digital) al rojo de la marca, y el capítulo de
+   resultados invierte la paleta (dark ⇄ light). */
+html.ml-c7 body.ml-page {
+  --ml-live: color-mix(in oklab, var(--cs-accent) calc(var(--ml-s, 0) * 100%), #8c8c8c);
+}
+
+html.ml-c7 body.ml-page > div {
+  --cs-accent: var(--ml-live);
+}
+
+html.ml-c7 :is(.cs-kicker, .cs-metric-num, .ml-ch-num, .ml-thread__line, .ml-node, .ml-bar i) {
+  transition: color 0.8s, background-color 0.8s, border-color 0.8s, -webkit-text-stroke-color 0.8s;
+}
+
+.ml-state {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: var(--cs-text);
+  background: color-mix(in srgb, var(--cs-bg) 85%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+html.ml-c7 .ml-state {
+  display: inline-flex;
+}
+
+.ml-state i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ml-state-c, #8c8c8c);
+  transition: background-color 0.8s;
+}
+
+/* Banda invertida del capítulo de resultados */
+.ml-chapter--result::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--cs-text);
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+html.ml-c7 .ml-chapter--result {
+  --ml-inv-bg: var(--cs-text);
+  --ml-inv-text: var(--cs-bg);
+  isolation: isolate;
+  padding-bottom: var(--cs-section);
+  margin-top: var(--cs-section);
+}
+
+html.ml-c7 .ml-chapter--result.is-inverted::before {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1s var(--ml-ease-fast), opacity 0.3s;
+}
+
+html.ml-c7 .ml-chapter--result.is-inverted > * {
+  --cs-text: var(--ml-inv-text);
+  --cs-bg: var(--ml-inv-bg);
+  --cs-muted: color-mix(in srgb, var(--ml-inv-text) 72%, transparent);
+  --cs-border: color-mix(in srgb, var(--ml-inv-text) 18%, transparent);
+}
+
+html.ml-c7 .ml-chapter--result :is(.cs-heading, .cs-body, .cs-metric-label, .cs-list li, .ml-ch-name) {
+  transition: color 0.6s;
+}
+
+/* el índice lateral también se invierte sobre la banda */
+html.ml-c7.ml-inv .ml-rail {
+  --ml-inv-bg: var(--cs-text);
+  --ml-inv-text: var(--cs-bg);
+  background: color-mix(in srgb, var(--cs-text) 90%, transparent);
+  border-color: color-mix(in srgb, var(--cs-bg) 18%, transparent);
+}
+
+html.ml-c7.ml-inv .ml-rail > * {
+  --cs-text: var(--ml-inv-text);
+  --cs-bg: var(--ml-inv-bg);
+  --cs-muted: color-mix(in srgb, var(--ml-inv-text) 72%, transparent);
+  --cs-border: color-mix(in srgb, var(--ml-inv-text) 18%, transparent);
+}
+
+/* ═════ Panel del laboratorio ═════ */
+.ml-panel {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 60;
+  width: min(296px, calc(100vw - 32px));
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  color: var(--cs-text);
+}
+
+@media (max-width: 768px) {
+  .ml-panel {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.ml-panel__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  font: 600 14px/18px var(--font-display, "Montserrat", sans-serif);
+  color: var(--cs-text);
+  background: color-mix(in srgb, var(--cs-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.ml-panel__toggle:hover,
+.ml-panel__toggle[aria-expanded="true"] {
+  border-color: var(--cs-accent);
+}
+
+.ml-panel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cs-accent);
+}
+
+.ml-panel__count {
+  color: var(--cs-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ml-panel__body {
+  margin-top: 8px;
+  padding: 12px 16px;
+  border: 1px solid var(--cs-border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--cs-bg) 94%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  max-height: calc(100svh - 200px);
+  overflow-y: auto;
+}
+
+.ml-panel__body[hidden] {
+  display: none;
+}
+
+.ml-panel__intro,
+.ml-panel__rm {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 17px;
+  color: var(--cs-muted);
+}
+
+.ml-panel__rm {
+  margin: 12px 0 0;
+}
+
+.ml-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ml-panel__list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--cs-border);
+}
+
+.ml-panel__list li:first-child {
+  border-top: 0;
+}
+
+.ml-switch {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 600 13px/17px var(--font-display, "Montserrat", sans-serif);
+  color: var(--cs-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.ml-switch__n {
+  width: 22px;
+  color: var(--cs-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ml-switch__track {
+  position: relative;
+  flex: none;
+  width: 28px;
+  height: 16px;
+  margin-left: auto;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.ml-switch__track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cs-muted);
+  transition: transform 0.2s var(--ml-ease-fast), background-color 0.2s;
+}
+
+.ml-switch[aria-checked="true"] .ml-switch__track {
+  border-color: var(--cs-accent);
+  background: color-mix(in srgb, var(--cs-accent) 18%, transparent);
+}
+
+.ml-switch[aria-checked="true"] .ml-switch__track::after {
+  transform: translateX(12px);
+  background: var(--cs-accent);
+}
+
+.ml-go {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cs-accent);
+  text-decoration: none;
+}
+
+.ml-go:hover,
+.ml-go:focus-visible {
+  text-decoration: underline;
+}
+
+.ml-panel__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--cs-border);
+}
+
+.ml-panel__foot button {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  background: none;
+  font: 600 12px/16px var(--font-display, "Montserrat", sans-serif);
+  color: var(--cs-text);
+  cursor: pointer;
+}
+
+.ml-panel__foot button:hover {
+  border-color: var(--cs-accent);
+}
+
+.ml-panel__foot label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--cs-muted);
+}
+
+.ml-panel__foot input {
+  accent-color: var(--cs-accent);
+}
+
+.ml-panel :focus-visible,
+.ml-rail :focus-visible {
+  outline: 1px solid var(--cs-accent);
+  outline-offset: 2px;
+}
+
+/* ═════ prefers-reduced-motion: todo estático ═════ */
+@media (prefers-reduced-motion: reduce) {
+  .ml-zoom__img,
+  .ml-tempo__bars i,
+  .ml-ch-head *,
+  .ml-thread__line,
+  .ml-node,
+  .ml-node__label,
+  .ml-chapter--result::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -583,5 +583,17 @@
   "iridian.proj4.w3": "40",
   "iridian.proj4.w3l": "UI kit components",
   "iridian.proj4.w4": "2",
-  "iridian.proj4.w4l": "Platforms, web and mobile"
+  "iridian.proj4.w4l": "Platforms, web and mobile",
+  "story.nav": "Project chapters",
+  "story.context": "Context",
+  "story.problem": "Problem",
+  "story.research": "Research",
+  "story.role": "My role",
+  "story.method": "Method",
+  "story.concept": "Concept",
+  "story.solution": "Solution",
+  "story.experience": "Experience",
+  "story.tests": "Testing",
+  "story.result": "Results",
+  "story.projects": "Projects"
 }

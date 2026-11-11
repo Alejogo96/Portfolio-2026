@@ -1,0 +1,363 @@
+/* =====================================================
+   Storytelling de las páginas de proyecto (scripts/case-story.js)
+   Conceptos elegidos en el Motion lab (2026-11-11):
+   1 capítulos · 3 hilo conductor · 5 ritmo emocional · 6 cifras.
+   Tokens del caso (--cs-*), Montserrat y líneas de 1 px.
+   ===================================================== */
+
+body[data-page] {
+  --st-slow: 1.6s;
+  --st-fast: 0.45s;
+  --st-ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --st-ease-fast: cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+html.cs-story main.cs-frame {
+  position: relative;
+}
+
+/* ═════ 1 · Capítulos ═════ */
+.cs-chapter {
+  width: var(--cs-col);
+  max-width: none;
+  margin: 0 auto;
+  padding-top: calc(var(--cs-section) * 1.5);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-display, "Montserrat", sans-serif);
+}
+
+.cs-chapter--in-header {
+  width: 100%;
+  padding-top: calc(var(--cs-gap) + var(--cs-section));
+}
+
+/* el título que sigue al capítulo queda pegado a él */
+.cs-chapter + .cs-block {
+  padding-top: var(--cs-gap) !important;
+  margin-top: 0 !important;
+}
+
+body[data-page] .cs-header > .cs-chapter + .cs-heading--context {
+  margin-top: var(--cs-gap);
+}
+
+.cs-chapter__num {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--cs-accent);
+}
+
+.cs-chapter__name {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+.cs-chapter__rule {
+  flex: 1 1 120px;
+  height: 1px;
+  background: var(--cs-border);
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  .cs-chapter {
+    padding-top: calc(var(--cs-section) * 1.5);
+    gap: 12px;
+  }
+
+  .cs-chapter--in-header {
+    padding-top: var(--cs-section);
+  }
+
+  .cs-chapter__num {
+    font-size: 40px;
+  }
+
+  .cs-chapter__name {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+html.cm-on .cs-chapter :is(.cs-chapter__num, .cs-chapter__name) {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.9s var(--st-ease-slow), transform 0.9s var(--st-ease-slow);
+}
+
+html.cm-on .cs-chapter__name {
+  transition-delay: 0.12s;
+}
+
+html.cm-on .cs-chapter .cs-chapter__rule {
+  transform: scaleX(0);
+  transition: transform 1.4s var(--st-ease-slow) 0.2s;
+}
+
+html.cm-on .cs-chapter.is-in :is(.cs-chapter__num, .cs-chapter__name) {
+  opacity: 1;
+  transform: none;
+}
+
+html.cm-on .cs-chapter.is-in .cs-chapter__rule {
+  transform: scaleX(1);
+}
+
+/* Cada capítulo entra con su propia transición:
+   01 fundido (el de case-motion) · 02 desde la izquierda ·
+   03 se construye (escala + recorte) · 04 sube con energía */
+html.cm-on [data-ch="2"] .cm-fade:not(.is-in),
+html.cm-on .cm-fade[data-ch="2"]:not(.is-in) {
+  transform: translate3d(-48px, 0, 0);
+  filter: none;
+}
+
+html.cm-on [data-ch="3"] .cm-fade,
+html.cm-on .cm-fade[data-ch="3"] {
+  clip-path: inset(-0.2em -0.2em -0.2em -0.2em);
+  transition-property: opacity, transform, filter, clip-path;
+}
+
+html.cm-on [data-ch="3"] .cm-fade:not(.is-in),
+html.cm-on .cm-fade[data-ch="3"]:not(.is-in) {
+  transform: scale(0.96);
+  clip-path: inset(100% 0 0 0);
+  filter: none;
+}
+
+html.cm-on [data-ch="4"] .cm-fade:not(.is-in),
+html.cm-on .cm-fade[data-ch="4"]:not(.is-in) {
+  transform: translate3d(0, 64px, 0) scale(0.98);
+  filter: none;
+}
+
+/* Barra flotante de capítulos (desktop) */
+.cs-story-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 40;
+  display: none;
+  transform: translateX(-50%);
+  padding: 4px;
+  border: 1px solid var(--cs-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cs-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-display, "Montserrat", sans-serif);
+}
+
+@media (min-width: 769px) {
+  html.cs-story .cs-story-nav {
+    display: block;
+  }
+}
+
+.cs-story-nav ol {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-story-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+/* solo el capítulo actual muestra su nombre */
+.cs-story-nav__name {
+  display: none;
+}
+
+.cs-story-nav a[aria-current="step"] .cs-story-nav__name {
+  display: inline;
+}
+
+.cs-story-nav a::after {
+  content: "";
+  width: 12px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s var(--st-ease-fast), background-color 0.3s;
+}
+
+.cs-story-nav a:hover,
+.cs-story-nav a:focus-visible,
+.cs-story-nav a[aria-current="step"] {
+  color: var(--cs-text);
+}
+
+.cs-story-nav a[aria-current="step"]::after {
+  width: 28px;
+  background: var(--cs-accent);
+}
+
+.cs-story-nav a:focus-visible {
+  outline: 1px solid var(--cs-accent);
+  outline-offset: 2px;
+}
+
+/* ═════ 3 · Hilo conductor ═════ */
+.cs-thread {
+  position: absolute;
+  left: max(10px, calc((100% - 1152px) / 4));
+  top: var(--t0, 0px);
+  height: var(--th, 0px);
+  width: 1px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cs-thread__track,
+.cs-thread__line {
+  position: absolute;
+  inset: 0;
+}
+
+.cs-thread__track {
+  background: repeating-linear-gradient(to bottom, var(--cs-border) 0 4px, transparent 4px 8px);
+}
+
+.cs-thread__line {
+  background: var(--cs-accent);
+  transform-origin: top;
+  transform: scaleY(var(--tp, 0));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cs-accent) 60%, transparent);
+}
+
+.cs-thread__node {
+  position: absolute;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--cs-border);
+  background: var(--cs-bg);
+  transform: translateY(-50%) scale(0.8);
+  transition: transform 0.4s var(--st-ease-fast), border-color 0.3s, background-color 0.3s;
+}
+
+.cs-thread__node--chapter {
+  left: -4px;
+  width: 9px;
+  height: 9px;
+}
+
+.cs-thread__node.is-on {
+  border-color: var(--cs-accent);
+  background: var(--cs-accent);
+  transform: translateY(-50%) scale(1);
+}
+
+.cs-thread__label {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  font: 600 11px/14px var(--font-display, "Montserrat", sans-serif);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+  opacity: 0;
+  transform: translate(-50%, 8px) rotate(180deg);
+  transition: opacity 0.5s, transform 0.5s var(--st-ease-fast);
+}
+
+.cs-thread__node.is-on .cs-thread__label {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(180deg);
+}
+
+/* las etiquetas solo caben con margen lateral amplio */
+@media (max-width: 1279px) {
+  .cs-thread__label {
+    display: none;
+  }
+}
+
+/* ═════ 5 · Ritmo emocional ═════ */
+html.cm-on [data-tempo="slow"] :is(.cm-fade, .cm-title),
+html.cm-on :is(.cm-fade, .cm-title)[data-tempo="slow"] {
+  transition-duration: var(--st-slow);
+  transition-timing-function: var(--st-ease-slow);
+  transition-delay: calc(var(--d, 0s) * 2.4);
+}
+
+html.cm-on [data-tempo="fast"] :is(.cm-fade, .cm-title),
+html.cm-on :is(.cm-fade, .cm-title)[data-tempo="fast"] {
+  transition-duration: var(--st-fast);
+  transition-timing-function: var(--st-ease-fast);
+  transition-delay: calc(var(--d, 0s) * 0.5);
+}
+
+.cs-w {
+  display: inline-block;
+  white-space: pre;
+}
+
+html.cm-on .cs-lead.is-split .cs-w {
+  opacity: 0.12;
+  transition: opacity 0.9s var(--st-ease-slow);
+  transition-delay: calc(var(--i) * 70ms);
+}
+
+html.cm-on .cs-lead.is-split.is-read .cs-w {
+  opacity: 1;
+}
+
+/* ═════ 6 · Cifras ═════ */
+body[data-page] :is(.cs-metric-num, .cs-stat-num) {
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-metric-bar {
+  display: block;
+  position: relative;
+  height: 1px;
+  margin: 8px 0 4px;
+  background: var(--cs-border);
+}
+
+.cs-metric-bar i {
+  position: absolute;
+  inset: 0;
+  background: var(--cs-accent);
+  transform-origin: left;
+  transform: scaleX(var(--v, 0));
+}
+
+/* ═════ prefers-reduced-motion ═════ */
+@media (prefers-reduced-motion: reduce) {
+  .cs-chapter *,
+  .cs-thread__line,
+  .cs-thread__node,
+  .cs-thread__label,
+  .cs-story-nav a::after {
+    transition: none !important;
+  }
+}

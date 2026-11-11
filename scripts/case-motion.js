@@ -6,6 +6,8 @@
  * Sin JS o con prefers-reduced-motion todo queda visible y estático.
  */
 import Lenis from "lenis";
+import { initCaseBg } from "./case-bg.js";
+import { initStory } from "./case-story.js";
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -137,6 +139,8 @@ function waves() {
 function init() {
   const medias = wrapImages();
   waves();
+  initCaseBg();
+  initStory();
   if (reduced) return;
   document.documentElement.classList.add("cm-on");
 
