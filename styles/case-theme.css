@@ -890,3 +890,20 @@ body[data-page] .cs-meta {
   text-transform: uppercase;
   color: var(--cs-accent);
 }
+
+/* Tres capturas de benchmark en una fila (Qualnet) */
+body[data-page] .cs-img-grid--trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+body[data-page] .cs-img-grid--trio .cs-media {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-img-grid--trio {
+    grid-template-columns: 1fr;
+  }
+}

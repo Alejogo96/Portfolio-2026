@@ -12,6 +12,32 @@ import { initStory } from "./case-story.js";
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
+/* Imágenes altas: en desktop limitan su alto (no ocupan 2 pantallas) conservando
+   la proporción. El ancho del marco se ajusta; clic abre el lightbox a tamaño completo. */
+const MAX_IMG_H = 680;
+function capHeight(img, wrap) {
+  if (img.closest(".cs-cover")) return;
+  const full = !!img.closest(".cs-img-full");
+  const phones = !!img.closest(".cs-img-grid--phones");
+  const apply = () => {
+    if (!window.matchMedia("(min-width: 769px)").matches) {
+      wrap.style.maxWidth = "";
+      return;
+    }
+    const w = img.naturalWidth || Number(img.getAttribute("width"));
+    const h = img.naturalHeight || Number(img.getAttribute("height"));
+    if (!w || !h) return;
+    const maxH = Number(img.closest("[data-maxh]")?.dataset.maxh) || (phones ? 600 : MAX_IMG_H);
+    const colW = full ? 1440 : phones ? 340 : 1152;
+    if ((h / w) * colW <= maxH) return; // ya es baja: no se toca
+    wrap.style.maxWidth = Math.round((w / h) * maxH) + "px";
+    wrap.style.marginInline = "auto";
+  };
+  apply();
+  img.addEventListener("load", apply);
+  window.matchMedia("(min-width: 769px)").addEventListener("change", apply);
+}
+
 function wrapImages() {
   const medias = [];
   document
@@ -21,6 +47,7 @@ function wrapImages() {
       wrap.className = "cs-media";
       img.parentNode.insertBefore(wrap, img);
       wrap.appendChild(img);
+      capHeight(img, wrap);
       medias.push(wrap);
     });
   return medias;
