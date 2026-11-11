@@ -46,7 +46,7 @@ const CHAPTERS = {
   iridian: [[0, "context"], [2, "method"], [4, "projects"]],
   jumbomana: [[0, "context"], [1, "problem"], [3, "solution"], [4, "tests"]],
   paramo: [[0, "context"], [1, "concept"], [3, "experience"]],
-  qualnet: [[0, "context"], [2, "role"], [6, "method"]],
+  qualnet: [[0, "context"], [2, "role"], [6, "method"], [7, "projects"]],
   spotify: [[0, "context"], [1, "problem"], [2, "method"], [4, "solution"]],
 };
 

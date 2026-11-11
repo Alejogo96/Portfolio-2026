@@ -870,3 +870,23 @@ html[data-bg="g2"] body[data-page]::after { display: none; }
 .bg-switch button[aria-pressed="true"] { background: #fff; color: #000; font-weight: 600; }
 @media (max-width: 768px) { .bg-switch { top: 8px; left: 8px; right: 8px; flex-wrap: nowrap; overflow-x: auto; font-size: 11px; }
   .bg-switch button { padding: 0 8px; white-space: nowrap; } }
+
+/* ── Subtítulo de etapa dentro de un proyecto (p. ej. Qualnet · Chiffrement)
+   y ficha corta bajo el título de sección ── */
+body[data-page] .cs-subheading {
+  margin: 12px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cs-accent);
+}

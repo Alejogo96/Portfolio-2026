@@ -266,6 +266,35 @@
 </ol>
 <div class="cs-loop"><span class="cs-loop__icon" aria-hidden="true">↻</span><p class="cs-loop__text" data-i18n="qualnet.loop">Le cycle recommence toutes les deux semaines : l'incrément livré et les retours des clients alimentent le backlog du sprint suivant.</p></div>
 </div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="qualnet.chiff.h">Projet · Chiffrement des documents</h2>
+<p class="cs-meta" data-i18n="qualnet.chiff.meta">Qualnet DYNAMIC · Cadrage lancé le 19/10/2026 (sprint 323) · Méthode de cadrage 360°</p>
+<p class="cs-body" data-i18n="qualnet.chiff.p1">Certains clients, soumis à des règles strictes sur les pièces jointes, doivent empêcher toute personne non autorisée d'accéder aux fichiers stockés sur leur serveur. L'objectif : qu'un administrateur Qualnet DYNAMIC puisse activer le chiffrement des pièces jointes avec une option globale Oui / Non, en sachant avant et après l'activation ce qui change, et en pouvant vérifier que le chiffrement est bien actif.</p>
+<h3 class="cs-subheading" data-i18n="qualnet.chiff.s1">01 · Cadrage 360°</h3>
+<p class="cs-body" data-i18n="qualnet.chiff.s1p">J'ai cadré le sujet en une page partagée avec l'équipe : objectifs, pourquoi, pour qui, KPI, risques et dépendances.</p>
+<ul class="cs-list"><li data-i18n="qualnet.chiff.s1l1">Pour qui : les administrateurs DYNAMIC (support Qualnet ou admin client), sans changement attendu pour les utilisateurs finaux.</li><li data-i18n="qualnet.chiff.s1l2">KPI : nombre de clients qui activent l'option à 3 et 6 mois, et zéro ticket « pièce jointe illisible » ou « option sans effet ».</li><li data-i18n="qualnet.chiff.s1l3">Risques : perte ou mauvaise gestion des clés, documents déjà déposés, durée du traitement et retour à « Non ».</li></ul>
+</div>
+<div class="cs-img-box"><img width="1600" height="1744" alt="Cadrage 360° du chiffrement des documents" data-i18n-alt="qualnet.chiff.img.cadrage" loading="lazy" src="./public/chiffrement-cadrage.webp"/></div>
+<div class="cs-block">
+<h3 class="cs-subheading" data-i18n="qualnet.chiff.s2">02 · Benchmark de 5 solutions</h3>
+<p class="cs-body" data-i18n="qualnet.chiff.s2p">Pour décider quelle modale proposer, j'ai analysé comment Nextcloud, Dropbox, Windows BitLocker, GitHub et Amazon S3 présentent une action à fort impact : ce qu'on observe, ce qu'on aime et ce qu'on aime moins.</p>
+<ul class="cs-list"><li data-i18n="qualnet.chiff.s2l1">Indispensable : dire le périmètre (nouveaux documents ou aussi les existants) et les conséquences avant de valider.</li><li data-i18n="qualnet.chiff.s2l2">Des boutons qui décrivent l'action (« Activer le chiffrement ») plutôt que Oui / Non.</li><li data-i18n="qualnet.chiff.s2l3">Retenu : le récapitulatif d'impact de Nextcloud et le choix du périmètre de BitLocker.</li></ul>
+</div>
+<div class="cs-img-box"><img width="1800" height="1522" alt="Synthèse du benchmark : quelle modale proposer ?" data-i18n-alt="qualnet.chiff.img.bench" loading="lazy" src="./public/chiffrement-benchmark.webp"/></div>
+<div class="cs-img-grid cs-img-grid--duo"><img width="1400" height="1623" alt="Benchmark Nextcloud" data-i18n-alt="qualnet.chiff.img.nextcloud" loading="lazy" src="./public/chiffrement-nextcloud.webp"/><img width="1400" height="1442" alt="Benchmark Windows BitLocker" data-i18n-alt="qualnet.chiff.img.bitlocker" loading="lazy" src="./public/chiffrement-bitlocker.webp"/></div>
+<div class="cs-img-grid cs-img-grid--duo"><img width="1400" height="1961" alt="Benchmark Dropbox" data-i18n-alt="qualnet.chiff.img.dropbox" loading="lazy" src="./public/chiffrement-dropbox.webp"/><img width="1400" height="1353" alt="Benchmark GitHub" data-i18n-alt="qualnet.chiff.img.github" loading="lazy" src="./public/chiffrement-github.webp"/></div>
+<div class="cs-img-grid cs-img-grid--duo"><img width="1400" height="1405" alt="Benchmark Amazon S3" data-i18n-alt="qualnet.chiff.img.s3" loading="lazy" src="./public/chiffrement-s3.webp"/></div>
+<div class="cs-block">
+<h3 class="cs-subheading" data-i18n="qualnet.chiff.s3">03 · Story map et flux proposé</h3>
+<p class="cs-body" data-i18n="qualnet.chiff.s3p">J'ai cartographié le parcours de l'administrateur en 8 étapes, de l'accès au paramétrage à la vérification du chiffrement, puis le flux complet : écrans, modales, actions et statuts. 10 points de friction ont été repérés et priorisés avant de maquetter, à valider avec l'équipe de développement.</p>
+</div>
+<div class="cs-img-box"><img width="3200" height="796" alt="Story map du parcours de chiffrement" data-i18n-alt="qualnet.chiff.img.storymap" loading="lazy" src="./public/chiffrement-storymap.webp"/></div>
+<div class="cs-img-box"><img width="3200" height="1169" alt="Flux proposé avec les points de friction" data-i18n-alt="qualnet.chiff.img.flux" loading="lazy" src="./public/chiffrement-flux.webp"/></div>
+<div class="cs-block">
+<h3 class="cs-subheading" data-i18n="qualnet.chiff.s4">04 · Solution retenue</h3>
+<p class="cs-body" data-i18n="qualnet.chiff.s4p">Les maquettes couvrent chaque état de l'option : non chiffré, en cours de chiffrement, chiffré, échec du traitement et vérification. Chaque écran est accompagné de notes pour les développeurs : modales d'impact, relance après un échec, badge de statut et infobulle de suivi.</p>
+</div>
+<div class="cs-img-box"><img width="3200" height="1695" alt="Maquettes de la solution retenue avec notes pour les développeurs" data-i18n-alt="qualnet.chiff.img.maquettes" loading="lazy" src="./public/chiffrement-maquettes.webp"/></div>
 <nav aria-label="Navigation entre projets" class="project-nav">
 <a class="project-nav-link project-nav-link--prev" href="../freelance/index.html">
 <span class="project-nav-label" data-i18n="ui.prev">← Projet précédent</span>
