@@ -65,7 +65,9 @@ function chapters() {
 }
 const colours = () => {
   const cs = getComputedStyle(document.body);
-  return ["--cs-accent", "--cs-accent2", "--cs-text", "--cs-bg"].map((v) => cs.getPropertyValue(v).trim());
+  /* En el Home no hay tokens --cs-*: se usan los de home-v2.css */
+  return [["--cs-accent", "--accent"], ["--cs-accent2", "--accent"], ["--cs-text", "--text"], ["--cs-bg", "--bg"]]
+    .map(([a, b]) => cs.getPropertyValue(a).trim() || cs.getPropertyValue(b).trim());
 };
 const docY = (el) => el.getBoundingClientRect().top + window.scrollY;
 
@@ -705,11 +707,18 @@ function modeFlow(variant) {
                cerca del cursor los puntos crecen un poco (lupa).
    g2 Lignes : líneas horizontales de 1 px, como curvas de nivel, que
                ondulan despacio y se desplazan con el scroll. */
-function modeGeneric(variant) {
+function modeGeneric(variant, opts = {}) {
   const canvas = document.createElement("canvas");
   canvas.className = "bgC";
   canvas.setAttribute("aria-hidden", "true");
-  document.body.prepend(canvas);
+  if (opts.before) opts.before.parentNode.insertBefore(canvas, opts.before);
+  else document.body.prepend(canvas);
+  /* Home: la trama aparece al dejar atrás el hero (que tiene sus ondas) */
+  const fade = () => {
+    if (!opts.fadeAfter) return;
+    const h = opts.fadeAfter.offsetHeight || 1;
+    canvas.style.setProperty("--bg-k", clamp((window.scrollY - h * 0.35) / (h * 0.45), 0, 1).toFixed(3));
+  };
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -769,6 +778,7 @@ function modeGeneric(variant) {
     t += 1;
     lens.x += (mouse.x - lens.x) * 0.12;
     lens.y += (mouse.y - lens.y) * 0.12;
+    fade();
     ctx.clearRect(0, 0, W, H);
     variant === "g1" ? grid() : lines();
     ctx.globalAlpha = 1;
@@ -801,6 +811,13 @@ function switcher(mode) {
     location.href = u.toString();
   });
   document.body.appendChild(box);
+}
+
+/* Home: mismo fondo G1 Grille que los casos, detrás de las secciones */
+export function initHomeBg() {
+  const main = document.getElementById("main");
+  if (document.body.dataset.page !== "home" || !main) return;
+  modeGeneric("g1", { before: main, fadeAfter: document.getElementById("home") });
 }
 
 export function initCaseBg() {
