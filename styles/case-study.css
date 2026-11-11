@@ -443,7 +443,7 @@ html.cm-on .cs-img-full .cs-media {
 }
 
 html.cm-on .cs-media img {
-  transform: translate3d(0, calc(var(--py) * 1%), 0) scale(calc(1.14 - 0.08 * var(--p)));
+  transform: scale(calc(1.06 - 0.06 * var(--p)));
   will-change: transform;
 }
 

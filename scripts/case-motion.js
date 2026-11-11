@@ -20,6 +20,8 @@ const PHONE_IMG_H = 460;
 const FULL_IMG_H = 560;
 function capHeight(img, wrap) {
   if (img.closest(".cs-cover")) return;
+  const g0 = img.closest(".cs-img-grid");
+  if (g0 && !g0.classList.contains("cs-img-grid--phones")) return; // las rejillas se ordenan en filas (justifyGrids)
   const full = !!img.closest(".cs-img-full");
   const phones = !!img.closest(".cs-img-grid--phones");
   const grid = img.closest(".cs-img-grid");
@@ -61,6 +63,38 @@ function wrapImages() {
       medias.push(wrap);
     });
   return medias;
+}
+
+/* Rejillas: filas de 2 (3 en trio, 4 en quad) donde todas las imágenes de la fila
+   tienen la misma altura y ocupan todo el ancho sin recortarse ni dejar huecos.
+   El ancho de la fila se limita para no pasar de data-maxh (440 por defecto) ni del tamaño real. */
+function justifyGrids() {
+  document.querySelectorAll(".cs-img-grid:not(.cs-img-grid--phones)").forEach((grid) => {
+    const n = grid.classList.contains("cs-img-grid--quad") ? 4 : grid.classList.contains("cs-img-grid--trio") ? 3 : 2;
+    const items = [...grid.children].filter((c) => c.classList.contains("cs-media") || c.tagName === "FIGURE");
+    if (!items.length) return;
+    const maxH0 = Number(grid.dataset.maxh) || (n === 4 ? 360 : GRID_IMG_H);
+    grid.classList.add("cs-justified");
+    for (let i = 0; i < items.length; i += n) {
+      const row = document.createElement("div");
+      row.className = "cs-row";
+      const part = items.slice(i, i + n);
+      grid.insertBefore(row, part[0]);
+      let sum = 0;
+      let maxH = maxH0;
+      part.forEach((m) => {
+        const img = m.querySelector("img");
+        const w = Number(img.getAttribute("width")) || 1;
+        const h = Number(img.getAttribute("height")) || 1;
+        const k = /@2x/.test(img.getAttribute("src") || "") ? 2 : 1;
+        sum += w / h;
+        maxH = Math.min(maxH, h / k);
+        m.style.setProperty("--a", (w / h).toFixed(4));
+        row.appendChild(m);
+      });
+      row.style.setProperty("--row-max", Math.round(sum * maxH + 20 * (part.length - 1)) + "px");
+    }
+  });
 }
 
 function tagText() {
@@ -175,6 +209,7 @@ function waves() {
 
 function init() {
   const medias = wrapImages();
+  justifyGrids();
   waves();
   initCaseBg();
   initStory();
@@ -203,7 +238,13 @@ function init() {
   const visible = new Set();
   const mio = new IntersectionObserver(
     (entries) => {
-      entries.forEach((en) => (en.isIntersecting ? visible.add(en.target) : visible.delete(en.target)));
+      entries.forEach((en) => {
+        if (en.isIntersecting) visible.add(en.target);
+        else {
+          visible.delete(en.target);
+          if (en.boundingClientRect.top < window.innerHeight) en.target.style.setProperty("--p", "1"); // ya pasó: sin recorte
+        }
+      });
       update();
     },
     { rootMargin: "20% 0px 20% 0px" }
@@ -222,7 +263,7 @@ function init() {
     });
     visible.forEach((m) => {
       const r = m.getBoundingClientRect();
-      const p = clamp((vh * 0.98 - r.top) / (vh * 0.55), 0, 1);
+      const p = r.bottom <= vh || r.top < vh * 0.43 ? 1 : clamp((vh * 0.98 - r.top) / (vh * 0.55), 0, 1); // visible entera = sin recorte
       const off = clamp((r.top + r.height / 2 - vh / 2) / vh, -1, 1);
       m.style.setProperty("--p", p.toFixed(3));
       m.style.setProperty("--py", (off * -3).toFixed(2));
@@ -232,6 +273,7 @@ function init() {
   /* Scroll suave */
   const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1, smoothWheel: true });
   lenis.on("scroll", update);
+  window.addEventListener("scroll", update, { passive: true });
   function raf(t) {
     lenis.raf(t);
     requestAnimationFrame(raf);

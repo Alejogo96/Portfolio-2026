@@ -891,19 +891,50 @@ body[data-page] .cs-meta {
   color: var(--cs-accent);
 }
 
-/* Tres capturas de benchmark en una fila (Qualnet) */
-body[data-page] .cs-img-grid--trio {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
+/* Rejillas en filas (justifyGrids en case-motion.js): misma altura por fila, sin recortes ni huecos */
+body[data-page] .cs-img-grid.cs-justified {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
-body[data-page] .cs-img-grid--trio .cs-media {
+body[data-page] .cs-row {
+  display: flex;
+  gap: 20px;
   width: 100%;
+  align-items: flex-start;
+}
+
+body[data-page] .cs-row > * {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+@media (min-width: 769px) {
+  body[data-page] .cs-row {
+    max-width: var(--row-max);
+  }
+
+  body[data-page] .cs-row > * {
+    flex: var(--a, 1) 1 0;
+  }
 }
 
 @media (max-width: 768px) {
-  body[data-page] .cs-img-grid--trio {
-    grid-template-columns: 1fr;
+  body[data-page] .cs-img-grid--quad .cs-row,
+  body[data-page] .cs-img-grid--trio .cs-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  body[data-page] .cs-img-grid--quad .cs-row > *,
+  body[data-page] .cs-img-grid--trio .cs-row > * {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  body[data-page] .cs-img-grid.cs-justified:not(.cs-img-grid--quad):not(.cs-img-grid--trio) .cs-row {
+    flex-direction: column;
+    gap: 20px;
   }
 }
