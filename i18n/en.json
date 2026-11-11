@@ -634,5 +634,7 @@
   "qualnet.chiff.img.flux": "Proposed flow with friction points",
   "qualnet.chiff.img.maquettes": "Mock-ups of the chosen solution with developer notes",
   "section.exp.intro": "Real engagements, in a team or solo: software products, platforms and brand, where I designed, prioritised and delivered, from user need to interface.",
-  "section.proj.intro": "Personal and academic projects born from curiosity: concepts, prototypes and experiences where I explore AI, heritage and immersive design, free of client constraints."
+  "section.proj.intro": "Personal and academic projects born from curiosity: concepts, prototypes and experiences where I explore AI, heritage and immersive design, free of client constraints.",
+  "qualnet.ai.l6": "Rolling out AI with the team across cross-functional processes (product, design, development and QA).",
+  "qualnet.design.l4": "Developing new features and integrating AI into the platform."
 }

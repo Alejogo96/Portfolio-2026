@@ -634,5 +634,7 @@
   "qualnet.chiff.img.flux": "Flujo propuesto con los puntos de fricción",
   "qualnet.chiff.img.maquettes": "Maquetas de la solución elegida con notas para los desarrolladores",
   "section.exp.intro": "Experiencias reales, en equipo o en solitario: producto de software, plataformas y marca, donde diseñé, prioricé y entregué, de la necesidad del usuario a la interfaz.",
-  "section.proj.intro": "Proyectos personales y académicos nacidos de la curiosidad: conceptos, prototipos y experiencias donde exploro la IA, el patrimonio y lo inmersivo, sin las limitaciones de un cliente."
+  "section.proj.intro": "Proyectos personales y académicos nacidos de la curiosidad: conceptos, prototipos y experiencias donde exploro la IA, el patrimonio y lo inmersivo, sin las limitaciones de un cliente.",
+  "qualnet.ai.l6": "Implementación interna de la IA con el equipo en procesos transversales (producto, diseño, desarrollo y QA).",
+  "qualnet.design.l4": "Desarrollo de nuevas funcionalidades e integración de la IA en la plataforma."
 }
