@@ -356,7 +356,7 @@ body {
 /* Texto descriptivo bajo el título de sección (Home) */
 .block__title--xl + .block__intro {
   margin: -1.25rem 0 2rem;
-  max-width: 62ch;
+  max-width: none; /* mismo ancho que la grilla de cards */
   font-size: 0.875rem;
   line-height: 1.65;
   color: var(--muted, var(--text));
