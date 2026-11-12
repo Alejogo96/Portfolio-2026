@@ -6,7 +6,7 @@
 <script>try{var t=localStorage.getItem("pf:theme");document.documentElement.dataset.theme=(t==="light"||t==="dark")?t:"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 <meta content="initial-scale=1, width=device-width" name="viewport"/>
 <title>Spotify, Cas d'étude · Alejandro Guevara</title>
-<meta content="Cas d'étude Spotify : conception de 3 nouvelles fonctionnalités pour l'application de streaming musical à travers un processus UX structuré." name="description"/>
+<meta content="Cas d'étude Spotify : trois fonctionnalités conçues à partir de l'histoire d'une utilisatrice, de l'enquête aux tests." name="description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://portfolio-alejandroguevara.vercel.app/projects/spotify/index.html" property="og:url"/>
 <meta content="Spotify, Cas d'étude · Alejandro Guevara" property="og:title"/>
@@ -173,100 +173,137 @@
 </section>
 <main class="cs-frame">
 <header class="cs-header">
-<h1 class="cs-title" data-i18n="spotify.t002">Spotify</h1>
-<p class="cs-role" data-i18n="spotify.t003">3 nouvelles fonctionnalités UX</p>
-<p class="cs-kicker" data-i18n="spotify.t001">UX Designer · 2025</p>
+<h1 class="cs-title" data-i18n="spotify.title">Spotify</h1>
+<p class="cs-role" data-i18n="spotify.role">Trois fonctionnalités nées d'une seule histoire</p>
+<p class="cs-kicker" data-i18n="spotify.kicker">UX/UI Designer · Bootcamp Coderhouse · 2025</p>
 <figure class="cs-cover"><img alt="Spotify, aperçu du projet" decoding="async" fetchpriority="high" height="720" src="../../public/cover-spotify.webp" width="1200"/></figure>
 <h2 class="cs-heading cs-heading--context" data-i18n="andy-electric.t011">Contexte</h2>
-<p class="cs-body" data-i18n="spotify.t004">J'ai conçu trois nouvelles fonctionnalités en suivant un processus de conception UX structuré. Mon approche impliquait des phases d'analyse, de prototypage et de tests utilisateurs, dans le but d'optimiser l'expérience et de répondre aux besoins des utilisateurs.</p>
+<p class="cs-body cs-lead"><strong data-i18n="spotify.ctx.lead">Et si Spotify écoutait aussi ses auditeurs ?</strong></p>
+<p class="cs-body" data-i18n="spotify.ctx.body">Projet du bootcamp UX/UI de Coderhouse : repenser trois moments de l'application Spotify à partir de ce que vivent vraiment ses utilisateurs. J'ai suivi tout le processus, de l'enquête aux écrans finaux, et je le raconte à travers l'histoire d'une utilisatrice, Daniela.</p>
+<p class="cs-body" data-i18n="spotify.ctx.role">Mon rôle :</p>
+<ul class="cs-list">
+<li data-i18n-html="spotify.ctx.r1">Enquête et analyse des réponses</li>
+<li data-i18n-html="spotify.ctx.r2">Persona et user journey</li>
+<li data-i18n-html="spotify.ctx.r3">Architecture de l'information</li>
+<li data-i18n-html="spotify.ctx.r4">Task flows, user flows et wireflows</li>
+<li data-i18n-html="spotify.ctx.r5">Wireframes, interface et prototype</li>
+<li data-i18n-html="spotify.ctx.r6">Tests d'utilisabilité</li>
+</ul>
 <div class="cs-tools">
-<div class="cs-tool"><img alt="Slack" data-i18n-alt="spotify.t031" src="./public/icon-slack.svg"/></div>
-<div class="cs-tool"><img alt="Figma" data-i18n-alt="spotify.t032" src="./public/icon-figma.svg"/></div>
-<div class="cs-tool"><img alt="Optimal Workshop" data-i18n-alt="spotify.t033" src="./public/icon-optimal.svg"/></div>
+<div class="cs-tool"><img alt="Slack" src="./public/icon-slack.svg"/></div>
+<div class="cs-tool"><img alt="Figma" src="./public/icon-figma.svg"/></div>
+<div class="cs-tool"><img alt="Optimal Workshop" src="./public/icon-optimal.svg"/></div>
 </div>
 </header>
-<div class="cs-img-grid cs-img-grid--phones">
-<img width="786" height="1704" alt="Spotify, écran bibliothèque" data-i18n-alt="spotify.t034" loading="lazy" src="./public/phone-biblioteca.webp"/>
-<img width="786" height="1704" alt="Spotify, écran chanson" data-i18n-alt="spotify.t035" loading="lazy" src="./public/phone-cancion.webp"/>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.research.h">Ce que disent les auditeurs</h2>
+<p class="cs-body" data-i18n="spotify.research.b">Tout commence par une enquête auprès de 11 utilisateurs de 25 à 31 ans. L'application leur plaît, mais trois manques reviennent sans cesse.</p>
+<ul class="cs-list cs-list--strong">
+<li data-i18n-html="spotify.research.l1"><strong>Donner son avis</strong>, la plupart aimeraient noter et commenter ce qu'ils viennent d'écouter.</li>
+<li data-i18n-html="spotify.research.l2"><strong>Trouver de l'aide</strong>, beaucoup ont eu du mal à trouver une information technique dans l'application.</li>
+<li data-i18n-html="spotify.research.l3"><strong>Ranger ce qu'on aime</strong>, enregistrer et classer son contenu demande trop d'étapes.</li>
+<li data-i18n-html="spotify.research.l4"><strong>100 %</strong> utilisent la version payante : chaque friction touche des abonnés.</li>
+</ul>
+<p class="cs-body cs-lead"><strong data-i18n="spotify.research.lead">Le problème n'est pas l'application, c'est ce qui manque autour de l'écoute.</strong></p>
 </div>
 <div class="cs-sep"></div>
 <div class="cs-block">
-<h2 class="cs-heading" data-i18n="spotify.t005">Utilisateurs de l'application</h2>
-<p class="cs-body" data-i18n="spotify.t006">Les utilisateurs de l'application signalent des problèmes concernant l'évaluation du contenu, la recherche et la classification du contenu enregistré, ainsi que le besoin d'options d'aide au sein de l'application.</p>
-<ul class="cs-list cs-list--strong">
-<li data-i18n="spotify.t007">11 utilisateurs ont entre 25 et 31 ans.</li>
-<li data-i18n="spotify.t008">84 % aimeraient laisser un commentaire sur le contenu qu'ils consomment.</li>
-<li data-i18n="spotify.t009">75 % ont eu des difficultés à trouver des informations techniques.</li>
-<li data-i18n="spotify.t010">100 % utilisent la version payante.</li>
-<li data-i18n="spotify.t011">85 % sont satisfaits des fonctionnalités de l'application.</li>
+<h2 class="cs-heading" data-i18n="spotify.persona.h">Rencontrer Daniela</h2>
+<p class="cs-body" data-i18n="spotify.persona.b1">Pour donner un visage à ces réponses, j'ai créé Daniela Salazar, 28 ans, ingénieure environnementale et étudiante en master. Sa carte enregistrée pose problème, son abonnement mensuel est suspendu, et elle veut le réactiver avant de prendre l'avion pour écouter sa musique pendant le vol.</p>
+<p class="cs-body" data-i18n="spotify.persona.b2">Son user journey montre où l'expérience se casse : aucune aide dans l'application, une recherche sur le web, un changement d'appareil, un tutoriel à suivre pas à pas, puis une nouvelle connexion. Son humeur chute à chaque étape.</p>
+<p class="cs-body cs-lead"><strong data-i18n="spotify.persona.lead">Chaque fois que Daniela quitte Spotify, l'expérience se dégrade.</strong></p>
+</div>
+<div class="cs-img-box cs-img-box--wide">
+<img width="2000" height="1463" alt="User journey de Daniela : support, changement de site, pas à pas, moyen de paiement" data-i18n-alt="spotify.alt.journey" loading="lazy" src="./public/desktop-parcours.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.tasks.h">Trois moments, trois tâches</h2>
+<p class="cs-body" data-i18n="spotify.tasks.b">L'enquête et le parcours de Daniela ont donné trois tâches à concevoir, chacune liée à un manque identifié :</p>
+<ul class="cs-list">
+<li data-i18n-html="spotify.tasks.l1"><strong>Changer son moyen de paiement</strong> sans quitter l'application.</li>
+<li data-i18n-html="spotify.tasks.l2"><strong>Noter et commenter un podcast</strong> qu'elle vient d'écouter, et lire l'avis des autres.</li>
+<li data-i18n-html="spotify.tasks.l3"><strong>Enregistrer une chanson</strong> dans la playlist de son choix, en quelques gestes.</li>
+</ul>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.ia.h">Remettre de l'ordre</h2>
+<p class="cs-body" data-i18n="spotify.ia.b">Avant de dessiner, j'ai revu l'architecture de l'information. Le profil regroupe désormais toute la configuration, du moyen de paiement au support technique, et la bibliothèque rassemble playlists, podcasts, albums et contenu téléchargé. L'objectif : que chaque réponse se trouve là où l'utilisateur la cherche.</p>
+</div>
+<div class="cs-img-box cs-img-box--wide">
+<img width="2000" height="1463" alt="Nouvelle architecture de l'information de Spotify" data-i18n-alt="spotify.alt.ia" loading="lazy" src="./public/desktop-architecture.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.flow.h">Du flux à l'écran</h2>
+<p class="cs-body" data-i18n="spotify.flow.b">Chaque tâche a suivi le même chemin, du plus abstrait au plus concret :</p>
+<ul class="cs-list">
+<li data-i18n-html="spotify.flow.l1"><strong>Task flow</strong>, les étapes idéales : Daniela finit un épisode, choisit une note et publie son avis.</li>
+<li data-i18n-html="spotify.flow.l2"><strong>User flow</strong>, les décisions et les chemins possibles : ajouter un commentaire ou envoyer seulement la note.</li>
+<li data-i18n-html="spotify.flow.l3"><strong>Wireflow</strong>, ces mêmes décisions posées sur des écrans basse fidélité.</li>
+<li data-i18n-html="spotify.flow.l4"><strong>Wireframes</strong>, les écrans clés de chaque tâche, comme le formulaire de carte, avant de passer à l'interface.</li>
 </ul>
 </div>
 <div class="cs-img-box cs-img-box--wide">
-<img width="2000" height="1463" alt="Parcours utilisateur Spotify" data-i18n-alt="spotify.t036" loading="lazy" src="./public/desktop-parcours.webp"/>
+<img width="2000" height="2456" alt="Task flow, user flow et wireflow : noter un podcast" data-i18n-alt="spotify.alt.flows" loading="lazy" src="./public/desktop-flows.webp"/>
+</div>
+<div class="cs-img-box cs-img-box--wide">
+<img width="1606" height="696" alt="Wireframes basse fidélité du changement de moyen de paiement" data-i18n-alt="spotify.alt.wire" loading="lazy" src="./public/screenshot-tests-1.webp"/>
 </div>
 <div class="cs-sep"></div>
 <div class="cs-block">
-<h2 class="cs-heading" data-i18n="spotify.t012">Chemins de navigation logiques</h2>
+<h2 class="cs-heading" data-i18n="spotify.tests.h">Tester avec de vrais utilisateurs</h2>
+<p class="cs-body" data-i18n="spotify.tests.b">Le prototype a été testé avec 5 participants de 25 à 35 ans, tous actifs et à l'aise avec la technologie : une designer industrielle, un cinéaste, un coach sportif, un chef et une graphiste.</p>
+<p class="cs-body" data-i18n="spotify.tests.goals">Trois objectifs guidaient les sessions :</p>
 <ul class="cs-list">
-<li data-i18n-html="spotify.t013"><strong>Architecture de l'information</strong>, Structure claire et évolutive pour la navigation, en donnant la priorité à la découverte du contenu, à l'accessibilité et à l'autonomie des utilisateurs.</li>
-<li data-i18n-html="spotify.t014"><strong>Cartographie des flux de tâches</strong>, Objectifs utilisateur spécifiques visualisés en séquences étape par étape pour optimiser l'efficacité et identifier les points de friction.</li>
-<li data-i18n-html="spotify.t015"><strong>Conception de flux utilisateur</strong>, Flux basés sur des décisions intégrant conditions et validations pour modéliser un comportement réaliste.</li>
-<li data-i18n-html="spotify.t016"><strong>Prototypage Wireflow</strong>, Wireframes basse fidélité connectant des écrans pour visualiser comment les utilisateurs se déplacent dans l'interface.</li>
+<li data-i18n-html="spotify.tests.l1"><strong>Valider</strong>, vérifier si nos hypothèses sur le comportement des utilisateurs tiennent face au prototype.</li>
+<li data-i18n-html="spotify.tests.l2"><strong>Analyser</strong>, comprendre comment ils interagissent avec le produit et repérer les points à améliorer.</li>
+<li data-i18n-html="spotify.tests.l3"><strong>Apprendre</strong>, mieux connaître nos utilisateurs et leur façon d'utiliser le produit repensé.</li>
 </ul>
 </div>
-<div class="cs-img-grid cs-img-grid--wide cs-img-grid--stack">
-<img width="2000" height="1463" alt="Architecture de l'information, Spotify" data-i18n-alt="spotify.t037" loading="lazy" src="./public/desktop-architecture.webp"/>
-<img width="2000" height="2456" alt="User flows et wireflows, Spotify" data-i18n-alt="spotify.t038" loading="lazy" src="./public/desktop-flows.webp"/>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.pay.h">Payer sans quitter l'application</h2>
+<p class="cs-body" data-i18n="spotify.pay.b">Retour à Daniela. Depuis son profil, elle ouvre Configuration puis Moyen de paiement : sa carte, les champs utiles, une validation à chaque champ et une confirmation claire. Plus besoin de chercher sur le web ni de changer d'appareil.</p>
+</div>
+<div class="cs-carousel" aria-label="Spotify, moyen de paiement">
+<img width="786" height="1704" alt="Profil de Daniela, configuration" data-i18n-alt="spotify.alt.pay1" loading="lazy" src="./public/phone-biblioteca-2.webp"/>
+<img width="786" height="1704" alt="Cartes enregistrées, bouton Modifier" data-i18n-alt="spotify.alt.pay2" loading="lazy" src="./public/phone-perfil-pago.webp"/>
+<img width="786" height="1704" alt="Formulaire de carte" data-i18n-alt="spotify.alt.pay3" loading="lazy" src="./public/phone-perfil-form-6.webp"/>
+<img width="786" height="1704" alt="Données de carte validées" data-i18n-alt="spotify.alt.pay4" loading="lazy" src="./public/phone-perfil.webp"/>
+<img width="786" height="1704" alt="Carte mise à jour" data-i18n-alt="spotify.alt.pay5" loading="lazy" src="./public/phone-perfil-update.webp"/>
 </div>
 <div class="cs-sep"></div>
 <div class="cs-block">
-<h2 class="cs-heading" data-i18n="spotify.t017">Tests d'utilisabilité</h2>
-<p class="cs-body" data-i18n="spotify.t018">Nous avons sélectionné un échantillon de 5 jeunes adultes entre 25 et 35 ans, tous des professionnels actifs possédant des connaissances techniques avancées : Tatiana Guevara (designer industriel), Manuel Santiago (cinéaste), Kevin Oliveros (préparateur physique), Anderson Martinez (chef), Paula Romero (graphiste).</p>
-<p class="cs-body" data-i18n="spotify.t019">Objectifs des tests :</p>
+<h2 class="cs-heading" data-i18n="spotify.comm.h">Faire partie d'une communauté</h2>
+<p class="cs-body" data-i18n="spotify.comm.b">Daniela vient de finir un épisode de son podcast. Elle le note de 1 à 5, ajoute un commentaire si elle le souhaite, puis peut lire ce que les autres auditeurs pensent du même épisode.</p>
+</div>
+<div class="cs-carousel" aria-label="Spotify, avis et commentaires">
+<img width="786" height="1704" alt="Page du podcast, bouton Noter" data-i18n-alt="spotify.alt.comm1" loading="lazy" src="./public/phone-biblioteca-1.webp"/>
+<img width="786" height="1688" alt="Noter l'épisode de 1 à 5" data-i18n-alt="spotify.alt.comm2" loading="lazy" src="./public/phone-podcast-cal-1.webp"/>
+<img width="786" height="1708" alt="Écrire un commentaire" data-i18n-alt="spotify.alt.comm3" loading="lazy" src="./public/phone-podcast-tec-1.webp"/>
+<img width="786" height="1708" alt="Commentaire envoyé, voir les avis des autres" data-i18n-alt="spotify.alt.comm4" loading="lazy" src="./public/phone-podcast-tec-2.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.song.h">Garder une chanson en trois gestes</h2>
+<p class="cs-body" data-i18n="spotify.song.b">Une chanson lui plaît : un geste pour l'ajouter, un pour choisir la playlist, un pour valider. Un message confirme où elle est rangée.</p>
+</div>
+<div class="cs-carousel" aria-label="Spotify, enregistrer une chanson">
+<img width="786" height="1704" alt="Lecture en cours, bouton ajouter" data-i18n-alt="spotify.alt.song1" loading="lazy" src="./public/phone-cancion-general.webp"/>
+<img width="786" height="1704" alt="Choisir la playlist" data-i18n-alt="spotify.alt.song2" loading="lazy" src="./public/phone-cancion-guardar.webp"/>
+<img width="786" height="1704" alt="Confirmation : enregistrée dans RoadTrip" data-i18n-alt="spotify.alt.song3" loading="lazy" src="./public/phone-cancion.webp"/>
+</div>
+<div class="cs-sep"></div>
+<div class="cs-block">
+<h2 class="cs-heading" data-i18n="spotify.learn.h">Ce que j'en retiens</h2>
 <ul class="cs-list">
-<li data-i18n-html="spotify.t020"><strong>Valider</strong>, Confirmer si nos hypothèses sur le comportement des utilisateurs sont validées lors de l'interaction avec le prototype.</li>
-<li data-i18n-html="spotify.t021"><strong>Analyser</strong>, Comprendre comment les utilisateurs interagissent avec le produit et identifier les opportunités d'amélioration.</li>
-<li data-i18n-html="spotify.t022"><strong>Apprendre</strong>, Obtenir des informations sur nos utilisateurs et la façon dont ils utilisent le produit repensé.</li>
+<li data-i18n-html="spotify.learn.l1"><strong>Le parcours se joue aussi hors de l'écran.</strong> Les pires moments de Daniela arrivaient quand elle devait quitter l'application : la réponse a été de tout ramener à l'intérieur.</li>
+<li data-i18n-html="spotify.learn.l2"><strong>Une histoire relie les fonctionnalités.</strong> Raconter le projet à travers une seule personne a donné un fil commun à trois besoins différents.</li>
+<li data-i18n-html="spotify.learn.l3"><strong>Prochaine étape :</strong> mesurer le taux de réussite et le temps par tâche lors d'une nouvelle série de tests.</li>
 </ul>
-</div>
-<div class="cs-img-grid cs-img-grid--wide cs-img-grid--stack">
-<img width="1606" height="696" alt="Résultats des tests utilisateurs" data-i18n-alt="spotify.t039" loading="lazy" src="./public/screenshot-tests-1.webp"/>
-<img width="1734" height="582" alt="Résultats des tests, tableau de bord" data-i18n-alt="spotify.t040" loading="lazy" src="./public/screenshot-tests-2.webp"/>
-</div>
-<div class="cs-sep"></div>
-<div class="cs-block">
-<h2 class="cs-heading" data-i18n="spotify.t023">Faire partie d'une communauté</h2>
-<p class="cs-body" data-i18n="spotify.t024">Permettre aux utilisateurs d'évaluer et de commenter le contenu qu'ils viennent d'écouter. Lire les avis des autres utilisateurs sur le même contenu et interagir avec eux.</p>
-</div>
-<div class="cs-img-grid cs-img-grid--phones">
-<img width="786" height="1688" alt="Évaluation de podcast" data-i18n-alt="spotify.t041" loading="lazy" src="./public/phone-podcast-cal-1.webp"/>
-<img width="786" height="1708" alt="Commentaire de podcast" data-i18n-alt="spotify.t042" loading="lazy" src="./public/phone-podcast-tec-1.webp"/>
-</div>
-<div class="cs-sep"></div>
-<div class="cs-block">
-<h2 class="cs-heading" data-i18n="spotify.t025">Profil simple et efficace</h2>
-<ul class="cs-list">
-<li data-i18n="spotify.t026">Gérez facilement les modes de paiement : mettez-les à jour ou modifiez-les directement depuis la même interface.</li>
-<li data-i18n="spotify.t027">En seulement trois étapes, la chanson sera enregistrée.</li>
-<li data-i18n="spotify.t028">Un espace dédié où les utilisateurs peuvent gérer plusieurs paramètres de compte.</li>
-</ul>
-</div>
-<div class="cs-img-grid cs-img-grid--phones">
-<img width="786" height="1704" alt="Profil méthode de paiement" data-i18n-alt="spotify.t043" loading="lazy" src="./public/phone-perfil-pago.webp"/>
-<img width="786" height="1704" alt="Formulaire paiement" data-i18n-alt="spotify.t044" loading="lazy" src="./public/phone-perfil-form-6.webp"/>
-</div>
-<div class="cs-sep"></div>
-<div class="cs-block">
-<h2 class="cs-heading" data-i18n="spotify.t029">Simple et rapide</h2>
-<p class="cs-body" data-i18n="spotify.t030">Permettez à l'utilisateur de sauvegarder les chansons de la manière la plus simple possible et permettez-lui de choisir où il souhaite les stocker.</p>
-</div>
-<div class="cs-img-grid cs-img-grid--phones">
-<img width="786" height="1704" alt="Chanson générale" data-i18n-alt="spotify.t045" loading="lazy" src="./public/phone-cancion-general.webp"/>
-<img width="786" height="1704" alt="Sauvegarder chanson" data-i18n-alt="spotify.t046" loading="lazy" src="./public/phone-cancion-guardar.webp"/>
-</div>
-<div class="cs-img-grid cs-img-grid--phones">
-<img width="786" height="1704" alt="Spotify, vue bibliothèque 1" data-i18n-alt="spotify.t047" loading="lazy" src="./public/phone-biblioteca-1.webp"/>
-<img width="786" height="1704" alt="Spotify, vue bibliothèque 2" data-i18n-alt="spotify.t048" loading="lazy" src="./public/phone-biblioteca-2.webp"/>
 </div>
 <nav aria-label="Navigation entre projets" class="project-nav">
 <a class="project-nav-link project-nav-link--prev" href="../bnf/index.html">
