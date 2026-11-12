@@ -8,6 +8,20 @@
 - Se publica solo cuando Alejandro lo pide: PR `ajustes` → `main`, merge, y `ajustes` vuelve a quedar igual que `main`.
 - Si el cambio toca textos o cifras de un caso, no se inventan datos: se marcan «À compléter» y se avisa.
 
+## Automatización (usar siempre)
+
+- `npm run verify` = `lint` + `build` + `check`. Es lo único que hace falta correr antes de subir.
+- `npm run lint`: `tools/i18n-check.py` (claves en fr/en/es) y `tools/lint-content.py` (sin guiones largos `—` `–` ni ` - ` en i18n y HTML; `<img>` de los casos con `width`/`height`; sin `border-radius` ni sombra en imágenes de los casos).
+- `npm run check` (Playwright, tarda ~2 min: lanzarlo en segundo plano): textos que no quedan invisibles tras las animaciones, y en 1440 y 390 px sin scroll horizontal, sin imágenes recortadas (proporción distinta a la real) ni ampliadas por encima de su tamaño real.
+- Si una petición de Alejandro se repite (una regla de estilo, un patrón de imagen), se convierte en un check en `tools/` y se anota aquí.
+- Publicar: commit en `ajustes`, `git push`, PR `ajustes` → `main` con las herramientas de GitHub (`gh pr create` falla), merge, y luego `git fetch && git reset --hard origin/main && git push --force-with-lease origin ajustes`.
+
+## Reglas visuales ya decididas
+
+- Imágenes de los casos limpias: sin marco, sombra ni bordes redondeados.
+- Series de más de 2 imágenes seguidas: carrusel horizontal (desktop y mobile), sin pasar del tamaño real. Zoom al clic con el lightbox.
+- Menú sin iconos de proyecto. CV sin índice flotante ni cards.
+
 ## Antes de subir cualquier cambio
 
 1. `npm run build` sin errores.

@@ -182,9 +182,8 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.navbar-dropdown-item__name,
-.navbar-dropdown-item__icon {
-  transition: color 0.2s ease, filter 0.2s ease;
+.navbar-dropdown-item__name {
+  transition: color 0.2s ease;
 }
 
 .navbar-dropdown-item:hover,
@@ -198,12 +197,6 @@
   color: #ff5f3a;
 }
 
-/* white SVG icon → brand orange #ff5f3a */
-.navbar-dropdown-item:hover .navbar-dropdown-item__icon,
-.navbar-dropdown-item:focus-visible .navbar-dropdown-item__icon {
-  filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2496%) hue-rotate(343deg) brightness(101%) contrast(101%);
-}
-
 .navbar-dropdown-item:hover .navbar-dropdown-item__desc,
 .navbar-dropdown-item:focus-visible .navbar-dropdown-item__desc {
   color: #d6d2d0;
@@ -211,8 +204,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .navbar-dropdown-item,
-  .navbar-dropdown-item__name,
-  .navbar-dropdown-item__icon {
+  .navbar-dropdown-item__name {
     transition: none;
   }
 }
@@ -319,10 +311,6 @@
    whatever size it is displayed at. */
 svg[stroke="currentColor"] * {
   vector-effect: non-scaling-stroke;
-}
-.navbar-dropdown-item:hover .navbar-dropdown-item__icon,
-.navbar-dropdown-item:focus-visible .navbar-dropdown-item__icon {
-  opacity: 1;
 }
 
 /* ── Header · Estado=Abierto (Figma Nav/Desktop): "Menu" pasa al acento

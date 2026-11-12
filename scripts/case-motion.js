@@ -51,8 +51,8 @@ function capHeight(img, wrap) {
 }
 
 /* Carrusel horizontal (scroll-snap) con flechas y contador: reduce el scroll vertical. */
-/* Móvil: más de 2 imágenes seguidas (sin texto entre ellas) pasan a un carrusel horizontal.
-   El carrusel usa copias de las imágenes y oculta los originales con .cs-hide-m (solo ≤768 px). */
+/* Móvil y desktop: más de 2 imágenes seguidas (sin texto entre ellas) pasan a un carrusel horizontal.
+   El carrusel usa copias de las imágenes y oculta los originales con .cs-hide-m. */
 function mobileSeries() {
   const main = document.querySelector("main.cs-frame");
   if (!main) return;
@@ -89,6 +89,11 @@ function initCarousels() {
       const slide = document.createElement("div");
       slide.className = "cs-carousel__slide";
       slide.setAttribute("aria-label", `${i + 1} / ${imgs.length}`);
+      const iw = Number(img.getAttribute("width")), ih = Number(img.getAttribute("height"));
+      if (iw && ih) {
+        slide.style.setProperty("--a", (iw / ih).toFixed(4));
+        slide.style.setProperty("--nw", Math.round(/@2x/.test(img.getAttribute("src") || "") ? iw / 2 : iw) + "px"); /* tamaño real: no se amplía */
+      }
       slide.appendChild(img);
       track.appendChild(slide);
     });
@@ -109,8 +114,15 @@ function initCarousels() {
     bar.append(prev, count, next);
     root.append(track, bar);
     const labels = () => L[document.documentElement.lang] || L.fr;
-    const step = () => (track.querySelector(".cs-carousel__slide")?.getBoundingClientRect().width || track.clientWidth) + 16;
-    const index = () => Math.round(track.scrollLeft / step());
+    const slides = [...track.children];
+    const x = (el) => el.offsetLeft - track.offsetLeft;
+    const index = () => {
+      let best = 0;
+      slides.forEach((sl, i) => {
+        if (Math.abs(x(sl) - track.scrollLeft) < Math.abs(x(slides[best]) - track.scrollLeft)) best = i;
+      });
+      return best;
+    };
     const update = () => {
       const i = Math.min(imgs.length - 1, Math.max(0, index()));
       count.textContent = `${i + 1} / ${imgs.length}`;
@@ -119,7 +131,10 @@ function initCarousels() {
       prev.setAttribute("aria-label", labels()[0]);
       next.setAttribute("aria-label", labels()[1]);
     };
-    const go = (d) => track.scrollBy({ left: d * step(), behavior: reduced ? "auto" : "smooth" });
+    const go = (d) => {
+      const t = slides[Math.min(slides.length - 1, Math.max(0, index() + d))];
+      track.scrollTo({ left: x(t), behavior: reduced ? "auto" : "smooth" });
+    };
     prev.addEventListener("click", () => go(-1));
     next.addEventListener("click", () => go(1));
     track.addEventListener("scroll", update, { passive: true });

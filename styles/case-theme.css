@@ -230,11 +230,7 @@ body[data-page] .project-nav-name {
   color: var(--cs-text);
 }
 
-/* Images keep a soft frame in both themes */
-body[data-page] .cs-media {
-  box-shadow: 0 0 0 1px var(--cs-border);
-}
-
+/* Imágenes limpias: sin marco, sombra ni bordes redondeados */
 /* ── Decorative background: colours + shapes of each project ──
    ::before = colour field, ::after = signature shape.
    --sp (scroll progress 0→1, set by case-motion.js) makes them drift.
@@ -513,10 +509,7 @@ body[data-page] .cs-stat-num {
    Aparece desenfocada y se enfoca al abrir el proyecto. */
 body[data-page] .cs-cover {
   margin: var(--cs-gap) 0 0;
-  border-radius: 12px;
   overflow: hidden;
-  background: color-mix(in srgb, var(--cs-text) 8%, transparent);
-  box-shadow: 0 0 0 1px var(--cs-border);
 }
 
 body[data-page] .cs-cover img {
@@ -577,7 +570,7 @@ body[data-page] .cs-station {
 body[data-page] .cs-station img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 body[data-page] .cs-caption {
@@ -627,11 +620,6 @@ body[data-page] .cs-img-grid--stack {
   body[data-page] .cs-img-full {
     width: var(--cs-col);
     margin-inline: auto;
-  }
-
-  body[data-page] .cs-img-full .cs-media,
-  body[data-page] .cs-img-full img {
-    border-radius: 12px;
   }
 
   body[data-page] .cs-img-box--tall .cs-media {
@@ -966,7 +954,6 @@ body[data-page] .cs-carousel__track {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  border-radius: 12px;
 }
 
 body[data-page] .cs-carousel__track::-webkit-scrollbar {
@@ -979,7 +966,8 @@ body[data-page] .cs-carousel__track:focus-visible {
 }
 
 body[data-page] .cs-carousel__slide {
-  flex: 0 0 min(78%, 820px);
+  flex: 0 0 auto;
+  width: min(100%, var(--nw, 9999px), calc(var(--a, 1.6) * var(--sh, 480px)));
   scroll-snap-align: start;
 }
 
@@ -987,8 +975,6 @@ body[data-page] .cs-carousel__slide img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 0 1px var(--cs-border);
 }
 
 body[data-page] .cs-carousel__bar {
@@ -1035,22 +1021,15 @@ body[data-page] .cs-carousel__count {
 
 @media (max-width: 768px) {
   body[data-page] .cs-carousel__slide {
-    flex-basis: 88%;
+    width: 88%;
   }
 }
 
-/* Carrusel solo móvil (series de más de 2 imágenes) */
+/* Series de más de 2 imágenes: carrusel en móvil y en desktop (mobileSeries en case-motion.js) */
 body[data-page] .cs-carousel.cs-mcarousel {
-  display: none;
+  margin-block: 20px;
 }
 
-@media (max-width: 768px) {
-  body[data-page] .cs-carousel.cs-mcarousel {
-    display: block;
-    margin-block: 20px;
-  }
-
-  body[data-page] .cs-hide-m {
-    display: none !important;
-  }
+body[data-page] .cs-hide-m {
+  display: none !important;
 }

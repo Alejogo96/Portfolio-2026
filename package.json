@@ -9,7 +9,9 @@
     "build": "parcel build index.html projects/andy-electric/index.html projects/andy-electric/motion.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html projects/paramo/index.html projects/qualnet/index.html projects/iridian/index.html projects/freelance/index.html projects/cv/index.html --dist-dir build && mkdir -p build/og && cp public/card-*.jpg build/og/",
     "clean": "rm -rf .parcel-cache build",
     "check": "node tools/check-reveal.mjs",
-    "build:pages": "parcel build index.html projects/andy-electric/index.html projects/andy-electric/motion.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html projects/paramo/index.html projects/qualnet/index.html projects/iridian/index.html projects/freelance/index.html projects/cv/index.html --dist-dir build --public-url /Portfolio-2026/ && mkdir -p build/og && cp public/card-*.jpg build/og/"
+    "build:pages": "parcel build index.html projects/andy-electric/index.html projects/andy-electric/motion.html projects/ublo/index.html projects/jumbomana/index.html projects/bellpi/index.html projects/bnf/index.html projects/spotify/index.html projects/paramo/index.html projects/qualnet/index.html projects/iridian/index.html projects/freelance/index.html projects/cv/index.html --dist-dir build --public-url /Portfolio-2026/ && mkdir -p build/og && cp public/card-*.jpg build/og/",
+    "lint": "python3 tools/i18n-check.py && python3 tools/lint-content.py",
+    "verify": "npm run lint && npm run build && npm run check"
   },
   "devDependencies": {
     "parcel": "^2.12.0"
