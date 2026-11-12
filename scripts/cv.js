@@ -37,34 +37,6 @@ function initAccordion() {
   sync();
 }
 
-function initSpy() {
-  const links = [...document.querySelectorAll(".cv-index a")];
-  const map = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        links.forEach((a) => a.removeAttribute("aria-current"));
-        map.get(en.target.id)?.setAttribute("aria-current", "true");
-      });
-    },
-    { rootMargin: "-30% 0px -60% 0px" }
-  );
-  map.forEach((_, id) => {
-    const s = document.getElementById(id);
-    if (s) io.observe(s);
-  });
-  links.forEach((a) =>
-    a.addEventListener("click", (e) => {
-      const t = document.getElementById(a.getAttribute("href").slice(1));
-      if (!t) return;
-      e.preventDefault();
-      t.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
-      history.replaceState(null, "", a.getAttribute("href"));
-    })
-  );
-}
-
 function initTimeline() {
   const tl = document.querySelector(".cv-timeline");
   if (!tl || reduced) return;
@@ -81,7 +53,6 @@ function initTimeline() {
 
 function init() {
   initAccordion();
-  initSpy();
   initTimeline();
 }
 

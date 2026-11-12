@@ -34,48 +34,6 @@ body[data-page="cv"]::after {
   color: var(--cs-text);
 }
 
-/* Índice fijo */
-.cv-index {
-  position: sticky;
-  top: 84px;
-  z-index: 5;
-  display: flex;
-  gap: 8px;
-  width: var(--cs-col);
-  margin: var(--cs-gap) auto 0;
-  padding: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  border: 1px solid var(--cs-border);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--cs-bg) 86%, transparent);
-  backdrop-filter: blur(10px);
-}
-
-.cv-index::-webkit-scrollbar {
-  display: none;
-}
-
-.cv-index a {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  color: var(--cs-muted);
-  text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.cv-index a:hover,
-.cv-index a[aria-current="true"] {
-  color: var(--cs-text);
-  background: color-mix(in srgb, var(--cs-accent) 18%, transparent);
-}
-
-.cv-index a:focus-visible,
 .cv-item__btn:focus-visible,
 .cv-toggle:focus-visible,
 .cv-cta:focus-visible,
@@ -283,12 +241,10 @@ body[data-page="cv"] .cv-section {
   to { opacity: 1; transform: none; }
 }
 
-/* Formación y competencias */
+/* Formación y competencias: texto limpio, sin cards */
 .cv-edu,
 .cv-skills {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  display: block;
   margin: 20px 0 0;
   padding: 0;
   list-style: none;
@@ -296,19 +252,16 @@ body[data-page="cv"] .cv-section {
 
 .cv-edu__item,
 .cv-skills li {
-  padding: 18px 20px;
-  border: 1px solid var(--cs-border);
-  border-radius: 12px;
-  font-size: 0.875rem;
-  line-height: 1.55;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--cs-border);
+  font-size: 0.9375rem;
+  line-height: 1.6;
   color: var(--cs-muted);
-  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.cv-edu__item:hover,
-.cv-skills li:hover {
-  transform: translateY(-2px);
-  border-color: var(--cs-accent);
+.cv-edu__item:last-child,
+.cv-skills li:last-child {
+  border-bottom: 0;
 }
 
 .cv-edu__item strong {
@@ -377,15 +330,6 @@ body[data-page="cv"] .cv-section:last-of-type {
 }
 
 @media (max-width: 768px) {
-  .cv-index {
-    top: 70px;
-  }
-
-  .cv-edu,
-  .cv-skills {
-    grid-template-columns: 1fr;
-  }
-
   .cv-item__role {
     font-size: 1.0625rem;
   }
