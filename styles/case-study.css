@@ -114,7 +114,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 /* ── 2-column image grid ── */
@@ -133,7 +133,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 /* ── Tools row ── */
@@ -293,7 +293,7 @@
 .cs-media {
   display: block;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0;
   min-width: 0;
 }
 
@@ -360,7 +360,7 @@
 .cs-img-grid > img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .cs-img-grid--phones > img {
