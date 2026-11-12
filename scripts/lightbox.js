@@ -55,6 +55,12 @@ function open(img) {
   const big = document.createElement("img");
   big.src = img.currentSrc || img.src;
   big.alt = img.alt;
+  /* Centrada y entera en la pantalla; un toque sobre la imagen alterna entre ajustada y tamaño real (para leer el texto). */
+  big.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const z = scroll.classList.toggle("is-zoomed");
+    big.style.cursor = z ? "zoom-out" : "zoom-in";
+  });
   scroll.appendChild(big);
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay || e.target === scroll) close();
@@ -67,10 +73,10 @@ function open(img) {
 }
 
 function init() {
-  document.querySelectorAll("main img").forEach((img) => {
+  document.querySelectorAll("main.cs-frame img").forEach((img) => {
     if (img.closest(".cs-tool, .cs-tools")) return;
     const mark = () => {
-      if (img.naturalWidth < 700) return;
+      if (img.naturalWidth < 400) return;
       img.setAttribute("data-zoomable", "");
       img.setAttribute("tabindex", "0");
       img.setAttribute("role", "button");

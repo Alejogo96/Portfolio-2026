@@ -6,12 +6,12 @@
  * focus enters the panel and returns to the burger, Tab stays inside, background scroll locked.
  */
 const MQ = window.matchMedia("(max-width: 768px)");
-const EXPERIENCES = ["qualnet", "iridian", "freelance"];
+const EXPERIENCES = ["qualnet", "iridian"];
 
 const T = {
-  fr: { open: "Ouvrir le menu", close: "Fermer le menu", menu: "Menu", projects: "Projets personnels", exp: "Expériences professionnelles", profile: "Profil", current: "Page actuelle" },
-  en: { open: "Open menu", close: "Close menu", menu: "Menu", projects: "Personal projects", exp: "Professional experience", profile: "Profile", current: "Current page" },
-  es: { open: "Abrir el menú", close: "Cerrar el menú", menu: "Menú", projects: "Proyectos personales", exp: "Experiencia profesional", profile: "Perfil", current: "Página actual" },
+  fr: { open: "Ouvrir le menu", close: "Fermer le menu", menu: "Menu", projects: "Projets personnels", exp: "Expériences professionnelles", profile: "Profil", freelance: "Freelance", current: "Page actuelle" },
+  en: { open: "Open menu", close: "Close menu", menu: "Menu", projects: "Personal projects", exp: "Professional experience", profile: "Profile", freelance: "Freelance", current: "Current page" },
+  es: { open: "Abrir el menú", close: "Cerrar el menú", menu: "Menú", projects: "Proyectos personales", exp: "Experiencia profesional", profile: "Perfil", freelance: "Freelance", current: "Página actual" },
 };
 const t = () => T[document.documentElement.lang] || T.fr;
 
@@ -61,7 +61,6 @@ function init() {
       item("ublo", "Ublo"),
       item("iridian", "Iridian"),
       item("bellpi", "Bellpi"),
-      item("freelance", "Freelance"),
     ],
     projects: [
       item("jumbomana", "JumboMana"),
@@ -69,18 +68,20 @@ function init() {
       item("spotify", "Spotify"),
       item("paramo", "ParamoTotem"),
     ],
+    freelance: [],
     profile: [],
   };
   dropdown.querySelectorAll("a.navbar-dropdown-item").forEach((a) => {
     const href = a.getAttribute("href");
-    if (!/#(home|cv)$/.test(href)) return;
+    if (/freelance\/(index\.html)?$/.test(href)) groups.freelance.push({ href, nameEl: a.querySelector(".navbar-dropdown-item__name") });
+    if (!/(#home|#cv|cv\/(index\.html)?)$/.test(href)) return;
     groups.profile.push({ href, nameEl: a.querySelector(".navbar-dropdown-item__name") });
   });
 
   const here = norm(location.href);
   const links = [];
   const titles = {};
-  for (const key of ["exp", "projects", "profile"]) {
+  for (const key of ["exp", "projects", "freelance", "profile"]) {
     if (!groups[key].length) continue;
     const sec = document.createElement("nav");
     sec.className = "mobile-menu__group";
@@ -132,6 +133,7 @@ function init() {
     panel.setAttribute("aria-label", s.menu);
     titles.projects && (titles.projects.textContent = s.projects);
     titles.exp && (titles.exp.textContent = s.exp);
+    titles.freelance && (titles.freelance.textContent = s.freelance);
     titles.profile && (titles.profile.textContent = s.profile);
     panel.querySelectorAll(".mobile-menu__current").forEach((el) => (el.textContent = s.current));
     links.forEach((a) => {

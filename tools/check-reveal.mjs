@@ -15,7 +15,7 @@ import { extname, join, normalize } from "node:path";
 import { createRequire } from "node:module";
 
 const ROOT = join(process.cwd(), "build");
-const PAGES = ["andy-electric", "ublo", "bellpi", "bnf", "spotify", "jumbomana", "paramo", "qualnet", "iridian"];
+const PAGES = ["andy-electric", "ublo", "bellpi", "bnf", "spotify", "jumbomana", "paramo", "qualnet", "iridian", "cv"];
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".webp": "image/webp", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg" };
 
 const server = createServer(async (req, res) => {
