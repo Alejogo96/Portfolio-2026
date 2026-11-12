@@ -51,6 +51,29 @@ function capHeight(img, wrap) {
 }
 
 /* Carrusel horizontal (scroll-snap) con flechas y contador: reduce el scroll vertical. */
+/* Móvil: más de 2 imágenes seguidas (sin texto entre ellas) pasan a un carrusel horizontal.
+   El carrusel usa copias de las imágenes y oculta los originales con .cs-hide-m (solo ≤768 px). */
+function mobileSeries() {
+  const main = document.querySelector("main.cs-frame");
+  if (!main) return;
+  const isImg = (el) => el.matches(".cs-img-box, .cs-img-grid, .cs-img-full") && !el.matches(".cs-only-desktop, .cs-only-mobile");
+  let run = [];
+  const flush = () => {
+    const imgs = run.flatMap((el) => [...el.querySelectorAll("img")]);
+    if (imgs.length > 2) {
+      const root = document.createElement("div");
+      root.className = "cs-carousel cs-mcarousel";
+      root.setAttribute("aria-label", document.title);
+      imgs.forEach((img) => root.appendChild(img.cloneNode(true)));
+      run[0].before(root);
+      run.forEach((el) => el.classList.add("cs-hide-m"));
+    }
+    run = [];
+  };
+  [...main.children].forEach((el) => (isImg(el) ? run.push(el) : flush()));
+  flush();
+}
+
 function initCarousels() {
   const L = { fr: ["Précédent", "Suivant"], en: ["Previous", "Next"], es: ["Anterior", "Siguiente"] };
   document.querySelectorAll(".cs-carousel").forEach((root) => {
@@ -263,6 +286,7 @@ function waves() {
 }
 
 function init() {
+  mobileSeries();
   initCarousels();
   const medias = wrapImages();
   justifyGrids();

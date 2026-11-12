@@ -1038,3 +1038,19 @@ body[data-page] .cs-carousel__count {
     flex-basis: 88%;
   }
 }
+
+/* Carrusel solo móvil (series de más de 2 imágenes) */
+body[data-page] .cs-carousel.cs-mcarousel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-carousel.cs-mcarousel {
+    display: block;
+    margin-block: 20px;
+  }
+
+  body[data-page] .cs-hide-m {
+    display: none !important;
+  }
+}

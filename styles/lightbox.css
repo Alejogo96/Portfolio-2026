@@ -37,24 +37,37 @@ img[data-zoomable] {
 
 .lb-scroll {
   flex: 1;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 1rem 1.5rem;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem 1rem;
+  overflow: hidden;
 }
 
 .lb-scroll img {
   display: block;
-  max-width: none;
-  width: max(100%, min(1800px, 220vw));
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
-  margin: 0 auto;
+  object-fit: contain;
   border-radius: 8px;
+  cursor: zoom-in;
 }
 
-@media (min-width: 1100px) {
-  .lb-scroll img {
-    width: min(100%, 1800px);
-  }
+/* Tamaño real: se recorre con scroll / arrastre */
+.lb-scroll.is-zoomed {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lb-scroll.is-zoomed img {
+  max-width: none;
+  max-height: none;
+  width: max(100%, min(1800px, 220vw));
+  margin: 0 auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
