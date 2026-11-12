@@ -636,5 +636,10 @@
   "section.exp.intro": "Des missions réelles, en équipe ou en solo : produit logiciel, plateformes et marque, où j'ai conçu, priorisé et livré, du besoin utilisateur à l'interface.",
   "section.proj.intro": "Des projets personnels et académiques, nés de la curiosité : concepts, prototypes et expériences où j'explore l'IA, le patrimoine et l'immersif, sans contrainte client.",
   "qualnet.ai.l6": "Mise en place de l'IA avec l'équipe sur des processus transversaux (produit, design, développement et QA).",
-  "qualnet.design.l4": "Développement de nouvelles fonctionnalités et intégration de l'IA dans la plateforme."
+  "qualnet.design.l4": "Développement de nouvelles fonctionnalités et intégration de l'IA dans la plateforme.",
+  "menu.group.freelance": "Freelance",
+  "menu.freelance.name": "Projets freelance",
+  "menu.freelance.desc": "Projets réalisés à côté, en indépendant.",
+  "section.free.intro": "Des projets réalisés en indépendant, en parallèle de mes autres missions. D'autres viendront s'ajouter ici.",
+  "freelance.intro2": "Cette section accueillera les projets que je réalise à côté."
 }
