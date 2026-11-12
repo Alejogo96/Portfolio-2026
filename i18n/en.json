@@ -641,5 +641,13 @@
   "menu.freelance.name": "Freelance projects",
   "menu.freelance.desc": "Side projects, done independently.",
   "section.free.intro": "Projects done independently, alongside my other missions. More will be added here.",
-  "freelance.intro2": "This section will host the projects I work on on the side."
+  "freelance.intro2": "This section will host the projects I work on on the side.",
+  "cv.now": "2026 to present",
+  "cv.exp.qualnet.role": "Product Owner",
+  "cv.exp.freelanceind.role": "Industrial designer",
+  "cv.page.openAll": "Expand all",
+  "cv.page.closeAll": "Collapse all",
+  "cv.page.view": "View project",
+  "meta.cv.title": "Alejandro Guevara, CV",
+  "meta.cv.desc": "Interactive CV of Alejandro Guevara: profile, experience, education, skills, tools and languages."
 }
