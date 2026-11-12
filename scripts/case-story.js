@@ -33,8 +33,9 @@ const LABELS = {
   tests: "Tests",
   result: "Résultats",
   projects: "Projets",
+  learn: "Apprentissages",
 };
-const SLOW = new Set(["context", "problem", "research", "role", "concept"]);
+const SLOW = new Set(["context", "problem", "research", "role", "concept", "learn"]);
 
 /* Capítulos por proyecto: [índice del título .cs-heading en la página, capítulo].
    El índice cuenta todos los títulos de sección, incluido "Contexte". */
@@ -47,7 +48,7 @@ const CHAPTERS = {
   jumbomana: [[0, "context"], [1, "problem"], [3, "solution"], [4, "tests"]],
   paramo: [[0, "context"], [1, "concept"], [3, "experience"]],
   qualnet: [[0, "context"], [2, "role"], [6, "method"], [7, "projects"]],
-  spotify: [[0, "context"], [1, "problem"], [2, "method"], [4, "solution"]],
+  spotify: [[0, "context"], [1, "research"], [3, "method"], [6, "tests"], [7, "solution"], [10, "learn"]],
 };
 
 const pad = (n) => String(n).padStart(2, "0");
