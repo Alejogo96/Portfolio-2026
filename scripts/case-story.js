@@ -49,7 +49,7 @@ const CHAPTERS = {
   jumbomana: [[0, "context"], [1, "problem"], [3, "solution"], [4, "tests"]],
   paramo: [[0, "context"], [1, "concept"], [3, "experience"]],
   qualnet: [[0, "context"], [2, "role"], [6, "method"], [7, "projects"]],
-  spotify: [[0, "context"], [1, "method"], [2, "research"], [4, "concept"], [11, "tests"], [12, "solution"], [15, "experience"], [16, "voice"], [17, "learn"]],
+  spotify: [[0, "context"], [1, "solution"], [3, "concept"], [5, "tests"], [6, "method"], [8, "research"], [16, "voice"], [17, "learn"]],
 };
 
 const pad = (n) => String(n).padStart(2, "0");
