@@ -22,6 +22,8 @@
 - Series de más de 2 imágenes seguidas: carrusel horizontal (desktop y mobile), sin pasar del tamaño real. Zoom al clic con el lightbox.
 - Menú sin iconos de proyecto. CV sin índice flotante ni cards.
 - Funcionalidades presentadas como en Behance: tablero `cs-board` (título + fila de pantallas `cs-phones`, con pantalla grande `cs-board__lead` opcional). Alto fijo y ancho auto, sin pasar del tamaño real; en móvil la fila hace scroll horizontal. Ejemplo: `projects/spotify`.
+- Un tablero con varios grupos de pantallas va en una sola fila (`cs-board--groups`); los textos complementarios van junto a las pantallas (`cs-board__note`), como en Behance.
+- Secciones con varias piezas (p. ej. el sistema de diseño) usan scroll horizontal fijo `cs-hscroll` (`data-hscroll`): solo `transform`, en móvil y con `prefers-reduced-motion` es scroll nativo con snap. Ejemplo: `projects/spotify`.
 
 ## Antes de subir cualquier cambio
 

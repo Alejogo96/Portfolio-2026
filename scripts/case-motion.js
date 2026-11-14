@@ -74,6 +74,49 @@ function mobileSeries() {
   flush();
 }
 
+/* Sección en scroll horizontal fijo (data-hscroll): en desktop y sin reduced motion, el scroll vertical
+   desplaza la fila con transform; después la página sigue normal. En el resto, scroll nativo. */
+function initHScroll() {
+  const mq = window.matchMedia("(min-width: 769px) and (prefers-reduced-motion: no-preference)");
+  document.querySelectorAll("[data-hscroll]").forEach((sec) => {
+    const sticky = sec.querySelector(".cs-hscroll__sticky");
+    const track = sec.querySelector(".cs-hscroll__track");
+    const bar = sec.querySelector(".cs-hscroll__bar span");
+    if (!sticky || !track) return;
+    let max = 0;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      if (!sec.classList.contains("is-pinned")) return;
+      const span = sec.offsetHeight - window.innerHeight;
+      const p = span > 0 ? Math.min(1, Math.max(0, -sec.getBoundingClientRect().top / span)) : 0;
+      track.style.transform = "translate3d(" + -p * max + "px,0,0)";
+      if (bar) bar.style.transform = "scaleX(" + p + ")";
+    };
+    const measure = () => {
+      if (!mq.matches) {
+        sec.classList.remove("is-pinned");
+        sec.style.height = "";
+        track.style.transform = "";
+        return;
+      }
+      sec.classList.add("is-pinned");
+      max = Math.max(0, track.scrollWidth - sticky.clientWidth);
+      sec.style.height = Math.round(max + window.innerHeight) + "px";
+      update();
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", measure);
+    mq.addEventListener("change", measure);
+    sec.querySelectorAll("img").forEach((img) => img.addEventListener("load", measure));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    measure();
+  });
+}
+
 function initCarousels() {
   const L = { fr: ["Précédent", "Suivant"], en: ["Previous", "Next"], es: ["Anterior", "Siguiente"] };
   document.querySelectorAll(".cs-carousel").forEach((root) => {
@@ -308,6 +351,7 @@ function init() {
   waves();
   initCaseBg();
   initStory();
+  initHScroll();
   if (reduced) return;
   document.documentElement.classList.add("cm-on");
 

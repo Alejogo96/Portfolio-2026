@@ -1124,6 +1124,220 @@ body[data-page] .cs-phones img {
   }
 }
 
+/* Notas complementarias junto a las pantallas (como los textos de Behance) */
+body[data-page] .cs-board__note {
+  margin: 0;
+  max-width: 36ch;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--cs-muted);
+}
+
+body[data-page] .cs-board__note strong {
+  color: var(--cs-text);
+  font-weight: 600;
+}
+
+body[data-page] .cs-board__leadwrap {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  justify-items: start;
+}
+
+body[data-page] .cs-board__leadwrap figcaption {
+  max-width: 100%;
+}
+
+/* Funcionalidad con dos grupos de pantallas en una sola fila */
+body[data-page] .cs-board--groups {
+  --ph: 400px;
+}
+
+body[data-page] .cs-board__groups {
+  display: flex;
+  gap: calc(var(--cs-gap) * 1.75);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+body[data-page] .cs-board__group {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+body[data-page] .cs-board__group .cs-phones {
+  gap: 16px;
+}
+
+body[data-page] .cs-board__label {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-board__notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--cs-gap);
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-board__groups {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  body[data-page] .cs-board__groups::-webkit-scrollbar {
+    display: none;
+  }
+  body[data-page] .cs-board__group {
+    flex: none;
+    scroll-snap-align: start;
+  }
+  body[data-page] .cs-board__group .cs-phones {
+    overflow: visible;
+  }
+  body[data-page] .cs-board__notes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  body[data-page] .cs-board__note {
+    max-width: none;
+  }
+}
+
+/* Sistema de diseño en scroll horizontal. Por defecto (móvil, reduced motion, sin JS) es una fila con
+   scroll nativo y snap. Con JS en desktop (.is-pinned) la sección queda fija y el scroll vertical mueve
+   la fila; solo se usa transform (case-motion.js, initHScroll). */
+body[data-page] .cs-hscroll {
+  position: relative;
+  width: 100%;
+}
+
+body[data-page] .cs-hscroll__sticky {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+body[data-page] .cs-hscroll__track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  padding-inline: max(1.25rem, calc((100% - 1152px) / 2));
+}
+
+body[data-page] .cs-hscroll__slide {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  scroll-snap-align: start;
+}
+
+body[data-page] .cs-hscroll__slide--intro {
+  display: block;
+  width: min(420px, 80vw);
+}
+
+body[data-page] .cs-hscroll__text {
+  width: min(300px, 80vw);
+}
+
+body[data-page] .cs-hscroll__slide img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: min(62vh, 640px);
+}
+
+body[data-page] .cs-hscroll__type {
+  display: grid;
+  gap: 28px;
+}
+
+body[data-page] .cs-hscroll__type > div {
+  display: grid;
+  gap: 4px;
+}
+
+body[data-page] .cs-hscroll__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-hscroll__num--xl {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+body[data-page] .cs-hscroll__cap {
+  font-size: 0.9375rem;
+  color: var(--cs-muted);
+}
+
+body[data-page] .cs-hscroll__bar {
+  display: none;
+}
+
+body[data-page] .cs-hscroll.is-pinned .cs-hscroll__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: clip;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+  box-sizing: border-box;
+}
+
+body[data-page] .cs-hscroll.is-pinned .cs-hscroll__track {
+  will-change: transform;
+}
+
+body[data-page] .cs-hscroll.is-pinned .cs-hscroll__bar {
+  display: block;
+  position: absolute;
+  left: max(1.25rem, calc((100% - 1152px) / 2));
+  right: max(1.25rem, calc((100% - 1152px) / 2));
+  bottom: 56px;
+  height: 2px;
+  background: color-mix(in srgb, var(--cs-text) 16%, transparent);
+}
+
+body[data-page] .cs-hscroll__bar span {
+  display: block;
+  height: 100%;
+  background: var(--cs-text);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-hscroll__track {
+    gap: 28px;
+  }
+  body[data-page] .cs-hscroll__slide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: min(86vw, 420px);
+  }
+  body[data-page] .cs-hscroll__slide img {
+    max-width: 100%;
+    max-height: 55vh;
+  }
+}
+
 /* Series de más de 2 imágenes: carrusel en móvil y en desktop (mobileSeries en case-motion.js) */
 body[data-page] .cs-carousel.cs-mcarousel {
   margin-block: 20px;
