@@ -1309,7 +1309,7 @@ body[data-page] .cs-hscroll.is-pinned .cs-hscroll__bar {
   position: absolute;
   left: max(1.25rem, calc((100% - 1152px) / 2));
   right: max(1.25rem, calc((100% - 1152px) / 2));
-  bottom: 56px;
+  bottom: 92px;
   height: 2px;
   background: color-mix(in srgb, var(--cs-text) 16%, transparent);
 }
