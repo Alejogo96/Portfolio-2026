@@ -355,8 +355,8 @@
   "ublo.t032": "SUS scores (System Usability Scale)",
   "ublo.t033": "User drop-off points",
   "ublo.t034": "Overview of the Ublo platform",
-  "ublo.t035": "Ublo iteration, view 1",
-  "ublo.t036": "Ublo iteration, view 2",
+  "ublo.t035": "Ublo UI Kit 2024, component library",
+  "ublo.t036": "Storybook, components overview",
   "ublo.t037": "UX audit, view 1",
   "ublo.t038": "UX audit, view 2",
   "ublo.t039": "UX audit, view 3",
@@ -911,6 +911,5 @@
   "andy-electric.mob.a4": "Andy Electric mobile, key figures",
   "andy-electric.mob.a5": "Andy Electric mobile, customer reviews",
   "andy-electric.mob.a6": "Andy Electric mobile, FAQ",
-  "ublo.ds.p": "The screens are built on Ublo's UI Kit 2024, a component library documented in Storybook. I designed from those components, and the copy was part of the same job: a label, an error message or an empty state was decided together with the component that shows it.",
-  "ublo.ds.alt": "Ublo UI Kit 2024 and its component library in Storybook"
+  "ublo.ds.p": "The screens are built on Ublo's UI Kit 2024, a component library documented in Storybook. I designed from those components, and the copy was part of the same job: a label, an error message or an empty state was decided together with the component that shows it."
 }

@@ -355,8 +355,8 @@
   "ublo.t032": "Scores SUS (System Usability Scale)",
   "ublo.t033": "Points d'abandon des utilisateurs",
   "ublo.t034": "Vue d'ensemble de la plateforme Ublo",
-  "ublo.t035": "Itération Ublo, vue 1",
-  "ublo.t036": "Itération Ublo, vue 2",
+  "ublo.t035": "UI Kit 2024 d'Ublo, bibliothèque de composants",
+  "ublo.t036": "Storybook, vue d'ensemble des composants",
   "ublo.t037": "Audit UX, vue 1",
   "ublo.t038": "Audit UX, vue 2",
   "ublo.t039": "Audit UX, vue 3",
@@ -911,6 +911,5 @@
   "andy-electric.mob.a4": "Andy Electric mobile, chiffres clés",
   "andy-electric.mob.a5": "Andy Electric mobile, avis clients",
   "andy-electric.mob.a6": "Andy Electric mobile, questions fréquentes",
-  "ublo.ds.p": "Les écrans reposent sur l'UI Kit 2024 d'Ublo, une bibliothèque de composants documentée dans Storybook. Je dessinais à partir de ces composants, et les textes faisaient partie du même travail : un libellé, un message d'erreur ou un état vide se décidait en même temps que le composant qui l'affiche.",
-  "ublo.ds.alt": "UI Kit 2024 d'Ublo et sa bibliothèque de composants dans Storybook"
+  "ublo.ds.p": "Les écrans reposent sur l'UI Kit 2024 d'Ublo, une bibliothèque de composants documentée dans Storybook. Je dessinais à partir de ces composants, et les textes faisaient partie du même travail : un libellé, un message d'erreur ou un état vide se décidait en même temps que le composant qui l'affiche."
 }
