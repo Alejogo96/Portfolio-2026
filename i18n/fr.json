@@ -493,7 +493,7 @@
   "iridian.del.l4": "Prototypes pour les tests utilisateurs et les tests A/B.",
   "iridian.del.l5": "Présentations aux clients et définitions fonctionnelles avec les développeurs.",
   "iridian.h.proj": "Projets",
-  "iridian.proj.p": "Quatre projets représentatifs, avec leurs résultats côté produit et côté design.",
+  "iridian.proj.p": "Deux projets représentatifs.",
   "iridian.proj1.title": "Projet 01 · Nom du projet",
   "iridian.proj1.img": "Iridian, projet 01",
   "iridian.proj2.title": "Projet 02 · Nom du projet",
@@ -887,5 +887,18 @@
   "hero.iridian.title": "Des systèmes que les entreprises font tourner chaque jour",
   "hero.iridian.b1": "Plateformes sur mesure, intégration ERP et CRM",
   "hero.iridian.b2": "Données, BI, IA et automatisation",
-  "hero.iridian.b3": "Clients en Amérique latine, aux États-Unis et en Europe"
+  "hero.iridian.b3": "Clients en Amérique latine, aux États-Unis et en Europe",
+  "iridian.st1": "Empathie",
+  "iridian.st1t": "entretiens avec le client et les utilisateurs, analyse du produit existant et benchmark.",
+  "iridian.st2": "Définition",
+  "iridian.st2t": "brief, objectifs business, KPI, personas et problèmes prioritaires.",
+  "iridian.st3": "Idéation",
+  "iridian.st3t": "ateliers, user flows, wireflows et story maps pour cadrer le MVP.",
+  "iridian.st4": "Prototypage",
+  "iridian.st4t": "wireframes, UI kits et prototypes interactifs.",
+  "iridian.st5": "Test",
+  "iridian.st5t": "tests utilisateurs et tests A/B pour valider et itérer.",
+  "iridian.st6": "Livraison",
+  "iridian.st6t": "définition des fonctionnalités avec l'équipe de développement et suivi en sprint.",
+  "iridian.loop": "Les résultats des tests repartent vers l'idéation et le prototypage jusqu'à ce que la solution tienne."
 }
