@@ -904,3 +904,102 @@ a.pcard .pcard__title::after {
 :root[data-theme="light"] .pcard[href*="/spotify/"] { --pc-bg: color-mix(in srgb, #12823a 12%, #f3faf5); }
 :root[data-theme="dark"] .pcard[href*="/paramo/"] { --pc-bg: color-mix(in srgb, #4ade80 16%, #07140c); }
 :root[data-theme="light"] .pcard[href*="/paramo/"] { --pc-bg: color-mix(in srgb, #166534 12%, #f0fdf4); }
+
+/* ── Retrato del hero: el disco gira y crece desde el centro, la foto hace un zoom inverso dentro
+   y un anillo de acento se abre alrededor. Después, parallax suave al hacer scroll (hero.js, --py).
+   Solo opacity/transform; con reduced motion queda estático. ── */
+.hero__portrait {
+  --ps: clamp(200px, 19vw, 292px);
+  position: relative;
+  width: var(--ps);
+  aspect-ratio: 1;
+  margin: 0;
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
+}
+
+.hero__portrait::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.82);
+  animation: portrait-ring 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+}
+
+.hero__portrait-disc {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.35) rotate(-14deg);
+  animation: portrait-in 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+.hero__portrait-disc img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  transform: scale(1.4);
+  animation: portrait-zoom 1.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+@keyframes portrait-in {
+  60% { opacity: 1; }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes portrait-zoom {
+  to { transform: none; }
+}
+
+@keyframes portrait-ring {
+  to { opacity: 0.55; transform: none; }
+}
+
+@media (min-width: 769px) {
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .hero__inner > * {
+    grid-column: 1;
+  }
+  .hero__inner > .hero__portrait {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__portrait {
+    --ps: 112px;
+    margin-bottom: 28px;
+  }
+  .hero__portrait::before {
+    inset: -8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__portrait {
+    transform: none;
+  }
+  .hero__portrait::before,
+  .hero__portrait-disc,
+  .hero__portrait-disc img {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero__portrait::before {
+    opacity: 0.55;
+  }
+}

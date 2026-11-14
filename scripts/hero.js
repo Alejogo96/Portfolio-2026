@@ -118,3 +118,19 @@
     init();
   }
 })();
+
+/* Parallax suave del retrato del hero (solo transform vía --py; nada con reduced motion). */
+(function () {
+  'use strict';
+  var el = document.getElementById('hero-portrait');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var y = Math.min(window.scrollY, window.innerHeight);
+    el.style.setProperty('--py', (y * -0.18).toFixed(1) + 'px');
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();

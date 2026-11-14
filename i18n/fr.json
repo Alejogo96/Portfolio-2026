@@ -911,5 +911,6 @@
   "andy-electric.mob.a4": "Andy Electric mobile, chiffres clés",
   "andy-electric.mob.a5": "Andy Electric mobile, avis clients",
   "andy-electric.mob.a6": "Andy Electric mobile, questions fréquentes",
-  "ublo.ds.p": "Les écrans reposent sur l'UI Kit 2024 d'Ublo, une bibliothèque de composants documentée dans Storybook. Je dessinais à partir de ces composants, et les textes faisaient partie du même travail : un libellé, un message d'erreur ou un état vide se décidait en même temps que le composant qui l'affiche."
+  "ublo.ds.p": "Les écrans reposent sur l'UI Kit 2024 d'Ublo, une bibliothèque de composants documentée dans Storybook. Je dessinais à partir de ces composants, et les textes faisaient partie du même travail : un libellé, un message d'erreur ou un état vide se décidait en même temps que le composant qui l'affiche.",
+  "h2.portrait": "Portrait d'Alejandro Guevara"
 }
