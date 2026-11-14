@@ -34,6 +34,7 @@ const LABELS = {
   result: "Résultats",
   projects: "Projets",
   learn: "Apprentissages",
+  voice: "Voix et ton",
 };
 const SLOW = new Set(["context", "problem", "research", "role", "concept", "learn"]);
 
@@ -48,7 +49,7 @@ const CHAPTERS = {
   jumbomana: [[0, "context"], [1, "problem"], [3, "solution"], [4, "tests"]],
   paramo: [[0, "context"], [1, "concept"], [3, "experience"]],
   qualnet: [[0, "context"], [2, "role"], [6, "method"], [7, "projects"]],
-  spotify: [[0, "context"], [1, "research"], [3, "method"], [6, "tests"], [7, "solution"], [10, "learn"]],
+  spotify: [[0, "context"], [1, "method"], [2, "research"], [4, "concept"], [11, "tests"], [12, "solution"], [15, "experience"], [16, "voice"], [17, "learn"]],
 };
 
 const pad = (n) => String(n).padStart(2, "0");
