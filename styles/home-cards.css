@@ -179,3 +179,124 @@ body[data-page="home"] .bgC {
     --bg-trama-opacity: 0.5;
   }
 }
+
+/* ── Variantes de organización de las cards para comparar en la vista previa (?cards=b|c|d; sin parámetro = a, grilla de 3).
+   La imagen nunca se recorta (contain sobre el fondo del proyecto). ── */
+html[data-cards] #main .pcard__img {
+  object-fit: contain;
+}
+
+/* b · Lista editorial: una fila por proyecto, imagen a la izquierda, separadas por una línea. */
+html[data-cards="b"] #main .grid {
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: auto;
+  row-gap: 0;
+}
+html[data-cards="b"] #main .pcard {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 4fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: 40px;
+  row-gap: 8px;
+  padding: 28px 0;
+  border: 0;
+  border-top: 1px solid var(--faint);
+  border-radius: 0;
+}
+html[data-cards="b"] #main .pcard > :not(.pcard__media) {
+  padding-inline: 0;
+}
+html[data-cards="b"] #main .pcard__media {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  aspect-ratio: 5 / 3;
+}
+html[data-cards="b"] #main .pcard__title {
+  grid-column: 2;
+  align-self: end;
+  font-size: 2rem;
+  line-height: 1.2;
+  white-space: normal;
+}
+html[data-cards="b"] #main .pcard__role {
+  grid-column: 2;
+  margin: 0;
+}
+html[data-cards="b"] #main .pcard__hook {
+  grid-column: 3;
+  grid-row: 1 / span 3;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.0625rem;
+}
+html[data-cards="b"] #main .pcard__hook::before,
+html[data-cards="b"] #main .pcard__hook::after {
+  display: none;
+}
+
+/* c · Destacado: el proyecto más reciente ocupa dos columnas y dos filas; los demás alrededor. */
+html[data-cards="c"] #main .grid {
+  grid-auto-rows: auto;
+}
+html[data-cards="c"] #main .grid > .pcard:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+html[data-cards="c"] #main .grid > .pcard:first-child .pcard__media {
+  aspect-ratio: auto;
+  min-height: 0;
+  height: 100%;
+}
+html[data-cards="c"] #main .grid > .pcard:first-child {
+  grid-template-rows: 1fr auto auto auto;
+}
+html[data-cards="c"] #main .grid > .pcard:first-child .pcard__title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+/* d · Carrusel: una fila que se desliza con scroll-snap, la siguiente card asoma a la derecha. */
+html[data-cards="d"] #main .grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  padding: 2px 2px 16px;
+  scrollbar-width: thin;
+}
+html[data-cards="d"] #main .grid > .pcard {
+  flex: 0 0 min(440px, 82%);
+  scroll-snap-align: start;
+}
+
+@media (max-width: 1100px) {
+  html[data-cards="c"] #main .grid > .pcard:first-child {
+    grid-row: auto;
+  }
+  html[data-cards="c"] #main .grid > .pcard:first-child .pcard__media {
+    aspect-ratio: 5 / 3;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  html[data-cards="b"] #main .pcard {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    padding: 24px 0;
+  }
+  html[data-cards="b"] #main .pcard > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  html[data-cards="b"] #main .pcard__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  html[data-cards="c"] #main .grid > .pcard:first-child {
+    grid-column: auto;
+  }
+}

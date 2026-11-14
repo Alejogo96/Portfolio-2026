@@ -156,3 +156,10 @@
     disc.style.setProperty('--rx', (dy * -24).toFixed(2) + 'deg');
   }, { passive: true });
 })();
+
+/* Variantes de organización de las cards del Home: ?cards=b|c|d (sin parámetro = a). */
+(function () {
+  'use strict';
+  var v = new URLSearchParams(location.search).get('cards');
+  if (/^[a-d]$/.test(v || '')) document.documentElement.setAttribute('data-cards', v);
+})();
