@@ -21,6 +21,7 @@
 - Imágenes de los casos limpias: sin marco, sombra ni bordes redondeados.
 - Series de más de 2 imágenes seguidas: carrusel horizontal (desktop y mobile), sin pasar del tamaño real. Zoom al clic con el lightbox.
 - Menú sin iconos de proyecto. CV sin índice flotante ni cards.
+- Funcionalidades presentadas como en Behance: tablero `cs-board` (título + fila de pantallas `cs-phones`, con pantalla grande `cs-board__lead` opcional). Alto fijo y ancho auto, sin pasar del tamaño real; en móvil la fila hace scroll horizontal. Ejemplo: `projects/spotify`.
 
 ## Antes de subir cualquier cambio
 
