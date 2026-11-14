@@ -348,7 +348,7 @@
   "ublo.t025": "Talleres de ideación y brainstorming",
   "ublo.t026": "Wireframes de baja y media fidelidad",
   "ublo.t027": "Entrega de los primeros prototipos funcionales en Figma",
-  "ublo.t028": "UX writing",
+  "ublo.t028": "Design system y UX writing",
   "ublo.t029": "Redacté textos UX claros y elaboré toda la documentación de apoyo, con especificaciones de diseño completas y pantallas listas para entregar al equipo de desarrollo. Para reforzar nuestra toma de decisiones, introduje y monitoricé KPI UX clave:",
   "ublo.t030": "Tasa de éxito de las tareas",
   "ublo.t031": "Tiempo en la tarea",
@@ -910,5 +910,7 @@
   "andy-electric.mob.a3": "Andy Electric móvil, servicios",
   "andy-electric.mob.a4": "Andy Electric móvil, cifras clave",
   "andy-electric.mob.a5": "Andy Electric móvil, opiniones de clientes",
-  "andy-electric.mob.a6": "Andy Electric móvil, preguntas frecuentes"
+  "andy-electric.mob.a6": "Andy Electric móvil, preguntas frecuentes",
+  "ublo.ds.p": "Las pantallas se apoyan en el UI Kit 2024 de Ublo, una librería de componentes documentada en Storybook. Diseñaba a partir de esos componentes, y los textos eran parte del mismo trabajo: una etiqueta, un mensaje de error o un estado vacío se decidía junto con el componente que lo muestra.",
+  "ublo.ds.alt": "UI Kit 2024 de Ublo y su librería de componentes en Storybook"
 }

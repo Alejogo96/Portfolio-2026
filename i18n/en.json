@@ -348,7 +348,7 @@
   "ublo.t025": "Ideation and brainstorming workshops",
   "ublo.t026": "Low- and mid-fidelity wireframing",
   "ublo.t027": "Delivery of the first functional prototypes in Figma",
-  "ublo.t028": "UX writing",
+  "ublo.t028": "Design system and UX writing",
   "ublo.t029": "I wrote clear UX copy and produced all the supporting documentation, providing complete design specifications and screens ready to hand over to the development team. To strengthen our decision-making, I introduced and tracked key UX KPIs:",
   "ublo.t030": "Task success rate",
   "ublo.t031": "Time on task",
@@ -910,5 +910,7 @@
   "andy-electric.mob.a3": "Andy Electric mobile, services",
   "andy-electric.mob.a4": "Andy Electric mobile, key figures",
   "andy-electric.mob.a5": "Andy Electric mobile, customer reviews",
-  "andy-electric.mob.a6": "Andy Electric mobile, FAQ"
+  "andy-electric.mob.a6": "Andy Electric mobile, FAQ",
+  "ublo.ds.p": "The screens are built on Ublo's UI Kit 2024, a component library documented in Storybook. I designed from those components, and the copy was part of the same job: a label, an error message or an empty state was decided together with the component that shows it.",
+  "ublo.ds.alt": "Ublo UI Kit 2024 and its component library in Storybook"
 }
