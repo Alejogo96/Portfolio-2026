@@ -900,5 +900,15 @@
   "iridian.st5t": "user tests and A/B tests to validate and iterate.",
   "iridian.st6": "Deliver",
   "iridian.st6t": "defining features with the development team and following up in sprints.",
-  "iridian.loop": "Test results go back into ideation and prototyping until the solution holds up."
+  "iridian.loop": "Test results go back into ideation and prototyping until the solution holds up.",
+  "andy-electric.mob.h": "Designed mobile first",
+  "andy-electric.mob.p": "95% of the people who land on the site come from a search on their phone. So I drew every page for a mobile screen first: the quote button visible on the first screen, services you can read at a glance, then the figures, reviews and FAQ to clear doubts before calling.",
+  "andy-electric.mob.r1": "Understand the offer in seconds",
+  "andy-electric.mob.r2": "Build trust before the call",
+  "andy-electric.mob.a1": "Andy Electric mobile, first screen with the quote button",
+  "andy-electric.mob.a2": "Andy Electric mobile, home",
+  "andy-electric.mob.a3": "Andy Electric mobile, services",
+  "andy-electric.mob.a4": "Andy Electric mobile, key figures",
+  "andy-electric.mob.a5": "Andy Electric mobile, customer reviews",
+  "andy-electric.mob.a6": "Andy Electric mobile, FAQ"
 }

@@ -900,5 +900,15 @@
   "iridian.st5t": "pruebas con usuarios y tests A/B para validar e iterar.",
   "iridian.st6": "Entrega",
   "iridian.st6t": "definición de funcionalidades con el equipo de desarrollo y seguimiento en sprint.",
-  "iridian.loop": "Los resultados de las pruebas vuelven a la ideación y al prototipado hasta que la solución se sostiene."
+  "iridian.loop": "Los resultados de las pruebas vuelven a la ideación y al prototipado hasta que la solución se sostiene.",
+  "andy-electric.mob.h": "Pensado primero para el móvil",
+  "andy-electric.mob.p": "El 95 % de las personas que llegan al sitio vienen de una búsqueda hecha desde el teléfono. Por eso diseñé cada página primero para la pantalla del móvil: el botón de presupuesto visible desde la primera pantalla, servicios que se leen de un vistazo, y luego las cifras, las opiniones y las preguntas frecuentes para resolver dudas antes de llamar.",
+  "andy-electric.mob.r1": "Entender la oferta en segundos",
+  "andy-electric.mob.r2": "Dar confianza antes de llamar",
+  "andy-electric.mob.a1": "Andy Electric móvil, primera pantalla con el botón de presupuesto",
+  "andy-electric.mob.a2": "Andy Electric móvil, inicio",
+  "andy-electric.mob.a3": "Andy Electric móvil, servicios",
+  "andy-electric.mob.a4": "Andy Electric móvil, cifras clave",
+  "andy-electric.mob.a5": "Andy Electric móvil, opiniones de clientes",
+  "andy-electric.mob.a6": "Andy Electric móvil, preguntas frecuentes"
 }

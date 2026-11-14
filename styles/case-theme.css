@@ -1091,7 +1091,7 @@ body[data-page] .cs-phones img {
   display: block;
   flex: none;
   width: auto;
-  height: var(--ph);
+  height: var(--ph) !important; /* responsive.css fuerza height:auto en algunas páginas */
   max-width: 100%;
 }
 
