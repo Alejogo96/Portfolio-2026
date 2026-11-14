@@ -1350,9 +1350,10 @@ body[data-page] .cs-hide-m {
 /* ── Portada con título y puntos clave (todos los casos, 2026-11-14) ──
    Texto a la izquierda, pantallas completas a la derecha (sin recorte, sin pasar su tamaño real). */
 body[data-page] {
-  --cs-hero-bg: #111;
-  --cs-hero-ink: #f2f2f2;
-  --cs-hero-muted: #c4c4c4;
+  /* fondo teñido con la paleta del caso: cambia solo en light y dark */
+  --cs-hero-bg: color-mix(in srgb, var(--cs-accent) 14%, var(--cs-bg));
+  --cs-hero-ink: var(--cs-text);
+  --cs-hero-muted: var(--cs-muted);
 }
 body[data-page] .cs-cover--hero {
   display: grid;
