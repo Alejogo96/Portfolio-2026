@@ -1037,14 +1037,16 @@ html[data-hero="c"] .hero__portrait::before {
   transform: scale(0.82) rotate(-90deg);
   animation-delay: 0.7s;
 }
-html[data-hero="c"] .hero__orbit {
+html[data-hero="c"] .hero__orbit,
+html[data-hero="e"] .hero__orbit {
   position: absolute;
   inset: -14px;
   opacity: 0;
   animation: portrait-orbit-in 0.6s ease 1.6s forwards, portrait-orbit 14s linear 1.6s infinite;
   pointer-events: none;
 }
-html[data-hero="c"] .hero__orbit::after {
+html[data-hero="c"] .hero__orbit::after,
+html[data-hero="e"] .hero__orbit::after {
   content: "";
   position: absolute;
   top: -5px;
@@ -1057,7 +1059,8 @@ html[data-hero="c"] .hero__orbit::after {
 @keyframes portrait-orbit-in { to { opacity: 1; } }
 @keyframes portrait-orbit { to { transform: rotate(1turn); } }
 .hero__orbit { display: none; }
-html[data-hero="c"] .hero__orbit { display: block; }
+html[data-hero="c"] .hero__orbit,
+html[data-hero="e"] .hero__orbit { display: block; }
 
 /* d · Inclinación: entra desde la derecha y luego se inclina en 3D siguiendo el cursor (hero.js, --rx/--ry). */
 html[data-hero="d"] .hero__portrait {
@@ -1089,4 +1092,17 @@ html[data-hero="d"] .hero__portrait-disc img {
     animation: none;
     opacity: 1;
   }
+}
+
+/* e · A + C: el disco crece con un giro más corto, la foto hace el zoom inverso y luego el punto orbita el anillo. */
+html[data-hero="e"] .hero__portrait-disc {
+  transform: scale(0.6) rotate(-8deg);
+  animation-duration: 1.2s;
+}
+html[data-hero="e"] .hero__portrait-disc img {
+  transform: scale(1.2);
+}
+html[data-hero="e"] .hero__portrait::before {
+  transform: scale(0.82) rotate(-90deg);
+  animation-delay: 0.8s;
 }

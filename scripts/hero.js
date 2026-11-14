@@ -135,11 +135,11 @@
   }, { passive: true });
 })();
 
-/* Variantes del retrato para comparar en la vista previa: ?hero=b|c|d (sin parámetro = a). */
+/* Variantes del retrato para comparar en la vista previa: ?hero=b|c|d|e (sin parámetro = a). */
 (function () {
   'use strict';
   var v = new URLSearchParams(location.search).get('hero');
-  if (!/^[a-d]$/.test(v || '')) return;
+  if (!/^[a-e]$/.test(v || '')) return;
   document.documentElement.setAttribute('data-hero', v);
   var fig = document.getElementById('hero-portrait');
   if (!fig || v !== 'd') return;
