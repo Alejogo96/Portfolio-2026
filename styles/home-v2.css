@@ -887,3 +887,20 @@ a.pcard .pcard__title::after {
 .bullets__meta {
   white-space: normal;
 }
+
+/* Fondo de la imagen de cada card con la paleta de su caso (light y dark), 2026-11-14 */
+.pcard__media { background: var(--pc-bg, var(--media-bg)); }
+:root[data-theme="dark"] .pcard[href*="/andy-electric/"] { --pc-bg: color-mix(in srgb, #ff2a42 16%, #131313); }
+:root[data-theme="light"] .pcard[href*="/andy-electric/"] { --pc-bg: color-mix(in srgb, #d4001a 12%, #fbf5f4); }
+:root[data-theme="dark"] .pcard[href*="/ublo/"] { --pc-bg: color-mix(in srgb, #8f78ff 16%, #120e29); }
+:root[data-theme="light"] .pcard[href*="/ublo/"] { --pc-bg: color-mix(in srgb, #3f22aa 12%, #f6f4ff); }
+:root[data-theme="dark"] .pcard[href*="/bellpi/"] { --pc-bg: color-mix(in srgb, #3d9bff 16%, #09111f); }
+:root[data-theme="light"] .pcard[href*="/bellpi/"] { --pc-bg: color-mix(in srgb, #0066d9 12%, #f7fbff); }
+:root[data-theme="dark"] .pcard[href*="/jumbomana/"] { --pc-bg: color-mix(in srgb, #8c96ff 16%, #0e0e1c); }
+:root[data-theme="light"] .pcard[href*="/jumbomana/"] { --pc-bg: color-mix(in srgb, #1a237e 12%, #fffcf5); }
+:root[data-theme="dark"] .pcard[href*="/bnf/"] { --pc-bg: color-mix(in srgb, #ffa94d 16%, #24092f); }
+:root[data-theme="light"] .pcard[href*="/bnf/"] { --pc-bg: color-mix(in srgb, #7b28a0 12%, #f7eefb); }
+:root[data-theme="dark"] .pcard[href*="/spotify/"] { --pc-bg: color-mix(in srgb, #1ed760 16%, #0d0d0d); }
+:root[data-theme="light"] .pcard[href*="/spotify/"] { --pc-bg: color-mix(in srgb, #12823a 12%, #f3faf5); }
+:root[data-theme="dark"] .pcard[href*="/paramo/"] { --pc-bg: color-mix(in srgb, #4ade80 16%, #07140c); }
+:root[data-theme="light"] .pcard[href*="/paramo/"] { --pc-bg: color-mix(in srgb, #166534 12%, #f0fdf4); }

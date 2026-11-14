@@ -1025,6 +1025,319 @@ body[data-page] .cs-carousel__count {
   }
 }
 
+/* Tablero de funcionalidad (como se presenta en Behance): título + pantallas del móvil en fila.
+   Las pantallas nunca pasan de su tamaño real (alto fijo, ancho auto). En móvil la fila es un
+   scroll horizontal con snap. */
+body[data-page] .cs-board {
+  --ph: 440px;
+  width: var(--cs-col);
+  margin-inline: auto;
+  display: grid;
+  gap: calc(var(--cs-gap) * 1.5);
+}
+
+body[data-page] .cs-board--lead {
+  --ph: 420px;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  column-gap: calc(var(--cs-gap) * 2);
+}
+
+body[data-page] .cs-board__lead {
+  display: block;
+  width: auto;
+  height: 600px;
+  max-width: 100%;
+}
+
+body[data-page] .cs-board__main {
+  display: grid;
+  gap: var(--cs-gap);
+  min-width: 0;
+}
+
+body[data-page] .cs-board__row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2.2fr);
+  column-gap: calc(var(--cs-gap) * 2);
+  align-items: center;
+}
+
+body[data-page] .cs-board__row--rev {
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.8fr);
+}
+
+body[data-page] .cs-board__row--rev .cs-board__title {
+  order: 2;
+}
+
+body[data-page] .cs-board__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-phones {
+  display: flex;
+  gap: var(--cs-gap);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+body[data-page] .cs-phones img {
+  display: block;
+  flex: none;
+  width: auto;
+  height: var(--ph);
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-board,
+  body[data-page] .cs-board--lead,
+  body[data-page] .cs-board__row,
+  body[data-page] .cs-board__row--rev {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body[data-page] .cs-board__row--rev .cs-board__title {
+    order: 0;
+  }
+  body[data-page] .cs-board__lead {
+    height: 420px;
+  }
+  body[data-page] .cs-board {
+    --ph: 380px;
+  }
+  body[data-page] .cs-phones {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  body[data-page] .cs-phones::-webkit-scrollbar {
+    display: none;
+  }
+  body[data-page] .cs-phones img {
+    scroll-snap-align: start;
+  }
+}
+
+/* Notas complementarias junto a las pantallas (como los textos de Behance) */
+body[data-page] .cs-board__note {
+  margin: 0;
+  max-width: 36ch;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--cs-muted);
+}
+
+body[data-page] .cs-board__note strong {
+  color: var(--cs-text);
+  font-weight: 600;
+}
+
+body[data-page] .cs-board__leadwrap {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  justify-items: start;
+}
+
+body[data-page] .cs-board__leadwrap figcaption {
+  max-width: 100%;
+}
+
+/* Funcionalidad con dos grupos de pantallas en una sola fila */
+body[data-page] .cs-board--groups {
+  --ph: 400px;
+}
+
+body[data-page] .cs-board__groups {
+  display: flex;
+  gap: calc(var(--cs-gap) * 1.75);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+body[data-page] .cs-board__group {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+body[data-page] .cs-board__group .cs-phones {
+  gap: 16px;
+}
+
+body[data-page] .cs-board__label {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-board__notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--cs-gap);
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-board__groups {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  body[data-page] .cs-board__groups::-webkit-scrollbar {
+    display: none;
+  }
+  body[data-page] .cs-board__group {
+    flex: none;
+    scroll-snap-align: start;
+  }
+  body[data-page] .cs-board__group .cs-phones {
+    overflow: visible;
+  }
+  body[data-page] .cs-board__notes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  body[data-page] .cs-board__note {
+    max-width: none;
+  }
+}
+
+/* Sistema de diseño en scroll horizontal. Por defecto (móvil, reduced motion, sin JS) es una fila con
+   scroll nativo y snap. Con JS en desktop (.is-pinned) la sección queda fija y el scroll vertical mueve
+   la fila; solo se usa transform (case-motion.js, initHScroll). */
+body[data-page] .cs-hscroll {
+  position: relative;
+  width: 100%;
+}
+
+body[data-page] .cs-hscroll__sticky {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+body[data-page] .cs-hscroll__track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  padding-inline: max(1.25rem, calc((100% - 1152px) / 2));
+}
+
+body[data-page] .cs-hscroll__slide {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  scroll-snap-align: start;
+}
+
+body[data-page] .cs-hscroll__slide--intro {
+  display: block;
+  width: min(420px, 80vw);
+}
+
+body[data-page] .cs-hscroll__text {
+  width: min(300px, 80vw);
+}
+
+body[data-page] .cs-hscroll__slide img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: min(62vh, 640px);
+}
+
+body[data-page] .cs-hscroll__type {
+  display: grid;
+  gap: 28px;
+}
+
+body[data-page] .cs-hscroll__type > div {
+  display: grid;
+  gap: 4px;
+}
+
+body[data-page] .cs-hscroll__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: var(--cs-text);
+}
+
+body[data-page] .cs-hscroll__num--xl {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+body[data-page] .cs-hscroll__cap {
+  font-size: 0.9375rem;
+  color: var(--cs-muted);
+}
+
+body[data-page] .cs-hscroll__bar {
+  display: none;
+}
+
+body[data-page] .cs-hscroll.is-pinned .cs-hscroll__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: clip;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+  box-sizing: border-box;
+}
+
+body[data-page] .cs-hscroll.is-pinned .cs-hscroll__track {
+  will-change: transform;
+}
+
+body[data-page] .cs-hscroll.is-pinned .cs-hscroll__bar {
+  display: block;
+  position: absolute;
+  left: max(1.25rem, calc((100% - 1152px) / 2));
+  right: max(1.25rem, calc((100% - 1152px) / 2));
+  bottom: 92px;
+  height: 2px;
+  background: color-mix(in srgb, var(--cs-text) 16%, transparent);
+}
+
+body[data-page] .cs-hscroll__bar span {
+  display: block;
+  height: 100%;
+  background: var(--cs-text);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  body[data-page] .cs-hscroll__track {
+    gap: 28px;
+  }
+  body[data-page] .cs-hscroll__slide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: min(86vw, 420px);
+  }
+  body[data-page] .cs-hscroll__slide img {
+    max-width: 100%;
+    max-height: 55vh;
+  }
+}
+
 /* Series de más de 2 imágenes: carrusel en móvil y en desktop (mobileSeries en case-motion.js) */
 body[data-page] .cs-carousel.cs-mcarousel {
   margin-block: 20px;
@@ -1032,4 +1345,76 @@ body[data-page] .cs-carousel.cs-mcarousel {
 
 body[data-page] .cs-hide-m {
   display: none !important;
+}
+
+/* ── Portada con título y puntos clave (todos los casos, 2026-11-14) ──
+   Texto a la izquierda, pantallas completas a la derecha (sin recorte, sin pasar su tamaño real). */
+body[data-page] {
+  /* fondo teñido con la paleta del caso: cambia solo en light y dark */
+  --cs-hero-bg: color-mix(in srgb, var(--cs-accent) 14%, var(--cs-bg));
+  --cs-hero-ink: var(--cs-text);
+  --cs-hero-muted: var(--cs-muted);
+}
+body[data-page] .cs-cover--hero {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(24px, 4vw, 56px);
+  background: var(--cs-hero-bg);
+  color: var(--cs-hero-ink);
+}
+body[data-page] .cs-hero__title {
+  margin: 0 0 20px;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--cs-hero-ink);
+}
+body[data-page] .cs-hero__list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--cs-hero-muted);
+}
+body[data-page] .cs-hero__list li {
+  position: relative;
+  padding-left: 20px;
+}
+body[data-page] .cs-hero__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 10px;
+  height: 1px;
+  background: var(--cs-accent);
+}
+body[data-page] .cs-hero__media {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+body[data-page] .cs-cover--hero img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 460px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+body[data-page] .cs-cover--hero .cs-ph--cover {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  body[data-page] .cs-cover--hero {
+    grid-template-columns: 1fr;
+  }
+  body[data-page] .cs-cover--hero img {
+    max-height: 360px;
+  }
 }
