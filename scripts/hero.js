@@ -134,32 +134,3 @@
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }, { passive: true });
 })();
-
-/* Variantes del retrato para comparar en la vista previa: ?hero=b|c|d|e (sin parámetro = a). */
-(function () {
-  'use strict';
-  var v = new URLSearchParams(location.search).get('hero');
-  if (!/^[a-e]$/.test(v || '')) return;
-  document.documentElement.setAttribute('data-hero', v);
-  var fig = document.getElementById('hero-portrait');
-  if (!fig || v !== 'd') return;
-  var disc = fig.querySelector('.hero__portrait-disc');
-  var mq = window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)');
-  if (!mq.matches) return;
-  disc.addEventListener('animationend', function () { disc.classList.add('is-tilt'); }, { once: true });
-  window.addEventListener('pointermove', function (e) {
-    if (!disc.classList.contains('is-tilt')) return;
-    var r = fig.getBoundingClientRect();
-    var dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
-    var dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
-    disc.style.setProperty('--ry', (dx * 24).toFixed(2) + 'deg');
-    disc.style.setProperty('--rx', (dy * -24).toFixed(2) + 'deg');
-  }, { passive: true });
-})();
-
-/* Variantes de organización de las cards del Home: ?cards=a|c|d (sin parámetro = b). */
-(function () {
-  'use strict';
-  var v = new URLSearchParams(location.search).get('cards') || 'b'; /* b = lista elegida por Alejandro */
-  if (/^[b-d]$/.test(v)) document.documentElement.setAttribute('data-cards', v);
-})();
