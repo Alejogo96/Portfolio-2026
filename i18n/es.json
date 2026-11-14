@@ -912,5 +912,6 @@
   "andy-electric.mob.a5": "Andy Electric móvil, opiniones de clientes",
   "andy-electric.mob.a6": "Andy Electric móvil, preguntas frecuentes",
   "ublo.ds.p": "Las pantallas se apoyan en el UI Kit 2024 de Ublo, una librería de componentes documentada en Storybook. Diseñaba a partir de esos componentes, y los textos eran parte del mismo trabajo: una etiqueta, un mensaje de error o un estado vacío se decidía junto con el componente que lo muestra.",
-  "h2.portrait": "Retrato de Alejandro Guevara"
+  "h2.portrait": "Retrato de Alejandro Guevara",
+  "cards.cta": "Ver el caso"
 }

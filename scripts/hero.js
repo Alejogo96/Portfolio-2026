@@ -157,9 +157,9 @@
   }, { passive: true });
 })();
 
-/* Variantes de organización de las cards del Home: ?cards=b|c|d (sin parámetro = a). */
+/* Variantes de organización de las cards del Home: ?cards=a|c|d (sin parámetro = b). */
 (function () {
   'use strict';
-  var v = new URLSearchParams(location.search).get('cards');
-  if (/^[a-d]$/.test(v || '')) document.documentElement.setAttribute('data-cards', v);
+  var v = new URLSearchParams(location.search).get('cards') || 'b'; /* b = lista elegida por Alejandro */
+  if (/^[b-d]$/.test(v)) document.documentElement.setAttribute('data-cards', v);
 })();

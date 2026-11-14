@@ -912,5 +912,6 @@
   "andy-electric.mob.a5": "Andy Electric mobile, customer reviews",
   "andy-electric.mob.a6": "Andy Electric mobile, FAQ",
   "ublo.ds.p": "The screens are built on Ublo's UI Kit 2024, a component library documented in Storybook. I designed from those components, and the copy was part of the same job: a label, an error message or an empty state was decided together with the component that shows it.",
-  "h2.portrait": "Portrait of Alejandro Guevara"
+  "h2.portrait": "Portrait of Alejandro Guevara",
+  "cards.cta": "View case study"
 }
