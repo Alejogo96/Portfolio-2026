@@ -79,3 +79,27 @@ img[data-zoomable] {
     to { opacity: 1; }
   }
 }
+
+/* Navegación entre las imágenes de un carrusel */
+.lb-bar { align-items: center; }
+.lb-count { margin-right: auto; color: #fff; font: 600 0.9375rem/1 var(--font-base); font-variant-numeric: tabular-nums; }
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.lb-nav--prev { left: 1rem; }
+.lb-nav--next { right: 1rem; }
+.lb-nav:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+@media (max-width: 768px) {
+  .lb-nav { top: auto; bottom: 1rem; transform: none; }
+}
