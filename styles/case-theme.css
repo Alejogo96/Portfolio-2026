@@ -766,7 +766,8 @@ html[data-theme="light"] body[data-page="iridian"] {
 .cs-projects { display: flex; flex-direction: column; gap: 4rem; margin-top: 2.5rem; }
 .cs-project { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem 2.5rem; align-items: center; }
 .cs-project__title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; color: var(--cs-text); }
-.cs-project__text { font-size: 1rem; line-height: 1.6; margin: 0; color: var(--cs-muted); }
+.cs-project__text { font-size: 1rem; line-height: 1.6; margin: 0 0 0.75rem; color: var(--cs-muted); }
+.cs-project__meta { font-size: 0.875rem; margin: 0 0 1rem; color: var(--cs-accent); font-weight: 600; }
 .cs-wins { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .cs-win {
   display: flex; flex-direction: column; gap: 0.375rem; padding: 1.25rem 1.25rem 1.5rem; border-radius: 16px;
