@@ -24,11 +24,16 @@ function close() {
   overlay = null;
   document.body.style.overflow = "";
   document.removeEventListener("keydown", onKey);
+  step = null;
   if (lastFocus) lastFocus.focus();
 }
 
+let step = null;
+
 function onKey(e) {
   if (e.key === "Escape") close();
+  if (step && e.key === "ArrowLeft") step(-1);
+  if (step && e.key === "ArrowRight") step(1);
   if (e.key === "Tab") {
     e.preventDefault();
     overlay?.querySelector(".lb-close")?.focus();
@@ -62,10 +67,44 @@ function open(img) {
     big.style.cursor = z ? "zoom-out" : "zoom-in";
   });
   scroll.appendChild(big);
+  /* Imágenes de un carrusel: flechas, teclado ← → y contador para recorrerlas todas. */
+  const group = [...(img.closest(".cs-carousel")?.querySelectorAll("img") || [])];
+  let idx = group.indexOf(img);
+  const navBtns = [];
+  if (group.length > 1 && idx >= 0) {
+    const count = document.createElement("span");
+    count.className = "lb-count";
+    count.setAttribute("aria-live", "polite");
+    const mkBtn = (cls, txt, label, d) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "lb-nav " + cls;
+      b.textContent = txt;
+      b.setAttribute("aria-label", label);
+      b.addEventListener("click", (e) => { e.stopPropagation(); step(d); });
+      return b;
+    };
+    const L = { fr: ["Précédent", "Suivant"], en: ["Previous", "Next"], es: ["Anterior", "Siguiente"] }[document.documentElement.lang] || ["Précédent", "Suivant"];
+    const show = () => {
+      const g = group[idx];
+      big.src = g.currentSrc || g.src;
+      big.alt = g.alt;
+      count.textContent = `${idx + 1} / ${group.length}`;
+      scroll.classList.remove("is-zoomed");
+      big.style.cursor = "zoom-in";
+      overlay.setAttribute("aria-label", g.alt || t("ui.zoom"));
+      lastFocus = g;
+    };
+    step = (d) => { idx = (idx + d + group.length) % group.length; show(); };
+    bar.prepend(count);
+    navBtns.push(mkBtn("lb-nav--prev", "←", L[0], -1), mkBtn("lb-nav--next", "→", L[1], 1));
+    show();
+  }
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay || e.target === scroll) close();
   });
   overlay.append(bar, scroll);
+  navBtns.forEach((b) => overlay.appendChild(b));
   document.body.appendChild(overlay);
   document.body.style.overflow = "hidden";
   document.addEventListener("keydown", onKey);
