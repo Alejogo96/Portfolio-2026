@@ -783,6 +783,10 @@ html[data-theme="light"] body[data-page="iridian"] {
 .cs-win__num { font-size: 2rem; line-height: 1.1; font-weight: 700; color: var(--cs-accent); }
 .cs-win__label { font-size: 0.875rem; line-height: 1.4; color: var(--cs-muted); }
 
+/* Variante alineada a la izquierda (Iridian): punto, título y texto empiezan en el mismo eje */
+.cs-steps--left::before { left: calc(var(--dot) / 2); right: calc(100% / 6 - var(--dot) / 2); }
+.cs-steps--left .cs-step { align-items: flex-start; text-align: left; }
+
 @media (max-width: 1023px) {
   .cs-steps { grid-template-columns: 1fr; gap: 1.75rem; }
   .cs-steps::before { left: calc(var(--dot) / 2 - 1px); right: auto; top: 0; bottom: 0; width: 2px; height: auto;
