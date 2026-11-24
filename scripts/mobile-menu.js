@@ -36,7 +36,7 @@ function init() {
   burger.className = "nav-burger";
   burger.setAttribute("aria-expanded", "false");
   burger.setAttribute("aria-controls", "mobile-menu");
-  burger.innerHTML = '<span class="nav-burger__box" aria-hidden="true"><span></span><span></span><span></span></span>';
+  burger.innerHTML = '<span class="nav-burger__box" aria-hidden="true"><span></span><span></span><span></span></span><span class="nav-burger__label" aria-hidden="true"></span>';
   wrapper.prepend(burger);
 
   // Panel
@@ -122,6 +122,7 @@ function init() {
     const open = burger.getAttribute("aria-expanded") === "true";
     burger.setAttribute("aria-label", open ? s.close : s.open);
     panel.setAttribute("aria-label", s.menu);
+    burger.querySelector(".nav-burger__label").textContent = s.menu;
     titles.projects && (titles.projects.textContent = s.projects);
     titles.exp && (titles.exp.textContent = s.exp);
     titles.freelance && (titles.freelance.textContent = s.freelance);
