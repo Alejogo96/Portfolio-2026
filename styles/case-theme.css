@@ -1444,3 +1444,6 @@ body[data-page] .cs-cover--hero .cs-ph--cover {
     max-height: 360px;
   }
 }
+
+/* Etiqueta en negrita al inicio de un punto de lista (Qualnet, roles del equipo) */
+body[data-page] .cs-list li > strong:first-child { font-weight: 600; color: var(--cs-text); }
