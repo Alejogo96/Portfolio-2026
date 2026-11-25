@@ -1094,6 +1094,19 @@ body[data-page] .cs-phones {
   gap: var(--cs-gap);
   align-items: flex-start;
   min-width: 0;
+  overflow-x: auto; /* series largas: carrusel horizontal, sin deformar las pantallas */
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+body[data-page] .cs-phones::-webkit-scrollbar {
+  display: none;
+}
+/* Pantallas apaisadas (streaming): más bajas para que quepan dos a la vista */
+body[data-page] .cs-board--stream {
+  --ph: 270px;
+}
+body[data-page] .cs-board--final {
+  margin-top: var(--cs-gap);
 }
 
 body[data-page] .cs-phones img {
@@ -1101,7 +1114,8 @@ body[data-page] .cs-phones img {
   flex: none;
   width: auto;
   height: var(--ph) !important; /* responsive.css fuerza height:auto en algunas páginas */
-  max-width: 100%;
+  max-width: none;
+  scroll-snap-align: start;
 }
 
 @media (max-width: 768px) {
@@ -1119,6 +1133,9 @@ body[data-page] .cs-phones img {
   }
   body[data-page] .cs-board {
     --ph: 380px;
+  }
+  body[data-page] .cs-board--stream {
+    --ph: 190px;
   }
   body[data-page] .cs-phones {
     overflow-x: auto;
