@@ -265,7 +265,7 @@ function tagText() {
    con los colores del proyecto (--cs-accent, --cs-accent2, --cs-text). */
 function waves() {
   const header = document.querySelector(".cs-header");
-  if (!header) return;
+  if (!header || document.body.dataset.page === "cv") return; // CV sin líneas de fondo
   const canvas = document.createElement("canvas");
   canvas.className = "cs-waves";
   canvas.setAttribute("aria-hidden", "true");

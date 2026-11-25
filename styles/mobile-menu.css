@@ -265,28 +265,30 @@
    Navbar · Design System (Figma "Design System" › 03 Organismos, 2026-11-24)
    Desktop: Nav/Desktop Tema=Dark 3881:32 · Tema=Light 3942:263
    Mobile:  Nav Mobile dark 3881:36 · Mobile light 3934:18474
+   Inverted on request (2026-11-25): light theme = black bar, dark theme = white bar;
+   theme and language buttons without their own background.
    Center: logo only (no "Portfolio" word). Mobile: burger + "Menu", no logo.
    Loaded last on every page, so these tokens win over the older black-only header.
    ===================================================== */
 :root,
-:root[data-theme="dark"] {
+:root[data-theme="light"] {
   --nav-bg: #000;
   --nav-border: transparent;
   --nav-fg: #fff;
   --nav-muted: #aba8a7;
-  --nav-capsule: rgba(255, 255, 255, 0.1);
+  --nav-capsule: transparent;
   --nav-sep: rgba(255, 255, 255, 0.25);
   --nav-hover: rgba(255, 255, 255, 0.08);
   --nav-accent: #ff5f3a;
   --nav-icon-filter: none;
   --nav-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
-:root[data-theme="light"] {
+:root[data-theme="dark"] {
   --nav-bg: #fff;                 /* color/surface */
   --nav-border: #e4e0dd;          /* color/border */
   --nav-fg: #1a1a1a;              /* color/text */
   --nav-muted: rgba(26, 26, 26, 0.66);
-  --nav-capsule: rgba(0, 0, 0, 0.04);
+  --nav-capsule: transparent;
   --nav-sep: #e4e0dd;
   --nav-hover: rgba(0, 0, 0, 0.05);
   --nav-accent: #e8431f;          /* light accent, keeps AA on white */
@@ -328,44 +330,39 @@
 .navbar-wrapper .theme-toggle__label { font: 600 14px/1 Montserrat, Inter, sans-serif; }
 .navbar-wrapper .navbar-lang-current { font-family: Montserrat, Inter, sans-serif; font-weight: 600; }
 
-/* Toggle/Theme switch: light = outlined track + dark knob; dark = accent track + white knob */
-:root[data-theme="light"] .theme-toggle__track {
-  background: #fff;
-  box-shadow: inset 0 0 0 1px #1a1a1a;
-}
-:root[data-theme="light"] .theme-toggle__knob { background: #1a1a1a; }
+/* Toggle/Theme switch: dark theme (white bar) = accent track; light theme (black bar) = translucent white track */
 
 /* Language list */
-:root[data-theme="light"] .navbar-lang-options {
+:root[data-theme="dark"] .navbar-lang-options {
   background: #fff;
   border-color: #e4e0dd;
   box-shadow: var(--nav-shadow);
 }
-:root[data-theme="light"] .navbar-lang-btn,
-:root[data-theme="light"] .lang-btn-code,
-:root[data-theme="light"] .lang-btn-name,
-:root[data-theme="light"] .lang-btn-check { color: #1a1a1a !important; }
-:root[data-theme="light"] .navbar-lang-btn:hover,
-:root[data-theme="light"] .navbar-lang-btn[data-active="true"] { background: rgba(0, 0, 0, 0.05) !important; }
+:root[data-theme="dark"] .navbar-lang-btn,
+:root[data-theme="dark"] .lang-btn-code,
+:root[data-theme="dark"] .lang-btn-name,
+:root[data-theme="dark"] .lang-btn-check { color: #1a1a1a !important; }
+:root[data-theme="dark"] .navbar-lang-btn:hover,
+:root[data-theme="dark"] .navbar-lang-btn[data-active="true"] { background: rgba(0, 0, 0, 0.05) !important; }
 
 /* Desktop menu · Estado=Abierto (3942:282 light) */
-:root[data-theme="light"] .navbar-dropdown {
+:root[data-theme="dark"] .navbar-dropdown {
   background: #fff;
   border: 1px solid #e4e0dd;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
-:root[data-theme="light"] .navbar-dropdown-item__name { color: #1a1a1a; }
-:root[data-theme="light"] .navbar-dropdown-item__desc,
-:root[data-theme="light"] .navbar-dropdown__label,
-:root[data-theme="light"] .navbar-dropdown-item__current { color: var(--nav-muted); }
-:root[data-theme="light"] .navbar-dropdown__foot { border-top-color: #1a1a1a; }
-:root[data-theme="light"] .navbar-dropdown-item[aria-current="page"] { background: rgba(0, 0, 0, 0.04); border-color: #e4e0dd; }
-:root[data-theme="light"] .navbar-dropdown-item:hover,
-:root[data-theme="light"] .navbar-dropdown-item:focus-visible { background: #fbebe6; }
-:root[data-theme="light"] .navbar-dropdown-item:hover .navbar-dropdown-item__name,
-:root[data-theme="light"] .navbar-dropdown-item:focus-visible .navbar-dropdown-item__name { color: var(--nav-accent); }
-:root[data-theme="light"] .navbar-dropdown-item:hover .navbar-dropdown-item__desc,
-:root[data-theme="light"] .navbar-dropdown-item:focus-visible .navbar-dropdown-item__desc { color: #1a1a1a; }
+:root[data-theme="dark"] .navbar-dropdown-item__name { color: #1a1a1a; }
+:root[data-theme="dark"] .navbar-dropdown-item__desc,
+:root[data-theme="dark"] .navbar-dropdown__label,
+:root[data-theme="dark"] .navbar-dropdown-item__current { color: var(--nav-muted); }
+:root[data-theme="dark"] .navbar-dropdown__foot { border-top-color: #1a1a1a; }
+:root[data-theme="dark"] .navbar-dropdown-item[aria-current="page"] { background: rgba(0, 0, 0, 0.04); border-color: #e4e0dd; }
+:root[data-theme="dark"] .navbar-dropdown-item:hover,
+:root[data-theme="dark"] .navbar-dropdown-item:focus-visible { background: #fbebe6; }
+:root[data-theme="dark"] .navbar-dropdown-item:hover .navbar-dropdown-item__name,
+:root[data-theme="dark"] .navbar-dropdown-item:focus-visible .navbar-dropdown-item__name { color: var(--nav-accent); }
+:root[data-theme="dark"] .navbar-dropdown-item:hover .navbar-dropdown-item__desc,
+:root[data-theme="dark"] .navbar-dropdown-item:focus-visible .navbar-dropdown-item__desc { color: #1a1a1a; }
 @media (min-width: 769px) {
   .navbar-menu-wrapper:not([data-dismissed]):hover .layout-grid-parent .button,
   .navbar-menu-wrapper:not([data-dismissed]):has(:focus-visible) .layout-grid-parent .button,
@@ -380,8 +377,7 @@
 /* Mobile (≤768): bar 64, padding 10/12, radius 16, 1px border; burger + "Menu" 13; capsule #191919 / #f5f1ef */
 @media (max-width: 768px) {
   :root,
-  :root[data-theme="dark"] { --nav-border: #393736; --nav-capsule: #191919; --nav-sep: #393736; }
-  :root[data-theme="light"] { --nav-capsule: #f5f1ef; }
+  :root[data-theme="light"] { --nav-border: #393736; --nav-sep: #393736; }
 
   .navbar-wrapper .navbar {
     min-height: 64px;
@@ -401,19 +397,19 @@
   .navbar-wrapper .navbar-lang-current { font-size: 14px; }
   .navbar-wrapper .theme-toggle__label { display: inline; } /* Figma shows "Light"/"Dark" on mobile too */
 
-  :root[data-theme="light"] .mobile-menu:not([hidden]) {
+  :root[data-theme="dark"] .mobile-menu:not([hidden]) {
     background: #fff;
     border-color: #e4e0dd;
     box-shadow: var(--nav-shadow);
   }
-  :root[data-theme="light"] .mobile-menu__title,
-  :root[data-theme="light"] .mobile-menu__arrow,
-  :root[data-theme="light"] .mobile-menu__current { color: var(--nav-muted); }
-  :root[data-theme="light"] .mobile-menu__link { color: #1a1a1a; }
-  :root[data-theme="light"] .mobile-menu__link:hover { background: rgba(0, 0, 0, 0.04); }
-  :root[data-theme="light"] .mobile-menu__link[aria-current="page"] { background: rgba(0, 0, 0, 0.05); }
-  :root[data-theme="light"] .mobile-menu__link:hover .mobile-menu__name,
-  :root[data-theme="light"] .mobile-menu__link:focus-visible .mobile-menu__name { color: var(--nav-accent); }
+  :root[data-theme="dark"] .mobile-menu__title,
+  :root[data-theme="dark"] .mobile-menu__arrow,
+  :root[data-theme="dark"] .mobile-menu__current { color: var(--nav-muted); }
+  :root[data-theme="dark"] .mobile-menu__link { color: #1a1a1a; }
+  :root[data-theme="dark"] .mobile-menu__link:hover { background: rgba(0, 0, 0, 0.04); }
+  :root[data-theme="dark"] .mobile-menu__link[aria-current="page"] { background: rgba(0, 0, 0, 0.05); }
+  :root[data-theme="dark"] .mobile-menu__link:hover .mobile-menu__name,
+  :root[data-theme="dark"] .mobile-menu__link:focus-visible .mobile-menu__name { color: var(--nav-accent); }
 }
 @media (min-width: 769px) {
   .nav-burger__label { display: none; }

@@ -822,6 +822,7 @@ export function initHomeBg() {
 
 export function initCaseBg() {
   if (!document.querySelector("main.cs-frame")) return;
+  if (document.body.dataset.page === "cv") return; // CV sin líneas de fondo (Alejandro, 2026-11-25)
   const mode = readMode();
   document.documentElement.dataset.bg = mode;
   if (mode === "a") modeA();
