@@ -349,3 +349,94 @@ body[data-page="cv"] .cv-section:last-of-type {
     transform: none;
   }
 }
+
+/* ── Contact al final del CV: igual que «Travaillons ensemble» del Home (2026-11-25) ──
+   Desktop: título a la izquierda y, a 200 px, e-mail, teléfono y botón de 250 px.
+   Mobile: columna centrada. */
+body[data-page="cv"] .cv-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  width: var(--cs-col);
+  margin: var(--cs-section) auto 0;
+  padding-block: 80px 112px;
+  scroll-margin-top: 160px;
+}
+.cv-contact__title {
+  margin: 0;
+  font-family: var(--font-display, Montserrat, sans-serif);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--cs-text);
+}
+.cv-contact .contact__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 250px;
+}
+.cv-contact .contact__lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.cv-contact .contact__line {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 20px;
+  white-space: nowrap;
+  color: var(--cs-text);
+}
+.cv-contact .contact__line .icon { display: none; }
+.cv-contact .contact__line a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--cs-border);
+}
+.cv-contact .contact__line a:hover { text-decoration-color: var(--cs-accent); }
+.cv-contact .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 250px;
+  margin: 0;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: var(--cs-text);
+  color: var(--cs-bg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 20px;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.cv-contact .btn .icon { width: 18px; height: 18px; flex: none; }
+.cv-contact .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+.cv-contact .btn:focus-visible { outline: 2px solid var(--cs-accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .cv-contact .btn { transition: none; }
+  .cv-contact .btn:hover { transform: none; }
+}
+@media (max-width: 768px) {
+  body[data-page="cv"] .cv-contact {
+    flex-direction: column;
+    gap: 48px;
+    padding-block: 24px 64px;
+    text-align: center;
+  }
+  .cv-contact__title { font-size: 1.75rem; }
+  .cv-contact .contact__lines { gap: 4px; }
+  .cv-contact .contact__line { font-size: 0.875rem; line-height: 17px; }
+}
+
+/* CV sin fondo decorativo (líneas, ondas, anillos ni halos), pedido de Alejandro 2026-11-25 */
+body[data-page="cv"]::before,
+body[data-page="cv"]::after,
+body[data-page="cv"] .cs-waves { display: none !important; }
